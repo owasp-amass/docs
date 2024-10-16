@@ -1,4 +1,4 @@
-# 🕸️ Amass Docs
+# 🕸️ Amass
 
 Expanding Data Horizons: Amassing More Than Subdomains
 
@@ -13,7 +13,7 @@ Amass extends far beyond basic subdomain enumeration, offering a comprehensive a
 - **Broader Data Collection Capabilities**: Gather a wide range of information to uncover assets and connections that traditional methods might miss.
 - **Advanced Recon Features**: Use powerful tools for detailed network mapping and asset identification to fully understand potential attack surfaces.
 - **Hands-on Learning and Best Practices**: Access expert guidance on using Amass's advanced features and optimized reconnaissance workflows.
-- **Community-Driven Innovation**: Contributors, including Jeff Foley, actively share insights, demos, and practical applications, driving ongoing improvements.
+- **Community-Driven Innovation**: Contributors actively share insights, demos, and practical applications, driving ongoing improvements.
 - **Continuous Development**: Regular updates introduce new functionalities and enhanced performance, keeping Amass aligned with the latest reconnaissance needs.
 
 ---
