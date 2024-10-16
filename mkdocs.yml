@@ -1,1 +1,78 @@
-site_name: My Docs
+# pip install mkdocs mkdocs-material
+# mkdocs serve
+# mkdocs gh-deploy
+
+site_name: OWASP Amass
+repo_name: OWASP Amass
+repo_url: https://github.com/51nk0r5w1m/docs
+site_description: "In-depth OSINT collection and external attack surface mapping "
+site_author: OWASP Amass Contributors
+remote_branch: gh-pages
+
+#copyright: 
+
+theme:
+  name: 'material'
+  #favicon: images/slack_logo_small.png
+  #logo: images/slack_logo.png
+  palette:
+    - media: '(prefers-color-scheme: light)'
+      scheme: default
+      primary: 'white'
+      accent: 'red'
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: '(prefers-color-scheme: dark)'
+      scheme: slate
+      primary: 'black'
+      accent: 'red'
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  font:
+    text: 'Lato'
+    code: 'Fira Code'
+  features:
+    - content.code.copy
+    - content.code.select
+
+extra_css:
+  - 'css/app.css'
+
+markdown_extensions:
+  - smarty
+  - codehilite:
+      guess_lang: false
+  - footnotes
+  - meta
+  - toc:
+      permalink: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.emoji
+  - pymdownx.tabbed:
+      alternate_style: true
+  - tables
+  - admonition
+  - attr_list
+  - md_in_html
+
+nav:
+  - 'Introduction': index.md
+  - 'Getting Started': getting-started.md
+  - 'Installation': installation.md
+  - 'Configuration': configuration.md
+  - 'Recon Techniques': recon-techniques.md
+  - 'Data Sources': data-sources.md
+  - 'Advanced Usage': advanced-usage.md
+  #- 'API Documentation': api/0.x/index.html
+  - 'Discussions ⏏': https://github.com/51nk0r5w1m/docs/discussions
+  - 'Change Log': changelog.md
+  - 'Contributing': contributing.md
+  #- 'Code of Conduct': code-of-conduct.md
