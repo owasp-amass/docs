@@ -18,7 +18,7 @@ Amass extends far beyond basic subdomain enumeration, offering a comprehensive a
 
 ---
 
-## Getting Started 🚀
+## Getting Started 🔧
 
 Follow these steps to start exploring Amass:
 1. **Installation**: Check out the [installation guide](installation.md) for setup instructions.
