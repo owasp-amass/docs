@@ -1,4 +1,4 @@
-# 🕸️ OWASP Amass Documentation
+# 🕸️ Amass Docs
 
 Expanding Data Horizons: Amassing More Than Subdomains
 
