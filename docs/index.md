@@ -4,11 +4,11 @@ Expanding Data Horizons: Amassing More Than Subdomains
 
 **OWASP Amass** is an open-source, versatile reconnaissance platform designed to comprehensively map an organization’s digital footprint. Built for flexibility and depth, Amass combines advanced data collection, network mapping, and OSINT capabilities to deliver detailed insights into online assets 🧩. 
 
----
-
 ## Overview
 
 Amass extends far beyond basic subdomain enumeration, offering a comprehensive approach to information gathering that reveals the full scope of an organization's infrastructure.
+
+!!! info "Open Asset Model (OAM)"
 
 - **Broader Data Collection Capabilities**: Gather a wide range of information to uncover assets and connections that traditional methods might miss.
 - **Advanced Recon Features**: Use powerful tools for detailed network mapping and asset identification to fully understand potential attack surfaces.
