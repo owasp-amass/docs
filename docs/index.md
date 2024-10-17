@@ -1,18 +1,18 @@
 # 🧩 Amass Docs 
 
-**OWASP Amass** is an open-source, versatile reconnaissance platform designed to comprehensively map an organization’s footprint. Built for flexibility and depth, Amass combines advanced data collection, network mapping, and OSINT capabilities to deliver detailed insights into physical and digital assets. 
+**OWASP Amass** is an open-source, versatile Attack Surface Intelligence platform designed to comprehensively map an organization’s footprint. Built for flexibility and depth, Amass combines advanced data collection, network mapping, and OSINT capabilities to deliver detailed insights into physical and digital assets. 
 
 ## Overview
 
-Amass extends far beyond basic subdomain enumeration, offering a comprehensive approach to information gathering that reveals the full scope of an organization's infrastructure.
+Amass extends far beyond basic subdomain enumeration, offering a comprehensive, automated approach to information gathering that reveals the full scope of an organization's infrastructure.
 
 !!! info "Open Asset Model (OAM)"
-    The Open Asset Model expands traditional asset specifications by covering both physical and digital assets, aiming to provide a comprehensive view of organization'sattack surface. It defines assets and their relationships, capturing the real-world interconnectedness between them.
-    [Taxonomy documentation](https://github.com/owasp-amass/open-asset-model/blob/master/docs/taxonomy.md)
+    The Open Asset Model expands traditional asset specifications by covering both physical and digital assets, aiming to provide a comprehensive view of 
+    organization'sattack surface. It defines assets and their relationships, capturing the real-world interconnectedness between them.
+    (https://github.com/owasp-amass/open-asset-model/blob/master/docs/taxonomy.md)
 
 - **Broader Data Collection Capabilities**: Gather a wide range of information to uncover assets and connections that traditional methods might miss.
 - **Advanced Recon Features**: Use powerful tools for detailed network mapping and asset identification to fully understand potential attack surfaces.
-- **Hands-on Learning and Best Practices**: Access expert guidance on using Amass's advanced features and optimized reconnaissance workflows.
 - **Community-Driven Innovation**: Contributors actively share insights, demos, and practical applications, driving ongoing improvements.
 - **Continuous Development**: Regular updates introduce new functionalities and enhanced performance, keeping Amass aligned with the latest reconnaissance needs.
 
@@ -20,7 +20,28 @@ Amass extends far beyond basic subdomain enumeration, offering a comprehensive a
 
 ## Getting Started 
 
-🔧 Follow these steps to start exploring Amass:
+🔧 Follow these steps to set up the OWASP Amass project using Docker Compose:
+
+#### Prerequisites
+
+Before you begin, make sure you have the following installed on your system:
+
+- **Docker:** Installed and running on your system. You can download it from [Docker's Official Website](https://www.docker.com/products/docker-desktop/).
+  
+- **Docker Compose:** Typically, Docker Compose is bundled with Docker Desktop, but you can verify the installation or install in seperately from
+    [Docker Compose Installation](https://docs.docker.com/compose/)).
+
+- **Git:** To clone the Amass repository. Download it from [Git's Official Website](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+
+#### Step 1: Clone the Amass GitHub Repository
+
+Start by cloning the OWASP Amass repository, which contains the Docker Compose setup files.
+
+
+
+
+
+
 
 1. **Installation**: Check out the [installation guide](installation.md) for setup instructions.
 
