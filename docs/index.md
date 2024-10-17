@@ -37,6 +37,11 @@ Before you begin, make sure you have the following installed on your system:
 
 Start by cloning the OWASP Amass repository, which contains the Docker Compose setup files.
 
+'''bash
+git clone https://github.com/OWASP/Amass.git
+cd Amass/docker
+'''
+
 
 
 
