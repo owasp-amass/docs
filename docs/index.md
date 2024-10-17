@@ -12,16 +12,16 @@ Amass extends far beyond basic subdomain enumeration, offering a comprehensive, 
     real-world interconnectedness between them.
     (https://github.com/owasp-amass/open-asset-model/blob/master/docs/taxonomy.md)
 
-- **Broader Data Collection Capabilities**: Gather a wide range of information to uncover assets and connections that traditional methods might miss.
-- **Advanced Recon Features**: Use powerful tools for detailed network mapping and asset identification to fully understand potential attack surfaces.
-- **Community-Driven Innovation**: Contributors actively share insights, demos, and practical applications, driving ongoing improvements.
-- **Continuous Development**: Regular updates introduce new functionalities and enhanced performance, keeping Amass aligned with the latest reconnaissance needs.
+:material-vector-point:**Broader Data Collection Capabilities**: Gather a wide range of information to uncover assets and connections that traditional methods might miss.
+:material-vector-point:**Advanced Recon Features**: Use powerful tools for detailed network mapping and asset identification to fully understand potential attack surfaces.
+:material-vector-point:**Community-Driven Innovation**: Contributors actively share insights, demos, and practical applications, driving ongoing improvements.
+:material-vector-point:**Continuous Development**: Regular updates introduce new functionalities and enhanced performance, keeping Amass aligned with the latest reconnaissance needs.
 
 ---
 
 ## Getting Started 
 
-🔧 Follow these steps to set up the OWASP Amass project using Docker Compose:
+:octicons-tools-16:Follow these steps to set up the OWASP Amass project using Docker Compose:
 
 ### Prerequisites
 
