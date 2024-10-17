@@ -66,12 +66,12 @@ markdown_extensions:
 nav:
   - 'Getting Started': index.md
   #- 'Installation': installation.md
-  - :material-tune-variant:'Configuration': configuration.md
-  - 'Recon Techniques': recon-techniques.md
-  - 'Data Sources': data-sources.md
-  - 'Advanced Usage': advanced-usage.md
+  - ':material-tune-variant: Configuration': configuration.md
+  - ':material-target:Recon Techniques': recon-techniques.md
+  - ':material-database-cog-outline:Data Sources': data-sources.md
+  - ':material-lightning-bolt:Advanced Usage': advanced-usage.md
   #- 'API Documentation': api/0.x/index.html
   #- 'Discussions ⏏': https://github.com/owasp-amass/amass/discussions
-  - 'Change Log': changelog.md
-  - 'Contributing': contributing.md
+  - ':material-update:Change Log': changelog.md
+  - ':material-chat:Contributing': contributing.md
   #- 'Code of Conduct': code-of-conduct.md
