@@ -64,10 +64,9 @@ markdown_extensions:
   - md_in_html
 
 nav:
-  - 'Introduction': index.md
-  - 'Getting Started': getting-started.md
-  - 'Installation': installation.md
-  - 'Configuration': configuration.md
+  - 'Getting Started': index.md
+  #- 'Installation': installation.md
+  - :material-tune-variant:'Configuration': configuration.md
   - 'Recon Techniques': recon-techniques.md
   - 'Data Sources': data-sources.md
   - 'Advanced Usage': advanced-usage.md
