@@ -13,8 +13,9 @@ remote_branch: gh-pages
 
 theme:
   name: 'material'
-  #favicon: images/slack_logo_small.png
-  #logo: images/slack_logo.png
+  #favicon: _____
+  icon:
+    logo: simple/owasp
   palette:
     - media: '(prefers-color-scheme: light)'
       scheme: default
