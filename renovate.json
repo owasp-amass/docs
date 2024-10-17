@@ -1,0 +1,34 @@
+{
+  "description": "Renovate configuration for managing Python dependencies, MkDocs, and style/linting tools.",
+  "extends": ["config:base"],
+  "baseBranches": ["development"],
+  "prHourlyLimit": 2,
+  "automerge": false,
+  "packageRules": [
+    {
+      "description": "Manage Python dependencies using pip (MkDocs-related and general).",
+      "matchManagers": ["pip_requirements"],
+      "separateMinorPatch": true,
+      "automerge": true,
+      "automergeType": "pr",
+      "schedule": ["every weekday"]
+    },
+    {
+      "description": "Manage style and linting tools (black, isort, ruff).",
+      "matchManagers": ["pip_requirements"],
+      "matchPackagePatterns": ["black", "isort", "ruff"],
+      "separateMinorPatch": true,
+      "automerge": false,
+      "schedule": ["every week"]
+    },
+    {
+      "description": "Manage GitHub Actions dependencies.",
+      "matchManagers": ["github-actions"],
+      "separateMinorPatch": true,
+      "automerge": false,
+      "pinDigests": true,
+      "schedule": ["every week"]
+    }
+  ],
+  "dependencyDashboard": true
+}
