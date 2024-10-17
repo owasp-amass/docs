@@ -1,4 +1,4 @@
-# 🧩 Amass Docs 
+# :spider_web:Amass Docs 
 
 **OWASP Amass** is an open-source, versatile Attack Surface Intelligence platform designed to comprehensively map an organization’s footprint. Built for flexibility and depth, Amass combines advanced data collection, network mapping, and OSINT capabilities to deliver detailed insights into physical and digital assets. 
 
@@ -37,22 +37,89 @@ Before you begin, make sure you have the following installed on your system:
 
 Start by cloning the OWASP Amass repository, which contains the Docker Compose setup files.
 
-'''bash
+```bash
 git clone https://github.com/OWASP/Amass.git
 cd Amass/docker
-'''
+```
+
+### Step 2: Review the Docker Compose File
+
+Navigate to the `docker/` folder within the cloned repository. In this folder, you will find the `docker-compose.yml` file, which is pre-configured for the Amass setup.
+
+The Docker Compose file defines the services (such as Amass and supporting services) that will be run. You don’t need to make any changes, but it's good to understand how it works. It sets up Amass with the necessary configurations and pulls external data sources like GoIP for better mapping results.
+
+### Step 3: Pull Docker Images
+
+Run the following command to pull the necessary Docker images specified in the `docker-compose.yml` file:
+
+```bash
+docker-compose pull
+```
+
+This command ensures that you have all the latest dependencies needed to run Amass.
+
+### Step 4: Configure Amass Enumeration
+
+The Amass tool allows you to perform enumeration of external assets. You can set parameters or adjust settings in the configuration file, but if you’re using the default Docker Compose setup, it's ready to go.
+
+Here’s a basic command to enumerate domains using Amass with Docker:
+
+```bash
+docker-compose run amass enum -d <target_domain>
+```
+
+For example:
+
+```bash
+docker-compose run amass enum -d example.com
+```
+
+This command runs Amass’s enumeration mode, which collects data from various public sources and scans the target domain for subdomains, IP addresses, and other details.
+
+### Step 5: Run the Docker Compose Setup
+
+Once you are satisfied with the configuration, start the Amass service with Docker Compose:
+
+```bash
+docker-compose up
+```
+
+This command will bring up all the containers defined in the `docker-compose.yml` file. You will see the containers starting up, and Amass will begin its operations, including data collection.
+
+### Step 6: Monitor and Analyze Data
+
+Once the containers are running, Amass will start collecting information on the domain you specified. The data is logged and can be visualized using the newly introduced dashboards (if you're using an [advanced setup](advanced-usage.md).
+
+You can also inspect logs from the running containers by using:
+
+```bash
+docker-compose logs
+```
+
+This helps you understand the progress of the enumeration process.
+
+### Step 7: Stopping and Cleaning Up
+
+To stop the Docker containers and services, use the following command:
+
+```bash
+docker-compose down
+```
+
+### Step 8: Viewing Results
+
+Amass stores its results in various formats, including text and JSON. To view the results of the enumeration:
+
+```bash
+cat output/amass.txt
+```
+
+You can further process this data using your preferred tools for visualization or analysis.
+
+### Additional Configurations
 
 
 
-
-
-
-
-1. **Installation**: Check out the [installation guide](installation.md) for setup instructions.
-
-2. **Basic Usage**: Learn practical ways to use Amass in the [user manual](user-manual.md).
-
-3. **Configuration**: Customize Amass with settings described in the [configuration guide](configuration.md).
 
 
 License
@@ -70,4 +137,4 @@ License
     distributed under the License is distributed on an "AS IS" BASIS,
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
-    limitations under the License.   
+    limitations under the License.  
