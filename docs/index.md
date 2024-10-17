@@ -33,7 +33,7 @@ Before you begin, make sure you have the following installed on your system:
 
 - **Git:** To clone the Amass repository. Download it from [Git's Official Website](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 
-#### Step 1: Clone the Amass GitHub Repository
+### Step 1: Clone the Amass GitHub Repository
 
 Start by cloning the OWASP Amass repository, which contains the Docker Compose setup files.
 
