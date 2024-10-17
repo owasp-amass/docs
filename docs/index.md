@@ -1,8 +1,6 @@
-# 🕸️ Amass
+# 🧩Amass Docs
 
-Expanding Data Horizons: Amassing More Than Subdomains
-
-**OWASP Amass** is an open-source, versatile reconnaissance platform designed to comprehensively map an organization’s digital footprint. Built for flexibility and depth, Amass combines advanced data collection, network mapping, and OSINT capabilities to deliver detailed insights into physical and digital assets 🧩. 
+**OWASP Amass** is an open-source, versatile reconnaissance platform designed to comprehensively map an organization’s digital footprint. Built for flexibility and depth, Amass combines advanced data collection, network mapping, and OSINT capabilities to deliver detailed insights into physical and digital assets. 
 
 ## Overview
 
@@ -20,25 +18,15 @@ Amass extends far beyond basic subdomain enumeration, offering a comprehensive a
 
 ---
 
-## Getting Started 🔧
+## Getting Started 
 
-Follow these steps to start exploring Amass:
+🔧 Follow these steps to start exploring Amass:
+
 1. **Installation**: Check out the [installation guide](installation.md) for setup instructions.
+
 2. **Basic Usage**: Learn practical ways to use Amass in the [user manual](user-manual.md).
+
 3. **Configuration**: Customize Amass with settings described in the [configuration guide](configuration.md).
-
-
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
 
 
 License
