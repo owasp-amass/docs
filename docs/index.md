@@ -22,7 +22,7 @@ Amass extends far beyond basic subdomain enumeration, offering a comprehensive, 
 
 🔧 Follow these steps to set up the OWASP Amass project using Docker Compose:
 
-#### Prerequisites
+### Prerequisites
 
 Before you begin, make sure you have the following installed on your system:
 
