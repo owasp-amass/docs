@@ -5,8 +5,8 @@ on:
   push:
     branches:
       - master
-      - features
-      - development
+      - develop
+      - feature/*
 
 jobs:
   mkdocs-build:
