@@ -7,10 +7,9 @@
 Amass extends far beyond basic subdomain enumeration, offering a comprehensive, automated approach to information gathering that reveals the full scope of an organization's infrastructure.
 
 !!! info "Open Asset Model (OAM)"
-    The Open Asset Model expands traditional asset specifications by covering both physical and digital assets, aiming to 
-    provide a comprehensive view of organization's attack surface. It defines assets and their relationships, capturing the 
-    real-world interconnectedness between them.
-    (https://github.com/owasp-amass/open-asset-model/blob/master/docs/taxonomy.md)
+    The Open Asset Model expands traditional asset specifications by covering both physical and digital assets, aiming to provide a comprehensive view of organization's attack surface.
+    It defines assets and their relationships, capturing the real-world interconnectedness between them, allowing for concurrent data collection and querying, making it easier to analyze and visualize reconnaissance results.
+    :fontawesome-brands-youtube:{ .youtube } [DEF CON 31 Recon Village - Jeff Foley - Unlocking the Power of OWASP Amass](https://www.youtube.com/watch?v=IgxPsv8MXMw)
 
 :material-vector-point:**Broader Data Collection Capabilities**: Gather a wide range of information to uncover assets and connections that traditional methods might miss.
 :material-vector-point:**Advanced Recon Features**: Use powerful tools for detailed network mapping and asset identification to fully understand potential attack surfaces.
@@ -121,8 +120,9 @@ You can further process this data using your preferred tools for visualization o
 ### :material-tune-variant:Additional Configurations
 
 !!! tip "Amass Configuration File" 
-    If you wish to customize Amass beyond the default setup, you can edit the `config.ini` file to modify settings like          source lists, APIs, etc. See [Configuration](configuration.md)
-    **GoIP Data:** You can integrate GoIP databases into Amass for more geographical insight into discovered assets. This        can be configured within the `docker-compose.yml` file. See [Advanced Usage](advanced-usage.md)
+    If you wish to customize Amass beyond the default setup, you can edit the `config.ini` file to modify settings like source lists, APIs, etc. See [Configuration](configuration.md)
+    **GoIP Data:** You can integrate GoIP databases into Amass for more geographical insight into discovered assets. This can be configured within the `docker-compose.yml` file. 
+    See [Advanced Usage](advanced-usage.md)
 
 License
 --------
