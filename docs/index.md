@@ -1,6 +1,6 @@
-# 🧩Amass Docs
+# 🅰️ Amass Docs
 
-**OWASP Amass** is an open-source, versatile reconnaissance platform designed to comprehensively map an organization’s digital footprint. Built for flexibility and depth, Amass combines advanced data collection, network mapping, and OSINT capabilities to deliver detailed insights into physical and digital assets. 
+**OWASP Amass** is an open-source, versatile reconnaissance platform designed to comprehensively map an organization’s footprint. Built for flexibility and depth, Amass combines advanced data collection, network mapping, and OSINT capabilities to deliver detailed insights into physical and digital assets. 
 
 ## Overview
 
