@@ -22,7 +22,7 @@ __[Unlocking the Power of OWASP Amass]__ by [@jeff_foley](https://x.com/jeff_fol
 
 - **Centralized Asset Management with Asset DB**: Use the Asset DB for storing, managing, and retrieving discovered assets, with support for long-term tracking and consistent data collection through the Open Asset Model.
 
-- **Scalable and Flexible Infrastructure**: Designed for enterprise environments,[DockerCompose](https://docs.docker.com/compose/) enables scalable deployments of Amass, ensuring consistent attack surface management for organizations of any size.
+- **Scalable and Flexible Infrastructure**: Designed for enterprise environments,[Docker Compose](https://docs.docker.com/compose/) enables scalable deployments of Amass, ensuring consistent attack surface management for organizations of any size.
 
 - **Advanced Collection and Monitoring**: The Collections Engine refines the data collection process, while open-source tools like [Loki](https://grafana.com/oss/loki/) provide centralized logging, enabling real-time monitoring and diagnostics.
 
