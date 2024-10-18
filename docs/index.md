@@ -18,13 +18,15 @@ __[Unlocking the Power of OWASP Amass]__ by [@jeff_foley](https://x.com/jeff_fol
 
   [Unlocking the Power of OWASP Amass]: https://www.youtube.com/watch?v=IgxPsv8MXMw
 
-- **Broader Data Collection Capabilities**: Gather a wide range of information to uncover assets and connections that traditional methods might miss.
+- **Automated Deployment and Enumeration**: Easily deploy Amass with [Docker Compose](https://docs.docker.com/compose/))for quick, automated asset discovery across multiple domains with minimal configuration.
 
-- **Advanced Recon Features**: Use powerful tools for detailed network mapping and asset identification to fully understand potential attack surfaces.
+- **Centralized Asset Management with Asset DB**: Use the Asset DB for storing, managing, and retrieving discovered assets, with support for long-term tracking and consistent data collection through the Open Asset Model.
 
-- **Community-Driven Innovation**: Contributors actively share insights, demos, and practical applications, driving ongoing improvements.
+- **Scalable and Flexible Infrastructure**: Designed for enterprise environments,[DockerCompose](https://docs.docker.com/compose/) enables scalable deployments of Amass, ensuring consistent attack surface management for organizations of any size.
 
-- **Continuous Development**: Regular updates introduce new functionalities and enhanced performance, keeping Amass aligned with the latest reconnaissance needs.
+- **Advanced Collection and Monitoring**: The Collections Engine refines the data collection process, while open-source tools like [Loki](https://grafana.com/oss/loki/) provide centralized logging, enabling real-time monitoring and diagnostics.
+
+- **Visualization and Data-Driven Insights**: The latest release features a fully integrated [Grafana](https://grafana.com/oss/grafana/) dashboard, providing dynamic visualization and analysis for deeper attack surface intelligence.
 
 ---
 
