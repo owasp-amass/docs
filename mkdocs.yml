@@ -13,7 +13,7 @@ remote_branch: gh-pages
 
 theme:
   name: 'material'
-  favicon: simple/owasp
+  favicon: assets/favicon.png
   icon:
     logo: simple/owasp
   palette:
