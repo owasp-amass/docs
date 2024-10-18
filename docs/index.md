@@ -18,11 +18,11 @@ __[Unlocking the Power of OWASP Amass]__ by [@jeff_foley](https://x.com/jeff_fol
 
   [Unlocking the Power of OWASP Amass]: https://www.youtube.com/watch?v=IgxPsv8MXMw
 
-- **Automated Deployment and Enumeration**: Easily deploy Amass with [Docker Compose](https://docs.docker.com/compose/))for quick, automated asset discovery across multiple domains with minimal configuration.
+- **Automated Deployment and Enumeration**: Easily deploy Amass with [Docker Compose](https://docs.docker.com/compose/) for quick, automated asset discovery across multiple domains with minimal configuration.
 
 - **Centralized Asset Management with Asset DB**: Use the Asset DB for storing, managing, and retrieving discovered assets, with support for long-term tracking and consistent data collection through the Open Asset Model.
 
-- **Scalable and Flexible Infrastructure**: Designed for enterprise environments,[Docker Compose](https://docs.docker.com/compose/) enables scalable deployments of Amass, ensuring consistent attack surface management for organizations of any size.
+- **Scalable and Flexible Infrastructure**: Designed for enterprise environments, [Docker Compose](https://docs.docker.com/compose/) enables scalable deployments of Amass, ensuring consistent attack surface management for organizations of any size.
 
 - **Advanced Collection and Monitoring**: The Collections Engine refines the data collection process, while open-source tools like [Loki](https://grafana.com/oss/loki/) provide centralized logging, enabling real-time monitoring and diagnostics.
 
