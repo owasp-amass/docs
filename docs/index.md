@@ -32,111 +32,155 @@ __[Unlocking the Power of OWASP Amass]__ by [@jeff_foley](https://x.com/jeff_fol
 
 ## :octicons-tools-16: Getting Started 
 
-Follow these steps to set up the OWASP Amass project using Docker Compose:
+Follow these steps to set up the OWASP Amass project using [Docker Compose](https://docs.docker.com/compose/):
 
 ### Prerequisites
 
 Before you begin, make sure you have the following installed on your system:
 
-- **Docker:** Installed and running on your system. You can download it from [Docker's Official Website](https://www.docker.com/products/docker-desktop/).
+- **Docker:** Up-to-date intallation running on your system. You can download it from [Docker's Official Website](https://www.docker.com/products/docker-desktop/).
   
 - **Docker Compose:** Typically, Docker Compose is bundled with Docker Desktop, but you can verify the installation or install in seperately from
-    [Docker Compose Installation](https://docs.docker.com/compose/)).
+    [Docker Compose Installation](https://docs.docker.com/compose/).
 
 - **Git:** To clone the Amass repository. Download it from [Git's Official Website](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 
-### Step 1: Clone the Amass GitHub Repository
+### Step 1: Clone the Amass Docker Compose Directory
 
 Start by cloning the OWASP Amass repository, which contains the Docker Compose setup files.
 
 ```bash
-git clone https://github.com/OWASP/Amass.git
-cd Amass/docker
+git clone https://github.com/owasp-amass/amass-docker-compose.git
+mv amass-docker-compose amass   # Optional: Rename the directory to something shorter (e.g., amass)
+cd amass   # Navigate to local directory
 ```
 
-### Step 2: Review the Docker Compose File
+### Step 2: Configure the Compose Environment
 
-Navigate to the `docker/` folder within the cloned repository. In this folder, you will find the `docker-compose.yml` file, which is pre-configured for the Amass setup.
+**> Open the `assetdb.env` File:**
 
-The Docker Compose file defines the services (such as Amass and supporting services) that will be run. You don’t need to make any changes, but it's good to understand how it works. It sets up Amass with the necessary configurations and pulls external data sources like GoIP for better mapping results.
-
-### Step 3: Pull Docker Images
-
-Run the following command to pull the necessary Docker images specified in the `docker-compose.yml` file:
+Navigate to the `config` directory and open the `assetdb.env` file in a text editor to set the database passwords.
 
 ```bash
-docker-compose pull
+cd config
+nano assetdb.env # (1)!
 ```
 
-This command ensures that you have all the latest dependencies needed to run Amass.
+1.   You can replace `nano` with your preferred text editor, like `vim` or `code` for Visual Studio Code.
 
-### Step 4: Configure Amass Enumeration
 
-The Amass tool allows you to perform enumeration of external assets. You can set parameters or adjust settings in the configuration file, but if you’re using the default Docker Compose setup, it's ready to go.
+**> Set the Passwords:** 
 
-Here’s a basic command to enumerate domains using Amass with Docker:
-
-```bash
-docker-compose run amass enum -d <target_domain>
-```
+In the `assetdb.env` file, locate the lines for `POSTGRES_PASSWORD` and `AMASS_PASSWORD`. Update them to assign new values. 
 
 For example:
 
 ```bash
-docker-compose run amass enum -d example.com
+POSTGRES_PASSWORD= your_new_postgres_password
+AMASS_PASSWORD= your_new_amass_password
 ```
 
-This command runs Amass’s enumeration mode, which collects data from various public sources and scans the target domain for subdomains, IP addresses, and other details.
+!!! Warning
+    This cannot be performed after you start the Docker Compose and the database has been created.
 
-### Step 5: Run the Docker Compose Setup
+**> Save Changes:** 
 
-Once you are satisfied with the configuration, start the Amass service with Docker Compose:
+After editing, save the file:
+
+- If you're using **nano**: Press `Ctrl + O` (then hit `Enter`) to save and `Ctrl + X` to exit.
+
+- If you're using **vim**: Press `Esc`, then type `:wq` and hit `Enter`.
+
+
+**> Modify the `config.yaml` File:**
+
+Open the `config.yaml` file to set the database password to the one you just assigned as `AMASS_PASSWORD`.
 
 ```bash
-docker-compose up
+nano ../config.yaml
 ```
 
-This command will bring up all the containers defined in the `docker-compose.yml` file. You will see the containers starting up, and Amass will begin its operations, including data collection.
+**> Update the Database Password:** 
 
-### Step 6: Monitor and Analyze Data
+Find the section in the `config.yaml` file that specifies the database settings. Change the password field to match the `AMASS_PASSWORD` you set earlier.
 
-Once the containers are running, Amass will start collecting information on the domain you specified. The data is logged and can be visualized using the newly introduced [dashboards](advanced-usage.md).
+For example:
 
-You can also inspect logs from the running containers by using:
+```yaml
+database:
+  ...
+  password: your_new_amass_password
+```
+
+**> Save Changes:**
+
+As before, save the changes using your preferred text editor.
+
+
+!!! info "Update the Data Sources"
+    If you want to configure data sources, you can modify the `datasources.yaml` file. Open it with:
+    ```bash
+    nano datasources.yaml
+    ```
+    Uncomment the lines you need, and provide any necessary credentials.
+
+### Step 3: Building the Docker Images
+
+Your **Amass** framework is now configured and ready to be built. [Docker Compose](https://docs.docker.com/compose/) will build the required images and start them correctly when you perform your first Amass command execution.
+
+**> Type the following to get started:**
 
 ```bash
-docker-compose logs
+docker compose run --rm amass enum -d example.org # (1)!
 ```
 
-This helps you understand the progress of the enumeration process.
+1.   If the build process times out, simply execute the command again to resume.
 
-### Step 7: Stopping and Cleaning Up
 
-To stop the Docker containers and services, use the following command:
+**> Accessing the Web UI:**
+
+You can obtain information about your asset discoveries by accessing the web UI at `http://127.0.0.1:3000`
+
+> All persistent data used exists on your host in the local repo root directory.
+
+> The `assetdb` is a [PostgreSQL](https://www.postgresql.org/) database reachable from your localhost on `port 5432`.
+
+> The `config` files in the local repo are automatically mapped to where components expect to find them in the Docker environment.
+
+!!! tip "Utilize the IP2Location Databse" 
+    - **Sign up** for a free [IP2Location LITE](https://lite.ip2location.com/) account.
+    - **Download Databse File:** Download the `IP2LOCATION-LITE-DB11.CSV` and `IP2LOCATION-LITE-DB11.IPV6.CSV` files.  
+    - **Copy Files to the Compose Directory:** Copy the downloaded CSV files into the compose directory:
+    ```bash
+    cp path/to/IP2LOCATION-LITE-DB11.CSV ./ 
+    cp path/to/IP2LOCATION-LITE-DB11.IPV6.CSV ./
+    ```
+    - **Run the Amass Docker Compose:** While the Amass Docker Compose is up, execute the script to insert the geo information into the database:
+    ```bash
+    ./upload_ip2loc_data.sh
+    ```
+
+
+## :material-update: Update Process for the Images
+
+**> Make the local repo your current working directory:**
+```bash
+cd amass
+```
+
+**> Shutdown the Amass framework within the Docker environment:**
 
 ```bash
-docker-compose down
+docker compose down
 ```
 
-### Step 8: Viewing Results
-
-Amass stores its results in various formats, including text and JSON. To view the results of the enumeration:
+**> Update components from their GitHub repos:**
 
 ```bash
-cat output/amass.txt
+docker compose build --pull --no-cache
 ```
-
-You can further process this data using your preferred tools for visualization or analysis.
 
 ---
-## :material-tune-variant: Additional Configurations
-
-!!! tip "Custom Configuration and Advanced Usage" 
-    [Configurations](configuration.md): If you wish to customize Amass beyond the default setup, you can edit the `config.ini` file to modify settings like source lists, APIs, etc. 
-
-    [GoIP Data](advanced-usage.md): You can integrate GoIP databases into Amass for more geographical insight into discovered assets. Configure this and other advanced features within the `docker-compose.yml` file. 
-
----    
 
 License
 --------

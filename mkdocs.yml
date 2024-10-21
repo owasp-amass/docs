@@ -4,7 +4,7 @@
 
 site_name: OWASP Amass
 repo_name: OWASP Amass
-repo_url: https://github.com/51nk0r5w1m/docs
+repo_url: https://github.com/owasp-amass/amass
 site_description: "In-depth OSINT collection and external attack surface mapping "
 site_author: OWASP Amass Contributors
 remote_branch: gh-pages
@@ -16,10 +16,11 @@ theme:
   favicon: assets/favicon.png
   icon:
     logo: simple/owasp
+    annotation: material/plus-circle
   palette:
     - media: '(prefers-color-scheme: light)'
       scheme: default
-      primary: 'indigo'
+      primary: 'black'
       accent: 'red'
       toggle:
         icon: material/toggle-switch
@@ -37,6 +38,7 @@ theme:
   features:
     - content.code.copy
     - content.code.select
+    - content.code.annotate
 
 extra_css:
   - stylesheets/extra.css
