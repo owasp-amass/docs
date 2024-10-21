@@ -8,8 +8,8 @@ Amass extends far beyond basic subdomain enumeration, offering a comprehensive, 
 
 
 !!! info "Open Asset Model (OAM)"
-    The Open Asset Model expands traditional asset specifications by covering both physical and digital assets, aiming to provide a comprehensive view of organization's attack surface.
-    It defines assets and their relationships, capturing the real-world interconnectedness between them, allowing for concurrent data collection and querying, making it easier to analyze and visualize reconnaissance results.
+    The Open Asset Model expands traditional asset specifications by covering both physical and digital assets, aiming to provide a comprehensive view of an organization's attack surface.
+    It defines assets and their relationships, capturing the real-world interconnectedness between them, allowing for concurrent data collection and querying, making it easier to analyze and visualize asset discoveries on the Internet.
 
 ---
 
@@ -24,7 +24,7 @@ __[Unlocking the Power of OWASP Amass]__ by [@jeff_foley](https://x.com/jeff_fol
 
 - **Scalable and Flexible Infrastructure**: Designed for enterprise environments, [Docker](https://www.docker.com/products/docker-desktop/) enables scalable deployments of Amass, ensuring consistent attack surface management for organizations of any size.
 
-- **Advanced Collection and Monitoring**: The Collections Engine refines the data collection process, while open-source tools like [Loki](https://grafana.com/oss/loki/) provide centralized logging, enabling real-time monitoring and diagnostics.
+- **Advanced Collection and Monitoring**: The Collections Engine refines the data collection process, while open-source tools like [syslog-ng](https://github.com/syslog-ng/syslog-ng) provide centralized logging, enabling real-time monitoring and diagnostics.
 
 - **Visualization and Data-Driven Insights**: The latest release features a fully integrated [Grafana](https://grafana.com/oss/grafana/) dashboard, providing dynamic visualization and analysis for deeper attack surface intelligence.
 
@@ -32,7 +32,7 @@ __[Unlocking the Power of OWASP Amass]__ by [@jeff_foley](https://x.com/jeff_fol
 
 ## :octicons-tools-16: Getting Started 
 
-Follow these steps to set up the OWASP Amass project using [Docker Compose](https://docs.docker.com/compose/):
+Follow these steps to set up the OWASP Amass Project using [Docker Compose](https://docs.docker.com/compose/):
 
 ### Prerequisites
 
@@ -40,7 +40,7 @@ Before you begin, make sure you have the following installed on your system:
 
 - **Docker:** Up-to-date intallation running on your system. You can download it from [Docker's Official Website](https://www.docker.com/products/docker-desktop/).
   
-- **Docker Compose:** Typically, Docker Compose is bundled with Docker Desktop, but you can verify the installation or install in seperately from
+- **Docker Compose:** Typically, Docker Compose is bundled with Docker Desktop, but you can verify the installation or install it seperately from
     [Docker Compose Installation](https://docs.docker.com/compose/).
 
 - **Git:** To clone the Amass repository. Download it from [Git's Official Website](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
@@ -102,14 +102,14 @@ nano ../config.yaml
 
 **> Update the Database Password:** 
 
-Find the section in the `config.yaml` file that specifies the database settings. Change the password field to match the `AMASS_PASSWORD` you set earlier.
+Find the section in the `config.yaml` file that specifies the database settings. Change the password to match the `AMASS_PASSWORD` you set earlier.
 
 For example:
 
 ```yaml
-database:
+options:
   ...
-  password: your_new_amass_password
+  database: "postgres://amass:password@assetdb:5432/assetdb"
 ```
 
 **> Save Changes:**
@@ -131,7 +131,7 @@ Your **Amass** framework is now configured and ready to be built. [Docker Compos
 **> Type the following to get started:**
 
 ```bash
-docker compose run --rm amass enum -d example.org # (1)!
+docker compose run --rm amass enum -active -d example.org # (1)!
 ```
 
 1.   If the build process times out, simply execute the command again to resume.
@@ -143,7 +143,7 @@ You can obtain information about your asset discoveries by accessing the web UI 
 
 > All persistent data used exists on your host in the local repo root directory.
 
-> The `assetdb` is a [PostgreSQL](https://www.postgresql.org/) database reachable from your localhost on `port 5432`.
+> The `assetdb` is a [PostgreSQL](https://www.postgresql.org/) database reachable from your localhost on `port 55432`.
 
 > The `config` files in the local repo are automatically mapped to where components expect to find them in the Docker environment.
 
@@ -205,6 +205,7 @@ docker compose down
 **> Update components from their GitHub repos:**
 
 ```bash
+docker compose pull
 docker compose build --pull --no-cache
 ```
 

@@ -73,7 +73,6 @@ nav:
   - 'Getting Started': index.md
   #- 'Installation': installation.md
   - 'Configuration': configuration.md
-  - 'Recon Techniques': recon-techniques.md
   - 'Data Sources': data-sources.md
   - 'Advanced Usage': advanced-usage.md
   #- 'API Documentation': api/0.x/index.html
