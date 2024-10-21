@@ -161,7 +161,35 @@ You can obtain information about your asset discoveries by accessing the web UI 
     ```
 
 
-## :material-update: Update Process for the Images
+## :material-update: Update Process for the Compose Environment
+
+**> Make the local repo your current working directory:**
+
+```bash
+cd amass
+```
+
+**> Shutdown the Amass framework within the Docker environment:**
+
+```bash 
+docker compose down
+```
+
+**> Backup the configuration files:**
+
+```bash 
+cp config/assetdb.env config/config.yaml config/datasources.yaml backups/
+```
+
+**> Backup the following directories: `assetdb` , `data` , `logs`.**
+
+**> Update the local repo:**
+
+```bash
+git pull origin master
+```
+
+## :material-update: Update Process for the Docker Images
 
 **> Make the local repo your current working directory:**
 ```bash
