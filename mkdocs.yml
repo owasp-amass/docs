@@ -1,0 +1,83 @@
+# pip install mkdocs mkdocs-material
+# mkdocs serve
+# mkdocs gh-deploy
+
+site_name: OWASP Amass
+repo_name: OWASP Amass
+repo_url: https://github.com/owasp-amass/amass
+site_description: "In-depth OSINT collection and external attack surface mapping "
+site_author: OWASP Amass Contributors
+remote_branch: gh-pages
+
+#copyright: 
+
+theme:
+  name: 'material'
+  favicon: assets/favicon.png
+  icon:
+    logo: simple/owasp
+    annotation: material/plus-circle
+  palette:
+    - media: '(prefers-color-scheme: light)'
+      scheme: default
+      primary: 'black'
+      accent: 'red'
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to dark mode
+    - media: '(prefers-color-scheme: dark)'
+      scheme: slate
+      primary: 'black'
+      accent: 'red'
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to light mode
+  font:
+    text: 'Lato'
+    code: 'Fira Code'
+  features:
+    - content.code.copy
+    - content.code.select
+    - content.code.annotate
+
+extra_css:
+  - stylesheets/extra.css
+
+markdown_extensions:
+  - smarty
+  - codehilite:
+      guess_lang: false
+  - footnotes
+  - meta
+  - toc:
+      permalink: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.tabbed:
+      alternate_style: true
+  - tables
+  - admonition
+  - attr_list
+  - md_in_html
+
+nav:
+  - 'Getting Started': index.md
+  #- 'Installation': installation.md
+  - 'Configuration': configuration.md
+  - 'Recon Techniques': recon-techniques.md
+  - 'Data Sources': data-sources.md
+  - 'Advanced Usage': advanced-usage.md
+  #- 'API Documentation': api/0.x/index.html
+  #- 'Discussions ⏏': https://github.com/owasp-amass/amass/discussions
+  - 'Change Log': changelog.md
+  - 'Contributing': contributing.md
+  #- 'Code of Conduct': code-of-conduct.md
