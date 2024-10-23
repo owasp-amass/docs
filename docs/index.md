@@ -102,7 +102,33 @@ This command will bring up all the containers defined in the `docker-compose.yml
 
 Once the containers are running, Amass will start collecting information on the domain you specified. The data is logged and can be visualized using the newly introduced [dashboards](advanced-usage.md).
 
+<<<<<<< Updated upstream
 You can also inspect logs from the running containers by using:
+=======
+> All persistent data used exists on your host in the local repo root directory.
+
+> The `assetdb` is a [PostgreSQL](https://www.postgresql.org/) database reachable from your localhost on `port 55432`.
+
+> The `config` files in the local repo are automatically mapped to where components expect to find them in the Docker environment.
+
+!!! tip "Utilize the IP2Location Databse" 
+    - **Sign up** for a free [IP2Location LITE](https://lite.ip2location.com/) account.
+    - **Download Database File:** Download the `IP2LOCATION-LITE-DB11.CSV` and `IP2LOCATION-LITE-DB11.IPV6.CSV` files.  
+    - **Copy Files to the Compose Directory:** Copy the downloaded CSV files into the compose directory:
+    ```bash
+    cp path/to/IP2LOCATION-LITE-DB11.CSV ./ 
+    cp path/to/IP2LOCATION-LITE-DB11.IPV6.CSV ./
+    ```
+    - **Run the Amass Docker Compose:** While the Amass Docker Compose is up, execute the script to insert the geo information into the database:
+    ```bash
+    ./upload_ip2loc_data.sh
+    ```
+
+
+## :material-update: Update Process for the Compose Environment
+
+**> Make the local repo your current working directory:**
+>>>>>>> Stashed changes
 
 ```bash
 docker-compose logs
