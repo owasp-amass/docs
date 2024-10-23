@@ -37,11 +37,8 @@ theme:
   features:
     - content.code.copy
     - content.code.select
-<<<<<<< Updated upstream
-=======
     - content.code.annotate
     - navigation.indexes
->>>>>>> Stashed changes
 
 extra_css:
   - stylesheets/extra.css
@@ -79,7 +76,7 @@ markdown_extensions:
 nav:
   - 'Getting Started': index.md
   - 'Open Asset Model':
-    - Overview: open-asset-model/index.md
+    - 'Open Asset Model': open-asset-model/index.md
     - Page 1: open-asset-model/page-1.md
     - Page 2: open-asset-model/page-2.md
   - 'Configuration': configuration.md
