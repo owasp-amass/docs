@@ -75,9 +75,9 @@ markdown_extensions:
   - md_in_html
 
 nav:
-  - 'Getting Started': index.md
-  - 'Open Asset Model':
-    - 'Open Asset Model': open-asset-model/index.md
+  - Getting Started: index.md
+  - Open Asset Model:
+    - Open Asset Model': open-asset-model/index.md
     - Contact: open-asset-model/contact.md
     - Registration: open-asset-model/registration.md
     - Infrastructure: open-asset-model/infrastructure.md
