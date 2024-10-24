@@ -1,6 +1,6 @@
 ``` mermaid
 flowchart TD
-Contact[("fa:fa-solid-comment: Contact Assets")]
+Contact[("fa:fa-comment: Contact Assets")]
 
 Email("fa:fa-envelope Email")
 Location("fa:fa-location-dot Location")
