@@ -7,7 +7,7 @@ graph RL
     Registrar
 
     %% Contact Assets on the right side
-    subgraph Contact_Assets
+    subgraph "Contact Assets"
         Email[Email Address]
         Location[Location]
         Phone[Phone]
