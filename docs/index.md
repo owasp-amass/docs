@@ -111,7 +111,7 @@ You can also inspect logs from the running containers by using:
 
 > The `config` files in the local repo are automatically mapped to where components expect to find them in the Docker environment.
 
-!!! tip "Utilize the IP2Location Databse" 
+!!! tip "Utilize the IP2Location Database" 
     - **Sign up** for a free [IP2Location LITE](https://lite.ip2location.com/) account.
     - **Download Database File:** Download the `IP2LOCATION-LITE-DB11.CSV` and `IP2LOCATION-LITE-DB11.IPV6.CSV` files.  
     - **Copy Files to the Compose Directory:** Copy the downloaded CSV files into the compose directory:

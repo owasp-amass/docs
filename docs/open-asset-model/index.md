@@ -13,49 +13,71 @@ The **Open Asset Model (OAM)** redefines the understanding of an organization's 
 
 ---
 
-!!! abstract "OAM Taxonomy"
-    Refer to the `OAM Taxonomy` documentation below for specific details on each asset type and their relationships.
+
+!!! abstract "Open Asset Taxonomy"
+    The `Open Asset Model` organizes assets into `Contact`, `Registration`, `Infrastructure`, `People`, `Organization`, and `Fingerprint` classes, bridging the relationships within and across these specifications.
+    
+### Explore each asset type and their distinct relationships:
 
 ---
 
-<div class="grid cards" markdown>
 
 <div class="grid cards" markdown>
 
--   :material-clock-fast:{ .lg .middle } __Set up in 5 minutes__
+
+-   :material-comment-outline:{ .lg .middle } __Contact__
 
     ---
 
-    Install [`mkdocs-material`](#) with [`pip`](#) and get up
-    and running in minutes
+    Link email addresses, phone numbers, and locations to people or organizations
 
-    [:octicons-arrow-right-24: Getting started](#)
+    [:octicons-arrow-right-24: Learn more](#)
 
--   :fontawesome-brands-markdown:{ .lg .middle } __It's just Markdown__
-
-    ---
-
-    Focus on your content and generate a responsive and searchable static site
-
-    [:octicons-arrow-right-24: Reference](#)
-
--   :material-format-font:{ .lg .middle } __Made to measure__
+-   :material-search-web:{ .lg .middle } __Registration__
 
     ---
 
-    Change the colors, fonts, language, icons, logo and more with a few lines
+    
+    Gather domain details, including Whois and registrar details
 
-    [:octicons-arrow-right-24: Customization](#)
+    [:octicons-arrow-right-24: Learn more](#)
 
--   :material-scale-balance:{ .lg .middle } __Open Source, MIT__
+-   :material-router:{ .lg .middle } __Infrastructure__
 
     ---
 
-    Material for MkDocs is licensed under MIT and available on [GitHub]
+    Identify IPs, networks, and systems to reveal key components
 
-    [:octicons-arrow-right-24: License](#)
+    [:octicons-arrow-right-24: Learn more](#)
+
+-   :material-account-outline:{ .lg .middle } __People__
+
+    ---
+
+     Collect names, locations, and attributes to build individual profiles 
+
+    [:octicons-arrow-right-24: Learn more](#)
+
+- :material-office-building-marker:{ .lg .middle } __Organization__
+
+    ---
+
+    Uncover entity names, locations, and operational details to expose connections
+
+    [:octicons-arrow-right-24: Learn more](#)
+
+-   :material-fingerprint:{ .lg .middle } __Fingerprint__
+
+    ---
+
+    Examine hashed server responses to detect unique configurations
+
+    [:octicons-arrow-right-24: Learn more](#)
 
 </div>
+
+
+
 
 
 

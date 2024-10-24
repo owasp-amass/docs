@@ -77,8 +77,12 @@ nav:
   - 'Getting Started': index.md
   - 'Open Asset Model':
     - 'Open Asset Model': open-asset-model/index.md
-    - Page 1: open-asset-model/page-1.md
-    - Page 2: open-asset-model/page-2.md
+    - Contact: open-asset-model/contact.md
+    - Registration: open-asset-model/registration.md
+    - Infrastructure: open-asset-model/infrastructure.md
+    - People: open-asset-model/people.md
+    - Organization: open-asset-model/organization.md
+    - Fingerprint: open-asset-model/fingerprint.md
   - 'Configuration': configuration.md
   - 'Recon Techniques': recon-techniques.md
   - 'Data Sources': data-sources.md
