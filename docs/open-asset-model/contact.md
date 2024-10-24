@@ -1,20 +1,20 @@
 ``` mermaid
 flowchart TD
-Contact[("fa:fa-comment: Contact Assets")]
+Contact[("Contact Assets")]
 
-Email("fa:fa-envelope Email")
-Location("fa:fa-location-dot Location")
-Phone("fa:fa-phone Phone")
+Email(Email)
+Location(Location)
+Phone(Phone)
 
 Email ==> Contact
 Location ==> Contact
 Phone ==> Contact
 
-Person(["fa:fa-user Person"])
-Organization(["fa:fa-building Organization"])
-TLSCertificate(["fa:fa-lock TLS Certificate"])
-Registrar(["fa:fa-folder Registrar"])
-Whois[("fa:fa-globe Whois")]
+Person([Person])
+Organization([Organization])
+TLSCertificate(["TLS Certificate"])
+Registrar([Registrar])
+Whois[(Whois)]
 
 
  subgraph whoisEmail["fa:fa-globe"]
