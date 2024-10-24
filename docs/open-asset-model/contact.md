@@ -14,18 +14,18 @@ graph RL
     end
 
     %% Relationships
-    Whois -- Admin |Tech|Billing|Registrant --> Email
-    Whois -- Admin |Tech|Billing|Registrant --> Phone
-    Whois -- Admin |Tech|Billing|Registrant --> Location
+    Whois --> Email
+    Whois --> Phone
+    Whois --> Location
     
-    Person -->|Has| Email
-    Person -->|Has| Phone
-    Person -->|Has| Location
+    Person --> Email
+    Person --> Phone
+    Person --> Location
     
-    Organization -->|Uses| Email
-    Organization -->|Uses| Phone
-    Organization -->|Uses| Location
+    Organization --> Email
+    Organization --> Phone
+    Organization --> Location
 
-    Registrar -->|Handles| Email
-    Registrar -->|Handles| Phone
+    Registrar --> Email
+    Registrar --> Phone
 ```
