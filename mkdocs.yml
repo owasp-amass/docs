@@ -41,6 +41,7 @@ theme:
     - content.code.annotate
     - navigation.indexes
     - navigation.footer
+    - navigation.top
 
 extra_css:
   - stylesheets/extra.css
