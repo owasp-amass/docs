@@ -39,6 +39,7 @@ theme:
     - content.code.copy
     - content.code.select
     - content.code.annotate
+    - navigation.indexes
 
 extra_css:
   - stylesheets/extra.css
