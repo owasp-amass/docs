@@ -55,7 +55,7 @@ extra:
       link: https://github.com/owasp-amass
     - icon: fontawesome/brands/docker
       link: https://github.com/owasp-amass/amass-docker-compose
-    - icon: fontawesome-brands-discord
+    - icon: fontawesome/brands/discord
       link: https://discord.gg/HNePVyX3cp
     - icon: fontawesome/brands/mastodon
       link: https://infosec.exchange/@amass
