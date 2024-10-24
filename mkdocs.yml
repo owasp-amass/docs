@@ -40,6 +40,7 @@ theme:
     - content.code.select
     - content.code.annotate
     - navigation.indexes
+    - navigation.footer
 
 extra_css:
   - stylesheets/extra.css
