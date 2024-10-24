@@ -43,9 +43,6 @@ theme:
     - navigation.footer
     - navigation.top
 
-plugins:
-  - social:
-      cards_layout: default
 
 extra_css:
   - stylesheets/extra.css
