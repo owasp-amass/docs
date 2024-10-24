@@ -1,5 +1,5 @@
 ```mermaid
-graph RL
+graph TD
     %% Main Incoming Relationships
     Whois
     Person
