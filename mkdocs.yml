@@ -78,12 +78,12 @@ nav:
   - Getting Started: index.md
   - Open Asset Model:
     - Open Asset Model': open-asset-model/index.md
-    - Contact: open-asset-model/index.md
-    - Registration: open-asset-model/index.md
-    - Infrastructure: open-asset-model/index.md
-    - People: open-asset-model/index.md
-    - Organization: open-asset-model/index.md
-    - Fingerprint: open-asset-model/index.md
+    - Contact: open-asset-model/contact.md
+    - Registration: open-asset-model/registration.md
+    - Infrastructure: open-asset-model/infrastructure.md
+    - People: open-asset-model/people.md
+    - Organization: open-asset-model/organization.md
+    - Fingerprint: open-asset-model/fingerprint.md
   - Configuration: configuration.md
   - Data Sources: data-sources.md
   - Advanced Usage: advanced-usage.md
