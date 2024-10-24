@@ -62,7 +62,7 @@ The **Open Asset Model (OAM)** redefines the understanding of an organization's 
 
     ---
 
-    Uncover entity names, locations, and operational details to expose connections
+    Uncover entity designations, locations, and operational details to expose connections
 
     [:octicons-arrow-right-24: Learn more](#)
 
