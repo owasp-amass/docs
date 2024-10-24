@@ -9,7 +9,7 @@ The **Open Asset Model (OAM)** redefines the understanding of an organization's 
 - **Seamless Data Exchange:** Facilitates efficient sharing of **standardized asset inventories**.
 - **Broader Attack Surface Awareness:** Identifies **vulnerabilities** beyond IT infrastructure.
 - **Community-Driven:** Developed and continuously refined by security experts within the **OWASP Amass** ecosystem.
-- **Risk Mapping:** Exposes hidden attack vectors by **mapping relationships** between assets."
+- **Risk Mapping:** Exposes hidden attack vectors by **mapping relationships** between assets.
 
 ---
 
