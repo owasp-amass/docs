@@ -1,6 +1,6 @@
 # :simple-owasp: Open Asset Model
 
-The **Open Asset Model (OAM)** redefines the understanding of an organization's attack surface. Shifting the paradigm away from narrow, internet infrastructure-focused collection, the **OWASP Amass** [Open Asset Model](https://github.com/owasp-amass/open-asset-model) broadens its scope to include both physical and digital assets. This approach delivers a complete view of an organization’s **assets and their relationships**, ensuring full visibility into the potential risks and attack vectors that might otherwise be overlooked.
+The **Open Asset Model (OAM)** redefines the understanding of an organization's attack surface. Shifting the paradigm away from narrow, internet infrastructure-focused collection, the [Open&nbsp;Asset&nbsp;Model](https://github.com/owasp-amass/open-asset-model) broadens its scope to include both physical and digital assets. This approach delivers a complete view of an organization’s **assets and their relationships**, ensuring full visibility into the potential risks and attack vectors that might otherwise be overlooked.
 
 ## :material-map-marker-outline: Key Features
 
