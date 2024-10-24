@@ -50,6 +50,23 @@ plugins:
 extra_css:
   - stylesheets/extra.css
 
+
+# Additional configuration
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/owasp-amass
+    - icon: fontawesome/brands/docker
+      link: https://github.com/owasp-amass/amass-docker-compose
+    - icon: fontawesome-brands-discord
+      link: https://discord.gg/HNePVyX3cp
+    - icon: fontawesome/brands/mastodon
+      link: https://infosec.exchange/@amass
+    - icon: fontawesome/brands/x-twitter
+      link: https://x.com/owaspamass/
+
+
+
 markdown_extensions:
   - smarty
   - codehilite:
