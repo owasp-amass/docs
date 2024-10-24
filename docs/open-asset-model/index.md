@@ -38,7 +38,7 @@ The **Open Asset Model (OAM)** redefines the understanding of an organization's 
     ---
 
     
-    Gather domain details, including Whois and registrar details
+    Gather domain insights, including Whois and registrar details
 
     [:octicons-arrow-right-24: Learn more](#)
 
