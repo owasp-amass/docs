@@ -42,6 +42,7 @@ theme:
     - navigation.indexes
     - navigation.footer
     - navigation.top
+    - navigation.instant
 
 
 extra_css:

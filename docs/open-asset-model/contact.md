@@ -1,31 +1,50 @@
 ``` mermaid
 flowchart TD
-Contact[("fa:fa-comment Contact Assets")]
+Contact[("Contact Assets")]
 
-Email("fa:fa-envelope Email")
-Location("fa:fa-location-dot Location")
-Phone("fa:fa-phone Phone")
+Email("Full Email
+Address")
+
 
 Email ==> Contact
-Location ==> Contact
-Phone ==> Contact
-
-Person(["fa:fa-user Person"])
-Organization(["fa:fa-building Organization"])
-TLSCertificate(["fa:fa-lock TLS Certificate"])
-Registrar(["fa:fa-folder Registrar"])
-Whois[("fa:fa-globe Whois")]
 
 
-whoisEmail@{shape: subproc, label: "admin_email
+Person[("Person")]
+Organization[("Organization")]
+TLSCertificate[("TLS Certificate")]
+Registrar[("Registrar")]
+Whois[("Whois")]
+
+
+whoisEmail@{ shape: braces, label: "admin_email
 tech_email
 billing_email
 registrant_email" }
 
 
+personEmail@{ shape: braces, label: "email"}
+registrarEmail@{ shape: braces, label: "abuse_email"}
+tlsEmail@{ shape: braces, label: "subject_email_address"}
+
 
 
 
 whoisEmail --> Email
-Whois --> whoisEmail
+Whois --o whoisEmail
+
+personEmail --> Email
+Person --o personEmail
+Organization --o personEmail 
+
+registrarEmail --> Email
+Registrar --o registrarEmail
+
+tlsEmail --> Email
+TLSCertificate --o tlsEmail
+
+
+
+
+
+
 ```
