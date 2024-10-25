@@ -1,50 +1,32 @@
 ``` mermaid
 graph TD
 Contact[("Contact Assets")]
-
 Email("Full Email
 Address")
 
-
 Email ==> Contact
-
 
 Person[("Person")]
 Organization[("Organization")]
-TLSCertificate[("TLS Certificate")]
-Registrar[("Registrar")]
-Whois[("Whois")]
+TLSCertificate[("Fingerprint")]
+Registration[("Registration")]
 
-
-whoisEmail@{ shape: braces, label: "admin_email
+registrationEmail@{ shape: braces, label: "admin_email
 tech_email
 billing_email
-registrant_email" }
-
+registrant_email
+abuse_email"}
 
 personEmail@{ shape: braces, label: "email"}
-registrarEmail@{ shape: braces, label: "abuse_email"}
 tlsEmail@{ shape: braces, label: "subject_email_address"}
 
-
-
-
-whoisEmail --> Email
-Whois --o whoisEmail
+registrationEmail --> Email
+Registration --o registrationEmail
 
 personEmail --> Email
 Person --o personEmail
 Organization --o personEmail 
 
-registrarEmail --> Email
-Registrar --o registrarEmail
-
-tlsEmail --> Email
+tlsEmail <--> Email
 TLSCertificate --o tlsEmail
-
-
-
-
-
-
 ```
