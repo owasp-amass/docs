@@ -1,5 +1,5 @@
 ``` mermaid
-flowchart TD
+graph TD
 Contact[("Contact Assets")]
 
 Email("Full Email
