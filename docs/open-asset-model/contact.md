@@ -27,6 +27,6 @@ personEmail --> Email
 Person --o personEmail
 Organization --o personEmail 
 
-tlsEmail <--> Email
+tlsEmail --> Email
 TLSCertificate --o tlsEmail
 ```
