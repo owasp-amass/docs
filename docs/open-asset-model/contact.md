@@ -10,8 +10,8 @@ This structure aids in mapping relationships, tracing asset discovery paths, and
 
 - **Complete Contact Coverage:** Provides a centralized view of standardized contact asset intelligence across email, location, and phone.
 - **Email Insights:** Tracks email connections, linking addresses to specific organizational roles for deeper context.
-- **Location Details:** Includes specific location information, from physical addresses and building details to region and country, for complete geographic context.
-- **Phone Numbers:** Captures the relationships between country codes, extensions, and subscriber numbers with an organization's structure.
+- **Location Details:** Includes specific location information, from physical addresses and building details to region and locality, for complete geographic context.
+- **Phone Numbers:** Captures the relationships between country codes, extensions, and subscriber numbers with individuals and organizational structure.
 - **Connected Data:** Trace the contact collection's discovery path to clarify its origin, validity, and relevance in investigative and data privacy contexts.
 
 ---
