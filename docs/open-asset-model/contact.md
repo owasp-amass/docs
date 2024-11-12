@@ -1,8 +1,19 @@
 # :simple-owasp: Contact Assets 
 
-**Contact Assets**—encompassing **email**, **location**, and **phone** properties—are essential components for comprehensive Attack Surface Intelligence. These assets represent both physical and digital points of contact associated with entities such as WHOIS records, organizations, certificates, and registrars. By organizing contact details with specific properties and relationships, the model enables visibility into connections across various resources, supporting a holistic understanding of an organization's asset landscape.
+**Contact Assets**—encompassing **email**, **location**, and **phone** properties—are essential components for comprehensive Attack Surface Intelligence. By organizing contact details with specific properties and relationships, the model enables visibility into connections across various resources, supporting a holistic understanding of an organization's asset landscape.
 
 This structure aids in mapping relationships, tracing asset discovery paths, and providing context for each contact point, enhancing the ability to identify potential exposures and improve security measures.
+
+:material-vector-point: **Complete Contact Coverage:** Provides a centralized view of standardized contact asset intelligence across email, location, and phone.
+
+:material-vector-point: **Email Insights:** Tracks email connections, linking addresses to specific organizational roles for deeper context.
+
+:material-vector-point: **Location Details:** Includes specific location information, from physical addresses and building details to region and country, for complete geographic context.
+
+:material-vector-point: **Phone Numbers:** Captures the relationships between country codes, extensions, and subscriber numbers with an organization's structure.
+
+:material-vector-point: **Connected Data:** Trace the contact collection's discovery path to clarify its origin, validity, and relevance in investigative and data privacy contexts.
+
 
 ---
 
@@ -51,7 +62,7 @@ TLSCertificate --o tlsEmail
 
 ---
 
-??? Warning "Email Requirement"
+!!! Info ""
     A full email `address`, formatted as a `string`, is required to map the related relationships.
 
 ---
