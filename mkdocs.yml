@@ -43,7 +43,11 @@ theme:
     - navigation.indexes
     - navigation.footer
     - navigation.top
-    - navigation.instant
+    - navigation.tracking
+    - navigation.path
+    - navigation.tabs
+    - toc.follow
+    
 
 
 extra_css:
