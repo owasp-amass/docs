@@ -2,7 +2,9 @@
 
 The **Open Asset Model (OAM)** redefines the understanding of an organization's attack surface. Shifting the paradigm away from narrow, internet infrastructure-focused collection, the **Amass** [Open&nbsp;Asset&nbsp;Model](https://github.com/owasp-amass/open-asset-model) broadens its scope to include both physical and digital assets. This approach delivers a complete view of an organization’s **assets and their relationships**, ensuring full visibility into the potential risks and attack vectors that might otherwise be overlooked.
 
-## :material-map-marker-outline: Key Features
+---
+
+## :material-lightning-bolt: Key Features
 
 - **Complete Asset Visibility:** Covers both **physical and digital** assets for a comprehensive view.
 - **Standardized Asset Framework:** Ensures **consistency in asset classification** and data exchange across organizations.
