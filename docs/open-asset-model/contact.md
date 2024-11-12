@@ -38,14 +38,14 @@ abuse_email"}
 personEmail@{ shape: braces, label: "email"}
 tlsEmail@{ shape: braces, label: "subject_email_address"}
 
-registrationEmail <--> Email
+registrationEmail --> Email
 Registration --o registrationEmail
 
-personEmail <--> Email
+personEmail --> Email
 Person --o personEmail
 Organization --o personEmail 
 
-tlsEmail <--> Email
+tlsEmail --> Email
 TLSCertificate --o tlsEmail
 ```
 
