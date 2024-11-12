@@ -6,10 +6,9 @@ The **Open Asset Model (OAM)** redefines the understanding of an organization's 
 
 ## :material-cogs: Key Benefits
 
-- **Complete Asset Visibility:** Covers both **physical and digital** assets for a comprehensive view.
+- **Deep Attack Surface Intelligence:** Identifies both physical and digital assets, moving beyond IT infrastructure.
 - **Standardized Asset Framework:** Ensures **consistency in asset classification** and data exchange across organizations.
 - **Seamless Data Transfer:** Facilitates efficient sharing of **standardized asset inventories**.
-- **Broader Attack Surface Intelligence:** Identifies **vulnerabilities** beyond IT infrastructure.
 - **Community-Driven:** Developed and continuously refined by security experts within the **OWASP Amass** ecosystem.
 - **Risk Mapping:** Exposes hidden attack vectors by **mapping relationships** between assets.
 
