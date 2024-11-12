@@ -29,9 +29,7 @@ This structure aids in mapping relationships, tracing asset discovery paths, and
 
 !!! Danger "Email Requirements"
     A full email `address`, formatted as a `string`, is required for mapping the related relationships.
-
----    
-
+   
 
 ``` mermaid
 graph TD
