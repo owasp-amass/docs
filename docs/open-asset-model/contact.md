@@ -19,8 +19,8 @@ This structure aids in mapping relationships, tracing asset discovery paths, and
 ``` mermaid
 graph TD
 Contact[("Contact Assets")]
-Email("Full Email
-Address")
+Email("Email
+Properties")
 
 Email ==> Contact
 
