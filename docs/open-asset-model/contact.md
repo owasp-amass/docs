@@ -62,7 +62,7 @@ TLSCertificate --o tlsEmail
 
 ---
 
-!!! Info ""
+??? Danger "Requirements"
     A full email `address`, formatted as a `string`, is required to map the related relationships.
 
 ---
