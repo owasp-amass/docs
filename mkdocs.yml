@@ -44,7 +44,6 @@ theme:
     - navigation.footer
     - navigation.top
     - navigation.tracking
-    - navigation.path
     - toc.follow
     
 
