@@ -6,7 +6,7 @@ This structure aids in mapping relationships, tracing asset discovery paths, and
 
 ---
 
-## :material-spider-web: Collection Engine
+## :material-hexagon-multiple: Collection Engine
 
 - **Complete Contact Coverage:** Provides a centralized view of standardized contact asset intelligence across email, location, and phone.
 - **Email Insights:** Tracks email connections, linking addresses to specific organizational roles for deeper context.
