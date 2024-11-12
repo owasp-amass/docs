@@ -25,7 +25,7 @@ This structure aids in mapping relationships, tracing asset discovery paths, and
 
 ## :material-email: Email Address
 
---
+---
 
 !!! Danger "Email Requirements"
     A full email `address`, formatted as a `string`, is required for mapping the related relationships.
