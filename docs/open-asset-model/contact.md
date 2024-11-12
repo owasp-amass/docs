@@ -15,7 +15,6 @@ This structure aids in mapping relationships, tracing asset discovery paths, and
 
 ## :material-email: Email Address
 
----
 
 ``` mermaid
 graph TD
@@ -52,7 +51,7 @@ TLSCertificate --o tlsEmail
 
 ---
 
-??? Danger "Email Requirement"
+??? Quote "Email Requirement"
     A full email `address`, formatted as a `string`, is required to map the related relationships.
 
 ---
