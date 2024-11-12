@@ -33,7 +33,7 @@ The **Open Asset Model (OAM)** redefines the understanding of an organization's 
 
     Link email addresses, phone numbers, and locations to people or organizations
 
-    [:octicons-arrow-right-24: Learn more](#)
+    [:octicons-arrow-right-24: Learn more](https://51nk0r5w1m.github.io/docs/open-asset-model/contact/)
 
 -   :material-search-web:{ .lg .middle } __Registration__
 
