@@ -3,6 +3,7 @@
 # mkdocs gh-deploy
 
 site_name: OWASP Amass
+site_url: https://51nk0r5w1m.github.io/docs/
 repo_name: OWASP Amass
 repo_url: https://github.com/owasp-amass/amass
 site_description: "In-depth OSINT collection and external attack surface mapping "
