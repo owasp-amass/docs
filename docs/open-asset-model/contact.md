@@ -7,7 +7,7 @@ This structure aids in mapping relationships, tracing asset discovery paths, and
 ---
 
 !!! Info annotate "OAM Taxonomy"
-    The diagram and data tables below outline the properties and incoming relationships for each `Contact Asset` type: `Email, Location, and Phone.` # (1)!
+    The diagrams and data tables below outline the properties and incoming relationships for each `Contact Asset` type: `Email, Location, and Phone.` # (1)!
 
 1. :material-check-decagram: Required fields are denoted in the tables below.
 
