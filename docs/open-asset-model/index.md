@@ -4,7 +4,7 @@ The **Open Asset Model (OAM)** redefines the understanding of an organization's 
 
 ---
 
-## :material-lightning-bolt: Key Features
+## :material-hub-outline: Key Benefits
 
 - **Complete Asset Visibility:** Covers both **physical and digital** assets for a comprehensive view.
 - **Standardized Asset Framework:** Ensures **consistency in asset classification** and data exchange across organizations.
