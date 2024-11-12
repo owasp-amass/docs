@@ -16,7 +16,7 @@ This structure aids in mapping relationships, tracing asset discovery paths, and
 ## :material-email: Email Address
 
 !!! Danger "Email Requirement"
-    A full email 'address', formatted as a 'string', is required to map the related relationships.
+    A full email `address`, formatted as a `string`, is required to map the related relationships.
 
 ``` mermaid
 graph TD
