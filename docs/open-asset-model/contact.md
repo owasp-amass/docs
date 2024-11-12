@@ -6,7 +6,7 @@ This structure aids in mapping relationships, tracing asset discovery paths, and
 
 ---
 
-!!! Note annotate "OAM Taxonomy"
+!!! Info annotate "OAM Taxonomy"
     The diagram and data tables below outline the properties and incoming relationships for each `Contact Asset` type: `Email, Location, and Phone.` # (1)!
 
 1. :material-check-decagram: Required fields are denoted in the tables below.
@@ -51,7 +51,7 @@ TLSCertificate --o tlsEmail
 
 ---
 
-??? Quote "Email Requirement"
+??? Warning "Email Requirement"
     A full email `address`, formatted as a `string`, is required to map the related relationships.
 
 ---
