@@ -1,6 +1,6 @@
 # :simple-owasp: Open Asset Model
 
-The **Open Asset Model (OAM)** redefines the understanding of an attack surface. Shifting the paradigm away from narrow, internet infrastructure-focused collection, the OAM framework broadens its scope to include both physical and digital assets. This approach delivers a complete view of an organization’s **assets and their relationships**, ensuring full visibility into the potential risks and attack vectors that might otherwise be overlooked.
+The **Open Asset Model (OAM)** redefines the understanding of an attack surface. Shifting the paradigm away from narrow, internet infrastructure-focused collection, the **OAM** framework broadens its scope to include both physical and digital assets. This approach delivers a complete view of an organization’s **assets and their relationships**, ensuring full visibility into the potential risks and attack vectors that might otherwise be overlooked.
 
 ---
 
