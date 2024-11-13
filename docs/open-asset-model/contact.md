@@ -2,6 +2,7 @@
 
 **Contact Assets**—comprising **Email**, **Location**, and **Phone** properties—are essential components of comprehensive **Attack Surface Intelligence**. By organizing contact details with unconvered attributes and relationships, the [Open Asset Model](#) reveals connections across diverse resources, supporting a holistic understanding of the asset landscape.
 
+
 This structure mirrors the adversary's perspective-tracing the asset discovery path, contextualizing insights for each contact point, and aiding in exposure identification to strengthen situational awareness.
 
 ---
@@ -25,7 +26,7 @@ This structure mirrors the adversary's perspective-tracing the asset discovery p
 
 ## :material-email: Email Address
 
-Email characteristics offer valuable intelligence for profiling and mapping an organization’s internal structure, operational contacts, and network ownership. By analyzing relationships among contact points, it becomes possible to trace domain ownership, uncover technical support channels, and reveal security response capabilities. This structured email data enriches the understanding of organizational roles and personnel responsibilities, providing a comprehensive view of the asset landscape from an adversarial perspective.
+Email characteristics offer valuable intelligence for profiling and mapping an organization’s internal structure, operational contacts, and network ownership. By analyzing relationships among contact points, it becomes possible to trace domain ownership, uncover technical support channels, and reveal security response capabilities. This structured email data enriches the understanding of organizational roles and personnel responsibilities, providing a comprehensive view of the asset landscape from an offensive lens.
 
 ---
 
