@@ -8,8 +8,8 @@ Amass extends far beyond basic subdomain enumeration, offering a comprehensive, 
 
 
 !!! info "Open Asset Model (OAM)"
-    The Open Asset Model expands traditional asset specifications by covering both physical and digital assets, aiming to provide a comprehensive view of an organization's attack surface.
-    It defines assets and their relationships, capturing the real-world interconnectedness between them, allowing for concurrent data collection and querying, making it easier to analyze and visualize asset discoveries on the Internet.
+    The `Open Asset Model` expands traditional asset specifications by covering physical and digital assets, providing a comprehensive view of an organization's attack surface.
+    It defines assets and their relationships, capturing their real-world interconnectedness. The `OAM` allows for concurrent data collection and querying, automating the asset collection, analysis, and visualization process.
 
 ---
 
