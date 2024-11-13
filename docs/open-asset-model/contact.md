@@ -9,11 +9,11 @@ Mirroring the adversary's perspective, this structure traces discovery paths, co
 
 ## :material-hexagon-multiple: Collection 
 
-- **Complete Contact Coverage:** Provides a centralized view of standardized contact asset intelligence across email, location, and phone.
-- **Email Insights:** Tracks email connections to link addresses to specific personnel and operational functions, offering visibility into business process maturity.
-- **Location Details:** Includes specific location information, from physical addresses and building details to region and locality, for complete geographic context.
-- **Phone Numbers:** Captures the relationships between country codes, extensions, and subscriber numbers with individuals and organizational structures.
-- **Connected Data:** Traces the contact collection's discovery path to clarify its origin, validity, and relevance in investigative and data privacy contexts.
+- **Complete Contact Coverage:** Provides a centralized view of standardized contact asset intelligence across **email**, **location**, and **phone**.
+- **Email Insights:** Tracks email connections to link addresses to specific **personnel and operational functions**, offering visibility into business process maturity.
+- **Location Details:** Includes specific location information, from physical addresses and building details to region and locality, for **complete geographic context**.
+- **Phone Numbers:** Captures the relationships between country codes, extensions, and subscriber **numbers with individuals and organizational structures**.
+- **Connected Data:** Traces the contact collection's discovery path to clarify its **origin, validity, and relevance** in investigative and data privacy contexts.
 
 ---
 
