@@ -1,6 +1,6 @@
 # :simple-owasp: Contact Assets 
 
-**Contact Assets**—encompassing [Email](#), [Location](#), and [Phone](#) properties—are essential components of comprehensive **Attack Surface Intelligence**. By organizing contact details with specific attributes and relationships, the **Open Asset Model** enables visibility into connections across various resources, supporting a holistic understanding of the asset landscape.
+**Contact Assets**—encompassing [Email](#), [Location](#), and [Phone](#) properties—are essential components of comprehensive **Attack Surface Intelligence**. By organizing contact details with specific attributes and relationships, the [Open Asset Model](#) enables visibility into connections across various resources, supporting a holistic understanding of the asset landscape.
 
 This structure aids in mapping relationships, tracing asset discovery paths, and providing context for each contact point, enhancing the ability to identify potential exposures and improve security measures.
 
@@ -9,7 +9,7 @@ This structure aids in mapping relationships, tracing asset discovery paths, and
 ## :material-hexagon-multiple: Collection 
 
 - **Complete Contact Coverage:** Provides a centralized view of standardized contact asset intelligence across email, location, and phone.
-- **Email Insights:** Tracks email connections, linking addresses to specific organizational roles for deeper context.
+- **Email Insights:** Tracks email connections, linking addresses to specific personnel and enhancing context.
 - **Location Details:** Includes specific location information, from physical addresses and building details to region and locality, for complete geographic context.
 - **Phone Numbers:** Captures the relationships between country codes, extensions, and subscriber numbers with individuals and organizational structures.
 - **Connected Data:** Traces the contact collection's discovery path to clarify its origin, validity, and relevance in investigative and data privacy contexts.
@@ -25,6 +25,9 @@ This structure aids in mapping relationships, tracing asset discovery paths, and
 
 ## :material-email: Email Address
 
+Email characteristics offer valuable intelligence for profiling and mapping an organization’s internal structure, operational contacts, and network ownership. By analyzing relationships among contact points, it becomes possible to trace domain ownership, uncover technical support channels, and reveal security response capabilities. This structured email data enriches the understanding of organizational roles and personnel responsibilities, providing a comprehensive view of the asset landscape from an adversarial perspective.
+
+---
 
 !!! Danger "Email Requirements"
     A full email `address`, formatted as a `string`, is required for mapping the related relationships.
