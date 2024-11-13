@@ -20,7 +20,7 @@ This structure mirrors the adversary's perspective: traces discovery paths, cont
 !!! Info annotate "OAM Taxonomy"
     The diagrams and data tables below outline the properties and incoming relationships for each `Contact Asset` type: `Email`, `Location`, and `Phone`. # (1)!
 
-1. :material-check-decagram: Required fields are denoted in the tables below.
+1. :material-check-decagram: Required fields are denoted in the tables.
 
 ---
 
