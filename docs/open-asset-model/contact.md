@@ -26,7 +26,7 @@ Mirroring the adversary's perspective, this structure traces discovery paths, co
 
 ## :material-email: Email Address
 
-Email characteristics offer valuable intelligence for profiling and mapping an organization’s internal structure, operational contacts, and network ownership. Analyzing relationships among contact points makes it possible to trace domain ownership, uncover technical support channels, and reveal security response capabilities. This structured email data enriches the understanding of organizational roles and personnel responsibilities, providing a comprehensive view of the asset landscape from an offensive lens.
+Email characteristics offer valuable intelligence for profiling and mapping an organization’s internal structure, operational contacts, and network ownership. Analyzing relationships among contact points makes it possible to trace domain ownership, uncover technical support channels, and reveal security response capabilities. This structured email data enriches the understanding of organizational roles and personnel responsibilities, providing a comprehensive view of the asset landscape through an offensive lens.
 
 ---
 
