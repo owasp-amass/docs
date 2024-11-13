@@ -1,6 +1,6 @@
 # :simple-owasp: Contact Assets 
 
-**Contact Assets**—comprising **Email**, **Location**, and **Phone** properties—are essential components of comprehensive **Attack Surface Intelligence**. By organizing contact details with unconvered attributes and relationships, the [Open Asset Model](#) reveals connections across diverse resources, supporting a holistic understanding of the asset landscape.
+**Contact Assets**—comprising `Email`, `Location`, and `Phone` properties—are essential components of comprehensive **Attack Surface Intelligence**. By organizing contact details with unconvered attributes and relationships, the [Open Asset Model](#) reveals connections across diverse resources, supporting a holistic understanding of the asset landscape.
 
 
 This structure mirrors the adversary's perspective-tracing the discovery path, contextualizing insights for each contact point, and aiding in exposure identification to strengthen situational awareness.
