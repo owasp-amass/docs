@@ -8,7 +8,7 @@ The **Open Asset Model (OAM)** redefines the understanding of an organization's 
 
 - **Deep Attack Surface Intelligence:** Identifies both **physical and digital assets**, moving beyond IT infrastructure.
 - **Standardized Asset Framework:** Ensures **consistency in asset classification**, facilitating efficient data exchange.
-- **Cylic Discovery:** Recursively approaches data exploration, leveraging each finding to **dynamically expand the target scope**.
+- **Cyclic Discovery:** Recursively approaches data exploration, leveraging each finding to **dynamically expand the target scope**.
 - **Community-Driven:** Developed and continuously refined by security experts within the **OWASP Amass** ecosystem.
 - **Risk Mapping:** Exposes hidden attack vectors by **mapping relationships** between assets.
 
