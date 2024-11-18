@@ -43,7 +43,7 @@ Properties")
 
 Email ==> Contact
 
-Person[("Person")]
+Person["Person"]
 Organization["Organization"]
 TLSCertificate["Fingerprint"]
 Registration["Registration"]
