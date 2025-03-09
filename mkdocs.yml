@@ -47,10 +47,8 @@ theme:
     - toc.follow
     
 
-
 extra_css:
   - stylesheets/extra.css
-
 
 
 # Additional configuration
@@ -68,51 +66,77 @@ extra:
       link: https://x.com/owaspamass/
 
 
-
+# Python Markdown 
 markdown_extensions:
-  - smarty
-  - codehilite:
-      guess_lang: false
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
   - footnotes
-  - meta
+  - md_in_html
   - toc:
       permalink: true
+  - tables
+
+# Python Markdown Extensions
+  - pymdownx.arithmatex:
+      generic: true
   - pymdownx.betterem:
       smart_enable: all
   - pymdownx.caret
-  - pymdownx.inlinehilite
-  - pymdownx.magiclink
-  - pymdownx.smartsymbols
   - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+# Mermaid Chart Config
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
-  - attr_list
-  - pymdownx.emoji:
-      emoji_index: !!python/name:material.extensions.emoji.twemoji
-      emoji_generator: !!python/name:material.extensions.emoji.to_svg
-  - pymdownx.tabbed:
-      alternate_style: true
-  - tables
-  - admonition
-  - attr_list
-  - md_in_html
+  
 
+# Page tree
 nav:
   - Getting Started: index.md
   - Open Asset Model:
-    - Open Asset Model: open-asset-model/index.md
-    - Contact: open-asset-model/contact.md
-    - Registration: open-asset-model/registration.md
-    - Infrastructure: open-asset-model/infrastructure.md
-    - People: open-asset-model/people.md
-    - Organization: open-asset-model/organization.md
-    - Fingerprint: open-asset-model/fingerprint.md
-  - Configuration: configuration.md
-  - Data Sources: data-sources.md
-  - Advanced Usage: advanced-usage.md
-  - 'Change Log': changelog.md
-  - 'Contributing': contributing.md
+    - Open Asset Model: open_asset_model/index.md
+    - Asset: open_asset_model/asset.md
+    - Relation: open_asset_model/relation.md
+    - Property: open_asset_model/property.md    
+    - Account: open_asset_model/account.md
+    - Certificate: open_asset_model/certificate.md
+    - Contact: open_asset_model/contact.md
+    - DNS: open_asset_model/dns.md
+    - File: open_asset_model/file.md
+    - Financial: open_asset_model/financial.md
+    - Identifier: open_asset_model/identifier.md
+    - Network: open_asset_model/network.md
+    - Organization: open_asset_model/organization.md
+    - People: open_asset_model/people.md
+    - Platform: open_asset_model/platform.md
+    - Registration: open_asset_model/registration.md
+    - URL: open_asset_model/url.md
+  - Configuration: configuration/configuration.md
+  - Data Sources: data_sources/data_sources.md
+  - AssetDB: assetDB/assetDB.md
+  - Dashboards: dashboards/dashboards.md
+  - Change Log: changelog/changelog.md
+  - Contributing: contributing/contributing.md
   
