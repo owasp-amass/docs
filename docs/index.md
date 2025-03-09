@@ -1,14 +1,14 @@
 # :simple-owasp: Amass Docs 
 
-**OWASP Amass** is an open-source, versatile Attack Surface Intelligence platform designed to comprehensively map an organization’s footprint. Built for flexibility and depth, Amass combines advanced data collection, network mapping, and OSINT capabilities to deliver detailed insights into physical and digital assets. 
+**OWASP Amass** is an open-source, versatile **Attack Surface Intelligence** platform designed to comprehensively map an organization’s footprint. Built for flexibility and depth, Amass combines advanced data collection, network mapping, and OSINT capabilities to deliver detailed insights into physical and digital assets. 
 
-## Overview
+## **//** Overview
 
-Amass extends far beyond basic subdomain enumeration, offering a comprehensive, automated approach to information gathering that reveals the full scope of an organization's infrastructure.
+[OWASP Amass](https://github.com/owasp-amass) extends **far beyond basic subdomain enumeration**, offering a comprehensive, automated approach to information gathering that reveals the full scope of an entity's **physical** and **digital** footprint.
 
 
-!!! info "Open Asset Model (OAM)"
-    The `Open Asset Model` expands traditional specifications by uncovering physical and digital properties. Defining asset classes and their interconnected relationships, `OAM` compiles a comprehensive view of the target attack surface from an adversarial perspective. Enabling concurrent data collection and querying, `OAM` automates intelligent asset collection, analysis, and visualization.
+??? info "Open Asset Model (OAM)"
+    The [Open Asset Model](https://51nk0r5w1m.github.io/docs/open-asset-model/) expands traditional specifications by modeling both the **physical** and **digital** structure of a target's asset landscape. Defining **asset types**, their unique **properties**, and the interconnected **relationships** that join them, `OAM` compiles a comprehensive view of the attack surface from an adversarial perspective. Enabling concurrent data collection and querying, `OAM` automates intelligent asset collection, analysis, and visualization.
 
 ---
 
