@@ -1,6 +1,6 @@
 # :simple-owasp: `Relation`
 
-The [`relation.go`](https://github.com/owasp-amass/open-asset-model/blob/master/relation.go) file manages and validates relationships between different asset types in the **Open Asset Model**. This document explains its purpose, core components, and role in defining the structure of asset properties.
+The [`relation.go`](https://github.com/owasp-amass/open-asset-model/blob/master/relation.go) file manages and validates relationships between different asset types in the **Open Asset Model**.
 
 
 
