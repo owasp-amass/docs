@@ -9,7 +9,7 @@ The [`asset.go`](https://github.com/owasp-amass/open-asset-model/blob/master/ass
 - [Asset Interface](#asset-interface)
 - [AssetType Enumerations](#assettype-enumerations)
 - [AssetList Variable](#assetlist-variable)
-- [Example](#example)
+- [Usage](#usage)
 
 ---
 
@@ -115,7 +115,7 @@ var AssetList = []AssetType{
 
 ---
 
-## **//** Example
+## **//** Usage
 
 The **Open Asset Model** is intended to:
 
