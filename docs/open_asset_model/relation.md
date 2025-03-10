@@ -14,8 +14,7 @@ The [`relation.go`](https://github.com/owasp-amass/open-asset-model/blob/master/
   - [GetTransformAssetTypes](#gettransformassettypes)
   - [assetTypeRelations](#assettyperelations)
   - [ValidRelationship](#validrelationship)
-- [Usage Example](#usage-example)
-- [Summary](#summary)
+- [Example](#example)
 
 ---
 
@@ -174,7 +173,7 @@ if ValidRelationship(Account, "id", SimpleRelation, Identifier) {
 
 ---
 
-## **//**  Usage Example
+## **//** Example
 
 Below is an example demonstrating the application of these functions:
 
@@ -223,3 +222,5 @@ The `relation.go` file is a key component of the **Open Asset Model**. It establ
 - Robust **utility functions** for transformation and validation,
 
 This model facilitates consistent asset interconnections which are critical to comprehensive visibility, network mapping, and data governance.
+
+---

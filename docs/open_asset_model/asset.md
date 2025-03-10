@@ -9,7 +9,7 @@ The [`asset.go`](https://github.com/owasp-amass/open-asset-model/blob/master/ass
 - [Asset Interface](#asset-interface)
 - [AssetType Enumerations](#assettype-enumerations)
 - [AssetList Variable](#assetlist-variable)
-- [Usage](#usage)
+- [Example](#example)
 
 ---
 
@@ -115,7 +115,7 @@ var AssetList = []AssetType{
 
 ---
 
-## **//** Usage
+## **//** Example
 
 The **Open Asset Model** is intended to:
 
@@ -138,3 +138,5 @@ This ensures a structured and scalable approach to asset representation within r
 ## **//** Summary
 
 The **Open Asset Model** defined in `asset.go` offers a powerful and flexible way to standardize asset representation through a clear interface and enumerated types, which aids in maintaining consistency across different services and applications. 
+
+---
