@@ -1,4 +1,4 @@
-# :simple-owasp: `PAccount`
+# :simple-owasp: `Account`
 
 The [`account.go`](https://github.com/owasp-amass/open-asset-model/blob/master/account/account.go) file defines structures and interfaces for representing account-related assets and their identity associations in the **Open Asset Model**. This document explains its purpose, core components, and role in structuring account-based asset representation within the framework.  
 
