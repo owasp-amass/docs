@@ -110,7 +110,7 @@ The Open Asset Model aims to provide a standardized and extensible approach to h
 
 - Defining a clear and concise **Account** structure that encapsulates common attributes.
 - Ensuring **consistency** across different types of assets through the **Asset interface**, which standardizes methods like `Key()`, `AssetType()`, and `JSON()`.
-- Facilitating integration with various systems (e.g., banking, financial, and user management systems) by providing robust serialization to JSON. 
+- Facilitating integration with various systems by providing robust serialization to JSON. 
 
 By adhering to these standards, the Account model supports relationships with other assets, such as:
 
