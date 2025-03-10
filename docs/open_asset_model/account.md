@@ -11,7 +11,6 @@ The [`account.go`](https://github.com/owasp-amass/open-asset-model/blob/master/a
 - [Key()](#key)
 - [AssetType()](#assettype)
 - [JSON()](#json)
-- [Usage & Integration](#usage--integration)
 - [Relationship with the Open Asset Model](#relationship-with-the-open-asset-model)
 
 ---
@@ -105,93 +104,22 @@ The **Account** struct implements the **Asset** interface defined in the **Open 
 
 ---
 
-## Usage & Integration
-
-Here’s how you might use the **Account Package** in your Go projects:
-
-1. **Import the Package:**
-
-   ```go
-   import "path/to/account"
-   import "github.com/owasp-amass/open-asset-model"
-   ```
-
-2. **Creating an Account:**
-
-   ```go
-   myAccount := account.Account{
-       ID:       "acc-12345",
-       Type:     "savings",
-       Username: "jdoe",
-       Number:   "00123456789",
-       Balance:  1000.50,
-       Active:   true,
-   }
-   ```
-
-3. **Accessing the Asset Interface Methods:**
-   
-   - **Retrieve the Account Key:**
-
-     ```go
-     key := myAccount.Key()
-     // key should be "acc-12345"
-     ```
-
-   - **Get the Asset Type:**
-
-     ```go
-     assetType := myAccount.AssetType()
-     // returns model.Account
-     ```
-
-   - **Serialize the Account to JSON:**
-
-     ```go
-     jsonData, err := myAccount.JSON()
-     if err != nil {
-         // handle error
-     }
-     fmt.Println(string(jsonData))
-     ```
-
-These simple steps show how the **Account** asset can be instantiated, manipulated, and serialized, making it a flexible component for financial and user account-related applications.
-
----
-
-## Relationship with the Open Asset Model
+## **//** Relationship with the Open Asset Model
 
 The Open Asset Model aims to provide a standardized and extensible approach to handling diverse digital assets. The **Account Package** plays a key role in this by:
 
 - Defining a clear and concise **Account** structure that encapsulates common attributes.
 - Ensuring **consistency** across different types of assets through the **Asset interface**, which standardizes methods like `Key()`, `AssetType()`, and `JSON()`.
-- Facilitating integration with various systems (e.g., banking, financial, and user management systems) by providing robust serialization to JSON. ☁️🔗
+- Facilitating integration with various systems (e.g., banking, financial, and user management systems) by providing robust serialization to JSON. 
 
 By adhering to these standards, the Account model supports relationships with other assets, such as:
+
 - **User Entities:** Representing persons or organizations linked to an account.
+
 - **Fund Transfers:** Tracking movement of funds between accounts.
-- **Banking Identifiers:** For support in systems utilizing **IBAN** and **SWIFT codes**.
+
+- **Banking Identifiers:** For support in systems utilizing **`IBAN`** and **`SWIFT`** codes.
 
 This structured approach simplifies integration and ensures a modular design, making it easier to extend and maintain in larger systems.
 
 ---
-
-## License & Credits
-
-The source code in this package is covered by the **Apache 2.0 License**. See the accompanying `LICENSE` file for detailed licensing information.
-
-- **Copyright:**  
-  © Jeff Foley 2017-2025. All rights reserved.
-
-- **License Summary:**  
-  The code is open source and can be used under the terms specified in the Apache 2.0 License.
-
----
-
-## Conclusion
-
-The **Account Package** is a crucial component of the Open Asset Model, providing a well-defined and extensible structure for managing accounts. Its implementation of the **Asset interface** ensures interoperability and ease of integration, while its design facilitates real-world applications such as financial transactions and user account management. With comprehensive JSON support and robust structure, it stands as an exemplary model for asset management in modern software systems. Happy coding! 😎🎉
-
---- 
-
-For further details or contributions, please refer to the project's repository and documentation.
