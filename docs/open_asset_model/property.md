@@ -8,7 +8,7 @@ The [`property.go`](https://github.com/owasp-amass/open-asset-model/blob/master/
 - [Property Interface](#property-interface)
 - [PropertyType Enumeration](#propertytype-enumeration)
 - [PropertyList Variable](#propertylist-variable)
-- [Example](#example)
+- [Usage](#usage)
 
 ---
 
@@ -106,7 +106,7 @@ var PropertyList = []PropertyType{
 
 ---
 
-## **//** Example
+## **//** Usage
 
 Below is an example implementation the **Property** interface for a simple property type within a Go application. This example demonstrates creating a struct that represents a simple asset property and implements the required methods:
 

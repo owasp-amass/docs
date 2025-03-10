@@ -14,7 +14,7 @@ The [`relation.go`](https://github.com/owasp-amass/open-asset-model/blob/master/
   - [GetTransformAssetTypes](#gettransformassettypes)
   - [assetTypeRelations](#assettyperelations)
   - [ValidRelationship](#validrelationship)
-- [Example](#example)
+- [Usage](#usage)
 
 ---
 
@@ -173,7 +173,7 @@ if ValidRelationship(Account, "id", SimpleRelation, Identifier) {
 
 ---
 
-## **//** Example
+## **//** Usage
 
 Below is an example demonstrating the application of these functions:
 
