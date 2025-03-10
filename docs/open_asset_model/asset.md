@@ -5,7 +5,6 @@ The [`asset.go`](https://github.com/owasp-amass/open-asset-model/blob/master/ass
 ## Table of Contents
 
 - [Overview](#overview)
-- [Package Details](#package-details)
 - [Asset Interface](#asset-interface)
 - [AssetType Enumerations](#assettype-enumerations)
 - [AssetList Variable](#assetlist-variable)
