@@ -14,7 +14,7 @@ The [`asset.go`](https://github.com/owasp-amass/open-asset-model/blob/master/ass
 
 ## **//** Overview
 
-The **Open Asset Model** offers a standardized framework for managing and processing a variety of digital asset types. It does so by defining a common **Asset** interface that all asset objects should implement. This allows for a consistent way to retrieve key asset information, understand its type, and convert the asset into JSON for further processing or transportation.
+The **Open Asset Model** offers a standardized framework for managing and processing a variety of digital and physical asset types. It does so by defining a common **Asset** interface that all asset objects should implement. This allows for a consistent way to retrieve key asset information, understand its type, and convert the asset into JSON for further processing or transportation.
 
 Key features include:
 
@@ -26,7 +26,7 @@ Key features include:
 
 ## **//** Asset Interface
 
-The **Asset** interface is at the heart of the **Open Asset Model** and defines the methods that any asset must implement:
+The **`Asset`** interface is at the heart of the **Open Asset Model** and defines the methods that any asset must implement:
 
 ```go
 type Asset interface {
@@ -38,15 +38,15 @@ type Asset interface {
 
 ### Method Details
 
-- **Key() string**  
+- **`Key() string`**  
   **Purpose:** Returns a unique key (identifier) for the asset.  
   **Use Case:** Useful for indexing and retrieving specific assets.
 
-- **AssetType() AssetType**  
+- **`AssetType() AssetType`**  
   **Purpose:** Identifies the category or specific type of the asset.  
   **Use Case:** Allows the application to differentiate between asset types such as Domains, Contacts, and Organizations.
 
-- **JSON() ([]byte, error)**  
+- **`JSON() ([]byte, error)`**  
   **Purpose:** Serializes the asset into JSON.  
   **Use Case:** Enables easy data transmission and storage, as JSON is a widely adopted format for data interchange.
 
@@ -54,7 +54,7 @@ type Asset interface {
 
 ## **//** AssetType Enumerations 
 
-The code defines a custom type **AssetType**, which is simply an alias of a string, and uses it to create a list of constants for the supported asset types. This ensures consistency when referring to asset types across the application.
+The code defines a custom type **`AssetType`**, which is simply an alias of a string, and uses it to create a list of constants for the supported asset types. This ensures consistency when referring to asset types across the application.
 
 ### Definition
 
@@ -94,7 +94,7 @@ The file defines many constants representing different asset types:
 
 ## **//** AssetList Variable 
 
-At the end of the file, an **AssetList** variable is declared. This is a slice containing all of the asset type constants defined in the model. It can be used for iteration or validation, ensuring that all supported types are captured.
+At the end of the file, an **`AssetList`** variable is declared. This is a slice containing all of the asset type constants defined in the model. It can be used for iteration or validation, ensuring that all supported types are captured.
 
 ### Declaration Code
 
@@ -119,9 +119,9 @@ var AssetList = []AssetType{
 The **Open Asset Model** is intended to:
 
 - **Manage Assets:** Provide a consistent way to represent diverse assets, whether for tracking, inventory, compliance, or intelligence purposes.
-- **Data Interchange:** Services that need to serialize asset data to JSON for storage, logging, or transmission between microservices.
-- **Asset Validation:** Tools that validate the type of asset being processed by comparing against the enumerated list (`AssetList`).
-- **Extended Functionality:** Developers can extend the model by implementing the **Asset** interface for new types of assets while maintaining a consistent API.
+- **Data Interchange:** Serialize asset data to JSON for storage, logging, or transmission between microservices.
+- **Asset Validation:** Validate the type of asset being processed by comparing against the enumerated list (`AssetList`).
+- **Extended Functionality:** Developers can extend the model by implementing the `Asset` interface for new types of assets while maintaining a consistent API.
 
 **Example Scenario:**  
 Consider a scenario that requires the tracking annd monitoring of  various asset categories, such as domain names, IP ranges, TLS certificates, and organizational entities. By implementing the `Asset` interface:

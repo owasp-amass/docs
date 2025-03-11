@@ -23,10 +23,10 @@ The [`relation.go`](https://github.com/owasp-amass/open-asset-model/blob/master/
 The **Open Asset Model** is designed to manage complex relationships between various types of assets (such as accounts, domain records, IP addresses, organizations, etc.) in a flexible and extensible way. The `relation.go` file focuses on defining:
 
 - **Relation Types** – A set of constants representing different types of relationships.
-- **Relationship Mappings** – Predefined mappings which specify which asset types can be related to one another.
+- **Relationship Mappings** – Predefined mappings specifying which asset types can be related to one another.
 - **Validation & Transformation Functions** – Helper functions to query, transform, and validate relationships according to the defined taxonomy.
 
-This model is useful in contexts where assets need to be interconnected in a structured taxonomy, ensuring data integrity and consistency throughout asset intelligence gathering.
+This model is particularly useful in contexts where assets need to be interconnected in a structured taxonomy, ensuring data integrity and consistency throughout asset intelligence gathering.
 
 ---
 
@@ -36,28 +36,25 @@ This model is useful in contexts where assets need to be interconnected in a str
 
 The file defines a central **Relation** interface that any relation entity must implement. This interface requires the following methods:
 
-- **`Label() string`**  
-  Returns a label that identifies the relation.
-  
-- **`RelationType() RelationType`**  
-  Returns the type of the relationship.
-  
-- **`JSON() ([]byte, error)`**  
-  Provides a JSON representation of the relation.
+```go
+Label() string  // Returns a label identifying the relation
+RelationType() RelationType  // Returns the type of the relationship
+JSON() ([]byte, error)  // Provides a JSON representation of the relation
+```
 
-This abstraction allows different relation types to share a consistent interface, facilitating serialization and integration with other components.
+This abstraction ensures consistency across different relation types, facilitating serialization and integration with other components.
 
 ### RelationType
 
-The `RelationType` is defined as a string alias and is used to distinguish among various types of asset relations. The code defines several constants for different relation types:
+The **`RelationType`** is defined as a string alias and is used to distinguish different types of asset relations. The file defines several constants:
 
-| **Constant**           | **Description**                                               |
-|------------------------|---------------------------------------------------------------|
-| `BasicDNSRelation`     | Basic DNS record relation                                     | 
-| `PortRelation`         | Relation concerning service ports                             | 
-| `PrefDNSRelation`      | Preferred DNS relation                                        |
-| `SimpleRelation`       | Standard/simple relation                                      | 
-| `SRVDNSRelation`       | Server DNS relation                                           |
+| **Constant**             | **Description**                    |
+|--------------------------|------------------------------------|
+| `BasicDNSRelation`       | Basic DNS record relation          | 
+| `PortRelation`           | Relation concerning service ports  | 
+| `PrefDNSRelation`        | Preferred DNS relation             |
+| `SimpleRelation`         | Standard/simple relation           | 
+| `SRVDNSRelation`         | Server DNS relation                |
 
 Additionally, `RelationList` aggregates these types into a slice for easy iteration and reference.
 
@@ -65,16 +62,16 @@ Additionally, `RelationList` aggregates these types into a slice for easy iterat
 
 ## **//** Asset Relationship Mappings
 
-The file declares several mapping variables that define **which asset types can be related to others**. Each mapping is a nested Go map structure organized as follows:
+The file declares several mapping variables that define **which asset types can be related to others**. Each entry is a nested Go map structured as follows:
 
-- **Key**: A string label representing the nature or role of the relationship (e.g., `"id"`, `"user"`, `"registrant_contact"`).
-- **Value**: A nested map where:
-    + **Key**: A `RelationType` constant (e.g., `SimpleRelation`, `PortRelation`).
-    + **Value**: A slice of asset types (e.g., `Identifier`, `Person`, `FQDN`) that are allowed as the target of that relationship.
+- **Key** - String label representing the nature of the relationship (e.g., `"id"`, `"user"`, `"registrant_contact"`).
+- **Value** - Nested map where:
+    + **Key**: `RelationType` constant (e.g., `SimpleRelation`, `PortRelation`).
+    + **Value**: Slice of asset types (e.g., `Identifier`, `Person`, `FQDN`) allowed as the target of that relationship.
 
 ### Example: Account Relationships
 
-For an [**Account**]() asset type (defined via the `accountRels` variable), the relationships are:
+For an [**`Account`**]() asset type (defined via the `accountRels` variable), the relationships are:
 
 | **Label**        | **Relation Type** | **Allowed Target Asset Types**        |
 |------------------|-------------------|---------------------------------------|
@@ -88,9 +85,9 @@ Similar mappings exist across asset types. These relations ensure that only appr
 
 ## **//** Utility Functions
 
-The file implements several helper functions that provide key functionality in managing asset relations.
+The file implements several helper functions that assist in managing asset relations.
 
-### GetAssetOutgoingRelations
+### `GetAssetOutgoingRelations`
 
 **Purpose:**  
 Retrieves the list of **relation labels** (as strings) allowed to be used when the subject is of a specified asset type.
@@ -108,7 +105,7 @@ func GetAssetOutgoingRelations(subject AssetType) []string
 
 ---
 
-### GetTransformAssetTypes
+### `GetTransformAssetTypes`
 
 **Purpose:**  
 Returns the allowable destination asset types for a given subject asset type, based on a specified relation label and relation type.
@@ -128,7 +125,7 @@ func GetTransformAssetTypes(subject AssetType, label string, rtype RelationType)
 
 ---
 
-### assetTypeRelations
+### `assetTypeRelations`
 
 **Purpose:**  
 A helper function that returns the relationship mappings for a specific asset type.
@@ -146,7 +143,7 @@ func assetTypeRelations(atype AssetType) map[string]map[RelationType][]AssetType
 
 ---
 
-### ValidRelationship
+### `ValidRelationship`
 
 **Purpose:**  
 Determines if a relationship from a source asset type to a destination asset type is valid within the defined taxonomy.
