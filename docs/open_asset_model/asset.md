@@ -1,6 +1,6 @@
 # :simple-owasp: `Asset`
 
-The [`asset.go`](https://github.com/owasp-amass/open-asset-model/blob/master/asset.go) file  cdefines the **core asset interface** and all supported **asset types** within the **Open Asset Model**. It provides a structured way to represent, manage, and process various digital and physical asset types in a standardized manner.
+The [`asset.go`](https://github.com/owasp-amass/open-asset-model/blob/master/asset.go) file  defines the **core asset interface** and all supported **asset types** within the **Open Asset Model**. It provides a structured way to represent, manage, and process various digital and physical asset types in a standardized manner.
 
 ## Table of Contents
 
