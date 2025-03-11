@@ -71,8 +71,6 @@ The file declares several mapping variables that define **which asset types can 
 
 ### Example: Account Relationships
 
-For an [**`Account`**]() asset type (defined via the `accountRels` variable), the relationships are:
-
 | **Label**        | **Relation Type** | **Allowed Target Asset Types**        |
 |------------------|-------------------|---------------------------------------|
 | id               | SimpleRelation    | Identifier                            |
@@ -85,24 +83,15 @@ Similar mappings exist across asset types. These relations ensure that only appr
 
 ## **//** Utility Functions
 
-The file implements several helper functions that assist in managing asset relations.
-
 ### `GetAssetOutgoingRelations`
 
 **Purpose:**  
-Retrieves the list of **relation labels** (as strings) allowed to be used when the subject is of a specified asset type.
+Retrieves the list of **relation labels** allowed when the subject is of a specified asset type.
 
 **Signature:**  
 ```go
 func GetAssetOutgoingRelations(subject AssetType) []string
 ```
-
-**How It Works:**
-
-- Retrieves the mapping for the given asset type using `assetTypeRelations(subject)`.
-- Iterates over the mapping keys (labels) and returns them as a slice of strings.
-- Returns `nil` if an invalid asset type is provided.
-
 ---
 
 ### `GetTransformAssetTypes`
@@ -114,32 +103,6 @@ Returns the allowable destination asset types for a given subject asset type, ba
 ```go
 func GetTransformAssetTypes(subject AssetType, label string, rtype RelationType) []AssetType
 ```
-
-**How It Works:**
-
-- Retrieves the relations for the provided asset type.
-- Converts the provided label to lowercase to ensure consistent mapping.
-- Iterates through the mapping for the label, comparing the relation type (`rtype`).
-- Collects and returns unique allowed asset types.
-- Returns `nil` if the asset type is invalid or if no matching relationship is found.
-
----
-
-### `assetTypeRelations`
-
-**Purpose:**  
-A helper function that returns the relationship mappings for a specific asset type.
-
-**Signature:**  
-```go
-func assetTypeRelations(atype AssetType) map[string]map[RelationType][]AssetType
-```
-
-**How It Works:**
-
-- Uses a switch-case statement to match the provided asset type.
-- Returns the corresponding relationship mapping variable (e.g., `accountRels`, `fqdnRels`).
-- Returns `nil` if the asset type is not recognized.
 
 ---
 
@@ -153,46 +116,41 @@ Determines if a relationship from a source asset type to a destination asset typ
 func ValidRelationship(src AssetType, label string, rtype RelationType, destination AssetType) bool
 ```
 
-**How It Works:**
-
-- Retrieves the list of allowed transformation asset types for the given source asset by invoking `GetTransformAssetTypes`.
-- Iterates over the allowed asset types to check if the specified destination asset type exists.
-- Returns `true` if a valid match is found; otherwise, returns `false`.
-
-**Example Code Block:**
-```go
-if ValidRelationship(Account, "id", SimpleRelation, Identifier) {
-    fmt.Println("Valid relationship!")
-} else {
-    fmt.Println("Invalid relationship!")
-}
-```
-
 ---
 
 ## **//** Usage
 
-Below is an example demonstrating the application of these functions:
+The following example demonstrates how to:
+
+- Retrieve outgoing relation labels for a specific asset type.
+
+- Determine valid target asset types for a relation.
+
+- Validate whether a given relationship is allowed.
 
 ```go
 package main
 
 import (
     "fmt"
-    "open_asset_model" // Ensure the package path is correct
+    "open_asset_model" 
 )
 
 func main() {
-    // Determine allowed outgoing relation labels for an Account asset
-    outgoingRelations := open_asset_model.GetAssetOutgoingRelations(open_asset_model.Account)
-    fmt.Printf("Allowed relation labels for Account: %v\n", outgoingRelations)
+    // Retrieve allowed relation labels for an FQDN asset
+    outgoingRelations := open_asset_model.GetAssetOutgoingRelations(open_asset_model.FQDN)
+    fmt.Printf("Allowed relation labels for FQDN: %v\n", outgoingRelations)
 
-    // Determine allowed target asset types when linking an Account's "user" relationship
-    allowedTypes := open_asset_model.GetTransformAssetTypes(open_asset_model.Account, "user", open_asset_model.SimpleRelation)
-    fmt.Printf("Allowed asset types for Account 'user' relation: %v\n", allowedTypes)
+    // Determine valid target asset types for an FQDN's "dns_record" relation
+    allowedTypes := open_asset_model.GetTransformAssetTypes(
+        open_asset_model.FQDN, "dns_record", open_asset_model.BasicDNSRelation,
+    )
+    fmt.Printf("Allowed asset types for FQDN 'dns_record' relation: %v\n", allowedTypes)
 
-    // Validate if a relationship is allowed from Account (with label "id") to Identifier
-    isValid := open_asset_model.ValidRelationship(open_asset_model.Account, "id", open_asset_model.SimpleRelation, open_asset_model.Identifier)
+    // Validate whether a relationship from an FQDN to an IP Address is allowed
+    isValid := open_asset_model.ValidRelationship(
+        open_asset_model.FQDN, "dns_record", open_asset_model.BasicDNSRelation, open_asset_model.IPAddress,
+    )
     if isValid {
         fmt.Println("The relationship is valid! ✅")
     } else {
@@ -201,23 +159,17 @@ func main() {
 }
 ```
 
-This example shows:
-
-1. **Retrieving relation labels** allowed for a given asset type.
-2. **Transforming** the relation to get allowed target asset types.
-3. **Validating** the relationship between two asset types.
-
----
-
 ## **//** Summary
 
-The `relation.go` file is a key component of the **Open Asset Model**. It establishes a rigorous framework for defining, querying, and validating relationships between assets by leveraging:
+The `relation.go` file plays a critical role in the **Open Asset Model**, ensuring a structured approach to defining and validating relationships between different assets. 
 
-- A well-structured **Relation interface**,
-- A comprehensive set of **RelationType constants**
-- Detailed **relationship mappings** for each asset type, and
-- Robust **utility functions** for transformation and validation,
+Key takeaways include:
 
-This model facilitates consistent asset interconnections which are critical to comprehensive visibility, network mapping, and data governance.
+- **Well-structured Relation interface** for consistency across asset relations.
+- A comprehensive set of **RelationType constants** to define asset relationships.
+- Detailed **relationship mappings** fthat maintain data integrity.
+- **Robust utility functions** for  querying, validating, and transforming relationships.
+
+This model facilitates **consistent asset interconnections** and is essential for **comprehensive asset intelligence**, **network mapping**, and **security investigations**.
 
 ---
