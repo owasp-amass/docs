@@ -1,6 +1,6 @@
 # :simple-owasp: `Property`
 
-The [`property.go`](https://github.com/owasp-amass/open-asset-model/blob/master/property.go) file defines core functionality for managing and representing asset properties within the **Open Asset Model**. It provides a standardized way to store, categorize, and serialize metadata associated with various asset types.
+The [`property.go`](https://github.com/owasp-amass/open-asset-model/blob/master/property.go) file defines the **core functionality** for managing and representing asset properties within the **Open Asset Model**. It provides a standardized way to **store, categorize, and serialize metadata** associated with various asset types.
 
 ## Table of Contents
 
@@ -14,65 +14,71 @@ The [`property.go`](https://github.com/owasp-amass/open-asset-model/blob/master/
 
 ## **//** Overview
 
-The **Open Asset Model** is designed to offer a consistent way to manage and interact with various kinds of asset information. The `property.go` file outlines core components related to asset properties. The primary components defined in this file are:
+The **Open Asset Model** provides a structured approach to handling **metadata** for different asset types. The **`property.go`** file establishes key components that ensure **consistency and extensibility** in property management:
 
-- **Property Interface:** An interface that any asset property should implement.
-- **PropertyType:** A string-based type that categorizes the different property types.
-- **PropertyList:** A list of all defined property types for ease of access and iteration.
+- **Property Interface** – Defines a common structure that all asset properties must implement.
 
-These components enable the creation of different asset property implementations that can be serialized (e.g., into JSON) while following a common interface.
+- **PropertyType Enumeration** – Predefined constants that categorize different asset properties.
+
+- **PropertyList** – A list of all supported property types for **validation and iteration**.
+
+These components allow **standardized metadata representation**, ensuring structured **asset intelligence, security analysis, and interoperability** across various applications.
 
 ---
 
 ## **//** Property Interface
 
-The **Property** interface establishes the contract that all asset property types must satisfy. Implementing this interface ensures consistency across different property representations. Below are the key methods declared within the interface:
-
-| **Method**      | **Return Type**        | **Description**                                                                                      |
-| --------------- | ---------------------- | ---------------------------------------------------------------------------------------------------- |
-| **Name()**      | `string`               | Returns the name of the property. This serves as the identifier for the particular asset attribute. |
-| **Value()**     | `string`               | Retrieves the value associated with the property in string format.                                  |
-| **PropertyType()** | `PropertyType`      | Provides the type of the property, ensuring it aligns with one of the predefined categories.          |
-| **JSON()**      | `([]byte, error)`      | Generates a JSON representation of the property, facilitating easy serialization and transmission.   |
-
-**Key Points:**
-
-- **Encapsulation:** Each property must encapsulate both its identifier and value.
-- **Serialization:** The `JSON()` method allows for seamless integration with systems that rely on JSON data.
-- **Extensibility:** By implementing this interface, new property types can be added without altering the core system.
-
-**Example interface declaration:**
+The **Property interface** defines the required methods that any asset property must implement. This ensures that all properties are represented in a consistent format.
 
 ```go
+// Property Interface
 type Property interface {
-    Name() string
-    Value() string
-    PropertyType() PropertyType
-    JSON() ([]byte, error)
+    Name() string          // Returns the property name (identifier)
+    Value() string         // Returns the value of the property
+    PropertyType() PropertyType // Categorizes the property type
+    JSON() ([]byte, error) // Serializes the property to JSON
 }
 ```
+
+| **Method**           | **Return Type**        | **Description**                                       |
+| --------------- -----| ---------------------- | ------------------------------------------------------|
+| **`Name()`**         | `string`               | Returns the **identifier name** of the property       |
+| **`Value()`**        | `string`               | Retrieves the value associated with the property      |
+| **`PropertyType()`** | `PropertyType`         | Provides the **category** of the property             |
+| **`JSON()`**         | `([]byte, error)`      | Serializes the **property into JSON format**          |
+
+### Usage Considerations
+
+- **Encapsulation**: Ensures that property data remains structured.
+
+- **Serialization**: Allows for seamless integration with JSON-based systems.
+
+- **Extensibility**: Developers can introduce new property types while maintaining compatibility.
 
 ---
 
 ## **//** PropertyType Enumeration
 
-The `PropertyType` type is defined as a string alias. It is used to categorize different asset properties, enabling the nature of the properties to be quickly identified.
-
-**Defined PropertyType Values:**
-
-| **Constant Name**         | **Actual Value**            | **Description**                                                       |
-| ------------------------- | --------------------------- | --------------------------------------------------------------------- |
-| **DNSRecordProperty**     | "DNSRecordProperty"         | Represents properties related to DNS record data.                     |
-| **SimpleProperty**        | "SimpleProperty"            | Used for properties that are generic or do not fit in another category. |
-| **SourceProperty**        | "SourceProperty"            | Indicates the source or origin of the asset data.                     |
-| **VulnProperty**          | "VulnProperty"              | Denotes properties concerning vulnerability details.                  |
-
-
-Example constant declarations:
+The `PropertyType` is a **string alias** that categorizes asset properties, ensuring clarity and **structured property handling**.
 
 ```go
 type PropertyType string
+```
 
+
+**Predefined Property Types:**
+
+| **Constant Name**         | **Actual Value**       | **Description**                                         |
+| ------------------------- | -----------------------| --------------------------------------------------------|
+| **`DNSRecordProperty`**   | `"DNSRecordProperty"`  | Represents properties related to **DNS records**        |
+| **`SimpleProperty`**      | `"SimpleProperty"`     | **General-purpose** property for miscellaneous metadata |
+| **`SourceProperty`**      | `"SourceProperty"`     | Indicates the **origin or source** of asset data        |
+| **`VulnProperty`**        | `"VulnProperty"`       | Represents **vulnerability-related** properties         |
+
+
+**Property Type Declaration**
+
+```go
 const (
     DNSRecordProperty PropertyType = "DNSRecordProperty"
     SimpleProperty    PropertyType = "SimpleProperty"
@@ -85,13 +91,7 @@ const (
 
 ## **//** PropertyList Variable
 
-The `PropertyList` variable is a slice of all supported **PropertyType** values. This list is helpful for:
-
-- Iterating over all available property types.
-- Validating whether a given property type is supported.
-- Populating selection options in user interfaces or configuration files.
-
-*Code snippet from the file:*
+To facilitate **validation and iteration**, the model defines **`PropertyList`**, which contains all property types.
 
 ```go
 var PropertyList = []PropertyType{
@@ -99,16 +99,27 @@ var PropertyList = []PropertyType{
 }
 ```
 
-**Why It's Useful:**
+**Why `PropertyList` is Useful:**
 
-- **Convenience:** Instead of hardcoding property types elsewhere, you have a single source of truth.
-- **Maintainability:** Adding a new property type in the enumeration automatically includes it in the list.
+- **Validation**: Ensures that only **supported property types** are used.
+
+- **Iteration**: Allows for **dynamic property processing** across multiple systems.
+
+- **Maintainability**: New property types can be **added easily** while keeping the model consistent.
 
 ---
 
 ## **//** Usage
 
-Below is an example implementation the **Property** interface for a simple property type within a Go application. This example demonstrates creating a struct that represents a simple asset property and implements the required methods:
+The **Open Asset Model** uses **`property.go`** for structured metadata handling. 
+
+Below is an example demonstrating how to:
+
+- **Retrieve property type information**.
+
+- **Serialize properties to JSON**.
+
+- **Validate whether a property type exists in `PropertyList`**.
 
 ```go
 package main
@@ -116,69 +127,54 @@ package main
 import (
     "encoding/json"
     "fmt"
-    "open_asset_model" // Assuming the package is imported as such
+    "github.com/owasp-amass/open-asset-model"
 )
 
-// SimpleAssetProperty is an example implementation of the Property interface.
-type SimpleAssetProperty struct {
-    name  string
-    value string
-}
-
-// Name returns the name of the property.
-func (sap SimpleAssetProperty) Name() string {
-    return sap.name
-}
-
-// Value returns the value of the property.
-func (sap SimpleAssetProperty) Value() string {
-    return sap.value
-}
-
-// PropertyType returns the property type of SimpleAssetProperty.
-func (sap SimpleAssetProperty) PropertyType() open_asset_model.PropertyType {
-    return open_asset_model.SimpleProperty
-}
-
-// JSON formats the property data into JSON.
-func (sap SimpleAssetProperty) JSON() ([]byte, error) {
-    return json.Marshal(sap)
-}
-
 func main() {
-    // Create an instance of a simple asset property
-    prop := SimpleAssetProperty{
-        name:  "ExampleProperty",
-        value: "Value123",
-    }
-    
-    // Serialize the property to JSON
-    jsonData, err := prop.JSON()
+    // Define an example property type (predefined in the model)
+    propertyType := open_asset_model.DNSRecordProperty
+
+    // Serialize the property type into JSON format
+    jsonData, err := json.Marshal(propertyType)
     if err != nil {
-        fmt.Println("Error serializing property to JSON:", err)
+        fmt.Println("Error serializing property type to JSON:", err)
         return
     }
-    
-    fmt.Println("Serialized JSON:", string(jsonData))
+
+    fmt.Printf("Property Type: %s\n", propertyType)
+    fmt.Printf("Serialized JSON: %s\n", string(jsonData))
+
+    // Validate if the property type exists in PropertyList
+    isValid := false
+    for _, p := range open_asset_model.PropertyList {
+        if p == propertyType {
+            isValid = true
+            break
+        }
+    }
+
+    if isValid {
+        fmt.Println("The property type is valid! ✅")
+    } else {
+        fmt.Println("The property type is invalid! ❌")
+    }
 }
 ```
-
-This example highlights:
-
-- Implementation of the **Property** interface.
-- How to assign a specific **PropertyType** (in this case, `SimpleProperty`).
-- Utilizing JSON serialization for output or storage.
 
 ---
 
 ## **//** Summary
 
-The `property.go` file is a fundamental part of the **Open Asset Model**. It provides a standardized interface and a set of defined property types to represent diverse asset metadata. Whether you're dealing with DNS records, vulnerability information, source data, or simple key-value pairs, this module offers a robust and extensible way to manage asset properties.
+The **`property.go`** file is a fundamental part of the **Open Asset Model**, ensuring **structured metadata representation** for asset intelligence workflows. 
 
-**Key takeaways:**
+Key takeaways:
 
-- **Modularity:** The **Property** interface ensures consistency across multiple property implementations.
-- **Extensibility:** New property types can be added easily by extending the enumeration and providing corresponding implementations.
-- **Serialization:** Built-in JSON support facilitates seamless integration with external systems and APIs.
+- **Defines a structured Property interface** to standardize asset metadata.
 
---- 
+- **Enumerates property types** to ensure data consistency.
+
+- **Provides JSON serialization support** for data interchange.
+
+- **Includes `PropertyList`** to facilitate property type validation and iteration.
+
+By following this structured approach, **contributors** can extend the property model, while **users** can leverage predefined properties for efficient asset intelligence and metadata management.
