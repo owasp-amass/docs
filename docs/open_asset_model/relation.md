@@ -48,13 +48,13 @@ This abstraction ensures consistency across different relation types, facilitati
 
 The **`RelationType`** is defined as a string alias and is used to distinguish different types of asset relations. The file defines several constants:
 
-| **Constant**             | **Description**                    |
-|--------------------------|------------------------------------|
-| `BasicDNSRelation`       | Basic DNS record relation          | 
-| `PortRelation`           | Relation concerning service ports  | 
-| `PrefDNSRelation`        | Preferred DNS relation             |
-| `SimpleRelation`         | Standard/simple relation           | 
-| `SRVDNSRelation`         | Server DNS relation                |
+| **Constant**                 | **Description**                    |
+|------------------------------|------------------------------------|
+| **`BasicDNSRelation`**       | Basic DNS record relation          | 
+| **`PortRelation`**           | Relation concerning service ports  | 
+| **`PrefDNSRelation`**        | Preferred DNS relation             |
+| **`SimpleRelation`**         | Standard/simple relation           | 
+| **`SRVDNSRelation`**         | Server DNS relation                |
 
 Additionally, `RelationList` aggregates these types into a slice for easy iteration and reference.
 
@@ -71,11 +71,11 @@ The file declares several mapping variables that define **which asset types can 
 
 ### Example: Account Relationships
 
-| **Label**        | **Relation Type** | **Allowed Target Asset Types**        |
-|------------------|-------------------|---------------------------------------|
-| id               | SimpleRelation    | Identifier                            |
-| user             | SimpleRelation    | Person, Organization                  |
-| funds_transfer   | SimpleRelation    | FundsTransfer                         |
+| **Label**              | **Relation Type**   | **Allowed Target Asset Types**        |
+|------------------------|---------------------|---------------------------------------|
+| **`id`**               | `SimpleRelation`    | `Identifier`                          |
+| **`user`**             | `SimpleRelation`    | `Person`, `Organization`              |
+| **`funds_transfer`**   | `SimpleRelation`    | `FundsTransfer`                       |
 
 Similar mappings exist across asset types. These relations ensure that only appropriate asset types are connected, maintaining data consistency across the asset taxonomy.
 

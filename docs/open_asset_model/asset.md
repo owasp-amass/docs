@@ -44,11 +44,11 @@ type Asset interface {
 
 ### Method Breakdown
 
-| **Method**        | **Return Type**       | **Description**                                    |
-|---------------|-------------------|------------------------------------------------------------|
-| `Key()`       | `string`          | Returns a **unique identifier** for the asset              |
-| `AssetType()` | `AssetType`       | Identifies the **type of asset** (e.g., FQDN, IP Address)  |
-| `JSON()`      | `([]byte, error)` | Serializes the **asset into JSON format**                  |
+| **Method**        | **Return Type**   | **Description**                                            |
+|-------------------|-------------------|------------------------------------------------------------|
+| **`Key()`**       | `string`          | Returns a **unique identifier** for the asset              |
+| **`AssetType()`** | `AssetType`       | Identifies the **type of asset** (e.g., FQDN, IP Address)  |
+| **`JSON()`**      | `([]byte, error)` | Serializes the **asset into JSON format**                  |
 
 ### Usage Considerations
 
@@ -74,27 +74,27 @@ The file defines the constants representing different asset types:
 
 | **Asset Constant**      | **String Value**        | **Description**                                            |
 |-------------------------|-------------------------|------------------------------------------------------------|
-| **`Account`**           | "Account"               | Represents a **user or service account**                   |
-| **`AutnumRecord`**      | "AutnumRecord"          | Records related to **autonomous system numbers**           |
-| **`AutonomousSystem`**  | "AutonomousSystem"      | Record for an **autonomous system (AS)**                 |
-| **ContactRecord**       | "ContactRecord"         | **Contact details** and associated metadata                |
-| **DomainRecord**        | "DomainRecord"          | Represents **domain registration information**             |
-| **File**                | "File"                  | Represents a **file asset**                                |
-| **FQDN**                | "FQDN"                  | **Fully Qualified Domain Name**                            |
-| **FundsTransfer**       | "FundsTransfer"         | Represents a **financial transaction**                     |
-| **Identifier**          | "Identifier"            | Generic **identifier for assets**                          |
-| **IPAddress**           | "IPAddress"             | Represents an **IP address**                               |
-| **IPNetRecord**         | "IPNetRecord"           | Records related to **IP networks/subnets**                 |
-| **Location**            | "Location"              | **Geographical** or **logical location** data              |
-| **Netblock**            | "Netblock"              | Represents a **block of network addresses**                |
-| **Organization**        | "Organization"          | Organizational details for **companies and institutions**  |
-| **Person**              | "Person"                | Represents an **individual entity**                        |
-| **Phone**               | "Phone"                 | **Phone** number/**contact** information                   |
-| **Product**             | "Product"               | Details about **technologies**                             |
-| **ProductRelease**      | "ProductRelease"        | Specific **versions or releases** of technology products   |
-| **Service**             | "Service"               | Represents a **service offering**                          |
-| **TLSCertificate**      | "TLSCertificate"        | Information about **TLS certificates**                     |
-| **URL**                 | "URL"                   | Represents a **URL (web address)**                         |
+| **`Account`**           | `"Account"`             | Represents a **user or service account**                   |
+| **`AutnumRecord`**      | `"AutnumRecord"`        | Records related to **autonomous system numbers**           |
+| **`AutonomousSystem`**  | `"AutonomousSystem"`    | Record for an **autonomous system (AS)**                 |
+| **`ContactRecord`**     | `"ContactRecord"`       | **Contact details** and associated metadata                |
+| **`DomainRecord`**      | `"DomainRecord"`        | Represents **domain registration information**             |
+| **`File`**              | `"File"`                | Represents a **file asset**                                |
+| **`FQDN`**              | `"FQDN"`                | **Fully Qualified Domain Name**                            |
+| **`FundsTransfer`**     | `"FundsTransfer"`       | Represents a **financial transaction**                     |
+| **`Identifier`**        | `"Identifier"`          | Generic **identifier for assets**                          |
+| **`IPAddress`**         | `"IPAddress"`           | Represents an **IP address**                               |
+| **`IPNetRecord`**       | `"IPNetRecord"`         | Records related to **IP networks/subnets**                 |
+| **`Location`**          | `"Location"`            | **Geographical** or **logical location** data              |
+| **`Netblock`**          | `"Netblock"`            | Represents a **block of network addresses**                |
+| **`Organization`**      | `"Organization"`        | Organizational details for **companies and institutions**  |
+| **`Person`**            | `"Person"`              | Represents an **individual entity**                        |
+| **`Phone`**             | `"Phone"`               | **Phone** number/**contact** information                   |
+| **`Product`**           | `"Product"`             | Details about **technologies**                             |
+| **`ProductRelease`**    | `"ProductRelease"`      | Specific **versions or releases** of technology products   |
+| **`Service`**           | `"Service"`             | Represents a **service offering**                          |
+| **`TLSCertificate`**    | `"TLSCertificate"`      | Information about **TLS certificates**                     |
+| **`URL`**               | `"URL"`                 | Represents a **URL (web address)**                         |
 
 ---
 
