@@ -17,7 +17,7 @@ The **Amass Project's** [Open Asset Model](https://github.com/owasp-amass/open-a
 
 ## :material-graph: Graph Structure and Data Model
     
-=== "[Asset]()"
+=== "[Assets]()"
     [:simple-github:](https://github.com/owasp-amass/open-asset-model/blob/master/asset.go)
      ``` json      
         - Account
@@ -36,7 +36,7 @@ The **Amass Project's** [Open Asset Model](https://github.com/owasp-amass/open-a
      ```      
 
 
-=== "[Relation]()" 
+=== "[Relations]()" 
     [:simple-github:](https://github.com/owasp-amass/open-asset-model/blob/master/relation.go) 
     
     ``` json
@@ -52,7 +52,7 @@ The **Amass Project's** [Open Asset Model](https://github.com/owasp-amass/open-a
     ```
      
     
-=== "[Property]()"
+=== "[Properties]()"
     [:simple-github:](https://github.com/owasp-amass/open-asset-model/blob/master/property.go)
 
     ``` json
