@@ -64,8 +64,8 @@ Additionally, `RelationList` aggregates these types into a slice for easy iterat
 
 The file declares several mapping variables that define **which asset types can be related to others**. Each entry is a nested Go map structured as follows:
 
-- **Key** - String label representing the nature of the relationship (e.g., `"id"`, `"user"`, `"registrant_contact"`).
-- **Value** - Nested map where:
+- **Key** – String label representing the nature of the relationship (e.g., `"id"`, `"user"`, `"registrant_contact"`).
+- **Value** – Nested map where:
     + **Key**: `RelationType` constant (e.g., `SimpleRelation`, `PortRelation`).
     + **Value**: Slice of asset types (e.g., `Identifier`, `Person`, `FQDN`) allowed as the target of that relationship.
 
