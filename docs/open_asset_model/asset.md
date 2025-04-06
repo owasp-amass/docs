@@ -89,7 +89,7 @@ The `AssetList` serves several important purposes:
 
 - `AssetType` is the fundamental definition, like saying "color". It's the string type used to categorize assets and the basis for creating the specific asset type constants.
 
-- `AssetList` is a concrete collection, similar to a list containing "red," "blue," and "green". It's a specific instance that holds all the currently defined AssetType constant values, making them readily accessible.
+- `AssetList` is a concrete collection, similar to a list containing "red," "blue," and "green". It's a specific instance that holds all the currently defined `AssetType` constant values, making them readily accessible.
 
 
 ## Summary 
