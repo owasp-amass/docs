@@ -1,6 +1,6 @@
 # :simple-owasp: `Relation`
 
-The [`relation.go`](https://github.com/owasp-amass/open-asset-model/blob/master/relation.go) implementation is designed to manage complex relationships between various assets in a flexible and extensible way. By specifing the types of relationships that can exist between assets and the **allowed target asset types** for a given source asset type and relationship within the **Open Asset Model**, this file serves as a crucial component for structuring interconnected assets, ensuring data integrity, and implementing consistency in asset intelligence gathering.
+The [`relation.go`](https://github.com/owasp-amass/open-asset-model/blob/master/relation.go) implementation is designed to manage complex relationships between various assets in a flexible and extensible way. By specifying the types of relationships that can exist between assets and the **allowed target asset types** for a given source asset type and relationship within the **Open Asset Model**, this file serves as a crucial component for structuring interconnected assets, ensuring data integrity, and implementing consistency in asset intelligence gathering.
 
 ---
 
@@ -64,7 +64,7 @@ This variable is a slice containing all the defined `RelationType` constants. It
 
 A significant aspect of `relation.go` is the definition of **maps that specify the permitted outgoing relationships for each** `AssetType` defined in `asset.go`. These maps, such as `accountRels`, `fqdnRels`, and others, are structured to define:
 
-- The label of the relationship (e.g., "id", "user", "dns_record").
+- The label of the relationship (e.g., `"id"`, `"user"`, `"dns_record"`).
 
 - The `RelationType` of the relationship (e.g., `SimpleRelation`, `BasicDNSRelation`, `PortRelation`).
 
