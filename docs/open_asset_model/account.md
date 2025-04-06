@@ -32,7 +32,7 @@ The **`Account`** struct is designed with **JSON tags for serialization**, ensur
 
 ## **//** Account Structure
 
-The **`Account` struct** defines key attributes necessary for financial asset representation.
+The **`Account`** struct defines key attributes necessary for financial asset representation.
 
 ```go
 // Account represents an account managed by an organization.
@@ -68,7 +68,7 @@ type Account struct {
 
 ## **//** Implemented Interfaces and Methods
 
-The **Account** struct implements the **Asset interface**, ensuring consistency across the **Open Asset Model**.
+The **`Account` struct** implements the **Asset interface**, ensuring consistency across the **Open Asset Model**.
 
 ### `Key()`
 
@@ -84,7 +84,9 @@ The **Account** struct implements the **Asset interface**, ensuring consistency 
   }
   ```
   **Usage:** 
+
   -  Used to **uniquely identify** the account.
+
   - Serves as the **primary key** for asset indexing and retrieval.
 
 ---
@@ -103,12 +105,14 @@ The **Account** struct implements the **Asset interface**, ensuring consistency 
   }
   ```
   **Usage:** 
+
   - Allows systems to **categorize the asset** as an **`Account`**.  
+
   - Ensures **type consistency** when processing different asset categories.
 
 ---
 
-### JSON()
+### `JSON()`
 
 - **Purpose:**  
   Serializes the **`Account`** struct into **JSON format** for **data exchange and storage**. 
@@ -123,7 +127,9 @@ The **Account** struct implements the **Asset interface**, ensuring consistency 
   ```
 
   **Usage:** 
+
   - Converts the asset into **JSON format** for **APIs, databases, and logging**.
+
   - Enables **data transmission** across services.
 
 ---
@@ -144,7 +150,9 @@ By adhering to these relationships, the **`Account model`** ensures structured d
 
 ## **//** Usage
 
-The **Open Asset Model** provides structured asset management for accounts. Below is an example demonstrating how to:
+The **Open Asset Model** provides structured asset management for accounts. 
+
+Below is an example demonstrating how to:
 
 - **Retrieve account details**.
 

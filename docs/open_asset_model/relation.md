@@ -1,60 +1,51 @@
 # :simple-owasp: `Relation`
 
-The [`relation.go`](https://github.com/owasp-amass/open-asset-model/blob/master/relation.go) file manages and validates relationships between different asset types in the **Open Asset Model**.
-
-
-
-## Table of Contents 
-
-- [Overview](#overview)
-- [Relation Interface and Types](#relation-interface-and-types)
-- [Asset Relationship Mappings](#asset-relationship-mappings)
-- [Utility Functions](#utility-functions)
-  - [GetAssetOutgoingRelations](#getassetoutgoingrelations)
-  - [GetTransformAssetTypes](#gettransformassettypes)
-  - [assetTypeRelations](#assettyperelations)
-  - [ValidRelationship](#validrelationship)
-- [Usage](#usage)
+The `relation.go` implementation is designed to manage complex relationships between various types of assets in a flexible and extensible way. This is especially useful for structuring interconnected assets within the Open Asset Model's defined taxonomy, ensuring data integrity and consistency in asset intelligence gathering.
 
 ---
+
+1. How are relation types defined and categorized?
+2. How are asset type relations mapped and accessed?
+3. How to validate relationships between asset types?
 
 ## **//** Overview
 
-The **Open Asset Model** is designed to manage complex relationships between various types of assets (such as accounts, domain records, IP addresses, organizations, etc.) in a flexible and extensible way. The `relation.go` file focuses on defining:
+- Relation Types: A set of constants representing different types of relationships.
 
-- **Relation Types** – A set of constants representing different types of relationships.
-- **Relationship Mappings** – Predefined mappings specifying which asset types can be related to one another.
-- **Validation & Transformation Functions** – Helper functions to query, transform, and validate relationships according to the defined taxonomy.
+- Relationship Mappings: Predefined schemas specifying which asset types can be related to one another.
 
-This model is particularly useful in contexts where assets need to be interconnected in a structured taxonomy, ensuring data integrity and consistency throughout asset intelligence gathering.
+- Validation & Transformation: Helper functions to query, transform, and validate relationships according to the defined taxonomy.
 
 ---
 
-## **//** Relation Interface and Types
+## **//** Relation Interface 
 
-### Relation Interface
-
-The file defines a central **Relation** interface that any relation entity must implement. This interface requires the following methods:
+Defined as a central `Relation` interface that any relation entity must implement. This interface requires the following methods:
 
 ```go
-Label() string  // Returns a label identifying the relation
-RelationType() RelationType  // Returns the type of the relationship
-JSON() ([]byte, error)  // Provides a JSON representation of the relation
+type Relation interface {
+	Label() string
+	RelationType() RelationType
+	JSON() ([]byte, error)
+}
 ```
 
 This abstraction ensures consistency across different relation types, facilitating serialization and integration with other components.
 
 ### RelationType
 
-The **`RelationType`** is defined as a string alias and is used to distinguish different types of asset relations. The file defines several constants:
+`RelationTypes` are defined as constants and used to distinguish the different types of relationships that can exist between assets. This categorization allows for structured and predictable handling of asset relations.
 
-| **Constant**                 | **Description**                    |
-|------------------------------|------------------------------------|
-| **`BasicDNSRelation`**       | Basic DNS record relation          | 
-| **`PortRelation`**           | Relation concerning service ports  | 
-| **`PrefDNSRelation`**        | Preferred DNS relation             |
-| **`SimpleRelation`**         | Standard/simple relation           | 
-| **`SRVDNSRelation`**         | Server DNS relation                |
+```go
+type RelationType string
+const (
+    BasicDNSRelation RelationType = "BasicDNSRelation"
+    PortRelation     RelationType = "PortRelation"
+    PrefDNSRelation  RelationType = "PrefDNSRelation"
+    SimpleRelation   RelationType = "SimpleRelation"
+    SRVDNSRelation   RelationType = "SRVDNSRelation"
+)
+```
 
 Additionally, `RelationList` aggregates these types into a slice for easy iteration and reference.
 
@@ -167,7 +158,7 @@ Key takeaways include:
 
 - **Well-structured Relation interface** for consistency across asset relations.
 - A comprehensive set of **RelationType constants** to define asset relationships.
-- Detailed **relationship mappings** fthat maintain data integrity.
+- Detailed **relationship mappings** that maintain data integrity.
 - **Robust utility functions** for  querying, validating, and transforming relationships.
 
 This model facilitates **consistent asset interconnections** and is essential for **comprehensive asset intelligence**, **network mapping**, and **security investigations**.
