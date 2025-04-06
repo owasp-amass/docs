@@ -3,7 +3,9 @@
 The [`asset.go`](https://github.com/owasp-amass/open-asset-model/blob/master/asset.go) file defines the **`Asset` interface** and the **`AssetType`** within the **Open Asset Model**. The `Asset` interface acts as a blueprint or a unified contract that every type of asset within the Open Asset Model must adhere. It provides a standardized way to represent, interact, manage, and process various digital and physical assets. This file is fundamental to the model as it **establishes the core structure** for all supported asset types.
 
 - **Filepath:** `open-asset-model/asset.go`
-- **Language**: This file is written in **Go** 
+- **Language**: This file is written in **Go**
+
+---
 
 ## Core Interface
 
@@ -85,19 +87,18 @@ The `AssetList` serves several important purposes:
 
 - It plays a key role in **ensuring type safety** by allowing us to easily validate whether a given string corresponds to a valid AssetType within the model.
 
+---
+
 ## `AssetType` vs `AssetList`
 
 - `AssetType` is the fundamental definition, like saying "color". It's the string type used to categorize assets and the basis for creating the specific asset type constants.
 
 - `AssetList` is a concrete collection, similar to a list containing "red," "blue," and "green". It's a specific instance that holds all the currently defined `AssetType` constant values, making them readily accessible.
 
+---
 
 ## Summary 
 
-The `asset.go` file is truly the cornerstone of the **Open Asset Model**. By defining a structured `Asset` interface, enumerating asset categories through `AssetType` constants, and providing a central `AssetList` for validation and iteration, this file ensures standardized asset representation across various security and reconnaissance applications. This well-defined structure allows for the consistent management and processing of a wide range of assets, ultimately enhancing our attack surface intelligence.
-
-## Summary
-
-This `asset.go` file is crucial for defining the fundamental structure of assets within the **OWASP Amass Open Asset Model**, ensuring that all asset implementations adhere to a common interface and are properly categorized by their type. The defined `AssetType` constants provide a clear and extensible enumeration of the asset categories the model currently supports.
+The `asset.go` file is truly the cornerstone of the **Open Asset Model**. By defining a structured `Asset` interface, enumerating asset categories through `AssetType` constants, and providing a central `AssetList` for validation and iteration, this file ensures standardized asset representation across various security and reconnaissance applications. This well-defined structure allows for the consistent management and processing of a wide range of assets, ultimately enhancing attack surface intelligence.
 
 ---
