@@ -22,7 +22,7 @@ The `Relation` interface consists of the following methods:
 
 - `RelationType() RelationType`: This method returns the general type or category of the relationship as a `RelationType`. The `RelationType` itself is defined as a string type.
 
-- `JSON() ([]byte, error)`: Similar to the Asset interface in `asset.go`, this method handles the serialization of the relation's data into JSON format. It returns a byte slice representing the JSON encoding and an error if the serialization fails
+- `JSON() ([]byte, error)`: Similar to the `Asset` interface in `asset.go`, this method handles the serialization of the relation's data into JSON format. It returns a byte slice representing the JSON encoding and an error if the serialization fails
 
 The `relation.go` file defines `RelationType` as a string type. It also declares several constants of `RelationType`, which represent the predefined categories of relationships supported by the model:
 
