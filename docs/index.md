@@ -1,6 +1,6 @@
 # :simple-owasp: Amass Docs 
 
-**OWASP Amass** is an open-source, versatile **Attack Surface Intelligence** platform designed to comprehensively map an organization’s footprint. Built for flexibility and depth, Amass combines advanced data collection, network mapping, and OSINT capabilities to deliver detailed insights into physical and digital assets. 
+**OWASP Amass** is an open-source, versatile **attack surface intelligence** framework designed to comprehensively map an organization’s footprint. Built for flexibility and depth, Amass combines advanced data collection, network mapping, and OSINT capabilities to deliver detailed insights into physical and digital assets. 
 
 ## **//** Overview
 
@@ -8,7 +8,7 @@
 
 
 ??? info "Open Asset Model (OAM)"
-    The [Open Asset Model](https://51nk0r5w1m.github.io/docs/open-asset-model/) expands traditional specifications by modeling both the **physical** and **digital** structure of a target's asset landscape. Defining **asset types**, their unique **properties**, and the interconnected **relationships** that join them, `OAM` compiles a comprehensive view of the attack surface from an adversarial perspective. Enabling concurrent data collection and querying, `OAM` automates intelligent asset collection, analysis, and visualization.
+    The [Open Asset Model](https://owasp-amass.github.io/docs/open-asset-model/) expands traditional specifications by modeling both the **physical** and **digital** structure of a target's asset landscape. Defining **asset types**, their unique **properties**, and the **relationships** that join them, the `OAM` compiles a comprehensive view of the attack surface from an adversarial perspective.
 
 ---
 
@@ -19,7 +19,7 @@ __[Unlocking the Power of OWASP Amass]__ by [@jeff_foley](https://x.com/jeff_fol
 
 - **Automated Deployment and Enumeration:** Easily deploy Amass with [Docker Compose](https://docs.docker.com/compose/) for quick, automated asset discovery across multiple domains with minimal configuration.
 
-- **Centralized Asset Management with Asset DB:** Use the Asset DB for storing, managing, and retrieving discovered assets, with support for long-term tracking and consistent data collection through the Open Asset Model.
+- **Centralized Asset Management with Asset DB:** Use the Asset DB for storing, managing, and retrieving discovered assets, with support for long-term tracking and consistent data collection via the Open Asset Model.
 
 - **Scalable and Flexible Infrastructure:** Designed for enterprise environments, [Docker](https://www.docker.com/products/docker-desktop/) enables scalable deployments of Amass, ensuring consistent attack surface management for organizations of any size.
 
@@ -31,30 +31,67 @@ __[Unlocking the Power of OWASP Amass]__ by [@jeff_foley](https://x.com/jeff_fol
 
 ## :octicons-tools-16: Getting Started 
 
-Follow these steps to set up the OWASP Amass Project using [Docker Compose](https://docs.docker.com/compose/):
+Users have several options when installing the Amass framework.
 
-### Prerequisites
+### Build from Source Code
+
+Install the Amass swiss army knife executable in your preferred environment.
+
+#### Prerequisites
+
+- **Golang:** Intall an up-to-date version of Go on your system. You can download it from the [Go Official Website](https://go.dev).
+
+#### Perform the build and installation process
+
+```bash
+go install -v github.com/owasp-amass/amass/v5/cmd/amass@main
+```
+
+At this point, the binary should be in *$GOPATH/bin*.
+
+### Install using Homebrew
+
+The OWASP Amass Project maintains a **Homebrew** package.
+
+#### Prerequisites
+
+- **Homebrew:** Intall an up-to-date version of the package manager on your system. You can download it from the [Homebrew Official Website](https://brew.sh/).
+
+#### Perform the build and installation process
+
+The following two commands will install Amass into your environment:
+
+```bash
+brew tap owasp-amass/amass
+brew install amass
+```
+
+### Containerized Execution within Docker Compose
+
+Follow these steps to set up Amass using [Docker Compose](https://docs.docker.com/compose/):
+
+#### Prerequisites
 
 Before you begin, make sure you have the following installed on your system:
 
-- **Docker:** Up-to-date intallation running on your system. You can download it from [Docker's Official Website](https://www.docker.com/products/docker-desktop/).
+- **Docker:** Up-to-date intallation running on your system. You can download it from the [Docker Official Website](https://www.docker.com/products/docker-desktop/).
   
 - **Docker Compose:** Typically, Docker Compose is bundled with Docker Desktop, but you can verify the installation or install it seperately from
     [Docker Compose Installation](https://docs.docker.com/compose/).
 
-- **Git:** To clone the Amass repository. Download it from [Git's Official Website](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+- **Git:** To clone the Amass repository. Download it from the [Git Official Website](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 
-### Step 1: Clone the Amass Docker Compose Directory
+#### Step 1: Clone the Amass Docker Compose Directory
 
-Start by cloning the OWASP Amass repository, which contains the Docker Compose setup files.
+Start by cloning the OWASP Amass repository containing the Docker Compose setup files.
 
 ```bash
 git clone https://github.com/owasp-amass/amass-docker-compose.git
 mv amass-docker-compose amass   # Optional: Rename the directory to something shorter (e.g., amass)
-cd amass   # Navigate to local directory
+cd amass   # Navigate to the local repository
 ```
 
-### Step 2: Configure the Compose Environment
+#### Step 2: Configure the Compose Environment
 
 **> Open the `assetdb.env` File:**
 
@@ -96,7 +133,7 @@ After editing, save the file:
 Open the `config.yaml` file to set the database password to the one you just assigned as `AMASS_PASSWORD`.
 
 ```bash
-nano ../config.yaml
+nano config.yaml
 ```
 
 **> Update the Database Password:** 
@@ -123,44 +160,20 @@ As before, save the changes using your preferred text editor.
     ```
     Uncomment the lines you need, and provide any necessary credentials.
 
-### Step 3: Building the Docker Images
+#### Step 3: Building the Docker Images
 
 Your **Amass** framework is now configured and ready to be built. [Docker Compose](https://docs.docker.com/compose/) will build the required images and start them correctly when you perform your first Amass command execution.
 
 **> Type the following to get started:**
 
 ```bash
-docker compose run --rm amass enum -active -d example.org # (1)!
+docker compose run --rm enum -active -d example.org # (1)!
 ```
 
 1.   If the build process times out, simply execute the command again to resume.
 
 
-**> Accessing the Web UI:**
-
-You can obtain information about your asset discoveries by accessing the web UI at `http://127.0.0.1:3000`
-
-> All persistent data used exists on your host in the local repo root directory.
-
-> The `assetdb` is a [PostgreSQL](https://www.postgresql.org/) database reachable from your localhost on `port 55432`.
-
-> The `config` files in the local repo are automatically mapped to where components expect to find them in the Docker environment.
-
-!!! tip "Utilize the IP2Location Database" 
-    - **Sign up** for a free [IP2Location LITE](https://lite.ip2location.com/) account.
-    - **Download Database File:** Download the `IP2LOCATION-LITE-DB11.CSV` and `IP2LOCATION-LITE-DB11.IPV6.CSV` files.  
-    - **Copy Files to the Compose Directory:** Copy the downloaded CSV files into the compose directory:
-    ```bash
-    cp path/to/IP2LOCATION-LITE-DB11.CSV ./ 
-    cp path/to/IP2LOCATION-LITE-DB11.IPV6.CSV ./
-    ```
-    - **Run the Amass Docker Compose:** While the Amass Docker Compose is up, execute the script to insert the geo information into the database:
-    ```bash
-    ./upload_ip2loc_data.sh
-    ```
-
-
-## :material-update: Update Process for the Compose Environment
+#### :material-update: Update Process for the Compose Environment
 
 **> Make the local repo your current working directory:**
 
@@ -168,7 +181,7 @@ You can obtain information about your asset discoveries by accessing the web UI 
 cd amass
 ```
 
-**> Shutdown the Amass framework within the Docker environment:**
+**> Shutdown the Amass containers within the Docker environment:**
 
 ```bash 
 docker compose down
@@ -185,17 +198,17 @@ cp config/assetdb.env config/config.yaml config/datasources.yaml backups/
 **> Update the local repo:**
 
 ```bash
-git pull origin master
+git pull origin main
 ```
 
-## :material-update: Update Process for the Docker Images
+#### :material-update: Update Process for the Docker Images
 
 **> Make the local repo your current working directory:**
 ```bash
 cd amass
 ```
 
-**> Shutdown the Amass framework within the Docker environment:**
+**> Shutdown the Amass containers within the Docker environment:**
 
 ```bash
 docker compose down
@@ -204,15 +217,18 @@ docker compose down
 **> Update components from their GitHub repos:**
 
 ```bash
-docker compose pull
 docker compose build --pull --no-cache
 ```
+
+### Amass Packages Maintained by a Third Party
+
+[![Packaging status](https://repology.org/badge/vertical-allrepos/amass.svg)](https://repology.org/metapackage/amass/versions)
 
 ---
 
 License
 --------
-    Copyright 2017 Jeff Foley
+    Copyright 2017-2025 Jeff Foley
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
