@@ -3,6 +3,7 @@
 # mkdocs gh-deploy
 
 site_name: OWASP Amass
+site_url: https://51nk0r5w1m.github.io/docs/
 repo_name: OWASP Amass
 repo_url: https://github.com/owasp-amass/amass
 site_description: "In-depth OSINT collection and external attack surface mapping "
@@ -39,44 +40,103 @@ theme:
     - content.code.copy
     - content.code.select
     - content.code.annotate
+    - navigation.indexes
+    - navigation.footer
+    - navigation.top
+    - navigation.tracking
+    - toc.follow
+    
 
 extra_css:
   - stylesheets/extra.css
 
+
+# Additional configuration
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/owasp-amass
+    - icon: fontawesome/brands/docker
+      link: https://github.com/owasp-amass/amass-docker-compose
+    - icon: fontawesome/brands/discord
+      link: https://discord.gg/HNePVyX3cp
+    - icon: fontawesome/brands/mastodon
+      link: https://infosec.exchange/@amass
+    - icon: fontawesome/brands/x-twitter
+      link: https://x.com/owaspamass/
+
+
+# Python Markdown 
 markdown_extensions:
-  - smarty
-  - codehilite:
-      guess_lang: false
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
   - footnotes
-  - meta
+  - md_in_html
   - toc:
       permalink: true
+  - tables
+
+# Python Markdown Extensions
+  - pymdownx.arithmatex:
+      generic: true
   - pymdownx.betterem:
       smart_enable: all
   - pymdownx.caret
-  - pymdownx.inlinehilite
-  - pymdownx.magiclink
-  - pymdownx.smartsymbols
-  - pymdownx.superfences
-  - attr_list
+  - pymdownx.details
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true
-  - tables
-  - admonition
-  - attr_list
-  - md_in_html
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
 
+# Mermaid Chart Config
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  
+
+# Page tree
 nav:
-  - 'Getting Started': index.md
-  #- 'Installation': installation.md
-  - 'Configuration': configuration.md
-  - 'Data Sources': data-sources.md
-  - 'Advanced Usage': advanced-usage.md
-  #- 'API Documentation': api/0.x/index.html
-  #- 'Discussions ⏏': https://github.com/owasp-amass/amass/discussions
-  - 'Change Log': changelog.md
-  - 'Contributing': contributing.md
-  #- 'Code of Conduct': code-of-conduct.md
+  - Getting Started: index.md
+  - Open Asset Model:
+    - Open Asset Model: open_asset_model/index.md
+    - Asset: open_asset_model/asset.md
+    - Relation: open_asset_model/relation.md
+    - Property: open_asset_model/property.md    
+    - Account: open_asset_model/account.md
+    - Certificate: open_asset_model/certificate.md
+    - Contact: open_asset_model/contact.md
+    - DNS: open_asset_model/dns.md
+    - File: open_asset_model/file.md
+    - Financial: open_asset_model/financial.md
+    - Identifier: open_asset_model/identifier.md
+    - Network: open_asset_model/network.md
+    - Organization: open_asset_model/organization.md
+    - People: open_asset_model/people.md
+    - Platform: open_asset_model/platform.md
+    - Registration: open_asset_model/registration.md
+    - URL: open_asset_model/url.md
+  - Configuration: configuration/configuration.md
+  - Data Sources: data_sources/data_sources.md
+  - AssetDB: assetDB/assetDB.md
+  - Dashboards: dashboards/dashboards.md
+  - Change Log: changelog/changelog.md
+  - Contributing: contributing/contributing.md
+  

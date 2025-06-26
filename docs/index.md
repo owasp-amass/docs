@@ -1,15 +1,14 @@
 # :simple-owasp: Amass Docs 
 
-**OWASP Amass** is an open-source, versatile Attack Surface Intelligence platform designed to comprehensively map an organization’s footprint. Built for flexibility and depth, Amass combines advanced data collection, network mapping, and OSINT capabilities to deliver detailed insights into physical and digital assets. 
+**OWASP Amass** is an open-source, versatile **Attack Surface Intelligence** platform designed to comprehensively map an organization’s footprint. Built for flexibility and depth, Amass combines advanced data collection, network mapping, and OSINT capabilities to deliver detailed insights into physical and digital assets. 
 
-## Overview
+## **//** Overview
 
-Amass extends far beyond basic subdomain enumeration, offering a comprehensive, automated approach to information gathering that reveals the full scope of an organization's infrastructure.
+[OWASP Amass](https://github.com/owasp-amass) extends **far beyond basic subdomain enumeration**, offering a comprehensive, automated approach to information gathering that reveals the full scope of an entity's **physical** and **digital** footprint.
 
 
-!!! info "Open Asset Model (OAM)"
-    The Open Asset Model expands traditional asset specifications by covering both physical and digital assets, aiming to provide a comprehensive view of an organization's attack surface.
-    It defines assets and their relationships, capturing the real-world interconnectedness between them, allowing for concurrent data collection and querying, making it easier to analyze and visualize asset discoveries on the Internet.
+??? info "Open Asset Model (OAM)"
+    The [Open Asset Model](https://51nk0r5w1m.github.io/docs/open-asset-model/) expands traditional specifications by modeling both the **physical** and **digital** structure of a target's asset landscape. Defining **asset types**, their unique **properties**, and the interconnected **relationships** that join them, `OAM` compiles a comprehensive view of the attack surface from an adversarial perspective. Enabling concurrent data collection and querying, `OAM` automates intelligent asset collection, analysis, and visualization.
 
 ---
 
@@ -18,15 +17,15 @@ __[Unlocking the Power of OWASP Amass]__ by [@jeff_foley](https://x.com/jeff_fol
 
   [Unlocking the Power of OWASP Amass]: https://www.youtube.com/watch?v=IgxPsv8MXMw
 
-- **Automated Deployment and Enumeration**: Easily deploy Amass with [Docker Compose](https://docs.docker.com/compose/) for quick, automated asset discovery across multiple domains with minimal configuration.
+- **Automated Deployment and Enumeration:** Easily deploy Amass with [Docker Compose](https://docs.docker.com/compose/) for quick, automated asset discovery across multiple domains with minimal configuration.
 
-- **Centralized Asset Management with Asset DB**: Use the Asset DB for storing, managing, and retrieving discovered assets, with support for long-term tracking and consistent data collection through the Open Asset Model.
+- **Centralized Asset Management with Asset DB:** Use the Asset DB for storing, managing, and retrieving discovered assets, with support for long-term tracking and consistent data collection through the Open Asset Model.
 
-- **Scalable and Flexible Infrastructure**: Designed for enterprise environments, [Docker](https://www.docker.com/products/docker-desktop/) enables scalable deployments of Amass, ensuring consistent attack surface management for organizations of any size.
+- **Scalable and Flexible Infrastructure:** Designed for enterprise environments, [Docker](https://www.docker.com/products/docker-desktop/) enables scalable deployments of Amass, ensuring consistent attack surface management for organizations of any size.
 
-- **Advanced Collection and Monitoring**: The Collections Engine refines the data collection process, while open-source tools like [syslog-ng](https://github.com/syslog-ng/syslog-ng) provide centralized logging, enabling real-time monitoring and diagnostics.
+- **Advanced Collection and Monitoring:** The Collections Engine refines the data collection process, while open-source tools like [syslog-ng](https://github.com/syslog-ng/syslog-ng) provide centralized logging, enabling real-time monitoring and diagnostics.
 
-- **Visualization and Data-Driven Insights**: The latest release features a fully integrated [Grafana](https://grafana.com/oss/grafana/) dashboard, providing dynamic visualization and analysis for deeper attack surface intelligence.
+- **Visualization and Data-Driven Insights:** The latest release features a fully integrated [Grafana](https://grafana.com/oss/grafana/) dashboard, providing dynamic visualization and analysis for deeper attack surface intelligence.
 
 ---
 
@@ -147,9 +146,9 @@ You can obtain information about your asset discoveries by accessing the web UI 
 
 > The `config` files in the local repo are automatically mapped to where components expect to find them in the Docker environment.
 
-!!! tip "Utilize the IP2Location Databse" 
+!!! tip "Utilize the IP2Location Database" 
     - **Sign up** for a free [IP2Location LITE](https://lite.ip2location.com/) account.
-    - **Download Databse File:** Download the `IP2LOCATION-LITE-DB11.CSV` and `IP2LOCATION-LITE-DB11.IPV6.CSV` files.  
+    - **Download Database File:** Download the `IP2LOCATION-LITE-DB11.CSV` and `IP2LOCATION-LITE-DB11.IPV6.CSV` files.  
     - **Copy Files to the Compose Directory:** Copy the downloaded CSV files into the compose directory:
     ```bash
     cp path/to/IP2LOCATION-LITE-DB11.CSV ./ 
