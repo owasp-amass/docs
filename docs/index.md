@@ -39,7 +39,7 @@ Install the Amass swiss army knife executable in your preferred environment.
 
 #### Prerequisites
 
-- **Golang:** Intall an up-to-date version of Go on your system. You can download it from the [Go Official Website](https://go.dev).
+- **Golang:** Install an up-to-date version of Go on your system. You can download it from the [Go Official Website](https://go.dev).
 
 #### Perform the build and installation process
 
