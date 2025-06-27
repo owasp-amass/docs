@@ -118,9 +118,9 @@ nav:
   - Open Asset Model:
     - Open Asset Model: open_asset_model/index.md
     - Assets: 
-      - Assets: open_asset_model/assets/asset.md
+      - Assets: open_asset_model/assets/index.md
       - Account: open_asset_model/assets/account.md
-      - Contact Record: open_asset_model/assets/contact.md
+      - Contact Record: open_asset_model/assets/contact_record.md
       - Domain Record: open_asset_model/assets/domain_record.md
       - File: open_asset_model/assets/file.md
       - FQDN: open_asset_model/assets/fqdn.md
@@ -133,10 +133,10 @@ nav:
       - TLS Certificate: open_asset_model/assets/tls_certificate.md
       - URL: open_asset_model/assets/url.md
     - Relations: 
-      - Relations: open_asset_model/relations/relation.md
+      - Relations: open_asset_model/relations/index.md
       - Simple Relation: open_asset_model/relations/simple_relation.md
     - Properties:
-      - Properties: open_asset_model/properties/property.md
+      - Properties: open_asset_model/properties/index.md
       - Source Property: open_asset_model/properties/source_property.md
   - Configuration: configuration/configuration.md
   - Data Sources: data_sources/data_sources.md

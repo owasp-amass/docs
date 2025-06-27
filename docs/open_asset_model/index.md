@@ -15,57 +15,7 @@ The **Amass Project's** [Open Asset Model](https://github.com/owasp-amass/open-a
 ---
 
 
-## :material-graph: Graph Structure and Data Model
-    
-=== "[Assets]()"
-    [:simple-github:](https://github.com/owasp-amass/open-asset-model/blob/master/asset.go)
-     ``` json      
-        - Account
-        - Certificate
-        - Contact
-        - DNS
-        - File
-        - Financial
-        - Identifier
-        - Network
-        - Organization
-        - People
-        - Platform
-        - Registration
-        - URL
-     ```      
-
-
-=== "[Relations]()" 
-    [:simple-github:](https://github.com/owasp-amass/open-asset-model/blob/master/relation.go) 
-    
-    ``` json
-        - Also referred to as edges.
-        - Always have a direction to establish asset associations.
-        - Able to store properties for enriched data analysis.
-        - Explicit naming convention improves query performance.
-        - Enable graph traversal to uncover asset associations.
-        - Define structured links between discovered assets.
-        - Facilitate discovery of infrastructure dependencies.
-        - Support queries that reveal attack surface risks.
-        - Allow efficient correlation of connected entities.
-    ```
-     
-    
-=== "[Properties]()"
-    [:simple-github:](https://github.com/owasp-amass/open-asset-model/blob/master/property.go)
-
-    ``` json
-        - Store metadata for discovered assets and their relationships.  
-        - Attach structured data to entities and relationships.  
-        - Standardize attributes like timestamps and source IDs.  
-        - Enable querying and filtering of asset metadata.  
-        - Support enrichment with additional asset details.  
-        - Provide a flexible structure across asset types.  
-    ```
-
-    
-### Explore each asset type and their distinct relationships:
+## :material-graph: Explore OAM Asset Types
 
 ---
 
@@ -79,34 +29,36 @@ The **Amass Project's** [Open Asset Model](https://github.com/owasp-amass/open-a
 
     Collect usernames, account types, and related attributes to track exposed user accounts
 
-    [:octicons-arrow-right-24: Learn more](https://51nk0r5w1m.github.io/docs/open-asset-model/account/)
+    [:octicons-arrow-right-24: Learn more](https://owasp-amass.github.io/docs/open-asset-model/assets/account/)
 
 
--   :material-file-certificate-outline:{ .lg .middle } __Certificate__
+-   :material-registered-trademark:{ .lg .middle } __Domain Record__
 
     ---
 
-    Gather SSL/TLS certificate details, issuers, and expiration dates for asset verification
+    
+    Gather domain insights, including Whois and registrar details
 
-    [:octicons-arrow-right-24: Learn more](https://51nk0r5w1m.github.io/docs/open-asset-model/certificate/)
+    [:octicons-arrow-right-24: Learn more](https://owasp-amass.github.io/docs/open-asset-model/assets/domain_record/)
 
 
--   :material-comment-outline:{ .lg .middle } __Contact__
+
+-   :material-comment-outline:{ .lg .middle } __Contact Record__
 
     ---
 
     Link email addresses, phone numbers, and locations to discovered entities
 
-    [:octicons-arrow-right-24: Learn more](https://51nk0r5w1m.github.io/docs/open-asset-model/contact/)
+    [:octicons-arrow-right-24: Learn more](https://owasp-amass.github.io/docs/open-asset-model/assets/contact_record/)
 
 
--   :material-dns:{ .lg .middle } __DNS__
+-   :material-dns:{ .lg .middle } __FQDN__
 
     ---
 
     Record domain resolutions, DNS records, and associated metadata
 
-    [:octicons-arrow-right-24: Learn more](https://51nk0r5w1m.github.io/docs/open-asset-model/dns/)
+    [:octicons-arrow-right-24: Learn more](https://owasp-amass.github.io/docs/open-asset-model/assets/fqdn/)
 
 
 -   :material-file-find:{ .lg .middle } __File__
@@ -115,16 +67,16 @@ The **Amass Project's** [Open Asset Model](https://github.com/owasp-amass/open-a
 
     Capture file names and hashes to analyze digital artifacts
 
-    [:octicons-arrow-right-24: Learn more](https://51nk0r5w1m.github.io/docs/open-asset-model/file/)
+    [:octicons-arrow-right-24: Learn more](https://owasp-amass.github.io/docs/open-asset-model/assets/file/)
 
 
--   :material-bank:{ .lg .middle } __Financial__
+-   :material-bank:{ .lg .middle } __Funds Transfer__
 
     ---
 
     Identify bank accounts, payment systems, and transaction details
 
-    [:octicons-arrow-right-24: Learn more](https://51nk0r5w1m.github.io/docs/open-asset-model/financial/)
+    [:octicons-arrow-right-24: Learn more](https://owasp-amass.github.io/docs/open-asset-model/assets/funds_transfer/)
 
 
 -   :material-id-card:{ .lg .middle } __Identifier__
@@ -133,16 +85,16 @@ The **Amass Project's** [Open Asset Model](https://github.com/owasp-amass/open-a
 
 	Track unique IDs, references, or numerical values 
 
-    [:octicons-arrow-right-24: Learn more](https://51nk0r5w1m.github.io/docs/open-asset-model/identifier/)
+    [:octicons-arrow-right-24: Learn more](https://owasp-amass.github.io/docs/open-asset-model/assets/identifier/)
 
 
--   :material-router:{ .lg .middle } __Network__
+-   :material-router:{ .lg .middle } __IP Address__
 
     ---
 
     Discover IPs, subnets, and routing structures to uncover key infrastructure
 
-    [:octicons-arrow-right-24: Learn more](https://51nk0r5w1m.github.io/docs/open-asset-model/network/)
+    [:octicons-arrow-right-24: Learn more](https://owasp-amass.github.io/docs/open-asset-model/assets/ip_address/)
 
 
 -   :material-office-building-marker:{ .lg .middle } __Organization__
@@ -151,35 +103,37 @@ The **Amass Project's** [Open Asset Model](https://github.com/owasp-amass/open-a
 
     Uncover entity designations, locations, and operational details to expose connections
 
-    [:octicons-arrow-right-24: Learn more](https://51nk0r5w1m.github.io/docs/open-asset-model/organization/)
+    [:octicons-arrow-right-24: Learn more](https://owasp-amass.github.io/docs/open-asset-model/assets/organization/)
 
 
--   :material-account-outline:{ .lg .middle } __People__
+-   :material-account-outline:{ .lg .middle } __Person__
 
     ---
 
      Collect names, locations, and attributes to build individual profiles 
 
-    [:octicons-arrow-right-24: Learn more](https://51nk0r5w1m.github.io/docs/open-asset-model/people/)
+    [:octicons-arrow-right-24: Learn more](https://owasp-amass.github.io/docs/open-asset-model/assets/person/)
 
 
--   :material-apps:{ .lg .middle } __Platform__
+
+-   :material-apps:{ .lg .middle } __Product__
 
     ---
 
      Identify online services, cloud providers, and software ecosystems 
 
-    [:octicons-arrow-right-24: Learn more](https://51nk0r5w1m.github.io/docs/open-asset-model/platform/)
+    [:octicons-arrow-right-24: Learn more](https://owasp-amass.github.io/docs/open-asset-model/assets/product/)
 
 
--   :material-registered-trademark:{ .lg .middle } __Registration__
+
+-   :material-file-certificate-outline:{ .lg .middle } __TLS Certificate__
 
     ---
 
-    
-    Gather domain insights, including Whois and registrar details
+    Gather SSL/TLS certificate details, issuers, and expiration dates for asset verification
 
-    [:octicons-arrow-right-24: Learn more](https://51nk0r5w1m.github.io/docs/open-asset-model/registration/)
+    [:octicons-arrow-right-24: Learn more](https://owasp-amass.github.io/docs/open-asset-model/assets/tls_certificate/)
+
 
 
 -   :material-web-refresh:{ .lg .middle } __URL__
@@ -188,18 +142,6 @@ The **Amass Project's** [Open Asset Model](https://github.com/owasp-amass/open-a
 
     Log web addresses and associated content to track online presence
 
-    [:octicons-arrow-right-24: Learn more](https://51nk0r5w1m.github.io/docs/open-asset-model/url/)
+    [:octicons-arrow-right-24: Learn more](https://owasp-amass.github.io/docs/open-asset-model/assets/url/)
 
 </div>
-
-
-
-
-
-
-   
-
-    
-
-
-    
