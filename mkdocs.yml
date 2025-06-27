@@ -3,7 +3,7 @@
 # mkdocs gh-deploy
 
 site_name: OWASP Amass
-site_url: https://51nk0r5w1m.github.io/docs/
+site_url: https://owasp-amass.github.io/docs/
 repo_name: OWASP Amass
 repo_url: https://github.com/owasp-amass/amass
 site_description: "In-depth OSINT collection and external attack surface mapping "
@@ -117,26 +117,30 @@ nav:
   - Getting Started: index.md
   - Open Asset Model:
     - Open Asset Model: open_asset_model/index.md
-    - Asset: open_asset_model/asset.md
-    - Relation: open_asset_model/relation.md
-    - Property: open_asset_model/property.md    
-    - Account: open_asset_model/account.md
-    - Certificate: open_asset_model/certificate.md
-    - Contact: open_asset_model/contact.md
-    - DNS: open_asset_model/dns.md
-    - File: open_asset_model/file.md
-    - Financial: open_asset_model/financial.md
-    - Identifier: open_asset_model/identifier.md
-    - Network: open_asset_model/network.md
-    - Organization: open_asset_model/organization.md
-    - People: open_asset_model/people.md
-    - Platform: open_asset_model/platform.md
-    - Registration: open_asset_model/registration.md
-    - URL: open_asset_model/url.md
+    - Assets: 
+      - Assets: open_asset_model/assets/asset.md
+      - Account: open_asset_model/assets/account.md
+      - Contact Record: open_asset_model/assets/contact.md
+      - Domain Record: open_asset_model/assets/domain_record.md
+      - File: open_asset_model/assets/file.md
+      - FQDN: open_asset_model/assets/fqdn.md
+      - Funds Transfer: open_asset_model/assets/funds_transfer.md
+      - Identifier: open_asset_model/assets/identifier.md
+      - IP Address: open_asset_model/assets/ip_address.md
+      - Organization: open_asset_model/assets/organization.md
+      - Person: open_asset_model/assets/person.md
+      - Product: open_asset_model/assets/product.md
+      - TLS Certificate: open_asset_model/assets/tls_certificate.md
+      - URL: open_asset_model/assets/url.md
+    - Relations: 
+      - Relations: open_asset_model/relations/relation.md
+      - Simple Relation: open_asset_model/relations/simple_relation.md
+    - Properties:
+      - Properties: open_asset_model/properties/property.md
+      - Source Property: open_asset_model/properties/source_property.md
   - Configuration: configuration/configuration.md
   - Data Sources: data_sources/data_sources.md
   - AssetDB: assetDB/assetDB.md
   - Dashboards: dashboards/dashboards.md
   - Change Log: changelog/changelog.md
   - Contributing: contributing/contributing.md
-  
