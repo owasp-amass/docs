@@ -1,8 +1,6 @@
 # :simple-owasp: FQDN
 
-The **FQDN**, or **Fully Qualified Domain Name (FQDN)**, asset represents a complete and unambiguous domain name that specifies the exact location of a device or resource within a **Domain Name System (DNS)** namespace on the internet. DNS names are critical components of **open-source intelligence (OSINT)** and a comprehensive **attack surface intelligence** collection process. By organizing these assets alongside discovered attributes and relationships, the [Open Asset Model](https://github.com/owasp-amass/open-asset-model) reveals connections across diverse resources, enabling a holistic understanding of the asset landscape.
-
----
+The *Fully Qualified Domain Name* (**FQDN**) asset represents a complete and unambiguous domain name that precisely identifies the location of a device or resource within the *Domain Name System (DNS)* hierarchy. FQDNs are foundational elements in *open-source intelligence (OSINT)* and are essential to building a thorough *attack surface intelligence* profile. Within the [Open Asset Model](https://github.com/owasp-amass/open-asset-model), these assets are organized along with their associated attributes and relationships, helping to uncover connections between otherwise disparate resources. This structured representation enables a more comprehensive and contextualized view of an organization’s digital footprint.
 
 ## :material-dns: FQDN Attributes
 
@@ -12,7 +10,7 @@ The **FQDN**, or **Fully Qualified Domain Name (FQDN)**, asset represents a comp
 
 ## :material-dns: FQDN Outgoing Relations
 
-``` mermaid
+```mermaid
 graph TD
 fqdn1["FQDN (e.g. owasp.org)"]
 fqdn2["FQDN (e.g. vpn.owasp.org)"]
@@ -52,7 +50,7 @@ regrel --> domrec
 ---
 
 | Relation Label | Relation Type | Assets | Description |
-| :--------------: | :--------------: | :----------: | :---------- |
+| :--------------: | :---------------: | :--------------: | :------------ |
 | `dns_record` | [`BasicDNSRelation`](#basic_dns_relation) | [`FQDN`](#fqdn), [`IPAddress`](#ip_address) | Used for most RR types |
 | `dns_record` | [`PrefDNSRelation`](#pref_dns_relation) | [`FQDN`](#fqdn) | Used for RR types that have a preference attribute |
 | `dns_record` | [`SRVDNSRelation`](#srv_dns_relation) | [`FQDN`](#fqdn) | Used to support the SRV RR type |

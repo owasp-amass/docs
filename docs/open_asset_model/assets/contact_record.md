@@ -1,152 +1,57 @@
-# :simple-owasp: Contact 
+# :simple-owasp: ContactRecord
 
-The **Contact** entity, which holds assets such as `Email`, `Location`, and `Phone`, is a critical component of comprehensive **Attack Surface Intelligence**. By organizing these assets alongside discovered attributes and relationships, the [Open Asset Model](https://github.com/owasp-amass/open-asset-model) reveals connections across diverse resources, enabling a holistic understanding of the asset landscape.
+The **ContactRecord** asset serves as a connective entity that maintains a reliable audit trail of where contact information was discovered during the *attack surface intelligence* collection process. It plays a critical role in ensuring both flexibility and consistency within the [Open Asset Model](https://github.com/owasp-amass/open-asset-model), as it is uniformly applied wherever contact details are identified—regardless of the specific type of contact information uncovered. Because such information is often found in varied groupings, it's important to preserve the context in which each piece was associated. The **ContactRecord** makes this possible by capturing and storing the discovered contact data alongside its source location, maintaining their relationship within the model.
 
+## :material-contacts: ContactRecord Attributes
 
-Mirroring the adversary's perspective, the **Amass Engine** traces discovery paths, contextualizes insights at each contact point, and identifies exposures to strengthen situational awareness.
+| Attributes | Type | Required | Description |
+| -------- | ---- | :--------: | ----------- |
+| `discovered_at` | string | :material-check-decagram: | Unique URL or path to the contact information |
 
----
+## :material-contacts: ContactRecord Outgoing Relations
 
-## :material-hexagon-multiple: Collection 
-
-- **Complete Contact Coverage:** Provides a centralized view of standardized contact asset intelligence across **email**, **location**, and **phone**.
-- **Email Insights:** Tracks email connections to link addresses to specific **personnel and operational functions**, offering visibility into business process maturity.
-- **Location Details:** Includes specific location information, from physical addresses and building details to region and locality, for **complete geographic context**.
-- **Phone Numbers:** Captures the relationships between country codes, extensions, and subscriber **numbers with individuals and organizational** structures.
-- **Connected Data:** Traces the contact collection's discovery path to clarify its **origin, validity, and relevance** in investigative and data privacy contexts.
-
----
-
-!!! Info annotate "OAM Taxonomy"
-    The diagrams and data tables below outline the properties and incoming relationships for each `Contact Asset` type: `Email`, `Location`, and `Phone`. # (1)!
-
-1. :material-check-decagram: Required fields are denoted in the data tables.
-
----
-
-## :material-email: Email Address
-
-Email characteristics offer valuable intelligence for profiling and mapping an organization’s internal structure, operational contacts, and network ownership. Analyzing relationships among contact points makes it possible to trace domain ownership, uncover technical support channels, and reveal security response capabilities. This structured email data enriches the understanding of organizational roles and personnel responsibilities, providing a comprehensive view of the asset landscape through an offensive lens.
-
----
-
-!!! Danger "Email Requirements"
-    A full email `address`, formatted as a `string`, is required for mapping the related relationships.
-
----   
-
-``` mermaid
+```mermaid
 graph TD
-Contact[("Contact Assets")]
-Email("Email
-Properties")
+contact["ContactRecord"]
+fqdn["FQDN"]
 
-Email ==> Contact
+simple1@{ shape: braces, label: "fqdn"}
+contact --o simple1
+simple1 --> fqdn
 
-Person["Person"]
-Organization["Organization"]
-TLSCertificate["Fingerprint"]
-Registration["Registration"]
+id["Identifier"]
+simple2@{ shape: braces, label: "id"}
+contact --o simple2
+simple2 --> id
 
-registrationEmail@{ shape: braces, label: "admin_email
-tech_email
-billing_email
-registrant_email
-abuse_email"}
+org["Organization"]
+simple3@{ shape: braces, label: "organization"}
+contact --o simple3
+simple3 --> org
 
-personEmail@{ shape: braces, label: "email"}
-tlsEmail@{ shape: braces, label: "subject_email_address"}
+person["Person"]
+simple4@{ shape: braces, label: "person"}
+contact --o simple4
+simple4 --> person
 
-registrationEmail --> Email
-Registration --o registrationEmail
+phone["Phone"]
+simple5@{ shape: braces, label: "phone"}
+contact --o simple5
+simple5 --> phone
 
-personEmail --> Email
-Person --o personEmail
-Organization --o personEmail 
-
-tlsEmail --> Email
-TLSCertificate --o tlsEmail
+url["URL"]
+simple6@{ shape: braces, label: "url"}
+contact --o simple6
+simple6 --> url
 ```
 
 ---
 
-
-### :material-email: Email Properties
-
-| Property | Type | Required | Description |
-| -------- | ---- | :--------: | ----------- |
-| `address` | string | :material-check-decagram: | The full email address |
-| `local` | string | - | The local part of the email address |
-| `domain` | string | - | The part of the address after the @ symbol |
-
-
-#### Incoming Relationships
-
-| Relationship | Type |
-| ------------ | ---- |
-| `admin_email` | [`Whois`](#whois) |
-| `tech_email` | [`Whois`](#whois) |
-| `billing_email` | [`Whois`](#whois) |
-| `registrant_email` | [`Whois`](#whois) |
-| `email` | [`Person`](#person) |
-| `email` | [`Organization`](#organization) |
-| `abuse_email` | [`Registrar`](#registrar) |
-| `subject_email_address` | [`TLSCertificate`](#tls-certificate) |
-
----
-
-## :material-map-marker: Location
-
-| Property | Type | Required | Description |
-| -------- | ---- | :--------: | ----------- |
-| `formatted_address` | string | - | The formatted address |
-| `building_number` | string | - | the number of the building at the location |
-| `street_name` | string | - | the name of the street at the location |
-| `unit` | string | - | the unit number at the location |
-| `building` | string | - | the name of the building at the location |
-| `town` | string | - | the name town or city at the location |
-| `locality` | string | - | the locality at the location |
-| `region` | string | - | the name of the region or state at the location |
-| `country_code` | string | - | the ISO 3166-1 alpha-2 country code |
-| `postal_code` | string | - | the postal code at the location |
-
-
-#### Incoming Relationships
-
-| Relationship | Type |
-| ------------ | ---- |
-| `admin_location` | [`Whois`](#whois) |
-| `tech_location` | [`Whois`](#whois) |
-| `billing_location` | [`Whois`](#whois) |
-| `registrant_location` | [`Whois`](#whois) |
-| `location` | [`Person`](#person) |
-| `location` | [`Organization`](#organization) |
-| `subject_state_or_province` | [`TLSCertificate`](#tls-certificate) |
-| `subject_locality` | [`TLSCertificate`](#tls-certificate) |
-
----
-
-## :material-phone: Phone
-
-| Property | Type | Required | Description |
-| -------- | ---- | :--------: | ----------- |
-| `type` | string | - | The type of phone number |
-| `raw` | string | :material-check-decagram: | The raw phone number |
-| `e164` | string | - | The E.164 formatted phone number |
-| `country_abbrev` | string | - | The ISO 3166-1 alpha-2 country code |
-| `country_code` | string | - | The ISO 3166-1 numeric country code |
-| `subscriber_number` | string | - | The subscriber number |
-| `ext` | string | - | The extension of the phone number |
-
-
-#### Incoming Relationships
-
-| Relationship | Type |
-| ------------ | ---- |
-| `admin_phone` | [`Whois`](#whois) |
-| `tech_phone` | [`Whois`](#whois) |
-| `billing_phone` | [`Whois`](#whois) |
-| `registrant_phone` | [`Whois`](#whois) |
-| `phone_number` | [`Person`](#person) |
-| `phone_number` | [`Organization`](#organization) |
-| `abuse_phone` | [`Registrar`](#registrar) |
+| Relation Label | Relation Type | Assets | Description |
+| :--------------: | :---------------: | :--------------: | :------------ |
+| `fqdn` | [`SimpleRelation`](#simple_relation) | [`FQDN`](#fqdn) | Represents a FQDN discovered in the contact information |
+| `id` | [`SimpleRelation`](#simple_relation) | [`Identifier`](#identifer) | Represents an ID (e.g. email address) in the contact information |
+| `organization` | [`SimpleRelation`](#simple_relation) | [`Organization`](#organization) | Represents an organization name in the contact information |
+| `person` | [`SimpleRelation`](#simple_relation) | [`Person`](#person) | Represents a person's name discovered with the contact information |
+| `phone` | [`SimpleRelation`](#simple_relation) | [`Phone`](#phone) | Represents a phone number in the contact information |
+| `url` | [`SimpleRelation`](#simple_relation) | [`URL`](#url) | Represents an URL discovered in the contact information |

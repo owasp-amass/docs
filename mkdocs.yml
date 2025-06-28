@@ -10,7 +10,7 @@ site_description: "In-depth OSINT collection and external attack surface mapping
 site_author: OWASP Amass Contributors
 remote_branch: gh-pages
 
-#copyright: 
+#copyright: 2025 Jeff Foley
 
 theme:
   name: 'material'
@@ -22,14 +22,14 @@ theme:
     - media: '(prefers-color-scheme: light)'
       scheme: default
       primary: 'black'
-      accent: 'red'
+      accent: 'blue'
       toggle:
         icon: material/toggle-switch
         name: Switch to dark mode
     - media: '(prefers-color-scheme: dark)'
       scheme: slate
       primary: 'black'
-      accent: 'red'
+      accent: 'blue'
       toggle:
         icon: material/toggle-switch-off-outline
         name: Switch to light mode
