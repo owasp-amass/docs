@@ -10,14 +10,12 @@ The **FQDN**, or **Fully Qualified Domain Name (FQDN)**, asset represents a comp
 | -------- | ---- | :--------: | ----------- |
 | `name` | string | :material-check-decagram: | Unique fully qualified domain name (e.g. www.example.com) |
 
----
-
 ## :material-dns: FQDN Outgoing Relations
 
 ``` mermaid
 graph TD
-fqdn1["FQDN (e.g. example.com)"]
-fqdn2["FQDN (e.g. www.example.com)"]
+fqdn1["FQDN (e.g. owasp.org)"]
+fqdn2["FQDN (e.g. vpn.owasp.org)"]
 nodeRel@{ shape: braces, label: "node"}
 fqdn1 --o nodeRel
 nodeRel --> fqdn2
@@ -30,12 +28,12 @@ basicdns1 --> ipaddr
 fqdn2 --o basicdns2
 basicdns2 --> ipaddr
 
-fqdn3["FQDN (e.g. send.example.com)"]
+fqdn3["FQDN (e.g. send.owasp.org)"]
 prefdns@{ shape: braces, label: "dns_record"}
 fqdn1 --o prefdns
 prefdns --> fqdn3
 
-fqdn4["FQDN (e.g. _sip._tcp.example.com)"]
+fqdn4["FQDN (e.g. _sip._tcp.owasp.org)"]
 srvdns@{ shape: braces, label: "dns_record"}
 fqdn4 --o srvdns
 srvdns --> fqdn1
@@ -51,8 +49,10 @@ fqdn1 --o regrel
 regrel --> domrec
 ```
 
+---
+
 | Relation Label | Relation Type | Assets | Description |
-| -------------- | -------------- | -------------- | -------------- |
+| :--------------: | :--------------: | :----------: | :---------- |
 | `dns_record` | [`BasicDNSRelation`](#basic_dns_relation) | [`FQDN`](#fqdn), [`IPAddress`](#ip_address) | Used for most RR types |
 | `dns_record` | [`PrefDNSRelation`](#pref_dns_relation) | [`FQDN`](#fqdn) | Used for RR types that have a preference attribute |
 | `dns_record` | [`SRVDNSRelation`](#srv_dns_relation) | [`FQDN`](#fqdn) | Used to support the SRV RR type |
