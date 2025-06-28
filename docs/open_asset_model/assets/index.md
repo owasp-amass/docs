@@ -1,8 +1,8 @@
-# :simple-owasp: `Assets`
+# :simple-owasp: Assets
 
 In the [OWASP](https://owasp.org) [Open Asset Model](https://github.com/owasp-amass/open-asset-model), an asset represents any discrete, observable element in the external environment of an organization that holds security or operational relevance. Assets can range from technical resources like domain names and IP addresses to organizational constructs such as legal entities and brand names. What makes assets central to the model is that they serve as the primary objects of analysis—entities that can be discovered, attributed, linked, enriched, and ultimately assessed for risk. Each asset is uniquely identified, carries contextual metadata such as confidence and source of discovery, and participates in a web of typed relationships that form a dynamic, queryable graph of an organization's external footprint.
 
-## Why *Assets* Are the First‑Class Citizens
+## :material-graph-outline: Why *Assets* Are the First‑Class Citizens
 
 In the **Open Asset Model (OAM)**, *assets* are the atomic units of knowledge that describe an organization’s externally observable footprint.  Every other class in the model—attributes, properties, relations—exists to enrich or contextualize an asset.  By treating *everything discoverable* (from a DNS name to a cloud storage bucket) as an asset, we gain three strategic advantages:
 
@@ -10,7 +10,7 @@ In the **Open Asset Model (OAM)**, *assets* are the atomic units of knowledge th
 2. **Composable Reasoning** – Graph analytics, enrichment, and risk scoring can be applied consistently because every node shares a common set of metadata fields (`id`, `confidence`, `source` …).
 3. **Auditability** – Each asset retains a pointer to discovery provenance, making it trivial to reproduce findings or trace errors.
 
-## Asset Definition
+## :material-graph-outline: Asset Definition
 
 > **Asset**: *An identifiable object—digital, network, or legal—that an organization owns, operates, or relies on and that can be observed from outside the security perimeter.*
 
@@ -23,7 +23,7 @@ An asset is **not** just a label; it is a self‑contained document that answers
 3. **How certain are we?**\
    A *confidence* score that downstream pipelines can use to gate actions.
 
-## Asset Taxonomy (Partial)
+## :material-graph-outline: Asset Taxonomy (Partial)
 
 | Category               | Example Asset Types                                    | Typical Sources                       |
 | ---------------------- | ------------------------------------------------------ | ------------------------------------- |
@@ -35,20 +35,19 @@ An asset is **not** just a label; it is a self‑contained document that answers
 
 *This list is intentionally open‑ended; community pull requests routinely add new asset types as technology evolves.*
 
-## Core Asset Attributes
+## :material-graph-outline: Core Asset Attributes
 
 Every asset embeds a minimal yet powerful set of metadata:
 
 ```json
 type: "FQDN"
-value: "login.example.com"
 created_at: "2025-06-11"
 last_seen: "2025-06-27"
 ```
 
 Additional attributes are type‑specific—for instance, an `IPAddress` has the **address** field, while an `Organization` stores jurisdiction and registration numbers.
 
-## Relationships: Building the Graph
+## :material-graph-outline: Relationships: Building the Graph
 
 Assets rarely exist in isolation.  The model expresses **typed, directed edges** such as:
 
@@ -59,7 +58,7 @@ Assets rarely exist in isolation.  The model expresses **typed, directed edges**
 
 These links turn the asset collection into a searchable **property graph**, enabling path‑finding queries like *“Which IP ranges host domains that roll up to Acme Corp’s legal entities?”*
 
-## Lifecycle in the Discovery Pipeline
+## :material-graph-outline: Lifecycle in the Discovery Pipeline
 
 ```mermaid
 flowchart LR
@@ -77,7 +76,7 @@ flowchart LR
 4. **Enrichment** – Plugins append properties, such as alternative names, vulnerabilities, etc.
 5. **Analytics & Export** – Downstream tools run path queries, generate reports, or feed alerting pipelines.
 
-## Quick Example: From Evidence to Asset
+## :material-graph-outline: Quick Example: From Evidence to Asset
 
 Imagine Amass extracts the email address *security@example.com* from the footer of *www.example.com*:
 
@@ -91,16 +90,15 @@ The *web scraper* module produces:
 ```json
 type: "ContactRecord"
 discovered_at: "http://www.example.com"
-value: "security@example.com"
 created_at: "2025-06-28"
 last_seen: "2025-06-28"
 ```
 
 An edge will be created between the **ContactRecord** and **Identifier** containing the email address (security@example.com). Future encounters with the same email address will reference the same asset in the graph.
 
-## Where to Go Next
+## :material-graph-outline: Where to Go Next
 
-Take a look at the pages with details for every asset type.
+Take a look at the pages where details are provided for each asset type.
 
 - [Relations](../relations/index.md) – Overview of Relations in the Open Asset Model.
 - [Properties](../properties/index.md) - Overview of a Property in the Open Asset Model.

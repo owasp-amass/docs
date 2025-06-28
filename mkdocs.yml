@@ -120,17 +120,17 @@ nav:
     - Assets: 
       - Assets: open_asset_model/assets/index.md
       - Account: open_asset_model/assets/account.md
-      - Contact Record: open_asset_model/assets/contact_record.md
-      - Domain Record: open_asset_model/assets/domain_record.md
+      - ContactRecord: open_asset_model/assets/contact_record.md
+      - DomainRecord: open_asset_model/assets/domain_record.md
       - File: open_asset_model/assets/file.md
       - FQDN: open_asset_model/assets/fqdn.md
-      - Funds Transfer: open_asset_model/assets/funds_transfer.md
+      - FundsTransfer: open_asset_model/assets/funds_transfer.md
       - Identifier: open_asset_model/assets/identifier.md
-      - IP Address: open_asset_model/assets/ip_address.md
+      - IPAddress: open_asset_model/assets/ip_address.md
       - Organization: open_asset_model/assets/organization.md
       - Person: open_asset_model/assets/person.md
       - Product: open_asset_model/assets/product.md
-      - TLS Certificate: open_asset_model/assets/tls_certificate.md
+      - TLSCertificate: open_asset_model/assets/tls_certificate.md
       - URL: open_asset_model/assets/url.md
     - Relations: 
       - Relations: open_asset_model/relations/index.md
