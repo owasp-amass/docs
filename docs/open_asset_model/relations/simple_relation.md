@@ -1,6 +1,6 @@
 # :simple-owasp: SimpleRelation
 
-TThe **SimpleRelation** in the [OWASP](https://owasp.org) [Open Asset Model](https://github.com/owasp-amass/open-asset-model) (OAM) is the most straightforward way to express a connection between two assets.
+The **SimpleRelation** in the [OWASP](https://owasp.org) [Open Asset Model](https://github.com/owasp-amass/open-asset-model) (OAM) is the most straightforward way to express a connection between two assets.
 
 - **Definition:** A `SimpleRelation` signifies a directed relationship from one asset to another, capturing things like `dns_record`, `contains`, or `announces`, without added complexity or metadata. It links one asset (the subject) to another (the object).
 
@@ -13,12 +13,11 @@ In essence, the `SimpleRelation` is a clean, minimal tool used within the OAM to
 ## :material-relation-one-to-one: SimpleRelation Attributes
 
 | Attributes | Type | Required | Description |
-| -------- | ---- | :--------: | ----------- |
+| :--------: | :----: | :--------: | :----------- |
 | `label` | string | :material-check-decagram: | The label for the relation between two assets |
 
 ## :material-relation-one-to-one: SimpleRelation Properties
 
 | Property Type | Property Name | Description |
 | :--------------: | :---------------: | :------------ |
-| [`SimpleProperty`](../properties/simple_property.md) | `last_monitored` | Tracks when a data source was last queried regarding this relationship |
 | [`SourceProperty`](../properties/source_property.md) | Source Plugin Name | Indicates that the specified data source discovered this SimpleRelation |

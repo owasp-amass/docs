@@ -134,13 +134,22 @@ nav:
       - URL: open_asset_model/assets/url.md
     - Relations: 
       - Relations: open_asset_model/relations/index.md
-      - Simple Relation: open_asset_model/relations/simple_relation.md
+      - BasicDNSRelation: open_asset_model/relations/basic_dns_relation.md
+      - PortRelation: open_asset_model/relations/port_relation.md
+      - PrefDNSRelation: open_asset_model/relations/pref_dns_relation.md
+      - SimpleRelation: open_asset_model/relations/simple_relation.md
+      - SRVDNSRelation: open_asset_model/relations/srv_dns_relation.md
     - Properties:
       - Properties: open_asset_model/properties/index.md
-      - Source Property: open_asset_model/properties/source_property.md
-  - Configuration: configuration/configuration.md
-  - Data Sources: data_sources/data_sources.md
-  - AssetDB: assetDB/assetDB.md
-  - Dashboards: dashboards/dashboards.md
-  - Change Log: changelog/changelog.md
+      - DNSRecordProperty: open_asset_model/properties/dns_property.md
+      - SimpleProperty: open_asset_model/properties/simple_property.md
+      - SourceProperty: open_asset_model/properties/source_property.md
+      - VulnProperty: open_asset_model/properties/vuln_property.md
+  - Configuration:
+    - Configuration: open_asset_model/configuration/index.md
+    - Data Sources: open_asset_model/configuration/data_sources.md
+  - Asset DB:
+    - Asset DB: asset_db/index.md
+    - Triples: asset_db/triples.md
+    - Transformations: asset_db/transformations.md
   - Contributing: contributing/contributing.md

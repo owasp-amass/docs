@@ -5,7 +5,7 @@ The *Fully Qualified Domain Name* (**FQDN**) asset represents a complete and una
 ## :material-dns: FQDN Attributes
 
 | Attributes | Type | Required | Description |
-| -------- | ---- | :--------: | ----------- |
+| :--------: | :----: | :--------: | :----------- |
 | `name` | string | :material-check-decagram: | Unique fully qualified domain name (e.g. www.example.com) |
 
 ## :material-dns: FQDN Properties
