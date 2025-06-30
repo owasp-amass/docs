@@ -8,6 +8,13 @@ The **ContactRecord** asset serves as a connective entity that maintains a relia
 | -------- | ---- | :--------: | ----------- |
 | `discovered_at` | string | :material-check-decagram: | Unique URL or path to the contact information |
 
+## :material-contacts: ContactRecord Properties
+
+| Property Type | Property Name | Description |
+| :--------------: | :---------------: | :------------ |
+| [`SimpleProperty`](../properties/simple_property.md) | `last_monitored` | Tracks when a data source was last queried for this ContactRecord |
+| [`SourceProperty`](../properties/source_property.md) | Source Plugin Name | Indicates that the specified data source discovered this ContactRecord |
+
 ## :material-contacts: ContactRecord Outgoing Relations
 
 ```mermaid
@@ -47,11 +54,11 @@ simple6 --> url
 
 ---
 
-| Relation Label | Relation Type | Assets | Description |
+| Relation Type | Relation Label | Target Assets | Description |
 | :--------------: | :---------------: | :--------------: | :------------ |
-| `fqdn` | [`SimpleRelation`](#simple_relation) | [`FQDN`](#fqdn) | Represents a FQDN discovered in the contact information |
-| `id` | [`SimpleRelation`](#simple_relation) | [`Identifier`](#identifer) | Represents an ID (e.g. email address) in the contact information |
-| `organization` | [`SimpleRelation`](#simple_relation) | [`Organization`](#organization) | Represents an organization name in the contact information |
-| `person` | [`SimpleRelation`](#simple_relation) | [`Person`](#person) | Represents a person's name discovered with the contact information |
-| `phone` | [`SimpleRelation`](#simple_relation) | [`Phone`](#phone) | Represents a phone number in the contact information |
-| `url` | [`SimpleRelation`](#simple_relation) | [`URL`](#url) | Represents an URL discovered in the contact information |
+| [`SimpleRelation`](../relations/simple_relation.md) | `fqdn` | [`FQDN`](#fqdn) | Represents a FQDN discovered in the contact information |
+| [`SimpleRelation`](../relations/simple_relation.md) | `id` | [`Identifier`](#identifer) | Represents an ID (e.g. email address) in the contact information |
+| [`SimpleRelation`](../relations/simple_relation.md) | `organization` | [`Organization`](#organization) | Represents an organization name in the contact information |
+| [`SimpleRelation`](../relations/simple_relation.md) | `person` | [`Person`](#person) | Represents a person's name discovered with the contact information |
+| [`SimpleRelation`](../relations/simple_relation.md) | `phone` | [`Phone`](#phone) | Represents a phone number in the contact information |
+| [`SimpleRelation`](../relations/simple_relation.md) | `url` | [`URL`](#url) | Represents an URL discovered in the contact information |

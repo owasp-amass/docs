@@ -8,6 +8,14 @@ The *Fully Qualified Domain Name* (**FQDN**) asset represents a complete and una
 | -------- | ---- | :--------: | ----------- |
 | `name` | string | :material-check-decagram: | Unique fully qualified domain name (e.g. www.example.com) |
 
+## :material-dns: FQDN Properties
+
+| Property Type | Property Name | Description |
+| :--------------: | :---------------: | :------------ |
+| [`SimpleProperty`](../properties/simple_property.md) | `last_monitored` | Tracks when a data source was last queried for this FQDN |
+| [`SourceProperty`](../properties/source_property.md) | Source Plugin Name | Indicates that the specified data source discovered this FQDN |
+| [`DNSRecordProperty`](../properties/dns_property.md) | `dns_record` | Represents a DNS record for this FQDN that provides only data |
+
 ## :material-dns: FQDN Outgoing Relations
 
 ```mermaid
@@ -49,11 +57,11 @@ regrel --> domrec
 
 ---
 
-| Relation Label | Relation Type | Assets | Description |
+| Relation Type | Relation Label | Target Assets | Description |
 | :--------------: | :---------------: | :--------------: | :------------ |
-| `dns_record` | [`BasicDNSRelation`](#basic_dns_relation) | [`FQDN`](#fqdn), [`IPAddress`](#ip_address) | Used for most RR types |
-| `dns_record` | [`PrefDNSRelation`](#pref_dns_relation) | [`FQDN`](#fqdn) | Used for RR types that have a preference attribute |
-| `dns_record` | [`SRVDNSRelation`](#srv_dns_relation) | [`FQDN`](#fqdn) | Used to support the SRV RR type |
-| `node` | [`SimpleRelation`](#simple_relation) | [`FQDN`](#fqdn) | Links a DNS zone apex to nodes within the zone |
-| `port` | [`PortRelation`](#port_relation) | [`Service`](#service) | Represents a port at the FQDN with a responding service |
-| `registration` | [`SimpleRelation`](#simple_relation) | [`DomainRecord`](#domain_record) | Links a root domain to registration data |
+| [`BasicDNSRelation`](../relations/basic_dns_relation.md) | `dns_record` | [`FQDN`](#fqdn), [`IPAddress`](#ip_address) | Represents most RR types |
+| [`PrefDNSRelation`](../relations/pref_dns_relation.md) | `dns_record` | [`FQDN`](#fqdn) | Utilized for RR types that have a preference attribute |
+| [`SRVDNSRelation`](../relations/srv_dns_relation.md) | `dns_record` | [`FQDN`](#fqdn) | Represents the SRV Resource Record type |
+| [`SimpleRelation`](../relations/simple_relation.md) | `node` | [`FQDN`](#fqdn) | Links a DNS zone apex to nodes within the zone |
+| [`PortRelation`](../relations/port_relation.md) | `port` | [`Service`](#service) | Represents a port at the FQDN with a responding service |
+| [`SimpleRelation`](../relations/simple_relation.md) | `registration` | [`DomainRecord`](#domain_record) | Links a root domain to its associated registration data |
