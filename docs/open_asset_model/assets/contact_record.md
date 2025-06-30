@@ -12,7 +12,7 @@ The **ContactRecord** asset serves as a connective entity that maintains a relia
 
 | Property Type | Property Name | Description |
 | :--------------: | :---------------: | :------------ |
-| [`SimpleProperty`](../properties/simple_property.md) | `last_monitored` | Tracks when a data source was last queried for this ContactRecord |
+| [`SimpleProperty`](../properties/simple_property.md) | `last_monitored` | Tracks when a data source was last queried regarding this ContactRecord |
 | [`SourceProperty`](../properties/source_property.md) | Source Plugin Name | Indicates that the specified data source discovered this ContactRecord |
 
 ## :material-contacts: ContactRecord Outgoing Relations

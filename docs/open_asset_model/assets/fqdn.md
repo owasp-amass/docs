@@ -1,6 +1,6 @@
 # :simple-owasp: FQDN
 
-The *Fully Qualified Domain Name* (**FQDN**) asset represents a complete and unambiguous domain name that precisely identifies the location of a device or resource within the *Domain Name System (DNS)* hierarchy. FQDNs are foundational elements in *open-source intelligence (OSINT)* and are essential to building a thorough *attack surface intelligence* profile. Within the [Open Asset Model](https://github.com/owasp-amass/open-asset-model), these assets are organized along with their associated attributes and relationships, helping to uncover connections between otherwise disparate resources. This structured representation enables a more comprehensive and contextualized view of an organization’s digital footprint.
+The *Fully Qualified Domain Name* (**FQDN**) asset represents a complete and unambiguous domain name that precisely identifies the location of a device or resource within the *Domain Name System (DNS)* hierarchy. FQDNs are foundational elements in *open-source intelligence (OSINT)* and are essential to building a thorough *attack surface intelligence* profile. Within the [Open Asset Model](https://github.com/owasp-amass/open-asset-model), these assets are organized along with their associated attributes and relationships, helping to uncover connections between otherwise disparate resources. This structured representation enables a more comprehensive and contextualized view of the organization digital footprint.
 
 ## :material-dns: FQDN Attributes
 
@@ -12,7 +12,7 @@ The *Fully Qualified Domain Name* (**FQDN**) asset represents a complete and una
 
 | Property Type | Property Name | Description |
 | :--------------: | :---------------: | :------------ |
-| [`SimpleProperty`](../properties/simple_property.md) | `last_monitored` | Tracks when a data source was last queried for this FQDN |
+| [`SimpleProperty`](../properties/simple_property.md) | `last_monitored` | Tracks when a data source was last queried regarding this FQDN |
 | [`SourceProperty`](../properties/source_property.md) | Source Plugin Name | Indicates that the specified data source discovered this FQDN |
 | [`DNSRecordProperty`](../properties/dns_property.md) | `dns_record` | Represents a DNS record for this FQDN that provides only data |
 
