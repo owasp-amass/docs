@@ -12,12 +12,12 @@ In essence, the `SimpleRelation` is a clean, minimal tool used within the OAM to
 
 ## :material-relation-one-to-one: SimpleRelation Attributes
 
-| Attributes | Type | Required | Description |
-| :--------: | :----: | :--------: | :----------- |
+| Attributes       | Type      | Required   | Description  |
+| :--------------: | :-------: | :--------: | :----------- |
 | `label` | string | :material-check-decagram: | The label for the relation between two assets |
 
 ## :material-relation-one-to-one: SimpleRelation Properties
 
-| Property Type | Property Name | Description |
-| :--------------: | :---------------: | :------------ |
+| Property Type       | Property Name       | Description   |
+| :-----------------: | :-----------------: | :------------ |
 | [`SourceProperty`](../properties/source_property.md) | Source Plugin Name | Indicates that the specified data source discovered this SimpleRelation |

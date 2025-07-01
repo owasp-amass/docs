@@ -15,8 +15,8 @@ By modeling DNS data with a dedicated property type, `DNSRecordProperty` enables
 
 ## :fontawesome-solid-tags: DNSRecordProperty Attributes
 
-| Attributes       | Type   | Required | Description |
-| :------------------: | :--------: | :----------: | :------------- |
+| Attributes       | Type      | Required   | Description  |
+| :--------------: | :-------: | :--------: | :----------- |
 | `property_name`    | string | :material-check-decagram: | The name of the property that should be `dns_record` |
 | `header.rr_type` | number | :material-check-decagram: | Specifies the type of resource within the DNS record |
 | `header.class` | number | :material-checkbox-blank-circle-outline: | 1, IN class (Internet), is the most commonly used |

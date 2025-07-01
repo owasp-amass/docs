@@ -15,7 +15,7 @@ All Amass engine plugins mark discovered assets and associations between them wi
 
 ## :fontawesome-solid-tags: SourceProperty Attributes
 
-| Attributes | Type | Required | Description |
-| :--------: | :----: | :--------: | :----------- |
+| Attributes       | Type      | Required   | Description  |
+| :--------------: | :-------: | :--------: | :----------- |
 | `name` | string | :material-check-decagram: | Name of the engine plugin that discovered the asset or relation |
 | `confidence` | number | :material-checkbox-blank-circle-outline: | A value 0 through 100 representing the confidence percentage |

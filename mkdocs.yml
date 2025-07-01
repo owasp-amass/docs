@@ -127,6 +127,7 @@ nav:
       - FundsTransfer: open_asset_model/assets/funds_transfer.md
       - Identifier: open_asset_model/assets/identifier.md
       - IPAddress: open_asset_model/assets/ip_address.md
+      - Netblock: open_asset_model/assets/netblock.md
       - Organization: open_asset_model/assets/organization.md
       - Person: open_asset_model/assets/person.md
       - Product: open_asset_model/assets/product.md

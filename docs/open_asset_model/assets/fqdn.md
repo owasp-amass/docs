@@ -1,17 +1,25 @@
 # :simple-owasp: FQDN
 
-The *Fully Qualified Domain Name* (**FQDN**) asset represents a complete and unambiguous domain name that precisely identifies the location of a device or resource within the *Domain Name System (DNS)* hierarchy. FQDNs are foundational elements in *open-source intelligence (OSINT)* and are essential to building a thorough *attack surface intelligence* profile. Within the [Open Asset Model](https://github.com/owasp-amass/open-asset-model), these assets are organized along with their associated attributes and relationships, helping to uncover connections between otherwise disparate resources. This structured representation enables a more comprehensive and contextualized view of the organization digital footprint.
+The **FQDN** (Fully Qualified Domain Name) asset type in the [OWASP](https://owasp.org) [Open Asset Model](https://github.com/owasp-amass/open-asset-model) (OAM) represents a fully specified domain name that uniquely identifies a resource within the DNS hierarchy. FQDNs are foundational elements in *open-source intelligence (OSINT)* and are essential to building a thorough *attack surface intelligence* profile.
+
+- **Definition:** An `FQDN` asset contains a domain name string (e.g., `www.example.com`). It refers to the complete and unambiguous name of a host or service as resolved through DNS.
+
+- **Purpose:** This asset type enables the modeling of DNS-resolvable names as distinct entities within an attack surface. `FQDN` assets are critical for tracing how external users and systems access internal infrastructure, through domain-based references rather than direct IP addresses.
+
+- **Design Choice:** By treating FQDNs as first-class assets, the model supports DNS resolution chains (via relations like `BasicDNSRelation`, `PrefDNSRelation`, and `SRVDNSRelation`) and links to IP addresses, services, or other host-based assets. This allows security teams to analyze exposure, misconfigurations, or shadow assets rooted in DNS name usage.
+
+In summary, the `FQDN` asset type provides a precise and structured way to represent domain-based identifiers in the OAM, serving as a core building block for understanding how infrastructure is referenced and accessed over the internet or internal networks.
 
 ## :material-dns: FQDN Attributes
 
-| Attributes | Type | Required | Description |
-| :--------: | :----: | :--------: | :----------- |
+| Attributes       | Type      | Required   | Description  |
+| :--------------: | :-------: | :--------: | :----------- |
 | `name` | string | :material-check-decagram: | Unique fully qualified domain name (e.g. www.example.com) |
 
 ## :material-dns: FQDN Properties
 
-| Property Type | Property Name | Description |
-| :--------------: | :---------------: | :------------ |
+| Property Type       | Property Name       | Description   |
+| :-----------------: | :-----------------: | :------------ |
 | [`SimpleProperty`](../properties/simple_property.md) | `last_monitored` | Tracks when a data source was last queried regarding this FQDN |
 | [`SourceProperty`](../properties/source_property.md) | Source Plugin Name | Indicates that the specified data source discovered this FQDN |
 | [`DNSRecordProperty`](../properties/dns_property.md) | `dns_record` | Represents a DNS record for this FQDN that provides only data |
@@ -26,7 +34,7 @@ nodeRel@{ shape: braces, label: "node"}
 fqdn1 --o nodeRel
 nodeRel --> fqdn2
 
-ipaddr["IP Address"]
+ipaddr["IPAddress"]
 basicdns1@{ shape: braces, label: "dns_record"}
 basicdns2@{ shape: braces, label: "dns_record"}
 fqdn1 --o basicdns1
@@ -49,7 +57,7 @@ port@{ shape: braces, label: "port"}
 fqdn2 --o port
 port --> service
 
-domrec["Domain Record"]
+domrec["DomainRecord"]
 regrel@{ shape: braces, label: "registration"}
 fqdn1 --o regrel
 regrel --> domrec
@@ -57,8 +65,8 @@ regrel --> domrec
 
 ---
 
-| Relation Type | Relation Label | Target Assets | Description |
-| :--------------: | :---------------: | :--------------: | :------------ |
+| Relation Type       | Relation Label     | Target Assets    | Description   |
+| :-----------------: | :----------------: | :--------------: | :------------ |
 | [`BasicDNSRelation`](../relations/basic_dns_relation.md) | `dns_record` | [`FQDN`](#fqdn), [`IPAddress`](#ip_address) | Represents most RR types |
 | [`PrefDNSRelation`](../relations/pref_dns_relation.md) | `dns_record` | [`FQDN`](#fqdn) | Utilized for RR types that have a preference attribute |
 | [`SRVDNSRelation`](../relations/srv_dns_relation.md) | `dns_record` | [`FQDN`](#fqdn) | Represents the SRV Resource Record type |

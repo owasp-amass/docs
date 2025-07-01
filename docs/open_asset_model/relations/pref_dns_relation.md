@@ -12,8 +12,8 @@ In summary, `PrefDNSRelation` extends basic DNS modeling by introducing priority
 
 ## :material-relation-one-to-one: PrefDNSRelation Attributes
 
-| Attributes | Type | Required | Description |
-| -------- | ---- | :--------: | ----------- |
+| Attributes       | Type      | Required   | Description  |
+| :--------------: | :-------: | :--------: | :----------- |
 | `label` | string | :material-check-decagram: | The label for the relation between two assets |
 | `header.rr_type` | number | :material-check-decagram: | Specifies the type of resource within the DNS record |
 | `header.class` | number | :material-checkbox-blank-circle-outline: | 1, IN class (Internet), is the most commonly used |
@@ -22,7 +22,6 @@ In summary, `PrefDNSRelation` extends basic DNS modeling by introducing priority
 
 ## :material-relation-one-to-one: PrefDNSRelation Properties
 
-| Property Type | Property Name | Description |
-| :--------------: | :---------------: | :------------ |
-| [`SimpleProperty`](../properties/simple_property.md) | `last_monitored` | Tracks when a data source was last queried regarding this relationship |
+| Property Type       | Property Name       | Description   |
+| :-----------------: | :-----------------: | :------------ |
 | [`SourceProperty`](../properties/source_property.md) | Source Plugin Name | Indicates that the specified data source discovered this PrefDNSRelation |

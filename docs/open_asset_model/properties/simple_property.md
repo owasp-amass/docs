@@ -15,7 +15,7 @@ In practice, `SimpleProperty` entries are often used when importing information 
 
 ## :fontawesome-solid-tags: SimpleProperty Attributes
 
-| Attributes | Type | Required | Description |
-| :--------: | :----: | :--------: | :----------- |
+| Attributes       | Type      | Required   | Description  |
+| :--------------: | :-------: | :--------: | :----------- |
 | `property_name` | string | :material-check-decagram: | A string that identifies the nature or role of the property |
 | `property_value` | string | :material-check-decagram: | A string-encoded representation of the property's actual value |

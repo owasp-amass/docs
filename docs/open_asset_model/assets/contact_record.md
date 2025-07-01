@@ -4,14 +4,14 @@ The **ContactRecord** asset serves as a connective entity that maintains a relia
 
 ## :material-contacts: ContactRecord Attributes
 
-| Attributes | Type | Required | Description |
-| -------- | ---- | :--------: | ----------- |
+| Attributes       | Type      | Required   | Description  |
+| :--------------: | :-------: | :--------: | :----------- |
 | `discovered_at` | string | :material-check-decagram: | Unique URL or path to the contact information |
 
 ## :material-contacts: ContactRecord Properties
 
-| Property Type | Property Name | Description |
-| :--------------: | :---------------: | :------------ |
+| Property Type       | Property Name       | Description   |
+| :-----------------: | :-----------------: | :------------ |
 | [`SimpleProperty`](../properties/simple_property.md) | `last_monitored` | Tracks when a data source was last queried regarding this ContactRecord |
 | [`SourceProperty`](../properties/source_property.md) | Source Plugin Name | Indicates that the specified data source discovered this ContactRecord |
 
@@ -54,8 +54,8 @@ simple6 --> url
 
 ---
 
-| Relation Type | Relation Label | Target Assets | Description |
-| :--------------: | :---------------: | :--------------: | :------------ |
+| Relation Type       | Relation Label     | Target Assets    | Description   |
+| :-----------------: | :----------------: | :--------------: | :------------ |
 | [`SimpleRelation`](../relations/simple_relation.md) | `fqdn` | [`FQDN`](#fqdn) | Represents a FQDN discovered in the contact information |
 | [`SimpleRelation`](../relations/simple_relation.md) | `id` | [`Identifier`](#identifer) | Represents an ID (e.g. email address) in the contact information |
 | [`SimpleRelation`](../relations/simple_relation.md) | `organization` | [`Organization`](#organization) | Represents an organization name in the contact information |

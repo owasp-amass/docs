@@ -17,8 +17,8 @@ By standardizing how vulnerability metadata is attached to assets and relations,
 
 ## :fontawesome-solid-tags: VulnProperty Attributes
 
-| Attributes     | Type   | Required | Description |
-| :----------------: | :--------: | :----------: | :------------- |
+| Attributes       | Type      | Required   | Description  |
+| :--------------: | :-------: | :--------: | :----------- |
 | `id`           | string | :material-check-decagram: | A unique identifier for the vulnerability (e.g., `CVE-2024-12345`) |
 | `desc`         | string | :material-check-decagram: | A brief human-readable summary of the vulnerability |
 | `source`       | string | :material-checkbox-blank-circle-outline: | The name of the tool, feed, or method that reported the vulnerability |
