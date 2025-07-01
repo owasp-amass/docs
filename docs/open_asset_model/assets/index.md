@@ -16,11 +16,11 @@ In the **Open Asset Model (OAM)**, *assets* are the atomic units of knowledge th
 
 An asset is **not** just a label; it is a self‑contained document that answers three questions:
 
-1. **What is it?**\
+1. **What is it?**
    A type‑specific schema (e.g., *FQDN*, *TLSCertificate*, *AutonomousSystem*).
-2. **Where did it come from?**\
+2. **Where did it come from?**
    One or more *DiscoveryMethods* with timestamps and collection method.
-3. **How certain are we?**\
+3. **How certain are we?**
    A *confidence* score that downstream pipelines can use to gate actions.
 
 ## :material-graph-outline: Asset Taxonomy (Partial)
