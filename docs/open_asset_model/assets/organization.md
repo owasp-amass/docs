@@ -72,7 +72,7 @@ social_media_profile" }
 org --o urlrel
 urlrel --> url
 
-account["Identifier"]
+account["Account"]
 acctrel@{ shape: braces, label: "account" }
 org --o acctrel
 acctrel --> account
