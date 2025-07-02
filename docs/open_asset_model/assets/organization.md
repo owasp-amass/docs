@@ -26,15 +26,15 @@ The `Organization` asset enables enrichment and correlation of digital infrastru
 |--------------------|-------------------|----------|-------------|
 | `unique_id`        | string            | :material-check-decagram: | Unique identifier for the organization within the model |
 | `name`             | string            | :material-check-decagram: | Common name used to identify the organization |
-| `legal_name`       | string            | :material-check-circle: | Official registered name of the organization |
-| `founding_date`    | string (date)     | :material-check-circle: | Date when the organization was founded (e.g., `2004-09-15`) |
-| `jurisdiction`     | string            | :material-check-circle: | Legal jurisdiction of incorporation (e.g., `US-DE`) |
-| `registration_id`  | string            | :material-check-circle: | Registered entity ID from a business registry |
-| `industry`         | string            | :material-check-circle: | Sector classification (e.g., `Cybersecurity`, `E-Commerce`) |
-| `target_markets`   | array of strings  | :material-check-circle: | Markets or regions the organization serves (e.g., `US`, `EU`) |
-| `active`           | boolean           | :material-check-circle: | Whether the organization is currently active |
-| `non_profit`       | boolean           | :material-check-circle: | Whether the organization is a nonprofit |
-| `headcount`        | number            | :material-check-circle: | Approximate number of employees |
+| `legal_name`       | string            | :material-checkbox-blank-circle-outline: | Official registered name of the organization |
+| `founding_date`    | string (date)     | :material-checkbox-blank-circle-outline: | Date when the organization was founded (e.g., `2004-09-15`) |
+| `jurisdiction`     | string            | :material-checkbox-blank-circle-outline: | Legal jurisdiction of incorporation (e.g., `US-DE`) |
+| `registration_id`  | string            | :material-checkbox-blank-circle-outline: | Registered entity ID from a business registry |
+| `industry`         | string            | :material-checkbox-blank-circle-outline: | Sector classification (e.g., `Cybersecurity`, `E-Commerce`) |
+| `target_markets`   | array of strings  | :material-checkbox-blank-circle-outline: | Markets or regions the organization serves (e.g., `US`, `EU`) |
+| `active`           | boolean           | :material-checkbox-blank-circle-outline: | Whether the organization is currently active |
+| `non_profit`       | boolean           | :material-checkbox-blank-circle-outline: | Whether the organization is a nonprofit |
+| `headcount`        | number            | :material-checkbox-blank-circle-outline: | Approximate number of employees |
 
 ## :octicons-organization-24: Organization Properties
 
@@ -42,7 +42,6 @@ The `Organization` asset enables enrichment and correlation of digital infrastru
 | :-----------------: | :-----------------: | :------------ |
 | [`SimpleProperty`](../properties/simple_property.md) | `last_monitored` | Tracks when a data source was last queried regarding this Organization |
 | [`SourceProperty`](../properties/source_property.md) | Source Plugin Name | Indicates that the specified data source discovered this Organization |
-
 
 ## :octicons-organization-24: Organization Outgoing Relations
 
@@ -58,7 +57,7 @@ loc["Location"]
 locrel@{ shape: braces, label: "legal_address
 hq_address
 location" }
-tls --o locrel
+org --o locrel
 locrel --> loc
 
 org2["Organization"]
@@ -83,12 +82,10 @@ member@{ shape: braces, label: "member" }
 org --o member
 member --> person
 
-person2["Person"]
-org3["Organization"]
 funding@{ shape: braces, label: "funding_source" }
 org --o funding
-funding --> org3
-funding --> person2
+funding --> org2
+funding --> person
 ```
 
 ---
