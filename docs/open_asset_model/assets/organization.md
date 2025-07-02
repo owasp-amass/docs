@@ -100,7 +100,6 @@ funding --> person
 | [`SimpleRelation`](../relations/simple_relation.md) | `org_unit` | `Organization` | Links the organization to one of its sectors or departments that is externally visible |
 | [`SimpleRelation`](../relations/simple_relation.md) | `account` | [`Account`](./account.md) | Links the organization to one of its digital or financial accounts |
 | [`SimpleRelation`](../relations/simple_relation.md) | `member` | [`Person`](./person.md) | Links the organization to one of its employees identified as a `Person` asset |
-| [`SimpleRelation`](../relations/simple_relation.md) | `san_ip_address` | [`IPAddress`](./ip_address.md) | Links the certificate to `IPAddress` assets found in the Subject Alternative Name (SAN) field |
 | [`SimpleRelation`](../relations/simple_relation.md) | `website` | [`URL`](./url.md) | Links the organization to its primary website or one dedicated to a product |
 | [`SimpleRelation`](../relations/simple_relation.md) | `social_media_profile` | [`URL`](./url.md) | Links the organization to one of its social media profiles |
 | [`SimpleRelation`](../relations/simple_relation.md) | `funding_source` | `Organization`, [`Person`](./person.md) | An `Organization` or `Person` that has invested in this company previously |
