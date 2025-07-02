@@ -120,6 +120,7 @@ nav:
     - Assets: 
       - Assets: open_asset_model/assets/index.md
       - Account: open_asset_model/assets/account.md
+      - AutonomousSystem: open_asset_model/assets/autonomous_system.md
       - ContactRecord: open_asset_model/assets/contact_record.md
       - DomainRecord: open_asset_model/assets/domain_record.md
       - File: open_asset_model/assets/file.md

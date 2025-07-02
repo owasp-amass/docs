@@ -67,9 +67,9 @@ regrel --> domrec
 
 | Relation Type       | Relation Label     | Target Assets    | Description   |
 | :-----------------: | :----------------: | :--------------: | :------------ |
-| [`BasicDNSRelation`](../relations/basic_dns_relation.md) | `dns_record` | [`FQDN`](#fqdn), [`IPAddress`](#ip_address) | Represents most RR types |
-| [`PrefDNSRelation`](../relations/pref_dns_relation.md) | `dns_record` | [`FQDN`](#fqdn) | Utilized for RR types that have a preference attribute |
-| [`SRVDNSRelation`](../relations/srv_dns_relation.md) | `dns_record` | [`FQDN`](#fqdn) | Represents the SRV Resource Record type |
-| [`SimpleRelation`](../relations/simple_relation.md) | `node` | [`FQDN`](#fqdn) | Links a DNS zone apex to nodes within the zone |
-| [`PortRelation`](../relations/port_relation.md) | `port` | [`Service`](#service) | Represents a port at the FQDN with a responding service |
-| [`SimpleRelation`](../relations/simple_relation.md) | `registration` | [`DomainRecord`](#domain_record) | Links a root domain to its associated registration data |
+| [`BasicDNSRelation`](../relations/basic_dns_relation.md) | `dns_record` | `FQDN`, [`IPAddress`](./ip_address.md) | Represents most RR types |
+| [`PrefDNSRelation`](../relations/pref_dns_relation.md) | `dns_record` | `FQDN` | Utilized for RR types that have a preference attribute |
+| [`SRVDNSRelation`](../relations/srv_dns_relation.md) | `dns_record` | `FQDN` | Represents the SRV Resource Record type |
+| [`SimpleRelation`](../relations/simple_relation.md) | `node` | `FQDN` | Links a DNS zone apex to nodes within the zone |
+| [`PortRelation`](../relations/port_relation.md) | `port` | [`Service`](./service.md) | Represents a port at the FQDN with a responding service |
+| [`SimpleRelation`](../relations/simple_relation.md) | `registration` | [`DomainRecord`](./domain_record.md) | Links a root domain to its associated registration data |

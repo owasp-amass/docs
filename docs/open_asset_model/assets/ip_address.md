@@ -46,5 +46,5 @@ port --> service
 
 | Relation Type       | Relation Label     | Target Assets    | Description   |
 | :-----------------: | :----------------: | :--------------: | :------------ |
-| [`SimpleRelation`](../relations/simple_relation.md) | `ptr_record` | [`FQDN`](#fqdn) | Links an IPAddress to its DNS name used in PTR records |
-| [`PortRelation`](../relations/port_relation.md) | `port` | [`Service`](#service) | Represents a port at the IPAddress with a responding service |
+| [`SimpleRelation`](../relations/simple_relation.md) | `ptr_record` | [`FQDN`](./fqdn.md) | Links an IPAddress to its DNS name used in PTR records |
+| [`PortRelation`](../relations/port_relation.md) | `port` | [`Service`](./service.md) | Represents a port at the IPAddress with a responding service |
