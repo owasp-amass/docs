@@ -45,3 +45,7 @@ regrel --> autnum
 | :-----------------: | :----------------: | :--------------: | :------------ |
 | [`SimpleRelation`](../relations/simple_relation.md) | `announces` | [`Netblock`](./netblock.md) | Links an IPAddress to its DNS name used in PTR records |
 | [`SimpleRelation`](../relations/simple_relation.md) | `registration` | [`AutnumRecord`](./autnum_record.md) | Links a ASN to its associated registration data |
+
+---
+
+*© 2025 Jeff Foley — Licensed under Apache 2.0.*

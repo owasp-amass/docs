@@ -23,3 +23,7 @@ In essence, `PortRelation` adds precise network exposure context to the OAM, let
 | Property Type       | Property Name       | Description   |
 | :-----------------: | :-----------------: | :------------ |
 | [`SourceProperty`](../properties/source_property.md) | Source Plugin Name | Indicates that the specified data source discovered this PortRelation |
+
+---
+
+*© 2025 Jeff Foley — Licensed under Apache 2.0.*

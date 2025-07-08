@@ -48,3 +48,7 @@ port --> service
 | :-----------------: | :----------------: | :--------------: | :------------ |
 | [`SimpleRelation`](../relations/simple_relation.md) | `ptr_record` | [`FQDN`](./fqdn.md) | Links an IPAddress to its DNS name used in PTR records |
 | [`PortRelation`](../relations/port_relation.md) | `port` | [`Service`](./service.md) | Represents a port at the IPAddress with a responding service |
+
+---
+
+*© 2025 Jeff Foley — Licensed under Apache 2.0.*

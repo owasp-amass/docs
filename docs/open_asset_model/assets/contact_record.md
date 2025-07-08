@@ -62,3 +62,7 @@ simple6 --> url
 | [`SimpleRelation`](../relations/simple_relation.md) | `person` | [`Person`](#person) | Represents a person's name discovered with the contact information |
 | [`SimpleRelation`](../relations/simple_relation.md) | `phone` | [`Phone`](#phone) | Represents a phone number in the contact information |
 | [`SimpleRelation`](../relations/simple_relation.md) | `url` | [`URL`](#url) | Represents an URL discovered in the contact information |
+
+---
+
+*© 2025 Jeff Foley — Licensed under Apache 2.0.*

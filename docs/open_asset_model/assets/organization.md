@@ -103,3 +103,7 @@ funding --> person
 | [`SimpleRelation`](../relations/simple_relation.md) | `website` | [`URL`](./url.md) | Links the organization to its primary website or one dedicated to a product |
 | [`SimpleRelation`](../relations/simple_relation.md) | `social_media_profile` | [`URL`](./url.md) | Links the organization to one of its social media profiles |
 | [`SimpleRelation`](../relations/simple_relation.md) | `funding_source` | `Organization`, [`Person`](./person.md) | An `Organization` or `Person` that has invested in this company previously |
+
+---
+
+*© 2025 Jeff Foley — Licensed under Apache 2.0.*

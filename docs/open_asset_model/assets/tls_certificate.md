@@ -100,3 +100,7 @@ issuer --> cert
 | [`SimpleRelation`](../relations/simple_relation.md) | `issuing_certificate` | `TLSCertificate` | Links a certificate to the issuing `TLSCertificate` used for signing |
 | [`SimpleRelation`](../relations/simple_relation.md) | `issuing_certificate_url` | [`URL`](./url.md) | The `URL` asset where the issuing `TLSCertificate` can be found |
 | [`SimpleRelation`](../relations/simple_relation.md) | `ocsp_server` | [`URL`](./url.md) | The OCSP responder that can provide status information regarding the validity of a digital certificate |
+
+---
+
+*© 2025 Jeff Foley — Licensed under Apache 2.0.*

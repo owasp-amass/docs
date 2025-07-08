@@ -25,3 +25,7 @@ In summary, `PrefDNSRelation` extends basic DNS modeling by introducing priority
 | Property Type       | Property Name       | Description   |
 | :-----------------: | :-----------------: | :------------ |
 | [`SourceProperty`](../properties/source_property.md) | Source Plugin Name | Indicates that the specified data source discovered this PrefDNSRelation |
+
+---
+
+*© 2025 Jeff Foley — Licensed under Apache 2.0.*

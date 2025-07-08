@@ -24,3 +24,7 @@ In summary, `BasicDNSRelation` enables efficient modeling of essential DNS relat
 | Property Type       | Property Name       | Description   |
 | :-----------------: | :-----------------: | :------------ |
 | [`SourceProperty`](../properties/source_property.md) | Source Plugin Name | Indicates that the specified data source discovered this BasicDNSRelation |
+
+---
+
+*© 2025 Jeff Foley — Licensed under Apache 2.0.*

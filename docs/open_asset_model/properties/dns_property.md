@@ -22,3 +22,7 @@ By modeling DNS data with a dedicated property type, `DNSRecordProperty` enables
 | `header.class` | number | :material-checkbox-blank-circle-outline: | 1, IN class (Internet), is the most commonly used |
 | `header.ttl` | number | :material-checkbox-blank-circle-outline: | Specifies how long a DNS record should be cached |
 | `data`         | string | :material-check-decagram: | The value from the data field of the DNS resource record |
+
+---
+
+*© 2025 Jeff Foley — Licensed under Apache 2.0.*

@@ -21,3 +21,7 @@ In essence, the `SimpleRelation` is a clean, minimal tool used within the OAM to
 | Property Type       | Property Name       | Description   |
 | :-----------------: | :-----------------: | :------------ |
 | [`SourceProperty`](../properties/source_property.md) | Source Plugin Name | Indicates that the specified data source discovered this SimpleRelation |
+
+---
+
+*© 2025 Jeff Foley — Licensed under Apache 2.0.*

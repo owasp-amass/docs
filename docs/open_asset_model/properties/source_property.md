@@ -19,3 +19,7 @@ All Amass engine plugins mark discovered assets and associations between them wi
 | :--------------: | :-------: | :--------: | :----------- |
 | `name` | string | :material-check-decagram: | Name of the engine plugin that discovered the asset or relation |
 | `confidence` | number | :material-checkbox-blank-circle-outline: | A value 0 through 100 representing the confidence percentage |
+
+---
+
+*© 2025 Jeff Foley — Licensed under Apache 2.0.*

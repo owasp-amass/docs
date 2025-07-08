@@ -73,3 +73,7 @@ regrel --> domrec
 | [`SimpleRelation`](../relations/simple_relation.md) | `node` | `FQDN` | Links a DNS zone apex to nodes within the zone |
 | [`PortRelation`](../relations/port_relation.md) | `port` | [`Service`](./service.md) | Represents a port at the FQDN with a responding service |
 | [`SimpleRelation`](../relations/simple_relation.md) | `registration` | [`DomainRecord`](./domain_record.md) | Links a root domain to its associated registration data |
+
+---
+
+*© 2025 Jeff Foley — Licensed under Apache 2.0.*

@@ -75,3 +75,7 @@ filerel --> file
 | [`SimpleRelation`](../relations/simple_relation.md) | `ip_address` | [`IPAddress`](./ip_address.md) | Links the URL to the IP address equal to the `host` attribute |
 | [`PortRelation`](../relations/port_relation.md) | `port` | [`Service`](./service.md) | Represents the port that served up content for this URL |
 | [`SimpleRelation`](../relations/simple_relation.md) | `file` | [`File`](./file.md) | Links the URL to the file that was served up at this location |
+
+---
+
+*© 2025 Jeff Foley — Licensed under Apache 2.0.*

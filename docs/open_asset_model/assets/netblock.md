@@ -46,3 +46,7 @@ regrel --> iprec
 | :-----------------: | :----------------: | :--------------: | :------------ |
 | [`SimpleRelation`](../relations/simple_relation.md) | `contains` | [`IPAddress`](./ip_address.md) | Links a Netblock to an IPAddress within the CIDR range |
 | [`SimpleRelation`](../relations/simple_relation.md) | `registration` | [`IPNetRecord`](./ipnet_record.md) | Links a network to its associated registration data |
+
+---
+
+*© 2025 Jeff Foley — Licensed under Apache 2.0.*

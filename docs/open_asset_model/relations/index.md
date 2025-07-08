@@ -25,7 +25,7 @@ Each relation answers three questions:
 3. **When was it discovered?**
    A timestamp for when it was first and most recently seen.
 
-## :material-graph-outline: Core Relation Schema
+## :material-graph-outline: Core Relation Schema (Conceptually)
 
 ```json
 {
@@ -36,6 +36,8 @@ Each relation answers three questions:
   "last_seen": "2025-06-20T14:22:00Z",
 }
 ```
+
+See specific relation types for actual JSON field names. Also, see the [Assoc Tool](../framework_tools/assoc.md) and [Triples](../assetdb/triples.md) for more information regarding how to query the data collected.
 
 ## :material-graph-outline: Common Relation Labels (Partial)
 

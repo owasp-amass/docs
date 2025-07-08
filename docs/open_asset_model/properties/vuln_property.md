@@ -25,3 +25,7 @@ By standardizing how vulnerability metadata is attached to assets and relations,
 | `category`     | string | :material-checkbox-blank-circle-outline: | A general classification of the vulnerability (e.g., `software-vuln`) |
 | `enum`         | string | :material-checkbox-blank-circle-outline: | The taxonomy or enumeration system used (e.g., `CVE`, `CWE`) |
 | `ref`          | string | :material-checkbox-blank-circle-outline: | An optional reference URL for more information about the vulnerability |
+
+---
+
+*© 2025 Jeff Foley — Licensed under Apache 2.0.*

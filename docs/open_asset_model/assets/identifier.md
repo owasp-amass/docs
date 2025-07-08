@@ -56,3 +56,7 @@ allrel --> contact
 | [`SimpleRelation`](../relations/simple_relation.md) | `registration_agency` | [`ContactRecord`](./contact_record.md.md) | Links a registration ID with the registering agency |
 | [`SimpleRelation`](../relations/simple_relation.md) | `issuing_authority` | [`ContactRecord`](./contact_record.md) | Links an identifier with its issuing authority |
 | [`SimpleRelation`](../relations/simple_relation.md) | `issuing_agent` | [`ContactRecord`](./contact_record.md) | Links an identifier with its issuing agent |
+
+---
+
+*© 2025 Jeff Foley — Licensed under Apache 2.0.*
