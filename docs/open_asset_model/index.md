@@ -14,14 +14,11 @@ The **Amass Project's** [Open Asset Model](https://github.com/owasp-amass/open-a
 
 ---
 
-
 ## :material-graph: Explore OAM Asset Types
 
 ---
 
-
 <div class="grid cards" markdown>
-
 
 -   :material-file-account:{ .lg .middle } __Account__
 
@@ -31,17 +28,13 @@ The **Amass Project's** [Open Asset Model](https://github.com/owasp-amass/open-a
 
     [:octicons-arrow-right-24: Learn more](https://owasp-amass.github.io/docs/open-asset-model/assets/account/)
 
-
 -   :material-registered-trademark:{ .lg .middle } __Domain Record__
 
     ---
-
     
     Gather domain insights, including Whois and registrar details
 
     [:octicons-arrow-right-24: Learn more](https://owasp-amass.github.io/docs/open-asset-model/assets/domain_record/)
-
-
 
 -   :material-comment-outline:{ .lg .middle } __Contact Record__
 
@@ -51,7 +44,6 @@ The **Amass Project's** [Open Asset Model](https://github.com/owasp-amass/open-a
 
     [:octicons-arrow-right-24: Learn more](https://owasp-amass.github.io/docs/open-asset-model/assets/contact_record/)
 
-
 -   :material-dns:{ .lg .middle } __FQDN__
 
     ---
@@ -59,7 +51,6 @@ The **Amass Project's** [Open Asset Model](https://github.com/owasp-amass/open-a
     Record domain resolutions, DNS records, and associated metadata
 
     [:octicons-arrow-right-24: Learn more](https://owasp-amass.github.io/docs/open-asset-model/assets/fqdn/)
-
 
 -   :material-file-find:{ .lg .middle } __File__
 
@@ -69,7 +60,6 @@ The **Amass Project's** [Open Asset Model](https://github.com/owasp-amass/open-a
 
     [:octicons-arrow-right-24: Learn more](https://owasp-amass.github.io/docs/open-asset-model/assets/file/)
 
-
 -   :material-bank:{ .lg .middle } __Funds Transfer__
 
     ---
@@ -77,7 +67,6 @@ The **Amass Project's** [Open Asset Model](https://github.com/owasp-amass/open-a
     Identify bank accounts, payment systems, and transaction details
 
     [:octicons-arrow-right-24: Learn more](https://owasp-amass.github.io/docs/open-asset-model/assets/funds_transfer/)
-
 
 -   :material-id-card:{ .lg .middle } __Identifier__
 
@@ -87,7 +76,6 @@ The **Amass Project's** [Open Asset Model](https://github.com/owasp-amass/open-a
 
     [:octicons-arrow-right-24: Learn more](https://owasp-amass.github.io/docs/open-asset-model/assets/identifier/)
 
-
 -   :material-router:{ .lg .middle } __IP Address__
 
     ---
@@ -95,7 +83,6 @@ The **Amass Project's** [Open Asset Model](https://github.com/owasp-amass/open-a
     Discover IPs, subnets, and routing structures to uncover key infrastructure
 
     [:octicons-arrow-right-24: Learn more](https://owasp-amass.github.io/docs/open-asset-model/assets/ip_address/)
-
 
 -   :material-office-building-marker:{ .lg .middle } __Organization__
 
@@ -105,7 +92,6 @@ The **Amass Project's** [Open Asset Model](https://github.com/owasp-amass/open-a
 
     [:octicons-arrow-right-24: Learn more](https://owasp-amass.github.io/docs/open-asset-model/assets/organization/)
 
-
 -   :material-account-outline:{ .lg .middle } __Person__
 
     ---
@@ -113,8 +99,6 @@ The **Amass Project's** [Open Asset Model](https://github.com/owasp-amass/open-a
      Collect names, locations, and attributes to build individual profiles 
 
     [:octicons-arrow-right-24: Learn more](https://owasp-amass.github.io/docs/open-asset-model/assets/person/)
-
-
 
 -   :material-apps:{ .lg .middle } __Product__
 
@@ -124,8 +108,6 @@ The **Amass Project's** [Open Asset Model](https://github.com/owasp-amass/open-a
 
     [:octicons-arrow-right-24: Learn more](https://owasp-amass.github.io/docs/open-asset-model/assets/product/)
 
-
-
 -   :material-file-certificate-outline:{ .lg .middle } __TLS Certificate__
 
     ---
@@ -133,8 +115,6 @@ The **Amass Project's** [Open Asset Model](https://github.com/owasp-amass/open-a
     Gather SSL/TLS certificate details, issuers, and expiration dates for asset verification
 
     [:octicons-arrow-right-24: Learn more](https://owasp-amass.github.io/docs/open-asset-model/assets/tls_certificate/)
-
-
 
 -   :material-web-refresh:{ .lg .middle } __URL__
 

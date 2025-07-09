@@ -8,7 +8,9 @@ The **DomainRecord** asset type in the [OWASP](https://owasp.org) [Open Asset Mo
 
 - **Design Choice:** Keeping both *normalised* fields (e.g., `created_date`) **and** the original `raw` text preserves machine‑readable consistency while ensuring full auditability.  Optional fields make the structure tolerant of incomplete WHOIS responses, and the `status` array supports the many ICANN/ccTLD state strings without schema changes.
 
-## :material-dns: DomainRecord Attributes
+DomainRecords provide authoritative visibility into how domain names are registered, updated, and governed, making them critical for attribution, expiration monitoring, and organizational mapping within the external asset graph.
+
+## :material-file-cabinet: DomainRecord Attributes
 
 | Attributes        | Type                | Required | Description |
 | :---------------: | :-----------------: | :------: | :---------- |
@@ -25,14 +27,14 @@ The **DomainRecord** asset type in the [OWASP](https://owasp.org) [Open Asset Mo
 | `raw`             | string              | :material-checkbox-blank-circle-outline: | Unparsed WHOIS / RDAP text for auditing |
 | `id`              | string              | :material-checkbox-blank-circle-outline: | Optional registry‑specific object ID |
 
-## :material-dns: DomainRecord Properties
+## :material-file-cabinet: DomainRecord Properties
 
 | Property Type | Property Name | Description |
 | :-----------: | :-----------: | :---------- |
 | [`SimpleProperty`](../properties/simple_property.md) | `last_monitored` | Timestamp of the most recent WHOIS/RDAP pull |
 | [`SourceProperty`](../properties/source_property.md) | Source Plugin Name | Identifies which discovery module produced the record |
 
-## :material-dns: DomainRecord Outgoing Relations
+## :material-file-cabinet: DomainRecord Outgoing Relations
 
 ```mermaid
 graph TD

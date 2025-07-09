@@ -34,7 +34,7 @@ file --o urlRel
 urlRel --> url
 
 contactrec["ContactRecord"]
-contains@{ shape: braces; label: "contains" }
+contains@{ shape: braces, label: "contains" }
 file --o contains
 contains --> contactrec
 contains --> url

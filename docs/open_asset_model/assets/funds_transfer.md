@@ -8,6 +8,8 @@ The **FundsTransfer** asset type in the [OWASP](https://owasp.org) [Open Asset M
 
 - **Design Choice:** This type focuses on capturing the *structure* of a transfer (e.g., amount, method, and timing) rather than sensitive or regulated content (like full account numbers). Optional fields like `exchange_rate` allow the model to support cross-currency scenarios and future integration with financial intelligence tooling, while keeping the core schema minimal and auditable.
 
+The FundsTransfer asset type enables graph-based tracking of financial transactions, providing insight into economic behavior, potential fraud, or organizational connections in the external attack surface.
+
 ## :material-cash-multiple: FundsTransfer Attributes
 
 | Attributes         | Type     | Required | Description |
@@ -33,22 +35,22 @@ The **FundsTransfer** asset type in the [OWASP](https://owasp.org) [Open Asset M
 graph TD
 transfer["FundsTransfer ($5,000 USD)"]
 ident["Identifer"]
-idRel@{ shape, braces; label: "id" }
+idRel@{ shape, braces, label: "id" }
 transfer --o idRel
 idRel --> ident
 
 acct1["Account (acct-123)"]
-fromRel@{ shape: braces; label: "sender" }
+fromRel@{ shape: braces, label: "sender" }
 transfer --o fromRel
 fromRel --> acct1
 
 acct2["Account (acct-456)"]
-toRel@{ shape: braces; label: "recipient" }
+toRel@{ shape: braces, label: "recipient" }
 transfer --o toRel
 toRel --> acct2
 
 org["Organization"]
-third@{ shape: braces; label: "third_party" }
+third@{ shape: braces, label: "third_party" }
 transfer --o third
 third --> org
 ```

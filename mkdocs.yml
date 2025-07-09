@@ -120,6 +120,7 @@ nav:
     - Assets: 
       - Assets: open_asset_model/assets/index.md
       - Account: open_asset_model/assets/account.md
+      - AutnumRecord: open_asset_model/assets/autnum_record.md
       - AutonomousSystem: open_asset_model/assets/autonomous_system.md
       - ContactRecord: open_asset_model/assets/contact_record.md
       - DomainRecord: open_asset_model/assets/domain_record.md
@@ -128,10 +129,15 @@ nav:
       - FundsTransfer: open_asset_model/assets/funds_transfer.md
       - Identifier: open_asset_model/assets/identifier.md
       - IPAddress: open_asset_model/assets/ip_address.md
+      - IPNetRecord: open_asset_model/assets/ipnet_record.md
+      - Location: open_asset_model/assets/location.md
       - Netblock: open_asset_model/assets/netblock.md
       - Organization: open_asset_model/assets/organization.md
       - Person: open_asset_model/assets/person.md
+      - Phone: open_asset_model/assets/phone.md
       - Product: open_asset_model/assets/product.md
+      - ProductRelease: open_asset_model/assets/product_release.md
+      - Service: open_asset_model/assets/service.md
       - TLSCertificate: open_asset_model/assets/tls_certificate.md
       - URL: open_asset_model/assets/url.md
     - Relations: 

@@ -38,10 +38,12 @@ Modeling accounts as first-class assets enables reasoning about identity exposur
 
 Account assets can be linked to services, users, or organizations through relations, enabling workflows such as credential exposure detection, service-to-user mapping, or analysis of abandoned or inactive accounts across cloud providers or infrastructure environments.
 
+Accounts are identity-centric primitives that enrich the graph’s ability to reason about control, access, and exposure across digital systems.
+
 ## :material-account: Account Attributes
 
-| Attributes            | Type        | Required.    | Description.   |
-| :-------------------: | :---------: | :----------: | :------------- |
+| Attributes            | Type        | Required    | Description   |
+| :-------------------: | :---------: | :---------: | :------------ |
 | `unique_id`           | string      | :material-check-decagram: | Unique identifier for the account within the model |
 | `account_type`        | string      | :material-check-decagram: | Classification of the account (e.g., `cloud`, `bank`, `user`) |
 | `username`            | string      | :material-checkbox-blank-circle-outline: | Login name, email, or screen name associated with the account |
@@ -62,16 +64,16 @@ Account assets can be linked to services, users, or organizations through relati
 graph TD
 acct["Account"]
 ident["Identifier"]
-idRel@{ shape: braces, label: "id"}
+idRel@{ shape: braces, label: "id" }
 acct --o idRel
 idRel --> ident
 
 org["Organization"]
 person["Person]
-user@{ shape: braces, label: "user"}
+user@{ shape: braces, label: "user" }
 acct --o user
 user --> org
-user --> persom
+user --> person
 ```
 
 ---

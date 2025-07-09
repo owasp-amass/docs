@@ -8,6 +8,8 @@ The **Person** asset type in the [OWASP](https://owasp.org) [Open Asset Model](h
 
 - **Design Choice:** The `Person` structure includes multiple levels of name granularity to enable flexible matching and entity resolution. Optional fields (e.g., `birth_date`, `gender`) support deeper analysis when present, but are not required—ensuring compatibility with incomplete or privacy-preserving sources. The model avoids sensitive personal information (e.g., national IDs) unless already exposed via legitimate public data sources.
 
+The Person asset type enables entity-centric analysis within the Open Asset Model, helping analysts reason about attribution, ownership, and relationships between human actors and the infrastructure they operate or influence.
+
 ## :material-account: Person Attributes
 
 | Attributes     | Type   | Required | Description |
@@ -33,22 +35,22 @@ The **Person** asset type in the [OWASP](https://owasp.org) [Open Asset Model](h
 graph TD
 person["Person (Jane E. Smith)"]
 ident["Identifier"]
-idRel@{ shape: braces; label: "id" }
+idRel@{ shape: braces, label: "id" }
 person --o idRel
 idRel --> ident
 
 loc["Location (Street Address)"]
-locRel@{ shape: braces; label: "address" }
+locRel@{ shape: braces, label: "address" }
 person --o locRel
 locRel --> loc
 
 phone["Phone"]
-phoneRel@{ shape: braces; label: "phone" }
+phoneRel@{ shape: braces, label: "phone" }
 person --o phoneRel
 phoneRel --> phone
 
 acct["Account"]
-account@{ shape: braces; label: "account" }
+account@{ shape: braces, label: "account" }
 person --o account
 account --> acct
 ```

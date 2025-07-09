@@ -8,6 +8,8 @@ The **Product** asset type in the [OWASP](https://owasp.org) [Open Asset Model](
 
 - **Design Choice:** The `Product` structure is intentionally minimal to support broad applicability. While the `ProductRelease` handles additional information such as version, vendor, and licensing via `Identifier` assets and properties, the core type emphasizes identification and categorization. The inclusion of `country_of_origin` supports use cases related to supply chain risk and regulatory compliance.
 
+The Product asset type provides structured visibility into the technologies exposed in an organization's external footprint, supporting vulnerability mapping, software inventory, and strategic technology analysis.
+
 ## :material-package-variant: Product Attributes
 
 | Attributes         | Type   | Required | Description |
@@ -32,24 +34,24 @@ The **Product** asset type in the [OWASP](https://owasp.org) [Open Asset Model](
 graph TD
 product["Product (nginx)"]
 ident["Identifier"]
-idRel@{ shape: braces; label: "id" }
+idRel@{ shape: braces, label: "id" }
 product --o idRel
 idRel --> ident
 
 org["Organization"]
-vendorRel@{ shape: braces; label: "manufacturer" }
+vendorRel@{ shape: braces, label: "manufacturer" }
 product --o vendorRel
 vendorRel --> org
 
 url["URL"]
-website@{ shape: braces; label: "website" }
-product --o website
-website --> url
+webRel@{ shape: braces, label: "website" }
+product --o webRel
+webRel --> url
 
 prodrel["ProductRelease"]
-release@{ shape: braces; label: "release" }
-product --o release
-release --> prodrel
+rel@{ shape: braces, label: "release" }
+product --o rel
+rel --> prodrel
 ```
 
 ---

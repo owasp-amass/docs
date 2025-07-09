@@ -56,12 +56,12 @@ simple6 --> url
 
 | Relation Type       | Relation Label     | Target Assets    | Description   |
 | :-----------------: | :----------------: | :--------------: | :------------ |
-| [`SimpleRelation`](../relations/simple_relation.md) | `fqdn` | [`FQDN`](#fqdn) | Represents a FQDN discovered in the contact information |
-| [`SimpleRelation`](../relations/simple_relation.md) | `id` | [`Identifier`](#identifer) | Represents an ID (e.g. email address) in the contact information |
-| [`SimpleRelation`](../relations/simple_relation.md) | `organization` | [`Organization`](#organization) | Represents an organization name in the contact information |
-| [`SimpleRelation`](../relations/simple_relation.md) | `person` | [`Person`](#person) | Represents a person's name discovered with the contact information |
-| [`SimpleRelation`](../relations/simple_relation.md) | `phone` | [`Phone`](#phone) | Represents a phone number in the contact information |
-| [`SimpleRelation`](../relations/simple_relation.md) | `url` | [`URL`](#url) | Represents an URL discovered in the contact information |
+| [`SimpleRelation`](../relations/simple_relation.md) | `fqdn` | [`FQDN`](./fqdn.md) | Represents a FQDN discovered in the contact information |
+| [`SimpleRelation`](../relations/simple_relation.md) | `id` | [`Identifier`](./identifier.md) | Represents an ID (e.g. email address) in the contact information |
+| [`SimpleRelation`](../relations/simple_relation.md) | `organization` | [`Organization`](./organization.md) | Represents an organization name in the contact information |
+| [`SimpleRelation`](../relations/simple_relation.md) | `person` | [`Person`](./person) | Represents a person's name discovered with the contact information |
+| [`SimpleRelation`](../relations/simple_relation.md) | `phone` | [`Phone`](./phone.md) | Represents a phone number in the contact information |
+| [`SimpleRelation`](../relations/simple_relation.md) | `url` | [`URL`](./url.md) | Represents an URL discovered in the contact information |
 
 ---
 
