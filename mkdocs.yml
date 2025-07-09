@@ -115,6 +115,13 @@ markdown_extensions:
 # Page tree
 nav:
   - Getting Started: index.md
+  - Configuration:
+    - Configuration: open_asset_model/configuration/index.md
+    - Data Sources: open_asset_model/configuration/data_sources.md
+  - Asset Database:
+    - Asset Database: asset_db/index.md
+    - Triples: asset_db/triples.md
+    - Transformations: asset_db/transformations.md
   - Open Asset Model:
     - Open Asset Model: open_asset_model/index.md
     - Assets: 
@@ -153,11 +160,4 @@ nav:
       - SimpleProperty: open_asset_model/properties/simple_property.md
       - SourceProperty: open_asset_model/properties/source_property.md
       - VulnProperty: open_asset_model/properties/vuln_property.md
-  - Configuration:
-    - Configuration: open_asset_model/configuration/index.md
-    - Data Sources: open_asset_model/configuration/data_sources.md
-  - Asset DB:
-    - Asset DB: asset_db/index.md
-    - Triples: asset_db/triples.md
-    - Transformations: asset_db/transformations.md
   - Contributing: contributing/contributing.md
