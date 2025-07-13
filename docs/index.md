@@ -2,7 +2,7 @@
 
 **OWASP Amass** is an open-source, versatile **attack surface intelligence** framework designed to comprehensively map an organization’s footprint. Built for flexibility and depth, Amass combines advanced data collection, network mapping, and OSINT capabilities to deliver detailed insights into physical and digital assets. 
 
-## **//** Overview
+## Overview
 
 [OWASP Amass](https://github.com/owasp-amass) extends **far beyond basic subdomain enumeration**, offering a comprehensive, automated approach to information gathering that reveals the full scope of an entity's **physical** and **digital** footprint.
 
@@ -19,13 +19,9 @@ __[Unlocking the Power of OWASP Amass]__ by [@jeff_foley](https://x.com/jeff_fol
 
 - **Automated Deployment and Enumeration:** Easily deploy Amass with [Docker Compose](https://docs.docker.com/compose/) for quick, automated asset discovery across multiple domains with minimal configuration.
 
-- **Centralized Asset Management with Asset DB:** Use the Asset DB for storing, managing, and retrieving discovered assets, with support for long-term tracking and consistent data collection via the Open Asset Model.
+- **Centralized Asset Management with Asset Database:** Use the Asset Database for storing, managing, and retrieving discovered assets, with support for long-term tracking and consistent data collection via the Open Asset Model.
 
 - **Scalable and Flexible Infrastructure:** Designed for enterprise environments, [Docker](https://www.docker.com/products/docker-desktop/) enables scalable deployments of Amass, ensuring consistent attack surface management for organizations of any size.
-
-- **Advanced Collection and Monitoring:** The Collections Engine refines the data collection process, while open-source tools like [syslog-ng](https://github.com/syslog-ng/syslog-ng) provide centralized logging, enabling real-time monitoring and diagnostics.
-
-- **Visualization and Data-Driven Insights:** The latest release features a fully integrated [Grafana](https://grafana.com/oss/grafana/) dashboard, providing dynamic visualization and analysis for deeper attack surface intelligence.
 
 ---
 
@@ -44,7 +40,47 @@ Install the Amass swiss army knife executable in your preferred environment.
 #### Perform the build and installation process
 
 ```bash
-go install -v github.com/owasp-amass/amass/v5/cmd/amass@main
+CGO_ENABLED=0 go install -v github.com/owasp-amass/amass/v5/cmd/amass@main
+```
+
+At this point, the binary should be in *$GOPATH/bin*.
+
+#### Install with Libpostal for Street Address Parsing
+
+**On Ubuntu/Debian**
+```bash
+sudo apt-get install curl autoconf automake libtool pkg-config
+```
+
+**On CentOS/RHEL**
+```bash
+sudo yum install curl autoconf automake libtool pkgconfig
+```
+
+**On Mac OSX**
+```bash
+sudo brew install curl autoconf automake libtool pkg-config
+```
+
+**Installing libpostal**
+```bash
+git clone https://github.com/openvenues/libpostal.git
+cd libpostal
+./bootstrap.sh
+./configure --datadir=[...some dir with a few GB of space...]
+make
+sudo make install
+```
+
+On Linux it's probably a good idea to run.
+```bash
+sudo ldconfig
+```
+
+Now, build OWASP Amass with libpostal compiled in for street address parsing.
+
+```bash
+CGO_ENABLED=1 go install -v github.com/owasp-amass/amass/v5/cmd/amass@main
 ```
 
 At this point, the binary should be in *$GOPATH/bin*.

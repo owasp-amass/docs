@@ -69,7 +69,7 @@ acct --o idRel
 idRel --> ident
 
 org["Organization"]
-person["Person]
+person["Person"]
 user@{ shape: braces, label: "user" }
 acct --o user
 user --> org

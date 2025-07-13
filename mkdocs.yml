@@ -2,11 +2,11 @@
 # mkdocs serve
 # mkdocs gh-deploy
 
-site_name: OWASP Amass
+site_name: OWASP Amass Project
 site_url: https://owasp-amass.github.io/docs/
 repo_name: OWASP Amass
 repo_url: https://github.com/owasp-amass/amass
-site_description: "In-depth OSINT collection and external attack surface mapping "
+site_description: "In-depth OSINT collection and external attack surface mapping"
 site_author: OWASP Amass Contributors
 remote_branch: gh-pages
 
@@ -118,10 +118,11 @@ nav:
   - Configuration:
     - Configuration: open_asset_model/configuration/index.md
     - Data Sources: open_asset_model/configuration/data_sources.md
+    - Transformations: asset_db/transformations.md
   - Asset Database:
     - Asset Database: asset_db/index.md
+    - PostgreSQL: asset_db/postgres.md
     - Triples: asset_db/triples.md
-    - Transformations: asset_db/transformations.md
   - Open Asset Model:
     - Open Asset Model: open_asset_model/index.md
     - Assets: 
