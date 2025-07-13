@@ -98,7 +98,7 @@ The OWASP Amass Project maintains a **Homebrew** package.
 The following two commands will install Amass into your environment:
 
 ```bash
-brew tap owasp-amass/amass
+brew tap owasp-amass/homebrew-amass
 brew install amass
 ```
 
