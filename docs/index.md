@@ -49,7 +49,7 @@ At this point, the binary should be in *$GOPATH/bin*.
 
 **On Ubuntu/Debian**
 ```bash
-sudo apt-get install curl autoconf automake libtool pkg-config
+sudo apt-get install curl autoconf make automake libtool pkg-config
 ```
 
 **On CentOS/RHEL**
@@ -57,7 +57,7 @@ sudo apt-get install curl autoconf automake libtool pkg-config
 sudo yum install curl autoconf automake libtool pkgconfig
 ```
 
-**On Mac OSX**
+**On MacOS**
 ```bash
 sudo brew install curl autoconf automake libtool pkg-config
 ```
