@@ -6,7 +6,6 @@
 
 [OWASP Amass](https://github.com/owasp-amass) extends **far beyond basic subdomain enumeration**, offering a comprehensive, automated approach to information gathering that reveals the full scope of an entity's **physical** and **digital** footprint.
 
-
 ??? info "Open Asset Model (OAM)"
     The [Open Asset Model](https://owasp-amass.github.io/docs/open-asset-model/) expands traditional specifications by modeling both the **physical** and **digital** structure of a target's asset landscape. Defining **asset types**, their unique **properties**, and the **relationships** that join them, the `OAM` compiles a comprehensive view of the attack surface from an adversarial perspective.
 
@@ -102,6 +101,37 @@ brew tap owasp-amass/homebrew-amass
 brew install amass
 ```
 
+### Execute using the Official Amass Docker Image
+
+#### Prerequisites
+
+Before you begin, make sure you have the following installed on your system:
+
+- **Docker:** Up-to-date intallation running on your system. You can download it from the [Docker Official Website](https://www.docker.com/products/docker-desktop/).
+
+#### Step 1: Pull the Amass Docker Image
+
+```bash
+docker pull owaspamass/amass:latest
+```
+
+#### Step 2: Give the Image a Convenient Tag
+
+```bash
+docker tag owaspamass/amass:5.0.0 amass:latest
+```
+
+#### Step 3: Execute Amass using the Container
+
+The volume mount allows the information collected to be stored outside of the container.
+
+```bash
+docker run --rm -it -v ~/.config/amass:/.config/amass amass:latest enum -d owasp.org
+```
+
+!!! Warning
+    The example above mounts the Amass configuration directory on Linux. The location of this directory can be different on other operating systems.
+
 ### Containerized Execution within Docker Compose
 
 Follow these steps to set up Amass using [Docker Compose](https://docs.docker.com/compose/):
@@ -140,7 +170,6 @@ nano assetdb.env # (1)!
 
 1.   You can replace `nano` with your preferred text editor, like `vim` or `code` for Visual Studio Code.
 
-
 **> Set the Passwords:** 
 
 In the `assetdb.env` file, locate the lines for `POSTGRES_PASSWORD` and `AMASS_PASSWORD`. Update them to assign new values. 
@@ -148,8 +177,8 @@ In the `assetdb.env` file, locate the lines for `POSTGRES_PASSWORD` and `AMASS_P
 For example:
 
 ```bash
-POSTGRES_PASSWORD= your_new_postgres_password
-AMASS_PASSWORD= your_new_amass_password
+POSTGRES_PASSWORD=your_new_postgres_password
+AMASS_PASSWORD=your_new_amass_password
 ```
 
 !!! Warning
@@ -162,7 +191,6 @@ After editing, save the file:
 - If you're using **nano**: Press `Ctrl + O` (then hit `Enter`) to save and `Ctrl + X` to exit.
 
 - If you're using **vim**: Press `Esc`, then type `:wq` and hit `Enter`.
-
 
 **> Modify the `config.yaml` File:**
 
@@ -188,7 +216,6 @@ options:
 
 As before, save the changes using your preferred text editor.
 
-
 !!! info "Update the Data Sources"
     If you want to configure data sources, you can modify the `datasources.yaml` file. Open it with:
     ```bash
@@ -207,7 +234,6 @@ docker compose run --rm enum -active -d example.org # (1)!
 ```
 
 1.   If the build process times out, simply execute the command again to resume.
-
 
 #### :material-update: Update Process for the Compose Environment
 
