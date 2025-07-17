@@ -61,6 +61,13 @@ domrec["DomainRecord"]
 regrel@{ shape: braces, label: "registration"}
 fqdn1 --o regrel
 regrel --> domrec
+
+org["Organization (e.g. Google LLC)"]
+serv2["Service (e.g. Google Workspace)"]
+verified@{ shape: braces, label: "verified_for" }
+fqdn1 --o verified
+verified --> org
+verified --> serv2
 ```
 
 ---
@@ -73,6 +80,7 @@ regrel --> domrec
 | [`SimpleRelation`](../relations/simple_relation.md) | `node` | `FQDN` | Links a DNS zone apex to nodes within the zone |
 | [`PortRelation`](../relations/port_relation.md) | `port` | [`Service`](./service.md) | Represents a port at the FQDN with a responding service |
 | [`SimpleRelation`](../relations/simple_relation.md) | `registration` | [`DomainRecord`](./domain_record.md) | Links a root domain to its associated registration data |
+| [`SimpleRelation`](../relations/simple_relation.md) | `verified_for` | [`Organization`](./organization.md), [`Service`](./service.md) | Evidence was discovered of a business or technical relationship |
 
 ---
 
