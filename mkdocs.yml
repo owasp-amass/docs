@@ -116,9 +116,9 @@ markdown_extensions:
 nav:
   - Getting Started: index.md
   - Configuration:
-    - Configuration: open_asset_model/configuration/index.md
-    - Data Sources: open_asset_model/configuration/data_sources.md
-    - Transformations: asset_db/transformations.md
+    - Configuration: configuration/index.md
+    - Data Sources: configuration/data_sources.md
+    - Transformations: configuration/transformations.md
   - Asset Database:
     - Asset Database: asset_db/index.md
     - PostgreSQL: asset_db/postgres.md
