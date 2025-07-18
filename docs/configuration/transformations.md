@@ -41,7 +41,7 @@ transformations:
     ttl: 10080        # 7 days
 ```
 
-### \:gear: `default_transform_values`
+### :gear: `default_transform_values`
 
 This section defines fallback values used when no custom values are given for a transformation.
 
@@ -51,7 +51,7 @@ This section defines fallback values used when no custom values are given for a 
 | `confidence` | integer | Minimum confidence (0–100%) required to accept the result of a transformation.                                              |
 | `priority`   | integer | Priority score (1=lowest, 10=highest) that may influence queue ordering in some future extensions.                          |
 
-## \:hammer\_and\_wrench: Defining Transformations
+## :hammer_and_wrench: Defining Transformations
 
 Each transformation follows this format:
 
@@ -72,7 +72,7 @@ FQDN->ALL:
 
 This enables all known FQDN transformations (e.g., `FQDN->IPAddress`, `FQDN->DomainRecord`, etc.).
 
-## \:page\_facing\_up: Example Config Breakdown
+## :page_facing_up: Example Config Breakdown
 
 ```yaml
 transformations:
@@ -92,7 +92,7 @@ transformations:
 * **IPAddress->ALL**: All available transformations for IPs are enabled (e.g., geolocation, RDAP, reverse DNS).
 * **TLSCertificate->ALL**: Certificates fetched from services are checked weekly.
 
-## \:material-refresh: What is `ttl`?
+## :material-refresh: What is `ttl`?
 
 `ttl` (Time To Live) controls **how often a transformation can be retried** from the original source:
 
@@ -101,18 +101,18 @@ transformations:
 
 This ensures the system avoids unnecessary queries and controls bandwidth/load.
 
-## \:material-shield-check: What is `confidence`?
+## :material-shield-check: What is `confidence`?
 
 `confidence` helps Amass **filter out noisy or speculative results**. Some plugins or handlers may return results with associated confidence scores.
 
 * If a handler returns a transformation with `confidence: 40`, and your threshold is `50`, **it will be ignored**.
 * Use this to reduce false positives or to tune behavior in environments where high data quality is crucial.
 
-## \:material-star: What is `priority`?
+## :material-star: What is `priority`?
 
 The `priority` value is a **relative score (1–10)** that can help inform which transformations are more important. While not strictly enforced in the engine today, this allows **future prioritization of more urgent or valuable tasks**—like scanning attack surfaces or refreshing high-risk domains.
 
-## \:material-clipboard-list-outline: Tips and Best Practices
+## :material-clipboard-list-outline: Tips and Best Practices
 
 * ✅ Use `->ALL` to simplify enabling all known transformations for an asset type.
 * ✅ Use higher TTLs (e.g., 30+ days) for records that rarely change (e.g., `RDAP`, `GLEIF`, `DomainRecord`).
@@ -120,7 +120,7 @@ The `priority` value is a **relative score (1–10)** that can help inform which
 * ✅ Set `confidence` thresholds higher (e.g., 70–90) in production pipelines where trust is critical.
 * ✅ Consider adjusting `priority` for critical infrastructure or high-value assets.
 
-## \:material-rocket-launch: Summary
+## :material-rocket-launch: Summary
 
 The `transformations` section of the Amass configuration lets users **shape the intelligence collection process**, optimize for **freshness vs. efficiency**, and **control data quality** through TTLs and confidence scoring.
 
