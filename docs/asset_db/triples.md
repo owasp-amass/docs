@@ -1,8 +1,8 @@
 # Triples Query Language
 
-The **Triples Query Language** allows users of the OWASP Amass framework to request data from the Asset Database using the **OWASP Open Asset Model**. This query language enables traversals across the data graph, where each triple describes a directed edge between two nodes.
+The **Triples Query Language** allows users of the OWASP Amass framework to request data from the Asset Database using the **OWASP Open Asset Model**. This query language enables traversals across the graph, where each triple describes a directed edge between two nodes.
 
-A **triple** is a traversal path that describes a step in a graph walk. Each triple consists of a **subject**, a **predicate**, and an **object**. The subject is the node being queried, the predicate describes the relationship, and the object is the target node. Results from the previous triple can serve as subjects for subsequent triples, enabling complex queries across the graph.
+A **triple** is a traversal path that describes a step in a graph walk, or a "hop" in your graph between two nodes. Each triple consists of a **subject**, a **predicate**, and an **object**. The subject is the node being queried, the predicate describes the relationship, and the object is the target node. Results from the previous triple can serve as subjects for subsequent triples, enabling complex queries across the graph.
 
 ## Syntax Overview
 
@@ -118,5 +118,3 @@ The **Triples Query Language** is a powerful way to interact with the OWASP Asse
 
 * [Asset Database](./index.md)
 * [Setting Up PostgreSQL](./postgres.md)
-* [PostgreSQL `pg_trgm` Extension Docs](https://www.postgresql.org/docs/current/pgtrgm.html)
-* [Managing Environment Variables Securely](https://direnv.net/)
