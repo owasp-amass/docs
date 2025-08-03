@@ -1,0 +1,12 @@
+.youtube {
+  color: #EE0F0F;
+}
+
+
+/* Custom styles for Mermaid diagrams */
+.mermaid {
+  width: 100%;               /* Takes up the full width of the container */
+  max-width: 1200px;          /* Prevents the diagram from getting too large */
+  height: auto;               /* Maintains the aspect ratio of the diagram */
+  margin: 0 auto;             /* Centers the diagram horizontally */
+}
