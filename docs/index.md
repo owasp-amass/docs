@@ -7,7 +7,7 @@
 [OWASP Amass](https://github.com/owasp-amass) extends **far beyond basic subdomain enumeration**, offering a comprehensive, automated approach to information gathering that reveals the full scope of an entity's **physical** and **digital** footprint.
 
 ??? info "Open Asset Model (OAM)"
-    The [Open Asset Model](https://owasp-amass.github.io/docs/open-asset-model/) expands traditional specifications by modeling both the **physical** and **digital** structure of a target's asset landscape. Defining **asset types**, their unique **properties**, and the **relationships** that join them, the `OAM` compiles a comprehensive view of the attack surface from an adversarial perspective.
+    The [Open Asset Model](https://owasp-amass.github.io/docs/open_asset_model/) expands traditional specifications by modeling both the **physical** and **digital** structure of a target's asset landscape. Defining **asset types**, their unique **properties**, and the **relationships** that join them, the `OAM` compiles a comprehensive view of the attack surface from an adversarial perspective.
 
 ---
 
