@@ -102,8 +102,7 @@ Take a look at the pages where details are provided for each asset type.
 
 - [Relations](../relations/index.md) – Overview of Relations in the Open Asset Model.
 - [Properties](../properties/index.md) - Overview of a Property in the Open Asset Model.
-- [Triples](../assetdb/triples.md) – Querying the graph with SPARQL‑inspired triples.
-- [Assoc Tool](../framework_tools/assoc.md) – Using the command-line tool that queries the graph.
+- [Triples](../../asset_db/triples.md) – Querying the graph with SPARQL‑inspired triples.
 
 ---
 
