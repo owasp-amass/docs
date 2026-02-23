@@ -37,7 +37,7 @@ Each relation answers three questions:
 }
 ```
 
-See specific relation types for actual JSON field names. Also, see the [Assoc Tool](../framework_tools/assoc.md) and [Triples](../assetdb/triples.md) for more information regarding how to query the data collected.
+See specific relation types for actual JSON field names. Also, see [Triples](../../asset_db/triples.md) for more information regarding how to query the data collected.
 
 ## :material-graph-outline: Common Relation Labels (Partial)
 
@@ -82,8 +82,8 @@ Learn more about the structure and usage of the model:
 
 - [Assets](../assets/index.md) – The core entities in the graph.
 - [Properties](../properties/index.md) – Descriptive metadata that enrich assets.
-- [Triples](../assetdb/triples.md) – Performing graph queries using SPARQL-style syntax.
-- [Assoc Tool](../framework_tools/assoc.md) – Using the command-line tool that queries the graph.
+- [Triples](../../asset_db/triples.md) – Performing graph queries using SPARQL-style syntax.
+
 ---
 
 *© 2025 Jeff Foley — Licensed under Apache 2.0.*

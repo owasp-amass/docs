@@ -101,7 +101,7 @@ Amass is now ready to store data in your PostgreSQL database. This enables you t
 
 ## See Also
 
-* [Amass Configuration](../configuration/configuration.md)
+* [Amass Configuration](../configuration/index.md)
 * [PostgreSQL Documentation](https://www.postgresql.org/docs/current/index.html)
 * [PostgreSQL `pg_trgm` Extension Docs](https://www.postgresql.org/docs/current/pgtrgm.html)
 * [Managing Environment Variables Securely](https://direnv.net/)
