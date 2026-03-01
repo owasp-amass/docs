@@ -101,6 +101,14 @@ brew tap owasp-amass/homebrew-amass
 brew install amass
 ```
 
+### Install using mise
+
+You can install amass using [mise](https://github.com/jdx/mise) polyglot software tool manager:
+
+```bash
+mise use -g amass@latest
+```
+
 ### Execute using the Official Amass Docker Image
 
 #### Prerequisites
