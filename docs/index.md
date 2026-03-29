@@ -90,7 +90,7 @@ The OWASP Amass Project maintains a **Homebrew** package.
 
 #### Prerequisites
 
-- **Homebrew:** Intall an up-to-date version of the package manager on your system. You can download it from the [Homebrew Official Website](https://brew.sh/).
+- **Homebrew:** Install an up-to-date version of the package manager on your system. You can download it from the [Homebrew Official Website](https://brew.sh/).
 
 #### Perform the build and installation process
 
@@ -115,7 +115,7 @@ mise use -g amass@latest
 
 Before you begin, make sure you have the following installed on your system:
 
-- **Docker:** Up-to-date intallation running on your system. You can download it from the [Docker Official Website](https://www.docker.com/products/docker-desktop/).
+- **Docker:** Up-to-date installation running on your system. You can download it from the [Docker Official Website](https://www.docker.com/products/docker-desktop/).
 
 #### Step 1: Pull the Amass Docker Image
 
@@ -148,7 +148,7 @@ Follow these steps to set up Amass using [Docker Compose](https://docs.docker.co
 
 Before you begin, make sure you have the following installed on your system:
 
-- **Docker:** Up-to-date intallation running on your system. You can download it from the [Docker Official Website](https://www.docker.com/products/docker-desktop/).
+- **Docker:** Up-to-date installation running on your system. You can download it from the [Docker Official Website](https://www.docker.com/products/docker-desktop/).
   
 - **Docker Compose:** Typically, Docker Compose is bundled with Docker Desktop, but you can verify the installation or install it seperately from
     [Docker Compose Installation](https://docs.docker.com/compose/).

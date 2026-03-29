@@ -81,8 +81,7 @@ Explore the types of data used to enrich and explain assets in the graph:
 
 - [Assets](../assets/index.md) – The core entities in the graph.
 - [Relations](../relations/index.md) – Overview of Relations in the Open Asset Model.
-- [Triples](../assetdb/triples.md) – Performing graph queries using SPARQL-style syntax.
-- [Assoc Tool](../framework_tools/assoc.md) – Using the command-line tool that queries the graph.
+- [Triples](../../asset_db/triples.md) – Performing graph queries using SPARQL-style syntax.
 
 ---
 
