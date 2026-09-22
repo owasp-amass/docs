@@ -44,6 +44,23 @@ CGO_ENABLED=0 go install -v github.com/owasp-amass/amass/v5/cmd/amass@main
 
 At this point, the binary should be in *$GOPATH/bin*.
 
+#### Available Subcommands
+
+Once installed, the `amass` binary supports the following subcommands:
+
+| Subcommand | Description |
+|---|---|
+| `assoc` | Associate organizations with discovered assets |
+| `engine` | Start the Amass engine |
+| `enum` | Perform DNS enumeration and network mapping |
+| `subs` | Manage discovered subdomains in the asset database |
+| `track` | Compare results across enumerations |
+| `viz` | Generate visualizations of enumeration results |
+
+!!! note "Removed in v5"
+    The `intel` and `db` subcommands from earlier versions are no longer available in v5.
+    Use `subs` in place of `db` for asset database management.
+
 #### Install with Libpostal for Street Address Parsing
 
 **On Ubuntu/Debian**
