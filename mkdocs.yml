@@ -161,4 +161,8 @@ nav:
       - SimpleProperty: open_asset_model/properties/simple_property.md
       - SourceProperty: open_asset_model/properties/source_property.md
       - VulnProperty: open_asset_model/properties/vuln_property.md
+  - AI (Experimental):
+    - Overview: ai/index.md
+    - Classification and Triage: ai/classification.md
+    - Test Fixtures: ai/fixtures.md
   - Contributing: contributing/contributing.md
