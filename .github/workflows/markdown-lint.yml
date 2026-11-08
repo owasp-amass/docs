@@ -8,21 +8,35 @@ on:
       - develop
       - feature/*
 
+permissions:
+  contents: read
+
 jobs:
   markdown-lint:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
+      - name: Checkout code and baseline
         uses: actions/checkout@v4
-
+        with:
+          fetch-depth: 0
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 'lts/*'
-
       - name: Install markdownlint-cli
         run: npm install -g markdownlint-cli
-
-      - name: Run markdownlint
-        run: markdownlint '**/*.md'
+      - name: Lint all new AI documentation (strict)
+        run: markdownlint 'docs/ai/*.md'
+      - name: Compare repository-wide lint results with master
+        shell: bash
+        run: |
+          set -euo pipefail
+          markdownlint --json '**/*.md' > "$RUNNER_TEMP/current-markdown.json" || true
+          git worktree add --detach "$RUNNER_TEMP/docs-master" origin/master
+          (
+            cd "$RUNNER_TEMP/docs-master"
+            markdownlint --json '**/*.md' > "$RUNNER_TEMP/master-markdown.json" || true
+          )
+          python3 scripts/lint_markdown_delta.py \
+            "$RUNNER_TEMP/master-markdown.json" \
+            "$RUNNER_TEMP/current-markdown.json"
