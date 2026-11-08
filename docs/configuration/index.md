@@ -78,7 +78,7 @@ The `options` section controls data sources, brute force, alterations, engine/da
 **Supported Options:**
 
 - `datasources` (string): Path to the data sources YAML file. Required for external data source integration.
-  - For information about the format and fields in this file, see the [Data Sources Configuration](datasources.md) section.
+  - For information about the format and fields in this file, see the [Data Sources Configuration](data_sources.md) section.
 - `engine` (string): URL for the Amass engine API (e.g., `http://127.0.0.1:4000/graphql`).
 - `database` (string): Database connection string (e.g., `bolt://neo4j:amass4OWASP@neo4j:7687/neo4j` or `postgres://amass:amass4OWASP@assetdb:5432/assetdb`).
 - `bruteforce` (object):
