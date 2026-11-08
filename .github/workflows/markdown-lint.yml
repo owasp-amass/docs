@@ -31,11 +31,11 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          markdownlint --json '**/*.md' > "$RUNNER_TEMP/current-markdown.json" || true
+          markdownlint --json '**/*.md' > "$RUNNER_TEMP/current-markdown.json" 2>&1 || true
           git worktree add --detach "$RUNNER_TEMP/docs-master" origin/master
           (
             cd "$RUNNER_TEMP/docs-master"
-            markdownlint --json '**/*.md' > "$RUNNER_TEMP/master-markdown.json" || true
+            markdownlint --json '**/*.md' > "$RUNNER_TEMP/master-markdown.json" 2>&1 || true
           )
           python3 scripts/lint_markdown_delta.py \
             "$RUNNER_TEMP/master-markdown.json" \
