@@ -3,24 +3,6 @@
 Beyond [enumeration](enum.md), [lenses](lenses.md) and [review](review.md),
 the framework has a few focused subcommands.
 
-## :material-sitemap: Subdomains { #subdomains }
-
-`amass subs` analyzes and presents the subdomains already in the database.
-
-```bash
-amass subs -d example.com -names        # just the discovered names
-amass subs -d example.com -ip           # names with their IP addresses
-amass subs -d example.com -summary      # the ASN table summary
-```
-
-| Flag | Meaning |
-| :--- | :--- |
-| `-names` | Print only the discovered names |
-| `-ip` / `-ipv4` / `-ipv6` | Show addresses for the names |
-| `-summary` | Print only the ASN table summary |
-| `-show` | Print results for the enumeration and the domains given |
-| `-o <file>` | Write terminal output to a file |
-
 ## :material-vector-polyline: Associations { #associations }
 
 `amass assoc` walks the Asset Database along a path you describe as a series

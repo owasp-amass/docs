@@ -53,6 +53,18 @@ amass lens report -d example.com
 The attack surface report: the key findings first, then a section from each
 posture lens below. Start here.
 
+### subdomains
+
+```bash
+amass lens subdomains -d example.com
+```
+
+The names a domain or organization controls, in order, each with its stored
+IP addresses (a CNAME is followed to the addresses at the end of its chain),
+and a summary of how many names fall into each autonomous system and
+netblock. This replaces the former `subs` command: the name list, the names
+with their addresses, and the per-AS/per-netblock counts are all here.
+
 ### family
 
 The organizations behind an enumerated domain — its registrant, the

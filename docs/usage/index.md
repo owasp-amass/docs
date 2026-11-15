@@ -17,7 +17,6 @@ amass lens report -d example.com      # read the attack surface
 | [`enum`](enum.md) | Run an enumeration through the engine |
 | [`lens`](lenses.md) | Read-only views of the Asset Database |
 | [`review`](review.md) | Apply and undo the changes lenses propose |
-| [`subs`](tools.md#subdomains) | List discovered subdomains and their data |
 | [`assoc`](tools.md#associations) | Walk the database along a path of triples |
 | [`viz`](tools.md#visualizations) | Graph visualizations (D3, DOT, GEXF) |
 | [`vuln-update`](tools.md#vulnerability-data) | Refresh vulnerability data |
