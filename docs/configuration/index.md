@@ -9,49 +9,30 @@ This document explains the structure and options available in Amass configuratio
 
 The main configuration file, typically named `config.yaml`, controls the scope of your scan, scanning options, and transformation rules. Below is a breakdown of its main sections:
 
-### `scope`
-
-The `scope` section defines the targets and boundaries for enumeration and scanning. Each field is parsed and normalized by Amass, supporting a variety of input formats.
-
-**Supported Fields:**
-
-- `domains` (array of strings): Registered domain names in scope (e.g., `owasp.org`).
-- `ips` (array of strings): IP addresses in scope. Supports single IPs (e.g., `192.0.2.1`), dash-ranges (e.g., `192.168.0.3-8`), and full ranges (e.g., `192.168.0.10-192.168.0.20`).
-- `asns` (array of strings): Autonomous System Numbers (ASNs) in scope (e.g., `AS15169`).
-- `cidrs` (array of strings): CIDR ranges in scope (e.g., `192.0.2.0/24`).
-- `ports` (array of ints): Ports to be used when actively scanning services (e.g., `80`, `443`, `8080`).
-- `blacklist` (array of strings): Subdomains to be excluded from results.
-
-**Example:**
-
-```yaml
-scope:
-  domains:
-    - owasp.org
-  ips:
-    - 192.0.2.1
-    - 192.168.0.10-192.168.0.20
-  cidrs:
-    - 192.0.2.0/24
-  ports:
-    - 80
-    - 443
-  blacklist:
-    - test.owasp.org
-```
-
 ### `seed`
 
-The `seed` section is optional and allows you to specify an initial set of domains, IPs, CIDRs, ASNs, ports, and blacklist entries. If provided, Amass uses `seed` to initialize the scan scope. If the `scope` section is not specified, the `seed` will also be used as the scope. Otherwise, `seed` and `scope` are treated as separate entities, and both can be specified independently.
+The `seed` is where an enumeration **starts**: the existing knowledge about
+the target. It is the one section you really need, because every seed entry
+is collected from and is automatically in scope. A simple run needs only a
+seed; add a `scope` section (below) only when the boundary should be wider
+than the starting points.
 
 **Supported Fields:**
 
-- `domains` (array of strings): Registered domain names to seed the scan (e.g., `owasp.org`).
-- `ips` (array of strings): IP addresses to seed the scan. Supports single IPs, dash-ranges, and full ranges.
-- `asns` (array of strings): Autonomous System Numbers to seed the scan (e.g., `AS15169`).
-- `cidrs` (array of strings): CIDR ranges to seed the scan (e.g., `192.0.2.0/24`).
-- `ports` (array of ints): Ports to be used when actively scanning services.
-- `blacklist` (array of strings): Subdomains to be excluded from results.
+- `domains` (array of strings): registered domains to begin from, the usual
+  starting point (e.g., `owasp.org`).
+- `names` (array of strings): known DNS names, or *leads* — normally
+  subdomains of a domain already in scope, supplied from other tooling or
+  past knowledge so the enumeration does not overlook them. Each lead's
+  registered domain is added to the scope. The `-nf` command-line flag adds
+  names the same way.
+- `names_file` (string): path to a file of leads, one name per line.
+- `ips` (array of strings): IP addresses to begin from. Supports single IPs,
+  dash-ranges, and full ranges.
+- `cidrs` (array of strings): CIDR ranges to begin from (e.g., `192.0.2.0/24`).
+- `asns` (array of ints): autonomous system numbers to begin from.
+- `organizations` (array of strings): company names to begin from; the
+  engine resolves each to its registered domains, networks and systems.
 
 **Example:**
 
@@ -59,16 +40,58 @@ The `seed` section is optional and allows you to specify an initial set of domai
 seed:
   domains:
     - owasp.org
-  ips:
-    - 192.0.2.1
-    - 192.168.0.10-192.168.0.20
+  names:
+    - vpn.owasp.org
+    - api.owasp.org
+  names_file: ./known-names.txt
   cidrs:
     - 192.0.2.0/24
+  asns:
+    - 64496
+  organizations:
+    - Example Corporation
+```
+
+### `scope`
+
+The `scope` is the **boundary** a discovered asset must fall within to be
+kept. Unless the run is started with `-rigid`, the engine may widen the
+scope as it finds evidence (for example, a netblock or domain registered to
+an in-scope organization), so it is a starting boundary, not a hard cap.
+Leave `scope` out to bound the run by the seed alone; list entries here only
+to allow assets beyond the seed.
+
+**Supported Fields:**
+
+- `domains` (array of strings): registered domain names allowed in scope.
+- `ips` (array of strings): IP addresses allowed in scope. Supports single
+  IPs (e.g., `192.0.2.1`), dash-ranges (e.g., `192.168.0.3-8`), and full
+  ranges (e.g., `192.168.0.10-192.168.0.20`).
+- `asns` (array of ints): autonomous systems allowed in scope (their
+  announced networks).
+- `cidrs` (array of strings): CIDR ranges allowed in scope.
+- `organizations` (array of strings): companies discovered assets must be
+  attributable to.
+- `ports` (array of ints): ports active enumeration may probe on in-scope
+  addresses. Leave out to probe every port the probes know; list ports only
+  to narrow that (ranges such as `8000-8010` also work).
+- `blacklist` (array of strings): subdomains that will never be investigated.
+
+**Example:**
+
+```yaml
+scope:
+  domains:
+    - owasp.org
+  cidrs:
+    - 192.0.2.0/24
+  organizations:
+    - Example Corporation
   ports:
     - 80
     - 443
   blacklist:
-    - test.owasp.org
+    - internal.owasp.org
 ```
 
 ### `options`
