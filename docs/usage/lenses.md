@@ -1,0 +1,196 @@
+# :material-eye-outline: Lenses
+
+A **lens** is a read-only view of the [Asset Database](../asset_db/index.md).
+`amass lens` answers a question about what a domain or organization controls
+directly from the stored evidence, with no language model involved. Lenses
+compute their answer each time and never write a conclusion back, so an
+answer changes as the evidence does and nothing is left behind to clean up.
+
+```bash
+amass lens report -d example.com
+amass lens network -org "Example Corp"
+```
+
+Most lenses start from a domain (`-d`) or an organization (`-org`). When a
+lens finds something that *should* change the database — two records of one
+organization that ought to be merged, say — it records a **proposal** rather
+than acting; see [Review](review.md).
+
+## :material-flag: Choosing a subject
+
+| Flag | Meaning |
+| :--- | :--- |
+| `-d <domain>` | The enumerated domain the lens starts from |
+| `-org <name>` | The organization the lens starts from |
+| `-with <domain>` / `-with-org <name>` | Second subject, for `compare` |
+| `-since <when>` | Date, RFC 3339 time or age (`7d`); for `changes` |
+
+## :material-cog-outline: Common options
+
+| Flag | Meaning |
+| :--- | :--- |
+| `-format text\|json` | Output format (default `text`) |
+| `-config <file>` / `-dir <path>` | Configuration file and data directory |
+| `-max-assets <n>` | Cap the controlled assets a lens follows |
+| `-max-reads <n>` | Cap the database reads of one lens run |
+| `-read-stats` | Report what the run read and how long it took |
+| `-vuln-data <file>` | Data file the `vulnerable` lens reads |
+
+Reads are bounded and batched. A lens says when a result is partial, and a
+large footprint is sampled across kinds of asset rather than cut off at the
+first kind.
+
+## :material-view-dashboard: Posture lenses
+
+These read what a subject controls and report on its security posture.
+
+### report
+
+```bash
+amass lens report -d example.com
+```
+
+The attack surface report: the key findings first, then a section from each
+posture lens below. Start here.
+
+### family
+
+The organizations behind an enumerated domain — its registrant, the
+organizations named on its certificates, and the networks and other
+registered domains that serve it — and how they relate (same institution,
+parent, affiliate or vendor). A matching name alone is never treated as
+strong: organizations in different jurisdictions often share a name.
+
+### vendors / group-vendors
+
+`vendors` lists the outside parties a domain and its organization's assets
+depend on (DNS, hosting, certificates, mail, and more). `group-vendors`
+does the same across a whole corporate group and shows which organization in
+the group uses each vendor.
+
+### org-group
+
+The corporate group around an organization: its ultimate parent and every
+subsidiary and unit, as an indented tree with each one's jurisdiction and
+registration number. The links are stored control relationships (such as
+GLEIF parent/child records), never inferred from a shared name.
+
+### services
+
+The services stored for what the subject controls: where each listens, its
+type, the software its response headers and banners name (`nginx 1.24.0`,
+`OpenSSH 9.6p1`), the certificates it presented, and recognized web
+applications. It flags services on unusual ports and weak or expiring
+certificates. Software is identified from stored evidence when asked, never
+written down, since a banner can be hidden or faked.
+
+### network
+
+The netblocks and autonomous systems registered to the subject, where its
+names are hosted (its own space or a provider's), address space none of its
+names use (worth checking for forgotten assets), and other domains found in
+its space. When the database supports range lookups, an address with no
+stored netblock is placed in the netblock that contains it.
+
+### dangling
+
+DNS records that may point at something the subject no longer holds, most
+severe first: claimable aliases (the classic subdomain takeover), expired or
+expiring alias targets and name servers, unresolved aliases, alias loops,
+and stale addresses. Each is a lead to confirm with a live lookup.
+
+### changes { #changes }
+
+```bash
+amass lens changes -d example.com -since 2026-11-01
+amass lens changes -org "Example Corp" -since 7d
+```
+
+What was first stored since a time, and what later enumerations stopped
+seeing, by asset type and relationship purpose. When the database records
+[collection runs](../asset_db/collection_runs.md), it compares against the
+latest finished run that covered the subject and reports what that run did
+not see — firmer than comparing timestamps, because the run is known to have
+looked. Without `-since`, the window is the last 30 days.
+
+### certificates
+
+The subject's TLS certificates — expired, expiring, weak, self-issued or
+overlong ones, and wildcards — and the certificate authorities it relies on.
+
+### domains
+
+The subject's registered domains: registrar, expiry, transfer lock, DNSSEC
+status and DNS providers.
+
+### email
+
+The subject's mail providers and its SPF, DMARC and DKIM records, and which
+of its domains can be spoofed because the records are missing or weak.
+
+### exposure
+
+What the subject exposes that deserves attention: remote access, databases,
+file sharing, management interfaces and login pages.
+
+### concentration
+
+How much the subject relies on single providers for DNS, registration,
+certificates, hosting and mail — where one provider's trouble would matter
+most.
+
+### coverage
+
+How complete the stored data is for the subject, and what collection would
+fill each gap. Useful for deciding what to enumerate next.
+
+### geography
+
+The countries of the subject's stored addresses and of the parties hosting
+its names.
+
+### compare
+
+```bash
+amass lens compare -d a.com -with b.com
+amass lens compare -org "A Corp" -with-org "B Corp"
+```
+
+What two domains or organizations share: common assets and common outside
+parties.
+
+### vulnerable
+
+```bash
+amass vuln-update                      # fetch/refresh the data first
+amass lens vulnerable -d example.com
+```
+
+Checks the software versions the `services` lens identifies against NVD's CVE
+data and lists those with CVEs, known-exploited ones first (CISA KEV), with
+each CVE's score and link. A product without a version, or a version the
+data does not yet cover, is listed as not checked. See
+[`vuln-update`](tools.md#vulnerability-data).
+
+### lookalikes
+
+Domains that resemble the subject's and could be used to impersonate it.
+
+## :material-broom: Database hygiene lenses
+
+These scan the whole database for records to correct and record their
+findings as [proposals](review.md); they are not applied until a reviewer
+approves them.
+
+| Command | What it records |
+| :--- | :--- |
+| `amass lens duplicates` | Duplicated organizations (merge proposals) |
+| `amass lens identity` | Contradicted legal identities (correction proposals) |
+| `amass lens person-named` | An org that is a person (removal proposals) |
+
+## :material-brain: Asking in plain language
+
+Every lens is also reachable through [`amass ai`](../ai/index.md), which uses
+a language model to turn a plain-language question into the right lens and to
+summarize the answer with its evidence. The lenses themselves never need a
+model.

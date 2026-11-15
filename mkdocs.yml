@@ -115,6 +115,12 @@ markdown_extensions:
 # Page tree
 nav:
   - Getting Started: index.md
+  - Usage:
+    - Using the Framework: usage/index.md
+    - Enumeration: usage/enum.md
+    - Lenses: usage/lenses.md
+    - Review: usage/review.md
+    - Other Subcommands: usage/tools.md
   - Configuration:
     - Configuration: configuration/index.md
     - Data Sources: configuration/data_sources.md

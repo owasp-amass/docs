@@ -26,7 +26,10 @@ __[Unlocking the Power of OWASP Amass]__ by [@jeff_foley](https://x.com/jeff_fol
 
 ## :octicons-tools-16: Getting Started 
 
-Users have several options when installing the Amass framework.
+Users have several options when installing the Amass framework. Once it is
+installed, see [Using the Framework](usage/index.md) for the subcommands —
+enumeration, the [lenses](usage/lenses.md) that read the Asset Database,
+[review](usage/review.md), and more.
 
 ### Build from Source Code
 
