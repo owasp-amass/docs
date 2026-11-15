@@ -122,6 +122,7 @@ nav:
   - Asset Database:
     - Asset Database: asset_db/index.md
     - PostgreSQL: asset_db/postgres.md
+    - Collection Runs: asset_db/collection_runs.md
     - Triples: asset_db/triples.md
   - Open Asset Model:
     - Open Asset Model: open_asset_model/index.md
