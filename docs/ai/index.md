@@ -77,6 +77,31 @@ what `describe_config` returns and in every diff, and a draft that sets
 any is refused. Keys are entered by the operator through a one-time local
 link (`data_source_key_link`), never written by the assistant.
 
+## Learning from review
+
+Ownership-gap proposals go to a review journal, where a person approves or
+rejects them. Those decisions train a small, local ownership model that
+replaces the hand-set signal weights with weights learned from the
+reviewer's choices:
+
+```bash
+# Train (or retrain) from the journal's reviewed decisions.
+amass ai -config /path/to/config.yaml train-attribution
+
+# Report whether a model is trained, what it decides with, and how much
+# reviewed data is on hand to retrain.
+amass ai -config /path/to/config.yaml attribution-status
+```
+
+A trained model is written beside the journal and is used everywhere
+ownership is decided: the engine's automatic attribution from the next
+enumeration, the `amass ai` ownership-gap answers, and the MCP ownership-gap
+tool. The model only ever ranks and decides candidates the rules already
+found attributable; weak and ambiguous candidates stay with the rules, and
+until a model is trained the static signal weights decide. The threshold for
+an automatic write is set above the highest score any rejected proposal
+received, so the model writes nothing a reviewer turned down.
+
 ## Model independence
 
 The prototype includes OpenAI-compatible and Anthropic model adapters.
