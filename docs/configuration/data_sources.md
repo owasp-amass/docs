@@ -72,6 +72,30 @@ datasources:
 
 ---
 
+## Key-less data sources
+
+Many data sources need no credentials and run automatically — no
+`datasources.yaml` entry is required for them. These include
+certificate-transparency and passive-DNS sources such as:
+
+- **CertSpotter** — subdomains from the Certificate Transparency logs
+  through SSLMate's CertSpotter API, a reliable alternative to crt.sh.
+- **Columbus** — subdomains from the free Columbus Project index
+  (`columbus.elmasy.com`).
+
+They query public endpoints that are rate-limited rather than
+credentialed, so they work out of the box. You can still give a key-less
+source a `ttl` in `datasources.yaml` to control how long its results are
+reused:
+
+```yaml
+datasources:
+  - name: CertSpotter
+    ttl: 1440 # reuse results for one day
+```
+
+---
+
 ## Tips
 
 - Comment or uncomment sections in YAML to enable/disable features.
