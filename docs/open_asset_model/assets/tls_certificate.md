@@ -38,6 +38,7 @@ This asset type is commonly used to enrich discovered web services, verify prope
 | `crl_distribution_points`  | array of strings | :material-checkbox-blank-circle-outline: | URLs where revocation info can be found |
 | `subject_key_id`           | string   | :material-checkbox-blank-circle-outline: | Identifier for the certificate’s public key |
 | `authority_key_id`         | string   | :material-checkbox-blank-circle-outline: | Identifier for the public key used to sign this certificate |
+| `public_key_sha256`        | string   | :material-checkbox-blank-circle-outline: | Lower-case hex SHA-256 of the DER SubjectPublicKeyInfo; identifies the key pair itself, so certificates sharing it share a key |
 
 ## :material-certificate-outline: TLSCertificate Properties
 
