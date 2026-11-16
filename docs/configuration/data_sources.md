@@ -82,6 +82,9 @@ certificate-transparency and passive-DNS sources such as:
   through SSLMate's CertSpotter API, a reliable alternative to crt.sh.
 - **Columbus** — subdomains from the free Columbus Project index
   (`columbus.elmasy.com`).
+- **Anubis** — subdomains from the Anubis-DB index (`anubisdb.com`).
+- **ThreatMiner** — subdomains from ThreatMiner's domain intelligence
+  API (`api.threatminer.org`).
 
 They query public endpoints that are rate-limited rather than
 credentialed, so they work out of the box. You can still give a key-less
