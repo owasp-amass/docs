@@ -25,6 +25,8 @@ than acting; see [Review](review.md).
 | `-with <domain>` / `-with-org <name>` | Second subject, for `compare` |
 | `-since <when>` | Date, RFC 3339 time or age (`7d`); for `changes` |
 
+An `-org` name is matched exactly; if it is misspelled or partial, or several organizations share it, the lens lists the closest stored names so you can pick the one you meant instead of failing.
+
 ## :material-cog-outline: Common options
 
 | Flag | Meaning |
@@ -86,6 +88,25 @@ The corporate group around an organization: its ultimate parent and every
 subsidiary and unit, as an indented tree with each one's jurisdiction and
 registration number. The links are stored control relationships (such as
 GLEIF parent/child records), never inferred from a shared name.
+
+### funding
+
+The funding a domain's or organization's company has received, from stored
+`FundsTransfer` records: each round or award with its amount, date and the
+investor or agency behind it, and a total when the rounds share a currency.
+Funding comes from keyless public sources — US federal awards and grants
+(USAspending, NSF, NIH, SBIR), US nonprofit and securities filings
+(ProPublica, SEC EDGAR) and public procurement in Europe (TED) and beyond
+(Open Contracting / OCDS). See [Funding and procurement data](../ai/funding.md).
+
+### group-funding
+
+The funding above rolled up across a whole corporate group — the organization
+and every parent, subsidiary and unit — merged, noting which group organization
+received each round, with a group total. One institution's funding is often
+split across records that different funders name differently (a university
+system and one of its campuses, say); this shows the whole picture when those
+records are linked in the group.
 
 ### services
 

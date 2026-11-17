@@ -171,5 +171,6 @@ nav:
   - AI (Experimental):
     - Overview: ai/index.md
     - Classification and Triage: ai/classification.md
+    - Funding and Procurement: ai/funding.md
     - Test Fixtures: ai/fixtures.md
   - Contributing: contributing/contributing.md
