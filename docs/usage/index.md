@@ -10,6 +10,16 @@ amass enum -active -d example.com     # collect
 amass lens report -d example.com      # read the attack surface
 ```
 
+```mermaid
+flowchart LR
+  E["enum<br/>collect"] --> DB[("Asset Database")]
+  DB --> L["lens"]
+  DB --> R["review"]
+  DB --> A["assoc"]
+  DB --> AI["ai"]
+  DB --> V["viz"]
+```
+
 ## :material-format-list-bulleted: Subcommands
 
 | Command | What it does |

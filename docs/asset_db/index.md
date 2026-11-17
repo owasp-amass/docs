@@ -18,6 +18,14 @@ and edges.
 
 [oam]: ../open_asset_model/index.md
 
+```mermaid
+flowchart LR
+  ENUM["amass enum"] -->|writes entities &amp; relations| DB[("Asset Database<br/>SQLite · PostgreSQL · Neo4j")]
+  DB -->|read-only| L["lens"]
+  DB -->|read-only| AI["ai"]
+  DB -->|read-only| V["viz"]
+```
+
 ## :material-database: Supported Backends
 
 | Backend | Connection String | Best For |
