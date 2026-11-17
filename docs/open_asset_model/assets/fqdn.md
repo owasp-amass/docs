@@ -14,7 +14,7 @@ In summary, the `FQDN` asset type provides a precise and structured way to repre
 
 | Attributes       | Type      | Required   | Description  |
 | :--------------: | :-------: | :--------: | :----------- |
-| `name` | string | :material-check-decagram: | Unique fully qualified domain name (e.g. www.example.com) |
+| `name` | string | :material-check-decagram: | Unique fully qualified domain name (e.g. `www.example.com`) |
 
 ## :material-dns: FQDN Properties
 

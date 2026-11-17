@@ -8,13 +8,13 @@ A **triple** is a traversal path that describes a step in a graph walk, or a "ho
 
 A single **triple** follows the format for outgoing relations from the subject:
 
-```
+```text
 <subject> - <predicate> -> <object>
 ```
 
 Or, the arrow pointing in the other direction for incoming relations to the subject:
 
-```
+```text
 <subject> <- <predicate> - <object>
 ```
 
@@ -26,8 +26,8 @@ Or, the arrow pointing in the other direction for incoming relations to the subj
 
 Each node and predicate in the triple has the following format:
 
-```
-<type:label,since:DATE,prop:[type:label,atrribute:value]>
+```text
+<type:label,since:DATE,prop:[type:label,attribute:value]>
 
 <ipaddress:#/72.*/#,prop:[sourceproperty:DNS-IP,since:2025-07-01,confidence:80]>
 ```
@@ -52,7 +52,7 @@ Here is an example of
 
 This query retrieves all IP addresses associated with the root domain name `owasp.org`, starting from the domain and considering DNS records since July 1st, 2025.
 
-```
+```text
 <fqdn:owasp.org> - <*:dns_record,since:2025-07-01> -> <ipaddress:*>
 ```
 
@@ -64,7 +64,7 @@ This query retrieves all IP addresses associated with the root domain name `owas
 
 This query retrieves all subdomains of the root domain `owasp.org`, starting from the domain and considering the relationship to nodes since July 1st, 2025.
 
-```
+```text
 <fqdn:owasp.org> - <*:node,since:2025-07-01> -> <*>
 ```
 
@@ -78,7 +78,7 @@ The object can simply specify the wildcard character, since the 'node' relation 
 
 This query retrieves IP addresses for all subdomain names (e.g. `subdomain.owasp.org`), acquired from a previous triple, and their DNS records since July 1st, 2025.
 
-```
+```text
 <fqdn:#/.*owasp.org/#> - <*:dns_record,since:2025-07-01> -> <ipaddress:*>
 ```
 
@@ -90,7 +90,7 @@ This query retrieves IP addresses for all subdomain names (e.g. `subdomain.owasp
 
 You can use regular expressions to filter the query results. For example, if you want to query IP addresses associated with domain names that match a specific pattern, you can use:
 
-```
+```text
 <fqdn:google.com> - <*:dns_record> -> <ipaddress:#/192.168.*/#>
 ```
 
@@ -104,7 +104,7 @@ This query retrieves IP addresses for `google.com` where the IP address matches 
 
 Triples allow for multiple traversals in a query. You can chain multiple triples to traverse from one node to another through various relationships. For example:
 
-```
+```text
 amass assoc -t1 '<fqdn:owasp.org> - <*:node> -> <*>' -t2 '<fqdn:*> - <*:dns_record> -> <ipaddress:*>'
 ```
 

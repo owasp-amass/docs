@@ -9,11 +9,13 @@ This section empowers users to **customize and optimize their data collection wo
 In Amass, the data collection process is modeled as a pipeline of **asset transformations**. Each asset observed (like an IP address, domain, ASN, etc.) can trigger **handlers**, which attempt to enrich, correlate, or expand on that asset type by transforming it into new assets.
 
 For example:
+
 - A discovered `FQDN` might trigger a handler to look up its DNS records (`FQDN -> DNS`)
 - A known `AutonomousSystem` could be transformed into its RDAP metadata (`AutonomousSystem -> RDAP`)
 - A `Product` seen on a web service might lead to discovery of its `ProductRelease` metadata
 
 The `transformations` section defines:
+
 - **Which transformations are allowed**
 - **How frequently** each transformation should be retried (`ttl`)
 - **How much confidence** the system should have in the results (`confidence`)
@@ -85,7 +87,7 @@ transformations:
     ttl: 10080  # 7 days
 ```
 
-### Explanation:
+### Explanation
 
 - **FQDN->DNS**: Amass will try to resolve DNS for fully qualified domain names once per day.
 - **FQDN->DomainRecord**: Domain ownership records are more stable, so these are refreshed every 30 days.

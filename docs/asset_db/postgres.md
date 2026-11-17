@@ -89,7 +89,7 @@ amass enum -config config.yaml
 
 If the configuration is correct, the collected data will be stored in the PostgreSQL backend you configured.
 
-## ✅ You're Done!
+## ✅ You're Done
 
 Amass is now ready to store data in your PostgreSQL database. This enables you to persist, analyze, and query discovered assets using SQL or integrate with other tooling and dashboards.
 

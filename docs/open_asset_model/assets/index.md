@@ -78,7 +78,7 @@ flowchart LR
 
 ## :material-graph-outline: Quick Example: From Evidence to Asset
 
-Imagine Amass extracts the email address *security@example.com* from the footer of *www.example.com*:
+Imagine Amass extracts the email address `security@example.com` from the footer of `www.example.com`:
 
 ```text
 Source URL: https://www.example.com
@@ -94,7 +94,7 @@ created_at: "2025-06-28"
 last_seen: "2025-06-28"
 ```
 
-An edge will be created between the **ContactRecord** and **Identifier** containing the email address (security@example.com). Future encounters with the same email address will reference the same asset in the graph.
+An edge will be created between the **ContactRecord** and **Identifier** containing the email address (`security@example.com`). Future encounters with the same email address will reference the same asset in the graph.
 
 ## :material-graph-outline: Where to Go Next
 
