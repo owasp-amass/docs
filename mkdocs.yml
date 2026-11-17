@@ -124,6 +124,12 @@ markdown_extensions:
 # Page tree
 nav:
   - Getting Started: index.md
+  - Guides:
+    - Guides: guides/index.md
+    - Your first enumeration: guides/first-enumeration.md
+    - Map an attack surface: guides/attack-surface-report.md
+    - Investigate with AI: guides/investigating-with-ai.md
+    - Organizations and groups: guides/organizations-and-groups.md
   - Usage:
     - Using the Framework: usage/index.md
     - Enumeration: usage/enum.md
