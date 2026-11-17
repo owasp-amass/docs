@@ -25,7 +25,9 @@ than acting; see [Review](review.md).
 | `-with <domain>` / `-with-org <name>` | Second subject, for `compare` |
 | `-since <when>` | Date, RFC 3339 time or age (`7d`); for `changes` |
 
-An `-org` name is matched exactly; if it is misspelled or partial, or several organizations share it, the lens lists the closest stored names so you can pick the one you meant instead of failing.
+An `-org` name is matched exactly; if it is misspelled or partial, or several
+organizations share it, the lens lists the closest stored names so you can pick
+the one you meant instead of failing.
 
 ## :material-cog-outline: Common options
 
