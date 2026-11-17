@@ -34,8 +34,9 @@ plain-language question.
 
 ```mermaid
 flowchart LR
-  T["Targets<br/>domains · IPs · ASNs · orgs"] --> E["Collect<br/><code>amass enum</code>"]
-  E --> DB[("Asset Database<br/>Open Asset Model")]
+  T["Targets<br/>domains · IPs · ASNs · orgs"]
+  E["Collect<br/><code>amass enum</code>"]
+  T --> E --> DB[("Asset Database<br/>Open Asset Model")]
   DB --> L["Lenses<br/><code>amass lens</code>"]
   DB --> AI["AI<br/><code>amass ai</code>"]
   DB --> V["Visualize<br/><code>amass viz</code>"]

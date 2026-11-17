@@ -20,7 +20,9 @@ and edges.
 
 ```mermaid
 flowchart LR
-  ENUM["amass enum"] -->|writes entities &amp; relations| DB[("Asset Database<br/>SQLite · PostgreSQL · Neo4j")]
+  ENUM["amass enum"]
+  DB[("Asset Database<br/>SQLite · PostgreSQL · Neo4j")]
+  ENUM -->|writes entities &amp; relations| DB
   DB -->|read-only| L["lens"]
   DB -->|read-only| AI["ai"]
   DB -->|read-only| V["viz"]

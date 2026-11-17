@@ -44,7 +44,7 @@ certificates each host presented.
 ```bash
 amass lens exposure     -d example.com   # internet-facing surface worth review
 amass lens certificates -d example.com   # expiring or weak certificates
-amass lens dangling     -d example.com   # records pointing at nothing (takeover risk)
+amass lens dangling     -d example.com   # dangling records (takeover risk)
 ```
 
 For known vulnerabilities, refresh the data first, then read the lens:
@@ -57,7 +57,7 @@ amass lens vulnerable -d example.com
 ## Concentration and coverage
 
 ```bash
-amass lens concentration -d example.com  # where the surface clusters (a provider, a netblock)
+amass lens concentration -d example.com  # where the surface clusters
 amass lens coverage      -d example.com  # what has not been collected yet
 ```
 
