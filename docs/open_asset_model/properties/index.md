@@ -1,22 +1,35 @@
 # :simple-owasp: Properties
 
-In the [OWASP](https://owasp.org) [Open Asset Model](https://github.com/owasp-amass/open-asset-model), a **property** is a typed, descriptive annotation attached to an asset or relation. Properties enrich the graph with granular metadata—timestamps, names, identifiers, classifications, fingerprints, and other scalar or structured values—without altering the core topology of the asset graph.
+In the [OWASP](https://owasp.org)
+[Open Asset Model](https://github.com/owasp-amass/open-asset-model), a
+**property** is a typed, descriptive annotation attached to an asset or
+relation. Properties enrich the graph with granular metadata—timestamps, names,
+identifiers, classifications, fingerprints, and other scalar or structured
+values—without altering the core topology of the asset graph.
 
-Properties are **first-class elements** of the model. They provide the facts that support inferences, highlight critical traits, and enable high-resolution filtering or grouping of graph data. Each property is tied to the context in which it was discovered, and many include source attribution for traceability.
+Properties are **first-class elements** of the model. They provide the facts
+that support inferences, highlight critical traits, and enable high-resolution
+filtering or grouping of graph data. Each property is tied to the context in
+which it was discovered, and many include source attribution for traceability.
 
 ## :material-database-outline: Why *Properties* Matter
 
-If assets are the **nouns** and relations are the **verbs** of the graph, then **properties are the adjectives**. They give each node and edge its character.
+If assets are the **nouns** and relations are the **verbs** of the graph, then
+**properties are the adjectives**. They give each node and edge its character.
 
 Properties bring three core advantages to the OAM:
 
-1. **Precision** – Properties allow representation of fine-grained detail like last time enumerated and confidence score of evidence.
-2. **Traceability** – Many property types (e.g., `SourceProperty`, `DNSRecordProperty`) retain the discovery method and timestamp.
-3. **Flexibility** – Because properties are modular and loosely typed, new data can be integrated without schema migrations.
+1. **Precision** – Properties allow representation of fine-grained detail like
+   last time enumerated and confidence score of evidence.
+2. **Traceability** – Many property types (e.g., `SourceProperty`,
+   `DNSRecordProperty`) retain the discovery method and timestamp.
+3. **Flexibility** – Because properties are modular and loosely typed, new data
+   can be integrated without schema migrations.
 
 ## :material-graph-outline: Property Definition
 
-> **Property**: *A typed key-value annotation attached to an asset or relation, used to describe a specific observable or characteristic.*
+> **Property**: *A typed key-value annotation attached to an asset or relation,
+> used to describe a specific observable or characteristic.*
 
 Each property answers three questions:
 
@@ -38,7 +51,8 @@ Each property answers three questions:
 | `DNSRecordProperty`   | Structured DNS lookup result                 | Record an `A` record resolution for an FQDN |
 | `VulnProperty`        | Basic vulnerability data                     | Attach `CVE-2023-1234` to a service asset |
 
-Each property is evaluated in the context of its parent asset or relation and contributes to filtering, scoring, reporting, and pivot logic within the model.
+Each property is evaluated in the context of its parent asset or relation and
+contributes to filtering, scoring, reporting, and pivot logic within the model.
 
 ## :material-graph-outline: Property Schema (Conceptually)
 
@@ -69,7 +83,8 @@ Example of a DNSRecordProperty on an FQDN:
 
 ## :material-graph-outline: Properties in Graph Queries
 
-Properties are not directly navigable edges, but they are critical for filtering and analysis. They can be used in:
+Properties are not directly navigable edges, but they are critical for filtering
+and analysis. They can be used in:
 
 assoc queries to filter assets by specific values.
 
@@ -81,7 +96,8 @@ Explore the types of data used to enrich and explain assets in the graph:
 
 - [Assets](../assets/index.md) – The core entities in the graph.
 - [Relations](../relations/index.md) – Overview of Relations in the Open Asset Model.
-- [Triples](../../asset_db/triples.md) – Performing graph queries using SPARQL-style syntax.
+- [Triples](../../asset_db/triples.md) – Performing graph queries using
+  SPARQL-style syntax.
 
 ---
 

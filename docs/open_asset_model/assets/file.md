@@ -1,12 +1,28 @@
 # :simple-owasp: File
 
-The **File** asset type in the [OWASP](https://owasp.org) [Open Asset Model](https://github.com/owasp-amass/open-asset-model) (OAM) represents a file that is publicly accessible from the internet—typically retrieved via HTTP, HTTPS, or other remote protocols. This includes web-accessible files such as JavaScript libraries, PDF documents, configuration exports, or exposed archives.
+The **File** asset type in the [OWASP](https://owasp.org)
+[Open Asset Model](https://github.com/owasp-amass/open-asset-model) (OAM)
+represents a file that is publicly accessible from the internet—typically
+retrieved via HTTP, HTTPS, or other remote protocols. This includes
+web-accessible files such as JavaScript libraries, PDF documents, configuration
+exports, or exposed archives.
 
-- **Definition:** A `File` asset consists of a direct URL reference to a downloadable or inspectable file, with optional metadata such as file name and type. It serves as an abstraction for discrete, remotely hosted resources.
+- **Definition:** A `File` asset consists of a direct URL reference to a
+  downloadable or inspectable file, with optional metadata such as file name and
+  type. It serves as an abstraction for discrete, remotely hosted resources.
 
-- **Purpose:** Exposed files often contain valuable signals for OSINT and security teams. Public-facing files may reveal application behavior (e.g., JavaScript logic), data leakage (e.g., exports, backups), infrastructure clues (e.g., `.env`, `.git/config`), or user-generated content (e.g., uploaded resumes, invoices). Modeling these files as assets enables targeted analysis, attribution, and monitoring.
+- **Purpose:** Exposed files often contain valuable signals for OSINT and
+  security teams. Public-facing files may reveal application behavior (e.g.,
+  JavaScript logic), data leakage (e.g., exports, backups), infrastructure clues
+  (e.g., `.env`, `.git/config`), or user-generated content (e.g., uploaded
+  resumes, invoices). Modeling these files as assets enables targeted analysis,
+  attribution, and monitoring.
 
-- **Design Choice:** The `File` type is intentionally simple—centered on its URL—to support lightweight ingestion from crawlers, link resolvers, or passive intelligence feeds. Optional `name` and `type` fields allow for basic classification without requiring full content analysis or mime-type parsing during collection.
+- **Design Choice:** The `File` type is intentionally simple—centered on its
+  URL—to support lightweight ingestion from crawlers, link resolvers, or passive
+  intelligence feeds. Optional `name` and `type` fields allow for basic
+  classification without requiring full content analysis or mime-type parsing
+  during collection.
 
 ## :material-file-outline: File Attributes
 

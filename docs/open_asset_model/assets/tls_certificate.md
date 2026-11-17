@@ -1,24 +1,45 @@
 # :simple-owasp: TLSCertificate
 
-The `TLSCertificate` asset type in the [OWASP](https://owasp.org) [Open Asset Model](https://github.com/owasp-amass/open-asset-model) (OAM) represents an X.509 certificate used to establish trust in TLS/SSL connections across Internet-facing services. TLS certificates are critical for encrypting traffic, authenticating services, and ensuring secure communication between clients and servers.
+The `TLSCertificate` asset type in the [OWASP](https://owasp.org)
+[Open Asset Model](https://github.com/owasp-amass/open-asset-model) (OAM)
+represents an X.509 certificate used to establish trust in TLS/SSL connections
+across Internet-facing services. TLS certificates are critical for encrypting
+traffic, authenticating services, and ensuring secure communication between
+clients and servers.
 
-This asset captures detailed metadata about observed certificates, making it possible to track their usage across domains, detect misconfigurations, monitor expiration, and identify shared infrastructure through certificate reuse. By modeling certificates as first-class assets, the OAM enables graph-based analysis of cryptographic trust relationships and their ties to real-world entities and assets.
+This asset captures detailed metadata about observed certificates, making it
+possible to track their usage across domains, detect misconfigurations, monitor
+expiration, and identify shared infrastructure through certificate reuse. By
+modeling certificates as first-class assets, the OAM enables graph-based
+analysis of cryptographic trust relationships and their ties to real-world
+entities and assets.
 
 Each `TLSCertificate` includes key attributes such as:
 
 - **Version** – The X.509 version number of the certificate.
-- **Serial Number** – A unique identifier assigned by the certificate authority (CA).
-- **Subject Common Name (CN)** – The primary identity this certificate claims to represent.
+- **Serial Number** – A unique identifier assigned by the certificate authority
+  (CA).
+- **Subject Common Name (CN)** – The primary identity this certificate claims to
+  represent.
 - **Issuer Common Name (CN)** – The identity of the CA that issued the certificate.
-- **Validity Period** – Timestamps indicating when the certificate is valid (`not_before`) and when it expires (`not_after`).
-- **Key Usage / Extended Key Usage** – Lists of intended purposes for the certificate (e.g., `DigitalSignature`, `ServerAuth`).
+- **Validity Period** – Timestamps indicating when the certificate is valid
+  (`not_before`) and when it expires (`not_after`).
+- **Key Usage / Extended Key Usage** – Lists of intended purposes for the
+  certificate (e.g., `DigitalSignature`, `ServerAuth`).
 - **Signature Algorithm** – The algorithm used by the CA to sign the certificate.
 - **Public Key Algorithm** – The algorithm used by the certificate's public key.
-- **CA Flag** – A boolean flag indicating whether the certificate is a Certificate Authority.
-- **CRL Distribution Points** – URLs where revocation information for the certificate may be retrieved.
-- **Subject Key ID / Authority Key ID** – Identifiers used for verifying trust chains and certificate lineage.
+- **CA Flag** – A boolean flag indicating whether the certificate is a
+  Certificate Authority.
+- **CRL Distribution Points** – URLs where revocation information for the
+  certificate may be retrieved.
+- **Subject Key ID / Authority Key ID** – Identifiers used for verifying trust
+  chains and certificate lineage.
 
-This asset type is commonly used to enrich discovered web services, verify proper encryption practices, and detect certificate sharing across unrelated hosts (e.g., in cloud environments or phishing infrastructure). When linked with assets like `FQDN`, `IPAddress`, or `URL`, `TLSCertificate` helps establish strong associations between services and the organizations operating them.
+This asset type is commonly used to enrich discovered web services, verify
+proper encryption practices, and detect certificate sharing across unrelated
+hosts (e.g., in cloud environments or phishing infrastructure). When linked with
+assets like `FQDN`, `IPAddress`, or `URL`, `TLSCertificate` helps establish
+strong associations between services and the organizations operating them.
 
 ## :material-certificate-outline: TLSCertificate Attributes
 

@@ -1,19 +1,34 @@
 # :simple-owasp: SRVDNSRelation
 
-The **SRVDNSRelation** in the [OWASP](https://owasp.org) [Open Asset Model](https://github.com/owasp-amass/open-asset-model) (OAM) is used to represent DNS SRV (Service) records, which include detailed routing information for locating services such as SIP, XMPP, or LDAP.
+The **SRVDNSRelation** in the [OWASP](https://owasp.org)
+[Open Asset Model](https://github.com/owasp-amass/open-asset-model) (OAM) is
+used to represent DNS SRV (Service) records, which include detailed routing
+information for locating services such as SIP, XMPP, or LDAP.
 
-- **Definition:** An `SRVDNSRelation` captures the mapping from a DNS service name (e.g., `_sip._tcp.example.com`) to a target host or IP address, along with structured metadata including **priority**, **weight**, and **port**. These attributes are fundamental to how SRV records guide service resolution.
+- **Definition:** An `SRVDNSRelation` captures the mapping from a DNS service
+  name (e.g., `_sip._tcp.example.com`) to a target host or IP address, along
+  with structured metadata including **priority**, **weight**, and **port**.
+  These attributes are fundamental to how SRV records guide service resolution.
 
-- **Purpose:** This relation type is essential for modeling DNS-based service discovery mechanisms where clients need to select among multiple service endpoints based on priority and load-balancing rules. Including all SRV-specific attributes enables accurate representation of how services are discovered and accessed in real-world deployments.
+- **Purpose:** This relation type is essential for modeling DNS-based service
+  discovery mechanisms where clients need to select among multiple service
+  endpoints based on priority and load-balancing rules. Including all
+  SRV-specific attributes enables accurate representation of how services are
+  discovered and accessed in real-world deployments.
 
-- **Design Choice:** `SRVDNSRelation` is a more detailed extension of DNS relation types like `BasicDNSRelation` or `PrefDNSRelation`. It includes:
-  - `priority`: Defines the order in which targets should be attempted (lower is tried first).
+- **Design Choice:** `SRVDNSRelation` is a more detailed extension of DNS
+  relation types like `BasicDNSRelation` or `PrefDNSRelation`. It includes:
+  - `priority`: Defines the order in which targets should be attempted (lower is
+    tried first).
   - `weight`: Used for load balancing among targets with the same priority.
   - `port`: Indicates the port on which the service is running.
 
-This richer structure allows for nuanced modeling of service behaviors and routing policies that simpler DNS relations cannot capture.
+This richer structure allows for nuanced modeling of service behaviors and
+routing policies that simpler DNS relations cannot capture.
 
-In summary, `SRVDNSRelation` brings full support for SRV record semantics into the OAM, enabling accurate modeling of service-based resolution patterns that are critical in modern, distributed infrastructure.
+In summary, `SRVDNSRelation` brings full support for SRV record semantics into
+the OAM, enabling accurate modeling of service-based resolution patterns that
+are critical in modern, distributed infrastructure.
 
 ## :material-relation-one-to-one: SRVDNSRelation Attributes
 

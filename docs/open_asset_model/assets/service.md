@@ -1,14 +1,33 @@
 # :simple-owasp: Service
 
-The **Service** asset type in the [OWASP](https://owasp.org) [Open Asset Model](https://github.com/owasp-amass/open-asset-model) (OAM) represents a **network-accessible service** discovered during external intelligence collection. This typically includes any server process that responded to a connection attempt on a known port—such as web servers, SSH daemons, mail servers, database listeners, and more.
+The **Service** asset type in the [OWASP](https://owasp.org)
+[Open Asset Model](https://github.com/owasp-amass/open-asset-model) (OAM)
+represents a **network-accessible service** discovered during external
+intelligence collection. This typically includes any server process that
+responded to a connection attempt on a known port—such as web servers, SSH
+daemons, mail servers, database listeners, and more.
 
-- **Definition:** A `Service` asset captures metadata about a responding network service, including its type (e.g., `http`, `ssh`, `ftp`), the raw output from its initial response, and optionally a set of key-value `attributes` such as HTTP headers or protocol banners.
+- **Definition:** A `Service` asset captures metadata about a responding network
+  service, including its type (e.g., `http`, `ssh`, `ftp`), the raw output from
+  its initial response, and optionally a set of key-value `attributes` such as
+  HTTP headers or protocol banners.
 
-- **Purpose:** The `Service` asset allows the model to **anchor discovery events at the protocol layer**, enabling linkage between hosts (e.g., IP addresses or FQDNs), ports, and deeper contextual assets like `TLSCertificate` or `Product`. This supports questions like: “What is responding on port 443?”, “Which certificates are served from this endpoint?”, or “What headers are exposed by this HTTP server?”
+- **Purpose:** The `Service` asset allows the model to **anchor discovery events
+  at the protocol layer**, enabling linkage between hosts (e.g., IP addresses or
+  FQDNs), ports, and deeper contextual assets like `TLSCertificate` or
+  `Product`. This supports questions like: “What is responding on port 443?”,
+  “Which certificates are served from this endpoint?”, or “What headers are
+  exposed by this HTTP server?”
 
-- **Design Choice:** By treating services as first-class assets, OAM avoids overloading lower-level host or transport layers with application-layer metadata. This cleanly separates service-level observations and makes it easy to enrich, correlate, or reason over what’s actually deployed on a given interface.
+- **Design Choice:** By treating services as first-class assets, OAM avoids
+  overloading lower-level host or transport layers with application-layer
+  metadata. This cleanly separates service-level observations and makes it easy
+  to enrich, correlate, or reason over what’s actually deployed on a given
+  interface.
 
-The Service asset type anchors application-layer discovery to observable ports on internet-facing hosts, enabling technology fingerprinting, encryption analysis, and vulnerability enrichment across the OAM graph.
+The Service asset type anchors application-layer discovery to observable ports
+on internet-facing hosts, enabling technology fingerprinting, encryption
+analysis, and vulnerability enrichment across the OAM graph.
 
 ## :material-server-network: Service Attributes
 

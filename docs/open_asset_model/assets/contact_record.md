@@ -1,6 +1,16 @@
 # :simple-owasp: ContactRecord
 
-The **ContactRecord** asset serves as a connective entity that maintains a reliable audit trail of where contact information was discovered during the *attack surface intelligence* collection process. It plays a critical role in ensuring both flexibility and consistency within the [Open Asset Model](https://github.com/owasp-amass/open-asset-model), as it is uniformly applied wherever contact details are identified—regardless of the specific type of contact information uncovered. Because such information is often found in varied groupings, it's important to preserve the context in which each piece was associated. The **ContactRecord** makes this possible by capturing and storing the discovered contact data alongside its source location, maintaining their relationship within the model.
+The **ContactRecord** asset serves as a connective entity that maintains a
+reliable audit trail of where contact information was discovered during the
+*attack surface intelligence* collection process. It plays a critical role in
+ensuring both flexibility and consistency within the
+[Open Asset Model](https://github.com/owasp-amass/open-asset-model), as it is
+uniformly applied wherever contact details are identified—regardless of the
+specific type of contact information uncovered. Because such information is
+often found in varied groupings, it's important to preserve the context in which
+each piece was associated. The **ContactRecord** makes this possible by
+capturing and storing the discovered contact data alongside its source location,
+maintaining their relationship within the model.
 
 ## :material-contacts: ContactRecord Attributes
 

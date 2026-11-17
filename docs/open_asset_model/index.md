@@ -1,16 +1,29 @@
 # :simple-owasp: Open Asset Model
 
-The **Amass Project's** [Open Asset Model](https://github.com/owasp-amass/open-asset-model) redefines the understanding of an attack surface. Shifting the paradigm away from narrow, internet infrastructure-focused collection, the **OAM** broadens its scope to include both physical and digital assets. This approach delivers a realistic view of **assets and their lesser-known associations**, utilizing adversarial tactics to gain visibility into potential risks and attack vectors that might otherwise be overlooked.
+The **Amass Project's**
+[Open Asset Model](https://github.com/owasp-amass/open-asset-model) redefines
+the understanding of an attack surface. Shifting the paradigm away from narrow,
+internet infrastructure-focused collection, the **OAM** broadens its scope to
+include both physical and digital assets. This approach delivers a realistic
+view of **assets and their lesser-known associations**, utilizing adversarial
+tactics to gain visibility into potential risks and attack vectors that might
+otherwise be overlooked.
 
 ---
 
 ## **//** Overview
 
-- **Deep Attack Surface Intelligence:** Identifies both **physical and digital assets**, moving beyond IT infrastructure.
-- **Standardized Asset Framework:** Ensures **consistency in asset classification**, facilitating efficient data exchange and streamlined analysis.
-- **Cyclic Discovery:** Recursively approaches data exploration, leveraging each finding to dynamically **expand the target scope**.
-- **Community-Driven:** Developed and continuously refined by security experts within the **OWASP Amass** ecosystem.
-- **Risk Mapping:** Exposes hidden attack vectors by **mapping asset relationships** and tracking their changes over time.
+- **Deep Attack Surface Intelligence:** Identifies both **physical and digital
+  assets**, moving beyond IT infrastructure.
+- **Standardized Asset Framework:** Ensures **consistency in asset
+  classification**, facilitating efficient data exchange and streamlined
+  analysis.
+- **Cyclic Discovery:** Recursively approaches data exploration, leveraging each
+  finding to dynamically **expand the target scope**.
+- **Community-Driven:** Developed and continuously refined by security experts
+  within the **OWASP Amass** ecosystem.
+- **Risk Mapping:** Exposes hidden attack vectors by **mapping asset
+  relationships** and tracking their changes over time.
 
 ---
 
@@ -50,7 +63,8 @@ documented in this section.
 
     ---
 
-    Collect usernames, account types, and related attributes to track exposed user accounts
+    Collect usernames, account types, and related attributes to track exposed
+    user accounts
 
     [:octicons-arrow-right-24: Learn more](https://owasp-amass.github.io/docs/open-asset-model/assets/account/)
 
@@ -138,7 +152,8 @@ documented in this section.
 
     ---
 
-    Gather SSL/TLS certificate details, issuers, and expiration dates for asset verification
+    Gather SSL/TLS certificate details, issuers, and expiration dates for asset
+    verification
 
     [:octicons-arrow-right-24: Learn more](https://owasp-amass.github.io/docs/open-asset-model/assets/tls_certificate/)
 

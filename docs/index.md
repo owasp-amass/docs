@@ -1,26 +1,47 @@
 # :simple-owasp: Amass Docs
 
-**OWASP Amass** is an open-source, versatile **attack surface intelligence** framework designed to comprehensively map an organization’s footprint. Built for flexibility and depth, Amass combines advanced data collection, network mapping, and OSINT capabilities to deliver detailed insights into physical and digital assets.
+**OWASP Amass** is an open-source, versatile **attack surface intelligence**
+framework designed to comprehensively map an organization’s footprint. Built for
+flexibility and depth, Amass combines advanced data collection, network mapping,
+and OSINT capabilities to deliver detailed insights into physical and digital
+assets.
 
 ## Overview
 
-[OWASP Amass](https://github.com/owasp-amass) extends **far beyond basic subdomain enumeration**, offering a comprehensive, automated approach to information gathering that reveals the full scope of an entity's **physical** and **digital** footprint.
+[OWASP Amass](https://github.com/owasp-amass) extends **far beyond basic
+subdomain enumeration**, offering a comprehensive, automated approach to
+information gathering that reveals the full scope of an entity's **physical**
+and **digital** footprint.
 
 ??? info "Open Asset Model (OAM)"
-    The [Open Asset Model](https://owasp-amass.github.io/docs/open-asset-model/) expands traditional specifications by modeling both the **physical** and **digital** structure of a target's asset landscape. Defining **asset types**, their unique **properties**, and the **relationships** that join them, the `OAM` compiles a comprehensive view of the attack surface from an adversarial perspective.
+    The [Open Asset Model](https://owasp-amass.github.io/docs/open-asset-model/)
+    expands traditional specifications by modeling both the **physical** and
+    **digital** structure of a target's asset landscape. Defining **asset
+    types**, their unique **properties**, and the **relationships** that join
+    them, the `OAM` compiles a comprehensive view of the attack surface from an
+    adversarial perspective.
 
 ---
 
 :fontawesome-brands-youtube:{ .youtube }
-**[Unlocking the Power of OWASP Amass]** by [@jeff_foley](https://x.com/jeff_foley) - DEFCON 31 Recon Village :octicons-clock-24: 33m  
+**[Unlocking the Power of OWASP Amass]** by
+[@jeff_foley](https://x.com/jeff_foley) - DEFCON 31 Recon Village
+:octicons-clock-24: 33m
 
   [Unlocking the Power of OWASP Amass]: https://www.youtube.com/watch?v=IgxPsv8MXMw
 
-- **Automated Deployment and Enumeration:** Easily deploy Amass with [Docker Compose](https://docs.docker.com/compose/) for quick, automated asset discovery across multiple domains with minimal configuration.
+- **Automated Deployment and Enumeration:** Easily deploy Amass with
+  [Docker Compose](https://docs.docker.com/compose/) for quick, automated asset
+  discovery across multiple domains with minimal configuration.
 
-- **Centralized Asset Management with Asset Database:** Use the Asset Database for storing, managing, and retrieving discovered assets, with support for long-term tracking and consistent data collection via the Open Asset Model.
+- **Centralized Asset Management with Asset Database:** Use the Asset Database
+  for storing, managing, and retrieving discovered assets, with support for
+  long-term tracking and consistent data collection via the Open Asset Model.
 
-- **Scalable and Flexible Infrastructure:** Designed for enterprise environments, [Docker](https://www.docker.com/products/docker-desktop/) enables scalable deployments of Amass, ensuring consistent attack surface management for organizations of any size.
+- **Scalable and Flexible Infrastructure:** Designed for enterprise
+  environments, [Docker](https://www.docker.com/products/docker-desktop/)
+  enables scalable deployments of Amass, ensuring consistent attack surface
+  management for organizations of any size.
 
 ---
 
@@ -58,7 +79,8 @@ Install the Amass swiss army knife executable in your preferred environment.
 
 #### Prerequisites
 
-- **Golang:** Install an up-to-date version of Go on your system. You can download it from the [Go Official Website](https://go.dev).
+- **Golang:** Install an up-to-date version of Go on your system. You can
+  download it from the [Go Official Website](https://go.dev).
 
 #### Perform the build and installation process
 
@@ -119,7 +141,9 @@ The OWASP Amass Project maintains a **Homebrew** package.
 
 #### Homebrew prerequisites
 
-- **Homebrew:** Install an up-to-date version of the package manager on your system. You can download it from the [Homebrew Official Website](https://brew.sh/).
+- **Homebrew:** Install an up-to-date version of the package manager on your
+  system. You can download it from the
+  [Homebrew Official Website](https://brew.sh/).
 
 #### Install the Homebrew package
 
@@ -136,7 +160,9 @@ brew install amass
 
 Before you begin, make sure you have the following installed on your system:
 
-- **Docker:** Up-to-date installation running on your system. You can download it from the [Docker Official Website](https://www.docker.com/products/docker-desktop/).
+- **Docker:** Up-to-date installation running on your system. You can download
+  it from the
+  [Docker Official Website](https://www.docker.com/products/docker-desktop/).
 
 #### Step 1: Pull the Amass Docker Image
 
@@ -159,7 +185,8 @@ docker run --rm -it -v ~/.config/amass:/.config/amass amass:latest enum -d owasp
 ```
 
 !!! Warning
-    The example above mounts the Amass configuration directory on Linux. The location of this directory can be different on other operating systems.
+    The example above mounts the Amass configuration directory on Linux. The
+    location of this directory can be different on other operating systems.
 
 ### Containerized Execution within Docker Compose
 
@@ -169,16 +196,20 @@ Follow these steps to set up Amass using [Docker Compose](https://docs.docker.co
 
 Before you begin, make sure you have the following installed on your system:
 
-- **Docker:** Up-to-date installation running on your system. You can download it from the [Docker Official Website](https://www.docker.com/products/docker-desktop/).
+- **Docker:** Up-to-date installation running on your system. You can download
+  it from the
+  [Docker Official Website](https://www.docker.com/products/docker-desktop/).
   
-- **Docker Compose:** Typically, Docker Compose is bundled with Docker Desktop, but you can verify the installation or install it separately from
+- **Docker Compose:** Typically, Docker Compose is bundled with Docker Desktop,
+  but you can verify the installation or install it separately from
     [Docker Compose Installation](https://docs.docker.com/compose/).
 
 - **Git:** To clone the Amass repository. Download it from the [Git Official Website](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 
 #### Step 1: Clone the Amass Docker Compose Directory
 
-Start by cloning the OWASP Amass repository containing the Docker Compose setup files.
+Start by cloning the OWASP Amass repository containing the Docker Compose setup
+files.
 
 ```bash
 git clone https://github.com/owasp-amass/amass-docker-compose.git
@@ -190,18 +221,21 @@ cd amass   # Navigate to the local repository
 
 **> Open the `assetdb.env` File:**
 
-Navigate to the `config` directory and open the `assetdb.env` file in a text editor to set the database passwords.
+Navigate to the `config` directory and open the `assetdb.env` file in a text
+editor to set the database passwords.
 
 ```bash
 cd config
 nano assetdb.env # (1)!
 ```
 
-1.   You can replace `nano` with your preferred text editor, like `vim` or `code` for Visual Studio Code.
+1.   You can replace `nano` with your preferred text editor, like `vim` or
+     `code` for Visual Studio Code.
 
 **> Set the Passwords:**
 
-In the `assetdb.env` file, locate the lines for `POSTGRES_PASSWORD` and `AMASS_PASSWORD`. Update them to assign new values.
+In the `assetdb.env` file, locate the lines for `POSTGRES_PASSWORD` and
+`AMASS_PASSWORD`. Update them to assign new values.
 
 For example:
 
@@ -211,19 +245,22 @@ AMASS_PASSWORD=your_new_amass_password
 ```
 
 !!! Warning
-    This cannot be performed after you start the Docker Compose and the database has been created.
+    This cannot be performed after you start the Docker Compose and the database
+    has been created.
 
 **> Save Changes:**
 
 After editing, save the file:
 
-- If you're using **nano**: Press `Ctrl + O` (then hit `Enter`) to save and `Ctrl + X` to exit.
+- If you're using **nano**: Press `Ctrl + O` (then hit `Enter`) to save and
+  `Ctrl + X` to exit.
 
 - If you're using **vim**: Press `Esc`, then type `:wq` and hit `Enter`.
 
 **> Modify the `config.yaml` File:**
 
-Open the `config.yaml` file to set the database password to the one you just assigned as `AMASS_PASSWORD`.
+Open the `config.yaml` file to set the database password to the one you just
+assigned as `AMASS_PASSWORD`.
 
 ```bash
 nano config.yaml
@@ -231,7 +268,8 @@ nano config.yaml
 
 **> Update the Database Password:**
 
-Find the section in the `config.yaml` file that specifies the database settings. Change the password to match the `AMASS_PASSWORD` you set earlier.
+Find the section in the `config.yaml` file that specifies the database settings.
+Change the password to match the `AMASS_PASSWORD` you set earlier.
 
 For example:
 
@@ -246,7 +284,8 @@ options:
 As before, save the changes using your preferred text editor.
 
 !!! info "Update the Data Sources"
-    If you want to configure data sources, you can modify the `datasources.yaml` file. Open it with:
+    If you want to configure data sources, you can modify the `datasources.yaml`
+    file. Open it with:
     ```bash
     nano datasources.yaml
     ```
@@ -254,7 +293,10 @@ As before, save the changes using your preferred text editor.
 
 #### Step 3: Building the Docker Images
 
-Your **Amass** framework is now configured and ready to be built. [Docker Compose](https://docs.docker.com/compose/) will build the required images and start them correctly when you perform your first Amass command execution.
+Your **Amass** framework is now configured and ready to be built.
+[Docker Compose](https://docs.docker.com/compose/) will build the required
+images and start them correctly when you perform your first Amass command
+execution.
 
 **> Type the following to get started:**
 

@@ -1,14 +1,34 @@
 # :simple-owasp: Person
 
-The **Person** asset type in the [OWASP](https://owasp.org) [Open Asset Model](https://github.com/owasp-amass/open-asset-model) (OAM) represents an individual human being discovered as part of intelligence collection, attribution, or enrichment processes. Persons may appear in public records, domain registrations, technical contacts, breached datasets, or OSINT sources and often serve as pivots for understanding organizational relationships or behavioral patterns.
+The **Person** asset type in the [OWASP](https://owasp.org)
+[Open Asset Model](https://github.com/owasp-amass/open-asset-model) (OAM)
+represents an individual human being discovered as part of intelligence
+collection, attribution, or enrichment processes. Persons may appear in public
+records, domain registrations, technical contacts, breached datasets, or OSINT
+sources and often serve as pivots for understanding organizational relationships
+or behavioral patterns.
 
-- **Definition:** A `Person` asset encapsulates identifying attributes such as full legal name, date of birth, and gender. It may represent a registrant, technical contact, executive, threat actor, or any other discovered individual.
+- **Definition:** A `Person` asset encapsulates identifying attributes such as
+  full legal name, date of birth, and gender. It may represent a registrant,
+  technical contact, executive, threat actor, or any other discovered
+  individual.
 
-- **Purpose:** Modeling people as structured assets allows for attribution graphs, ownership resolution, and behavioral correlation across disparate data points. Individuals are often central to understanding the provenance, intent, or organizational structure behind assets like domains, IP ranges, or certificates.
+- **Purpose:** Modeling people as structured assets allows for attribution
+  graphs, ownership resolution, and behavioral correlation across disparate data
+  points. Individuals are often central to understanding the provenance, intent,
+  or organizational structure behind assets like domains, IP ranges, or
+  certificates.
 
-- **Design Choice:** The `Person` structure includes multiple levels of name granularity to enable flexible matching and entity resolution. Optional fields (e.g., `birth_date`, `gender`) support deeper analysis when present, but are not required—ensuring compatibility with incomplete or privacy-preserving sources. The model avoids sensitive personal information (e.g., national IDs) unless already exposed via legitimate public data sources.
+- **Design Choice:** The `Person` structure includes multiple levels of name
+  granularity to enable flexible matching and entity resolution. Optional fields
+  (e.g., `birth_date`, `gender`) support deeper analysis when present, but are
+  not required—ensuring compatibility with incomplete or privacy-preserving
+  sources. The model avoids sensitive personal information (e.g., national IDs)
+  unless already exposed via legitimate public data sources.
 
-The Person asset type enables entity-centric analysis within the Open Asset Model, helping analysts reason about attribution, ownership, and relationships between human actors and the infrastructure they operate or influence.
+The Person asset type enables entity-centric analysis within the Open Asset
+Model, helping analysts reason about attribution, ownership, and relationships
+between human actors and the infrastructure they operate or influence.
 
 ## :material-account: Person Attributes
 

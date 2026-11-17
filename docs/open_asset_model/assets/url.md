@@ -1,8 +1,15 @@
 # :simple-owasp: URL
 
-The `URL` asset type is part of the [OWASP](https://owasp.org) [Open Asset Model](https://github.com/owasp-amass/open-asset-model) (OAM) and represents a fully qualified web resource identifier. This asset captures essential information about a Uniform Resource Locator, including its structure, classification, and the context in which it was discovered or used.
+The `URL` asset type is part of the [OWASP](https://owasp.org)
+[Open Asset Model](https://github.com/owasp-amass/open-asset-model) (OAM) and
+represents a fully qualified web resource identifier. This asset captures
+essential information about a Uniform Resource Locator, including its structure,
+classification, and the context in which it was discovered or used.
 
-URLs are a central component in external-attack surface assessments, as they often map directly to web applications, APIs, or other internet-facing services. Modeling URLs as first-class assets enables automated analysis, correlation with certificates, subdomain enumeration, and vulnerability scanning workflows.
+URLs are a central component in external-attack surface assessments, as they
+often map directly to web applications, APIs, or other internet-facing services.
+Modeling URLs as first-class assets enables automated analysis, correlation with
+certificates, subdomain enumeration, and vulnerability scanning workflows.
 
 Each `URL` asset includes the following attributes:
 
@@ -16,9 +23,14 @@ Each `URL` asset includes the following attributes:
 - **Options** – Extra options used while connecting.
 - **Fragment** – Optional—anchor reference within the resource (e.g., `#section`).
 
-By representing URLs with a dedicated asset structure, OAM supports detailed analysis of web-facing infrastructure—like identifying TLS mismatches, linking subdomains to specific applications, flagging hosts with dynamic or query-based endpoints, and auditing for insecure or deprecated schemes.
+By representing URLs with a dedicated asset structure, OAM supports detailed
+analysis of web-facing infrastructure—like identifying TLS mismatches, linking
+subdomains to specific applications, flagging hosts with dynamic or query-based
+endpoints, and auditing for insecure or deprecated schemes.
 
-This asset type plays a key role in workflows such as subdomain takeover detection, API fingerprinting, redirect chain mapping, and vulnerability assessment pipelines.
+This asset type plays a key role in workflows such as subdomain takeover
+detection, API fingerprinting, redirect chain mapping, and vulnerability
+assessment pipelines.
 
 ## :octicons-browser-24: URL Attributes
 

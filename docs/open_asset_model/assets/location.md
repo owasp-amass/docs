@@ -1,14 +1,30 @@
 # :simple-owasp: Location
 
-The **Location** asset type in the [OWASP](https://owasp.org) [Open Asset Model](https://github.com/owasp-amass/open-asset-model) (OAM) represents a physical, postal, or geo-administrative address where an entity, asset, or infrastructure component is situated. Modeling locations is essential for *physical security*, *compliance*, and *geo-contextual threat intelligence*.
+The **Location** asset type in the [OWASP](https://owasp.org)
+[Open Asset Model](https://github.com/owasp-amass/open-asset-model) (OAM)
+represents a physical, postal, or geo-administrative address where an entity,
+asset, or infrastructure component is situated. Modeling locations is essential
+for *physical security*, *compliance*, and *geo-contextual threat intelligence*.
 
-* **Definition:** A `Location` asset encapsulates structured geographic and civic data elements such as street name, building number, city, province, country, and more. It is designed to express physical placement or registration information for various assets in the OAM.
+* **Definition:** A `Location` asset encapsulates structured geographic and
+  civic data elements such as street name, building number, city, province,
+  country, and more. It is designed to express physical placement or
+  registration information for various assets in the OAM.
 
-* **Purpose:** By defining `Location` as a core asset, the model enables linkage between digital infrastructure and their physical contexts. This supports use cases like data residency enforcement, regional exposure analysis, and logistics around physical components of an attack surface.
+* **Purpose:** By defining `Location` as a core asset, the model enables linkage
+  between digital infrastructure and their physical contexts. This supports use
+  cases like data residency enforcement, regional exposure analysis, and
+  logistics around physical components of an attack surface.
 
-* **Design Choice:** Each attribute within the `Location` asset is modeled with optionality in mind, allowing broad applicability — from a complete civic address to partial location data such as city-only or PO Box information. The inclusion of a `GLN` (Global Location Number) field aligns with standardized supply chain and logistics frameworks.
+* **Design Choice:** Each attribute within the `Location` asset is modeled with
+  optionality in mind, allowing broad applicability — from a complete civic
+  address to partial location data such as city-only or PO Box information. The
+  inclusion of a `GLN` (Global Location Number) field aligns with standardized
+  supply chain and logistics frameworks.
 
-In summary, the `Location` asset type serves as a structured and flexible mechanism for tying assets to their real-world geographic presence — aiding in operational awareness, compliance mapping, and geospatial intelligence.
+In summary, the `Location` asset type serves as a structured and flexible
+mechanism for tying assets to their real-world geographic presence — aiding in
+operational awareness, compliance mapping, and geospatial intelligence.
 
 ## :material-map-marker: Location Attributes
 

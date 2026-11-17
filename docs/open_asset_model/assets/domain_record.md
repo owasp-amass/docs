@@ -1,14 +1,32 @@
 # :simple-owasp: DomainRecord
 
-The **DomainRecord** asset type in the [OWASP](https://owasp.org) [Open Asset Model](https://github.com/owasp-amass/open-asset-model) (OAM) captures authoritative *registration* data for a domain name, as supplied by WHOIS, RDAP, or similar registry services. Domain registration facts are distinct from DNS‑resolution facts; they reveal **who controls a domain, when it was created, and under what status it currently operates**—all of which are vital to attribution, supply‑chain mapping, and domain‑lifecycle monitoring.
+The **DomainRecord** asset type in the [OWASP](https://owasp.org)
+[Open Asset Model](https://github.com/owasp-amass/open-asset-model) (OAM)
+captures authoritative *registration* data for a domain name, as supplied by
+WHOIS, RDAP, or similar registry services. Domain registration facts are
+distinct from DNS‑resolution facts; they reveal **who controls a domain, when it
+was created, and under what status it currently operates**—all of which are
+vital to attribution, supply‑chain mapping, and domain‑lifecycle monitoring.
 
-- **Definition:** A `DomainRecord` represents a single domain’s registration record (raw and parsed), including key lifecycle dates, status flags, registrar details, internationalisation fields, and a DNSSEC indicator.
+- **Definition:** A `DomainRecord` represents a single domain’s registration
+  record (raw and parsed), including key lifecycle dates, status flags,
+  registrar details, internationalisation fields, and a DNSSEC indicator.
 
-- **Purpose:** Modeling registration data as a first‑class asset allows security teams to (1) link domains to legal entities and contacts, (2) detect newly registered or expiring domains, (3) follow ownership changes over time, and (4) correlate punycode / IDN variants that could be abused for impersonation.
+- **Purpose:** Modeling registration data as a first‑class asset allows security
+  teams to (1) link domains to legal entities and contacts, (2) detect newly
+  registered or expiring domains, (3) follow ownership changes over time, and
+  (4) correlate punycode / IDN variants that could be abused for impersonation.
 
-- **Design Choice:** Keeping both *normalised* fields (e.g., `created_date`) **and** the original `raw` text preserves machine‑readable consistency while ensuring full auditability.  Optional fields make the structure tolerant of incomplete WHOIS responses, and the `status` array supports the many ICANN/ccTLD state strings without schema changes.
+- **Design Choice:** Keeping both *normalised* fields (e.g., `created_date`)
+  **and** the original `raw` text preserves machine‑readable consistency while
+  ensuring full auditability. Optional fields make the structure tolerant of
+  incomplete WHOIS responses, and the `status` array supports the many
+  ICANN/ccTLD state strings without schema changes.
 
-DomainRecords provide authoritative visibility into how domain names are registered, updated, and governed, making them critical for attribution, expiration monitoring, and organizational mapping within the external asset graph.
+DomainRecords provide authoritative visibility into how domain names are
+registered, updated, and governed, making them critical for attribution,
+expiration monitoring, and organizational mapping within the external asset
+graph.
 
 ## :material-file-cabinet: DomainRecord Attributes
 

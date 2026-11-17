@@ -1,14 +1,32 @@
 # :simple-owasp: FQDN
 
-The **FQDN** (Fully Qualified Domain Name) asset type in the [OWASP](https://owasp.org) [Open Asset Model](https://github.com/owasp-amass/open-asset-model) (OAM) represents a fully specified domain name that uniquely identifies a resource within the DNS hierarchy. FQDNs are foundational elements in *open-source intelligence (OSINT)* and are essential to building a thorough *attack surface intelligence* profile.
+The **FQDN** (Fully Qualified Domain Name) asset type in the
+[OWASP](https://owasp.org)
+[Open Asset Model](https://github.com/owasp-amass/open-asset-model) (OAM)
+represents a fully specified domain name that uniquely identifies a resource
+within the DNS hierarchy. FQDNs are foundational elements in *open-source
+intelligence (OSINT)* and are essential to building a thorough *attack surface
+intelligence* profile.
 
-- **Definition:** An `FQDN` asset contains a domain name string (e.g., `www.example.com`). It refers to the complete and unambiguous name of a host or service as resolved through DNS.
+- **Definition:** An `FQDN` asset contains a domain name string (e.g.,
+  `www.example.com`). It refers to the complete and unambiguous name of a host
+  or service as resolved through DNS.
 
-- **Purpose:** This asset type enables the modeling of DNS-resolvable names as distinct entities within an attack surface. `FQDN` assets are critical for tracing how external users and systems access internal infrastructure, through domain-based references rather than direct IP addresses.
+- **Purpose:** This asset type enables the modeling of DNS-resolvable names as
+  distinct entities within an attack surface. `FQDN` assets are critical for
+  tracing how external users and systems access internal infrastructure, through
+  domain-based references rather than direct IP addresses.
 
-- **Design Choice:** By treating FQDNs as first-class assets, the model supports DNS resolution chains (via relations like `BasicDNSRelation`, `PrefDNSRelation`, and `SRVDNSRelation`) and links to IP addresses, services, or other host-based assets. This allows security teams to analyze exposure, misconfigurations, or shadow assets rooted in DNS name usage.
+- **Design Choice:** By treating FQDNs as first-class assets, the model supports
+  DNS resolution chains (via relations like `BasicDNSRelation`,
+  `PrefDNSRelation`, and `SRVDNSRelation`) and links to IP addresses, services,
+  or other host-based assets. This allows security teams to analyze exposure,
+  misconfigurations, or shadow assets rooted in DNS name usage.
 
-In summary, the `FQDN` asset type provides a precise and structured way to represent domain-based identifiers in the OAM, serving as a core building block for understanding how infrastructure is referenced and accessed over the internet or internal networks.
+In summary, the `FQDN` asset type provides a precise and structured way to
+represent domain-based identifiers in the OAM, serving as a core building block
+for understanding how infrastructure is referenced and accessed over the
+internet or internal networks.
 
 ## :material-dns: FQDN Attributes
 
