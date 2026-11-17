@@ -22,8 +22,7 @@ is linked:
 - `FundsTransfer --third_party--> Organization` — the funder (investor, agency
   or contracting body).
 
-The Asset Database rejects a transfer with a non-positive amount, so a record
-with no monetary value is skipped rather than stored.
+A record with no monetary value is skipped rather than stored.
 
 ## Sources
 
@@ -32,8 +31,8 @@ setup. Each applies only where it has coverage (a US source matches nothing for
 a non-US organization, and stores nothing), requests are rate-limited, and
 collection follows the normal TTL cadence. Any source can be turned off per
 session through the `transformations` section of the configuration (see
-[Transformations](../configuration/transformations.md)); each grant source is
-its own named source so they can be excluded individually.
+[Transformations](../configuration/transformations.md)); each is its own named
+source so they can be excluded individually.
 
 | Source | Region | What it adds |
 | :--- | :--- | :--- |
@@ -46,32 +45,23 @@ its own named source so they can be excluded individually.
 
 ## Open Contracting (OCDS)
 
-The Open Contracting Data Standard normalizes procurement data, so one parser
-reads every publisher; what differs is each publisher's access method, recorded
-as data in the publisher catalog. A publisher is used only after its endpoint
-and response shape are validated against a real sample.
+Amass reads public procurement published in the Open Contracting Data Standard
+(OCDS). Publishers differ in how their data is reached:
 
-- **Supplier-search publishers** expose an API that can be queried by supplier
-  name; the collector queries it per organization.
-- **Bulk publishers** publish only a full export (newline-delimited compiled
-  releases, optionally gzipped). Bulk ingestion is **on-demand**: the export is
-  downloaded (once per day, then streamed and matched by supplier) only when an
-  organization from that publisher's own country is enumerated, so a run that
-  touches no organizations from a country never downloads it. This covers a
-  country with no supplier-search API without pulling every country's data. The
-  amount is read from the award, or, when the award omits it, from the matching
-  contract or the tender value.
+- **Supplier-search publishers** offer an API that can be queried by supplier
+  name; Amass queries it for each organization.
+- **Bulk publishers** offer only a full export. These are fetched **on-demand**:
+  a country's export is downloaded (once per day, then matched by supplier) only
+  when an organization from that country is enumerated, so a run that touches no
+  organizations from a country never downloads its data.
 
 Currently enabled publishers include Mexico (Nuevo León), the United Kingdom
-(Find a Tender), Rwanda, the Dominican Republic, Honduras and Paraguay. To add
-one, set its `bulk_url` (or a supplier-search `query_url`) in the catalog and
-enable it after validating a sample from that publisher.
+(Find a Tender), Rwanda, the Dominican Republic, Honduras and Paraguay.
 
-## Signals and inference
+## Identifiers and correlation
 
-Government and registry identifiers collected alongside funding feed
-correlation: a shared registry identifier (LEI, D-U-N-S, EIN, SEC CIK, …) is a
-strong signal that two stored organizations are the same company, and shared
-funders are a signal that two organizations are affiliated. These remain
-[review](../usage/review.md) proposals; funding itself is a stored observation,
-and the lenses compute their conclusions each time without writing them back.
+Alongside funding, Amass collects government and registry identifiers (LEI,
+D-U-N-S, EIN, SEC CIK, and others). A shared registry identifier is a strong
+indication that two stored organizations are the same company, and shared
+funders suggest two organizations are affiliated. These surface as
+[review](../usage/review.md) proposals for you to confirm.

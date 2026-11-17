@@ -180,7 +180,9 @@ fill each gap. Useful for deciding what to enumerate next.
 ### geography
 
 The countries of the subject's stored addresses and of the parties hosting
-its names.
+its names. For an organization it also reports an inferred country — Amass's
+best determination from the evidence it has (legal jurisdiction, a registration
+or contact address, a registrant phone).
 
 ### compare
 
