@@ -89,6 +89,17 @@ subsidiary and unit, as an indented tree with each one's jurisdiction and
 registration number. The links are stored control relationships (such as
 GLEIF parent/child records), never inferred from a shared name.
 
+### affiliation
+
+Organizations the subject is affiliated with — tied by a shared phone, person,
+funder or address — each with the signals behind the link and a confidence.
+A shared name alone is never enough.
+
+### accounts
+
+The platform accounts the subject has (code hosts, social media and the like),
+computed from the profile URLs stored for it.
+
 ### funding
 
 The funding a domain's or organization's company has received, from stored
@@ -117,6 +128,11 @@ applications. It flags services on unusual ports and weak or expiring
 certificates. Software is identified from stored evidence when asked, never
 written down, since a banner can be hidden or faked.
 
+### web
+
+The subject's web presence: its website URLs and endpoints, the host and
+address each one reaches, and the web applications recognized on them.
+
 ### network
 
 The netblocks and autonomous systems registered to the subject, where its
@@ -124,6 +140,11 @@ names are hosted (its own space or a provider's), address space none of its
 names use (worth checking for forgotten assets), and other domains found in
 its space. When the database supports range lookups, an address with no
 stored netblock is placed in the netblock that contains it.
+
+### cloud
+
+The public cloud and CDN providers hosting the subject's names — by provider,
+region and service — from the providers' own published IP ranges.
 
 ### dangling
 
@@ -161,10 +182,31 @@ status and DNS providers.
 The subject's mail providers and its SPF, DMARC and DKIM records, and which
 of its domains can be spoofed because the records are missing or weak.
 
+### contacts
+
+The subject's contact details — phone numbers, email addresses, contact people
+and postal addresses — from its stored contact records.
+
+### identifiers
+
+The registered identifiers attached to what the subject controls — LEI, tax,
+company and registry numbers and handles — grouped by type.
+
 ### exposure
 
 What the subject exposes that deserves attention: remote access, databases,
 file sharing, management interfaces and login pages.
+
+### headers
+
+The HTTP security headers of the subject's web services — HSTS, CSP,
+clickjacking and MIME-sniffing protection, and cookie flags — and which are
+missing or weak.
+
+### disclosure
+
+How the subject invites vulnerability reports: its `security.txt` contacts,
+policy and encryption links, and any of those files that have expired.
 
 ### concentration
 
