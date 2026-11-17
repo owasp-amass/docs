@@ -80,9 +80,9 @@ This query may walk:
 
 Learn more about the structure and usage of the model:
 
-- [Assets](../assets/index.md) – The core entities in the graph.
-- [Properties](../properties/index.md) – Descriptive metadata that enrich assets.
-- [Triples](../../asset_db/triples.md) – Performing graph queries using SPARQL-style syntax.
+* [Assets](../assets/index.md) – The core entities in the graph.
+* [Properties](../properties/index.md) – Descriptive metadata that enrich assets.
+* [Triples](../../asset_db/triples.md) – Performing graph queries using SPARQL-style syntax.
 
 ---
 
