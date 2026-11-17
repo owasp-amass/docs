@@ -1,50 +1,46 @@
-# Cost-aware classification and review
+# Cost-aware classification and triage (development preview)
 
 !!! warning "Experimental"
-    The CPU classifier has no production-calibrated weights.
-    Accuracy, cost savings, and false-negative rates have not been
-    measured on a representative corpus.
+    The local classifier is experimental and not yet calibrated, so it is used
+    conservatively: by default it never sets a candidate aside on its own.
 
-Deterministic candidate selection is the default. With adequate
-verified provenance, an optional local classifier routes candidates:
+Running a generative model on every candidate is slow and costly. Before doing
+so, Amass can run an inexpensive, local classification step that decides how much
+attention each candidate deserves — so model calls are spent only where they
+help.
 
-- **`review`:** Record a review-only triage event without an LLM call
-  or trusted OAM edge.
-- **`escalate`:** Send bounded evidence to the generative provider.
-- **`skip`:** Reject a candidate locally only under an explicit,
-  calibrated policy. This is not an ownership conclusion.
+Each candidate is routed one of three ways:
 
-**An uncalibrated skip never suppresses generative analysis.**
-The Go API permits calibrated skipping only with an explicit policy;
-the CLI does not enable that behavior.
+- **review** — recorded for your triage, with no model call.
+- **escalate** — sent to the generative model for analysis.
+- **skip** — set aside locally. This is conservative: it applies only under an
+  explicit, calibrated policy, it is **off by default**, and it is never an
+  ownership conclusion.
 
-## Provenance-aware features
+```mermaid
+flowchart LR
+  C["Candidate<br/>(evidence-backed)"] --> T{"Local triage"}
+  T -->|review| RV["Review queue"]
+  T -->|escalate| LLM["Generative model"]
+  T -->|"skip (off by default)"| SK["Set aside"]
+  LLM --> P["Review proposal"]
+```
 
-The initial `oam-provenance-v1` extractor uses bounded counts of
-distinct source identities, evidence records, the fraction of source
-properties, and the fraction of unattributed evidence. It requires
-at least two attributed source IDs before classification.
+## Conservative by default
 
-These features test routing and costs. They do not establish legal
-ownership from name similarity or shared infrastructure, and cannot
-replace evidence-based relationship assessment.
+Because the local classifier is not calibrated, Amass does not let it suppress
+analysis on its own. By default, every candidate with enough evidence is still
+escalated; automatic skipping is reserved for a future, independently validated
+policy.
 
-## Evaluation
+## It never decides ownership
 
-The `classify.Evaluate` API reports label correctness, escalations,
-review decisions, and unsafe skips (known positives wrongly skipped).
-Tests include shared-CDN and similar-name negative examples.
+Classification only routes effort — it does not conclude that two organizations
+are related. A shared CDN or a similar name is not evidence of a relationship;
+conclusions come from the evidence and from your review.
 
-Do not enable automatic negative skipping until an independently
-adjudicated, held-out evaluation set demonstrates acceptable recall
-and false-negative behavior for each relationship category.
+## Audit
 
-## Audit and review
-
-Classification-only decisions use `triage` journal events.
-Generative proposals use `proposal` events and must pass evidence ID
-and OAM taxonomy validation. Neither writes trusted OAM edges.
-
-The local JSONL journal is suitable for development. An unattended
-worker requires durable queueing, idempotency, concurrency controls,
-and authorization before production use.
+Every decision is recorded, and generative proposals are checked against their
+evidence and the Open Asset Model before they appear for review. Nothing here
+changes the database on its own — see [review](../usage/review.md).

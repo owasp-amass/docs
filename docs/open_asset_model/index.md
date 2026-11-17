@@ -14,6 +14,32 @@ The **Amass Project's** [Open Asset Model](https://github.com/owasp-amass/open-a
 
 ---
 
+## :material-vector-polyline: Assets and relationships
+
+The OAM describes an attack surface as **assets** joined by **relationships**.
+From any asset you can follow those links outward — a domain to the hosts it
+resolves to, a host to its network and services, an organization to the domains
+and addresses it controls.
+
+```mermaid
+flowchart TD
+  ORG["Organization"] -->|website| URL["URL"]
+  URL -->|domain| FQDN["FQDN"]
+  ORG -->|location| LOC["Location"]
+  ORG -->|id| IDN["Identifier"]
+  ORG -->|recipient| FT["FundsTransfer"]
+  FQDN -->|dns record| IP["IP Address"]
+  IP -->|contained by| NB["Netblock"]
+  NB -->|announced by| AS["Autonomous System"]
+  FQDN -->|port| SVC["Service"]
+  SVC -->|certificate| CERT["TLS Certificate"]
+```
+
+Each asset type, and the relationships and properties that join them, is
+documented in this section.
+
+---
+
 ## :material-graph: Explore OAM Asset Types
 
 ---

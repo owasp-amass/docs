@@ -24,6 +24,26 @@ __[Unlocking the Power of OWASP Amass]__ by [@jeff_foley](https://x.com/jeff_fol
 
 ---
 
+## :material-sitemap: How Amass works
+
+Amass **collects** what it observes about a target into the **Asset Database**,
+structured by the [Open Asset Model](open_asset_model/index.md). Every other
+command **reads** that database — turning raw observations into subdomains,
+services, organizations, an attack-surface report, or an answer to a
+plain-language question.
+
+```mermaid
+flowchart LR
+  T["Targets<br/>domains · IPs · ASNs · orgs"] --> E["Collect<br/><code>amass enum</code>"]
+  E --> DB[("Asset Database<br/>Open Asset Model")]
+  DB --> L["Lenses<br/><code>amass lens</code>"]
+  DB --> AI["AI<br/><code>amass ai</code>"]
+  DB --> V["Visualize<br/><code>amass viz</code>"]
+  L --> R["Reports &amp; insight"]
+  AI --> R
+  V --> R
+```
+
 ## :octicons-tools-16: Getting Started 
 
 Users have several options when installing the Amass framework. Once it is

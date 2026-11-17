@@ -22,6 +22,13 @@ is linked:
 - `FundsTransfer --third_party--> Organization` — the funder (investor, agency
   or contracting body).
 
+```mermaid
+flowchart LR
+  REC["Organization<br/>recipient"] -->|account| ACC["Account"]
+  FT["FundsTransfer<br/>amount · currency · date"] -->|recipient| ACC
+  FT -->|third_party| FUN["Organization<br/>funder"]
+```
+
 A record with no monetary value is skipped rather than stored.
 
 ## Sources

@@ -34,10 +34,15 @@ source provided each fact, so you can always see where a detail came from.
 ## How it appears in the graph
 
 A discovered company is linked to its domain through standard Open Asset Model
-relations:
+relations, so the company is reachable from the domain and vice versa:
 
-```
-Organization --website--> URL --domain--> FQDN
+```mermaid
+flowchart LR
+  W["Wikidata"] --> ORG["Organization"]
+  G["GLEIF<br/>by LEI"] --> ORG
+  H["Homepage markup"] --> ORG
+  ORG -->|website| URL["URL"]
+  URL -->|domain| FQDN["FQDN"]
 ```
 
 So from a domain you can reach the organization that owns it, and from an
