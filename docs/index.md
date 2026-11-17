@@ -171,7 +171,7 @@ Before you begin, make sure you have the following installed on your system:
 
 - **Docker:** Up-to-date installation running on your system. You can download it from the [Docker Official Website](https://www.docker.com/products/docker-desktop/).
   
-- **Docker Compose:** Typically, Docker Compose is bundled with Docker Desktop, but you can verify the installation or install it seperately from
+- **Docker Compose:** Typically, Docker Compose is bundled with Docker Desktop, but you can verify the installation or install it separately from
     [Docker Compose Installation](https://docs.docker.com/compose/).
 
 - **Git:** To clone the Amass repository. Download it from the [Git Official Website](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)

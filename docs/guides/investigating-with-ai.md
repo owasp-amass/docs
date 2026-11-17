@@ -51,12 +51,13 @@ company, or an affiliation — are written as **proposals**, never applied
 automatically. Work through them with the review workflow:
 
 ```bash
-amass review            # see and act on pending proposals
+amass review proposals       # list what is pending
+amass review approve -proposal <id>   # accept one (reject to decline)
 ```
 
-Accepting a proposal records the decision; your decisions are the only thing
-that changes trusted data. See [Review](../usage/review.md) for the full
-workflow and how to undo a change.
+Approving a proposal records the decision, and only your decisions change
+trusted data; `amass review retract` undoes one you already applied. See
+[Review](../usage/review.md) for the full workflow.
 
 ## Good questions to start with
 

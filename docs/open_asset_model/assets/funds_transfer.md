@@ -34,8 +34,8 @@ The FundsTransfer asset type enables graph-based tracking of financial transacti
 ```mermaid
 graph TD
 transfer["FundsTransfer ($5,000 USD)"]
-ident["Identifer"]
-idRel@{ shape, braces, label: "id" }
+ident["Identifier"]
+idRel@{ shape: braces, label: "id" }
 transfer --o idRel
 idRel --> ident
 

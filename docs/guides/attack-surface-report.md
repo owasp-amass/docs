@@ -81,7 +81,9 @@ all show up here — useful for ongoing attack-surface monitoring.
 Any of this can be exported as a graph for a different tool or a report:
 
 ```bash
-amass viz -d example.com      # D3, DOT and GEXF outputs
+amass viz -d3   -d example.com   # interactive D3 force-graph (HTML)
+amass viz -dot  -d example.com   # Graphviz DOT
+amass viz -gexf -d example.com   # Gephi GEXF
 ```
 
 See [Other subcommands](../usage/tools.md#visualizations) for the formats, and
