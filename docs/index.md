@@ -70,22 +70,26 @@ At this point, the binary should be in *$GOPATH/bin*.
 
 #### Install with Libpostal for Street Address Parsing
 
-**On Ubuntu/Debian**
+##### On Ubuntu/Debian
+
 ```bash
 sudo apt-get install curl autoconf make automake libtool pkg-config
 ```
 
-**On CentOS/RHEL**
+##### On CentOS/RHEL
+
 ```bash
 sudo yum install curl autoconf automake libtool pkgconfig
 ```
 
-**On MacOS**
+##### On macOS
+
 ```bash
-sudo brew install curl autoconf automake libtool pkg-config
+brew install curl autoconf automake libtool pkg-config
 ```
 
-**Installing libpostal**
+##### Installing libpostal
+
 ```bash
 git clone https://github.com/openvenues/libpostal.git
 cd libpostal
@@ -95,7 +99,8 @@ make
 sudo make install
 ```
 
-On Linux it's probably a good idea to run.
+On Linux, it's a good idea to run the following:
+
 ```bash
 sudo ldconfig
 ```
@@ -112,11 +117,11 @@ At this point, the binary should be in *$GOPATH/bin*.
 
 The OWASP Amass Project maintains a **Homebrew** package.
 
-#### Prerequisites
+#### Homebrew prerequisites
 
 - **Homebrew:** Install an up-to-date version of the package manager on your system. You can download it from the [Homebrew Official Website](https://brew.sh/).
 
-#### Perform the build and installation process
+#### Install the Homebrew package
 
 The following two commands will install Amass into your environment:
 
@@ -127,7 +132,7 @@ brew install amass
 
 ### Execute using the Official Amass Docker Image
 
-#### Prerequisites
+#### Docker prerequisites
 
 Before you begin, make sure you have the following installed on your system:
 
@@ -142,7 +147,7 @@ docker pull owaspamass/amass:latest
 #### Step 2: Give the Image a Convenient Tag
 
 ```bash
-docker tag owaspamass/amass:5.0.0 amass:latest
+docker tag owaspamass/amass:latest amass:latest
 ```
 
 #### Step 3: Execute Amass using the Container
@@ -160,7 +165,7 @@ docker run --rm -it -v ~/.config/amass:/.config/amass amass:latest enum -d owasp
 
 Follow these steps to set up Amass using [Docker Compose](https://docs.docker.com/compose/):
 
-#### Prerequisites
+#### Docker Compose prerequisites
 
 Before you begin, make sure you have the following installed on your system:
 
@@ -290,6 +295,7 @@ git pull origin main
 #### :material-update: Update Process for the Docker Images
 
 **> Make the local repo your current working directory:**
+
 ```bash
 cd amass
 ```
@@ -312,18 +318,20 @@ docker compose build --pull --no-cache
 
 ---
 
-License
---------
-    Copyright 2017-2025 Jeff Foley
+## License
 
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
+```text
+Copyright 2017-2025 Jeff Foley
 
-       http://www.apache.org/licenses/LICENSE-2.0
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
 
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.  
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+```
