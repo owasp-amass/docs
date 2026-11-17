@@ -172,7 +172,7 @@ Amass supports configuring the Engine API and Database connection using environm
 
 ### `transformations`
 
-The `transformations` section controls how assets should be proccessed, how long results from specific transforms are considered valid (TTL), and the minimum confidence level. This can be customized per entity and transform type. 
+The `transformations` section controls how assets should be proccessed, how long results from specific transforms are considered valid (TTL), and the minimum confidence level. This can be customized per entity and transform type.
 
 - Each transformation key is parsed as `<from>-><to>`. Amass validates these against the Open Asset Model (OAM) and ensures there are no conflicts (e.g., you can't have both `FQDN->ALL` and `FQDN->none`). You can set `ttl`, `confidence`, `priority`, and `exclude` for each transformation.
 - If a transformation omits `ttl`, `confidence`, or `priority`, Amass uses the values from `default_transform_values` in `options`.

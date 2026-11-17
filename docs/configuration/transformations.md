@@ -87,17 +87,17 @@ transformations:
 
 ### Explanation:
 
-* **FQDN->DNS**: Amass will try to resolve DNS for fully qualified domain names once per day.
-* **FQDN->DomainRecord**: Domain ownership records are more stable, so these are refreshed every 30 days.
-* **IPAddress->ALL**: All available transformations for IPs are enabled (e.g., geolocation, RDAP, reverse DNS).
-* **TLSCertificate->ALL**: Certificates fetched from services are checked weekly.
+- **FQDN->DNS**: Amass will try to resolve DNS for fully qualified domain names once per day.
+- **FQDN->DomainRecord**: Domain ownership records are more stable, so these are refreshed every 30 days.
+- **IPAddress->ALL**: All available transformations for IPs are enabled (e.g., geolocation, RDAP, reverse DNS).
+- **TLSCertificate->ALL**: Certificates fetched from services are checked weekly.
 
 ## :material-refresh: What is `ttl`?
 
 `ttl` (Time To Live) controls **how often a transformation can be retried** from the original source:
 
-* If the data is **still fresh** (within TTL), Amass will use the previously stored result from the database.
-* If the TTL has **expired**, the handler will attempt to **re-run the transformation**, such as querying the data source again.
+- If the data is **still fresh** (within TTL), Amass will use the previously stored result from the database.
+- If the TTL has **expired**, the handler will attempt to **re-run the transformation**, such as querying the data source again.
 
 This ensures the system avoids unnecessary queries and controls bandwidth/load.
 
@@ -105,8 +105,8 @@ This ensures the system avoids unnecessary queries and controls bandwidth/load.
 
 `confidence` helps Amass **filter out noisy or speculative results**. Some plugins or handlers may return results with associated confidence scores.
 
-* If a handler returns a transformation with `confidence: 40`, and your threshold is `50`, **it will be ignored**.
-* Use this to reduce false positives or to tune behavior in environments where high data quality is crucial.
+- If a handler returns a transformation with `confidence: 40`, and your threshold is `50`, **it will be ignored**.
+- Use this to reduce false positives or to tune behavior in environments where high data quality is crucial.
 
 ## :material-star: What is `priority`?
 
@@ -114,11 +114,11 @@ The `priority` value is a **relative score (1–10)** that can help inform which
 
 ## :material-clipboard-list-outline: Tips and Best Practices
 
-* ✅ Use `->ALL` to simplify enabling all known transformations for an asset type.
-* ✅ Use higher TTLs (e.g., 30+ days) for records that rarely change (e.g., `RDAP`, `GLEIF`, `DomainRecord`).
-* ⚠️ Keep `ttl` low (e.g., 60–1440 min) for time-sensitive records like DNS, services, or IP geolocation.
-* ✅ Set `confidence` thresholds higher (e.g., 70–90) in production pipelines where trust is critical.
-* ✅ Consider adjusting `priority` for critical infrastructure or high-value assets.
+- ✅ Use `->ALL` to simplify enabling all known transformations for an asset type.
+- ✅ Use higher TTLs (e.g., 30+ days) for records that rarely change (e.g., `RDAP`, `GLEIF`, `DomainRecord`).
+- ⚠️ Keep `ttl` low (e.g., 60–1440 min) for time-sensitive records like DNS, services, or IP geolocation.
+- ✅ Set `confidence` thresholds higher (e.g., 70–90) in production pipelines where trust is critical.
+- ✅ Consider adjusting `priority` for critical infrastructure or high-value assets.
 
 ## :material-rocket-launch: Summary
 

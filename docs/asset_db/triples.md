@@ -32,7 +32,7 @@ Each node and predicate in the triple has the following format:
 <ipaddress:#/72.*/#,prop:[sourceproperty:DNS-IP,since:2025-07-01,confidence:80]>
 ```
 
-Here is an example of 
+Here is an example of
 
 - **type**: The type of the node (e.g., `fqdn` or `ipaddress`).
 - **label**: The specific value associated with the node (e.g. `dns_record`).
@@ -116,5 +116,5 @@ The **Triples Query Language** is a powerful way to interact with the OWASP Asse
 
 ## See Also
 
-* [Asset Database](./index.md)
-* [Setting Up PostgreSQL](./postgres.md)
+- [Asset Database](./index.md)
+- [Setting Up PostgreSQL](./postgres.md)

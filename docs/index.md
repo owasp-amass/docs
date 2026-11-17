@@ -1,6 +1,6 @@
-# :simple-owasp: Amass Docs 
+# :simple-owasp: Amass Docs
 
-**OWASP Amass** is an open-source, versatile **attack surface intelligence** framework designed to comprehensively map an organization’s footprint. Built for flexibility and depth, Amass combines advanced data collection, network mapping, and OSINT capabilities to deliver detailed insights into physical and digital assets. 
+**OWASP Amass** is an open-source, versatile **attack surface intelligence** framework designed to comprehensively map an organization’s footprint. Built for flexibility and depth, Amass combines advanced data collection, network mapping, and OSINT capabilities to deliver detailed insights into physical and digital assets.
 
 ## Overview
 
@@ -11,8 +11,8 @@
 
 ---
 
-:fontawesome-brands-youtube:{ .youtube } 
-__[Unlocking the Power of OWASP Amass]__ by [@jeff_foley](https://x.com/jeff_foley) - DEFCON 31 Recon Village :octicons-clock-24: 33m  
+:fontawesome-brands-youtube:{ .youtube }
+**[Unlocking the Power of OWASP Amass]** by [@jeff_foley](https://x.com/jeff_foley) - DEFCON 31 Recon Village :octicons-clock-24: 33m  
 
   [Unlocking the Power of OWASP Amass]: https://www.youtube.com/watch?v=IgxPsv8MXMw
 
@@ -45,7 +45,7 @@ flowchart LR
   V --> R
 ```
 
-## :octicons-tools-16: Getting Started 
+## :octicons-tools-16: Getting Started
 
 Users have several options when installing the Amass framework. Once it is
 installed, see [Using the Framework](usage/index.md) for the subcommands —
@@ -194,9 +194,9 @@ nano assetdb.env # (1)!
 
 1.   You can replace `nano` with your preferred text editor, like `vim` or `code` for Visual Studio Code.
 
-**> Set the Passwords:** 
+**> Set the Passwords:**
 
-In the `assetdb.env` file, locate the lines for `POSTGRES_PASSWORD` and `AMASS_PASSWORD`. Update them to assign new values. 
+In the `assetdb.env` file, locate the lines for `POSTGRES_PASSWORD` and `AMASS_PASSWORD`. Update them to assign new values.
 
 For example:
 
@@ -208,7 +208,7 @@ AMASS_PASSWORD=your_new_amass_password
 !!! Warning
     This cannot be performed after you start the Docker Compose and the database has been created.
 
-**> Save Changes:** 
+**> Save Changes:**
 
 After editing, save the file:
 
@@ -224,7 +224,7 @@ Open the `config.yaml` file to set the database password to the one you just ass
 nano config.yaml
 ```
 
-**> Update the Database Password:** 
+**> Update the Database Password:**
 
 Find the section in the `config.yaml` file that specifies the database settings. Change the password to match the `AMASS_PASSWORD` you set earlier.
 
@@ -269,13 +269,13 @@ cd amass
 
 **> Shutdown the Amass containers within the Docker environment:**
 
-```bash 
+```bash
 docker compose down
 ```
 
 **> Backup the configuration files:**
 
-```bash 
+```bash
 cp config/assetdb.env config/config.yaml config/datasources.yaml backups/
 ```
 
