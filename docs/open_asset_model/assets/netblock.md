@@ -50,6 +50,11 @@ contains@{ shape: braces, label: "contains" }
 netblock --o contains
 contains --> ipaddr
 
+org["Organization"]
+provrel@{ shape: braces, label: "provider" }
+netblock --o provrel
+provrel --> org
+
 iprec["IPNetRecord"]
 regrel@{ shape: braces, label: "registration"}
 netblock --o regrel
@@ -61,6 +66,7 @@ regrel --> iprec
 | Relation Type       | Relation Label     | Target Assets    | Description   |
 | :-----------------: | :----------------: | :--------------: | :------------ |
 | [`SimpleRelation`](../relations/simple_relation.md) | `contains` | [`IPAddress`](./ip_address.md) | Links a Netblock to an IPAddress within the CIDR range |
+| [`SimpleRelation`](../relations/simple_relation.md) | `provider` | [`Organization`](./organization.md) | Links a Netblock to the organization that provides it, such as its cloud or hosting provider |
 | [`SimpleRelation`](../relations/simple_relation.md) | `registration` | [`IPNetRecord`](./ipnet_record.md) | Links a network to its associated registration data |
 
 ---

@@ -51,6 +51,11 @@ simple4@{ shape: braces, label: "person"}
 contact --o simple4
 simple4 --> person
 
+loc["Location"]
+simple7@{ shape: braces, label: "location"}
+contact --o simple7
+simple7 --> loc
+
 phone["Phone"]
 simple5@{ shape: braces, label: "phone"}
 contact --o simple5
@@ -70,6 +75,7 @@ simple6 --> url
 | [`SimpleRelation`](../relations/simple_relation.md) | `id` | [`Identifier`](./identifier.md) | Represents an ID (e.g. email address) in the contact information |
 | [`SimpleRelation`](../relations/simple_relation.md) | `organization` | [`Organization`](./organization.md) | Represents an organization name in the contact information |
 | [`SimpleRelation`](../relations/simple_relation.md) | `person` | [`Person`](./person.md) | Represents a person's name discovered with the contact information |
+| [`SimpleRelation`](../relations/simple_relation.md) | `location` | [`Location`](./location.md) | Represents a street address in the contact information |
 | [`SimpleRelation`](../relations/simple_relation.md) | `phone` | [`Phone`](./phone.md) | Represents a phone number in the contact information |
 | [`SimpleRelation`](../relations/simple_relation.md) | `url` | [`URL`](./url.md) | Represents an URL discovered in the contact information |
 

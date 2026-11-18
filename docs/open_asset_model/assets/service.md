@@ -74,6 +74,20 @@ used@{ shape: braces, label: "product_used" }
 service --o used
 used --> prod
 used --> prodrel
+
+seccontact["ContactRecord"]
+scontact@{ shape: braces, label: "security_contact" }
+service --o scontact
+scontact --> seccontact
+
+securl["URL"]
+secpolicy@{ shape: braces, label: "security_policy
+security_canonical
+security_encryption
+security_acknowledgments
+security_hiring" }
+service --o secpolicy
+secpolicy --> securl
 ```
 
 ---
@@ -84,6 +98,12 @@ used --> prodrel
 | [`SimpleRelation`](../relations/simple_relation.md) | `certificate` | [`TLSCertificate`](./tls_certificate.md) | Links the service with an associated TLS certificate |
 | [`SimpleRelation`](../relations/simple_relation.md) | `terms_of_service` | [`File`](./file.md), [`URL`](./url.md) | Links the service with terms of service information |
 | [`SimpleRelation`](../relations/simple_relation.md) | `product_used` | [`Product`](./product.md), [`ProductRelease`](./product_release.md) | Links the service to `Product` and versioning details |
+| [`SimpleRelation`](../relations/simple_relation.md) | `security_contact` | [`ContactRecord`](./contact_record.md) | The security contact from the service's `security.txt` |
+| [`SimpleRelation`](../relations/simple_relation.md) | `security_policy` | [`URL`](./url.md) | The security policy named in the service's `security.txt` |
+| [`SimpleRelation`](../relations/simple_relation.md) | `security_canonical` | [`URL`](./url.md) | The canonical URL of the service's `security.txt` |
+| [`SimpleRelation`](../relations/simple_relation.md) | `security_encryption` | [`URL`](./url.md) | The encryption key URL from the service's `security.txt` |
+| [`SimpleRelation`](../relations/simple_relation.md) | `security_acknowledgments` | [`URL`](./url.md) | The security acknowledgments page from the service's `security.txt` |
+| [`SimpleRelation`](../relations/simple_relation.md) | `security_hiring` | [`URL`](./url.md) | The security hiring page from the service's `security.txt` |
 
 ---
 
