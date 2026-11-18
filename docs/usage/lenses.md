@@ -12,10 +12,10 @@ amass lens network -org "Example Corp"
 ```
 
 Every lens below links to its own page with worked examples (from a real
-enumeration of `owasp.org`) and notes on reading the output. Most lenses start from a domain (`-d`) or an organization (`-org`). Lenses
-only read. The scans that find records to fix and write **proposals** are a
-separate subcommand, [`amass db`](db.md), reviewed with
-[`amass review`](review.md).
+enumeration of `owasp.org`) and notes on reading the output. Most lenses start
+from a domain (`-d`) or an organization (`-org`). Lenses only read. The scans
+that find records to fix and write **proposals** are a separate subcommand,
+[`amass db`](db.md), reviewed with [`amass review`](review.md).
 
 ## :material-flag: Choosing a subject
 
