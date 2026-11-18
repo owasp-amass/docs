@@ -15,7 +15,7 @@ historical archives.
 Each `SourceProperty` includes the following components:
 
 - **Name** – Name of the engine plugin that discovered the asset or relation
-  (e.g., `DNS-IP`, `RDAP`, `GLIEF`).
+  (e.g., `DNS-IP`, `RDAP`, `GLEIF`).
 - **Confidence** – A numerical value providing a percentage of confidence (e.g.,
   `50`, `75`, `100`).
 

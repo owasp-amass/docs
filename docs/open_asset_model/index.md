@@ -40,12 +40,12 @@ flowchart TD
   URL -->|domain| FQDN["FQDN"]
   ORG -->|location| LOC["Location"]
   ORG -->|id| IDN["Identifier"]
-  ORG -->|recipient| FT["FundsTransfer"]
-  FQDN -->|dns record| IP["IP Address"]
-  IP -->|contained by| NB["Netblock"]
-  NB -->|announced by| AS["Autonomous System"]
+  FT["FundsTransfer"] -->|third_party| ORG
+  FQDN -->|dns_record| IP["IPAddress"]
+  NB["Netblock"] -->|contains| IP
+  AS["AutonomousSystem"] -->|announces| NB
   FQDN -->|port| SVC["Service"]
-  SVC -->|certificate| CERT["TLS Certificate"]
+  SVC -->|certificate| CERT["TLSCertificate"]
 ```
 
 Each asset type, and the relationships and properties that join them, is
@@ -66,23 +66,23 @@ documented in this section.
     Collect usernames, account types, and related attributes to track exposed
     user accounts
 
-    [:octicons-arrow-right-24: Learn more](https://owasp-amass.github.io/docs/open-asset-model/assets/account/)
+    [:octicons-arrow-right-24: Learn more](assets/account.md)
 
--   :material-registered-trademark:{ .lg .middle } **Domain Record**
+-   :material-registered-trademark:{ .lg .middle } **DomainRecord**
 
     ---
 
     Gather domain insights, including Whois and registrar details
 
-    [:octicons-arrow-right-24: Learn more](https://owasp-amass.github.io/docs/open-asset-model/assets/domain_record/)
+    [:octicons-arrow-right-24: Learn more](assets/domain_record.md)
 
--   :material-comment-outline:{ .lg .middle } **Contact Record**
+-   :material-comment-outline:{ .lg .middle } **ContactRecord**
 
     ---
 
     Link email addresses, phone numbers, and locations to discovered entities
 
-    [:octicons-arrow-right-24: Learn more](https://owasp-amass.github.io/docs/open-asset-model/assets/contact_record/)
+    [:octicons-arrow-right-24: Learn more](assets/contact_record.md)
 
 -   :material-dns:{ .lg .middle } **FQDN**
 
@@ -90,7 +90,7 @@ documented in this section.
 
     Record domain resolutions, DNS records, and associated metadata
 
-    [:octicons-arrow-right-24: Learn more](https://owasp-amass.github.io/docs/open-asset-model/assets/fqdn/)
+    [:octicons-arrow-right-24: Learn more](assets/fqdn.md)
 
 -   :material-file-find:{ .lg .middle } **File**
 
@@ -98,15 +98,15 @@ documented in this section.
 
     Capture file names and hashes to analyze digital artifacts
 
-    [:octicons-arrow-right-24: Learn more](https://owasp-amass.github.io/docs/open-asset-model/assets/file/)
+    [:octicons-arrow-right-24: Learn more](assets/file.md)
 
--   :material-bank:{ .lg .middle } **Funds Transfer**
+-   :material-bank:{ .lg .middle } **FundsTransfer**
 
     ---
 
     Identify bank accounts, payment systems, and transaction details
 
-    [:octicons-arrow-right-24: Learn more](https://owasp-amass.github.io/docs/open-asset-model/assets/funds_transfer/)
+    [:octicons-arrow-right-24: Learn more](assets/funds_transfer.md)
 
 -   :material-id-card:{ .lg .middle } **Identifier**
 
@@ -114,15 +114,15 @@ documented in this section.
 
     Track unique IDs, references, or numerical values
 
-    [:octicons-arrow-right-24: Learn more](https://owasp-amass.github.io/docs/open-asset-model/assets/identifier/)
+    [:octicons-arrow-right-24: Learn more](assets/identifier.md)
 
--   :material-router:{ .lg .middle } **IP Address**
+-   :material-router:{ .lg .middle } **IPAddress**
 
     ---
 
     Discover IPs, subnets, and routing structures to uncover key infrastructure
 
-    [:octicons-arrow-right-24: Learn more](https://owasp-amass.github.io/docs/open-asset-model/assets/ip_address/)
+    [:octicons-arrow-right-24: Learn more](assets/ip_address.md)
 
 -   :material-office-building-marker:{ .lg .middle } **Organization**
 
@@ -130,7 +130,7 @@ documented in this section.
 
     Uncover entity designations, locations, and operational details to expose connections
 
-    [:octicons-arrow-right-24: Learn more](https://owasp-amass.github.io/docs/open-asset-model/assets/organization/)
+    [:octicons-arrow-right-24: Learn more](assets/organization.md)
 
 -   :material-account-outline:{ .lg .middle } **Person**
 
@@ -138,7 +138,7 @@ documented in this section.
 
      Collect names, locations, and attributes to build individual profiles
 
-    [:octicons-arrow-right-24: Learn more](https://owasp-amass.github.io/docs/open-asset-model/assets/person/)
+    [:octicons-arrow-right-24: Learn more](assets/person.md)
 
 -   :material-apps:{ .lg .middle } **Product**
 
@@ -146,16 +146,16 @@ documented in this section.
 
      Identify online services, cloud providers, and software ecosystems
 
-    [:octicons-arrow-right-24: Learn more](https://owasp-amass.github.io/docs/open-asset-model/assets/product/)
+    [:octicons-arrow-right-24: Learn more](assets/product.md)
 
--   :material-file-certificate-outline:{ .lg .middle } **TLS Certificate**
+-   :material-file-certificate-outline:{ .lg .middle } **TLSCertificate**
 
     ---
 
     Gather SSL/TLS certificate details, issuers, and expiration dates for asset
     verification
 
-    [:octicons-arrow-right-24: Learn more](https://owasp-amass.github.io/docs/open-asset-model/assets/tls_certificate/)
+    [:octicons-arrow-right-24: Learn more](assets/tls_certificate.md)
 
 -   :material-web-refresh:{ .lg .middle } **URL**
 
@@ -163,6 +163,6 @@ documented in this section.
 
     Log web addresses and associated content to track online presence
 
-    [:octicons-arrow-right-24: Learn more](https://owasp-amass.github.io/docs/open-asset-model/assets/url/)
+    [:octicons-arrow-right-24: Learn more](assets/url.md)
 
 </div>
