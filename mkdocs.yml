@@ -10,7 +10,7 @@ site_description: "In-depth OSINT collection and external attack surface mapping
 site_author: OWASP Amass Contributors
 remote_branch: gh-pages
 
-#copyright: 2025 Jeff Foley
+#copyright: 2026 Jeff Foley
 
 theme:
   name: 'material'

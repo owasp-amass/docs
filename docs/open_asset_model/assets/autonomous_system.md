@@ -64,4 +64,4 @@ regrel --> autnum
 
 ---
 
-*© 2025 Jeff Foley — Licensed under Apache 2.0.*
+*© 2026 Jeff Foley — Licensed under Apache 2.0.*

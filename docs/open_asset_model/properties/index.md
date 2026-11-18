@@ -101,4 +101,4 @@ Explore the types of data used to enrich and explain assets in the graph:
 
 ---
 
-© 2025 Jeff Foley — Licensed under Apache 2.0.
+© 2026 Jeff Foley — Licensed under Apache 2.0.

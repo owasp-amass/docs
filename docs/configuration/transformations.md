@@ -165,4 +165,4 @@ or asset attribution.
 
 For a full list of supported asset types, refer to the [Open Asset Model documentation](../open_asset_model/index.md).
 
-*© 2025 Jeff Foley — Licensed under Apache 2.0.*
+*© 2026 Jeff Foley — Licensed under Apache 2.0.*

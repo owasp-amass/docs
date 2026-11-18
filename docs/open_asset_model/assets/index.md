@@ -142,4 +142,4 @@ Take a look at the pages where details are provided for each asset type.
 
 ---
 
-*© 2025 Jeff Foley — Licensed under Apache 2.0.*
+*© 2026 Jeff Foley — Licensed under Apache 2.0.*
