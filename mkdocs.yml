@@ -134,6 +134,7 @@ nav:
     - Using the Framework: usage/index.md
     - Enumeration: usage/enum.md
     - Lenses: usage/lenses.md
+    - Database Hygiene: usage/db.md
     - Review: usage/review.md
     - Other Subcommands: usage/tools.md
   - Configuration:

@@ -11,10 +11,10 @@ amass lens report -d example.com
 amass lens network -org "Example Corp"
 ```
 
-Most lenses start from a domain (`-d`) or an organization (`-org`). When a
-lens finds something that *should* change the database — two records of one
-organization that ought to be merged, say — it records a **proposal** rather
-than acting; see [Review](review.md).
+Most lenses start from a domain (`-d`) or an organization (`-org`). Lenses
+only read. The scans that find records to fix and write **proposals** are a
+separate subcommand, [`amass db`](db.md), reviewed with
+[`amass review`](review.md).
 
 ## :material-flag: Choosing a subject
 
@@ -255,17 +255,12 @@ data does not yet cover, is listed as not checked. See
 
 Domains that resemble the subject's and could be used to impersonate it.
 
-## :material-broom: Database hygiene lenses
+## :material-broom: Database hygiene
 
-These scan the whole database for records to correct and record their
-findings as [proposals](review.md); they are not applied until a reviewer
-approves them.
-
-| Command | What it records |
-| :--- | :--- |
-| `amass lens duplicates` | Duplicated organizations (merge proposals) |
-| `amass lens identity` | Contradicted legal identities (correction proposals) |
-| `amass lens person-named` | An org that is a person (removal proposals) |
+The scans that find records to fix — duplicate organizations, contradicted
+identities, and organizations that are really people — are **not** lenses:
+they walk the whole database and write proposals rather than viewing one
+subject. They live under their own subcommand, [`amass db`](db.md).
 
 ## :material-brain: Asking in plain language
 

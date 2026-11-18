@@ -1,15 +1,15 @@
 # :material-clipboard-check: Review
 
-Some [lenses](lenses.md) find changes that would improve the Asset Database:
-two records of one organization that should be merged, a legal identity that
-contradicts its own evidence, or an organization stored under a person's
-name. A lens never makes such a change itself. It records a **proposal** in
-the review journal, and `amass review` is how a person approves, rejects or
-undoes it. Every proposal keeps enough to be reversed, and every decision
-records who made it.
+The [`amass db`](db.md) scans find changes that would improve the Asset
+Database: two records of one organization that should be merged, a legal
+identity that contradicts its own evidence, or an organization stored under a
+person's name. A scan never makes such a change itself. It records a
+**proposal** in the review journal, and `amass review` is how a person
+approves, rejects or undoes it. Every proposal keeps enough to be reversed,
+and every decision records who made it.
 
 ```bash
-amass lens duplicates                                  # record proposals
+amass db duplicates                                    # record proposals
 amass review proposals                                 # see them
 amass review approve -proposal dup-1a2b -reviewer jeff # apply one
 amass review retract -proposal dup-1a2b -reviewer jeff # undo it
@@ -32,14 +32,14 @@ automatic attribution uses, set by `AMASS_AI_JOURNAL`).
 
 ## :material-source-branch: What produces proposals
 
-- **`lens duplicates`** proposes merging organizations stored more than
+- **`db duplicates`** proposes merging organizations stored more than
   once. Approving moves the duplicate's relationships and properties onto the
   record with more evidence, fills that record's empty fields, and deletes
   the duplicate.
-- **`lens identity`** proposes correcting a legal identity that contradicts
+- **`db identity`** proposes correcting a legal identity that contradicts
   the evidence. Approving removes what only an enrichment source recorded and
   clears the legal fields.
-- **`lens person-named`** proposes removing an organization that is really a
+- **`db person-named`** proposes removing an organization that is really a
   person. Approving deletes the organization and keeps the person.
 
 Each decision is reversible. Retracting a merge restores the duplicate and
