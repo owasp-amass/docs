@@ -11,7 +11,8 @@ amass lens report -d example.com
 amass lens network -org "Example Corp"
 ```
 
-Most lenses start from a domain (`-d`) or an organization (`-org`). Lenses
+Every lens below links to its own page with worked examples (from a real
+enumeration of `owasp.org`) and notes on reading the output. Most lenses start from a domain (`-d`) or an organization (`-org`). Lenses
 only read. The scans that find records to fix and write **proposals** are a
 separate subcommand, [`amass db`](db.md), reviewed with
 [`amass review`](review.md).
@@ -48,7 +49,7 @@ first kind.
 
 These read what a subject controls and report on its security posture.
 
-### report
+### [report](lenses/report.md)
 
 ```bash
 amass lens report -d example.com
@@ -57,7 +58,7 @@ amass lens report -d example.com
 The attack surface report: the key findings first, then a section from each
 posture lens below. Start here.
 
-### subdomains
+### [subdomains](lenses/subdomains.md)
 
 ```bash
 amass lens subdomains -d example.com
@@ -69,7 +70,7 @@ and a summary of how many names fall into each autonomous system and
 netblock. This replaces the former `subs` command: the name list, the names
 with their addresses, and the per-AS/per-netblock counts are all here.
 
-### family
+### [family](lenses/family.md)
 
 The organizations behind an enumerated domain — its registrant, the
 organizations named on its certificates, and the networks and other
@@ -77,32 +78,32 @@ registered domains that serve it — and how they relate (same institution,
 parent, affiliate or vendor). A matching name alone is never treated as
 strong: organizations in different jurisdictions often share a name.
 
-### vendors / group-vendors
+### [vendors](lenses/vendors.md) / [group-vendors](lenses/group-vendors.md)
 
 `vendors` lists the outside parties a domain and its organization's assets
 depend on (DNS, hosting, certificates, mail, and more). `group-vendors`
 does the same across a whole corporate group and shows which organization in
 the group uses each vendor.
 
-### org-group
+### [org-group](lenses/org-group.md)
 
 The corporate group around an organization: its ultimate parent and every
 subsidiary and unit, as an indented tree with each one's jurisdiction and
 registration number. The links are stored control relationships (such as
 GLEIF parent/child records), never inferred from a shared name.
 
-### affiliation
+### [affiliation](lenses/affiliation.md)
 
 Organizations the subject is affiliated with — tied by a shared phone, person,
 funder or address — each with the signals behind the link and a confidence.
 A shared name alone is never enough.
 
-### accounts
+### [accounts](lenses/accounts.md)
 
 The platform accounts the subject has (code hosts, social media and the like),
 computed from the profile URLs stored for it.
 
-### funding
+### [funding](lenses/funding.md)
 
 The funding a domain's or organization's company has received, from stored
 `FundsTransfer` records: each round or award with its amount, date and the
@@ -112,7 +113,7 @@ Funding comes from keyless public sources — US federal awards and grants
 (ProPublica, SEC EDGAR) and public procurement in Europe (TED) and beyond
 (Open Contracting / OCDS). See [Funding and procurement data](../ai/funding.md).
 
-### group-funding
+### [group-funding](lenses/group-funding.md)
 
 The funding above rolled up across a whole corporate group — the organization
 and every parent, subsidiary and unit — merged, noting which group organization
@@ -121,7 +122,7 @@ split across records that different funders name differently (a university
 system and one of its campuses, say); this shows the whole picture when those
 records are linked in the group.
 
-### services
+### [services](lenses/services.md)
 
 The services stored for what the subject controls: where each listens, its
 type, the software its response headers and banners name (`nginx 1.24.0`,
@@ -130,12 +131,12 @@ applications. It flags services on unusual ports and weak or expiring
 certificates. Software is identified from stored evidence when asked, never
 written down, since a banner can be hidden or faked.
 
-### web
+### [web](lenses/web.md)
 
 The subject's web presence: its website URLs and endpoints, the host and
 address each one reaches, and the web applications recognized on them.
 
-### network
+### [network](lenses/network.md)
 
 The netblocks and autonomous systems registered to the subject, where its
 names are hosted (its own space or a provider's), address space none of its
@@ -143,19 +144,19 @@ names use (worth checking for forgotten assets), and other domains found in
 its space. When the database supports range lookups, an address with no
 stored netblock is placed in the netblock that contains it.
 
-### cloud
+### [cloud](lenses/cloud.md)
 
 The public cloud and CDN providers hosting the subject's names — by provider,
 region and service — from the providers' own published IP ranges.
 
-### dangling
+### [dangling](lenses/dangling.md)
 
 DNS records that may point at something the subject no longer holds, most
 severe first: claimable aliases (the classic subdomain takeover), expired or
 expiring alias targets and name servers, unresolved aliases, alias loops,
 and stale addresses. Each is a lead to confirm with a live lookup.
 
-### changes { #changes }
+### [changes](lenses/changes.md) { #changes }
 
 ```bash
 amass lens changes -d example.com -since 2026-11-01
@@ -169,66 +170,66 @@ latest finished run that covered the subject and reports what that run did
 not see — firmer than comparing timestamps, because the run is known to have
 looked. Without `-since`, the window is the last 30 days.
 
-### certificates
+### [certificates](lenses/certificates.md)
 
 The subject's TLS certificates — expired, expiring, weak, self-issued or
 overlong ones, and wildcards — and the certificate authorities it relies on.
 
-### domains
+### [domains](lenses/domains.md)
 
 The subject's registered domains: registrar, expiry, transfer lock, DNSSEC
 status and DNS providers.
 
-### email
+### [email](lenses/email.md)
 
 The subject's mail providers and its SPF, DMARC and DKIM records, and which
 of its domains can be spoofed because the records are missing or weak.
 
-### contacts
+### [contacts](lenses/contacts.md)
 
 The subject's contact details — phone numbers, email addresses, contact people
 and postal addresses — from its stored contact records.
 
-### identifiers
+### [identifiers](lenses/identifiers.md)
 
 The registered identifiers attached to what the subject controls — LEI, tax,
 company and registry numbers and handles — grouped by type.
 
-### exposure
+### [exposure](lenses/exposure.md)
 
 What the subject exposes that deserves attention: remote access, databases,
 file sharing, management interfaces and login pages.
 
-### headers
+### [headers](lenses/headers.md)
 
 The HTTP security headers of the subject's web services — HSTS, CSP,
 clickjacking and MIME-sniffing protection, and cookie flags — and which are
 missing or weak.
 
-### disclosure
+### [disclosure](lenses/disclosure.md)
 
 How the subject invites vulnerability reports: its `security.txt` contacts,
 policy and encryption links, and any of those files that have expired.
 
-### concentration
+### [concentration](lenses/concentration.md)
 
 How much the subject relies on single providers for DNS, registration,
 certificates, hosting and mail — where one provider's trouble would matter
 most.
 
-### coverage
+### [coverage](lenses/coverage.md)
 
 How complete the stored data is for the subject, and what collection would
 fill each gap. Useful for deciding what to enumerate next.
 
-### geography
+### [geography](lenses/geography.md)
 
 The countries of the subject's stored addresses and of the parties hosting
 its names. For an organization it also reports an inferred country — Amass's
 best determination from the evidence it has (legal jurisdiction, a registration
 or contact address, a registrant phone).
 
-### compare
+### [compare](lenses/compare.md)
 
 ```bash
 amass lens compare -d a.com -with b.com
@@ -238,7 +239,7 @@ amass lens compare -org "A Corp" -with-org "B Corp"
 What two domains or organizations share: common assets and common outside
 parties.
 
-### vulnerable
+### [vulnerable](lenses/vulnerable.md)
 
 ```bash
 amass vuln-update                      # fetch/refresh the data first
@@ -249,9 +250,9 @@ Checks the software versions the `services` lens identifies against NVD's CVE
 data and lists those with CVEs, known-exploited ones first (CISA KEV), with
 each CVE's score and link. A product without a version, or a version the
 data does not yet cover, is listed as not checked. See
-[`vuln-update`](tools.md#vulnerability-data).
+[`vuln-update`](vuln-update.md).
 
-### lookalikes
+### [lookalikes](lenses/lookalikes.md)
 
 Domains that resemble the subject's and could be used to impersonate it.
 

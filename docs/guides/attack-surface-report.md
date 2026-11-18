@@ -86,5 +86,5 @@ amass viz -dot  -d example.com   # Graphviz DOT
 amass viz -gexf -d example.com   # Gephi GEXF
 ```
 
-See [Other subcommands](../usage/tools.md#visualizations) for the formats, and
+See [Visualizations](../usage/viz.md) for the formats, and
 the [Lenses reference](../usage/lenses.md) for every lens and its options.

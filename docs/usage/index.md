@@ -27,9 +27,9 @@ flowchart LR
 | [`enum`](enum.md) | Run an enumeration through the engine |
 | [`lens`](lenses.md) | Read-only views of the Asset Database |
 | [`review`](review.md) | Apply and undo the changes lenses propose |
-| [`assoc`](tools.md#associations) | Walk the database along a path of triples |
-| [`viz`](tools.md#visualizations) | Graph visualizations (D3, DOT, GEXF) |
-| [`vuln-update`](tools.md#vulnerability-data) | Refresh vulnerability data |
+| [`assoc`](assoc.md) | Walk the database along a path of triples |
+| [`viz`](viz.md) | Graph visualizations (D3, DOT, GEXF) |
+| [`vuln-update`](vuln-update.md) | Refresh vulnerability data |
 | [`ai`](../ai/index.md) | Plain-language questions, MCP tools, model review |
 | `engine` | Run the collection engine as a service |
 

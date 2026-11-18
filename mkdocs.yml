@@ -133,10 +133,45 @@ nav:
   - Usage:
     - Using the Framework: usage/index.md
     - Enumeration: usage/enum.md
-    - Lenses: usage/lenses.md
+    - Lenses:
+      - Overview: usage/lenses.md
+      - report: usage/lenses/report.md
+      - subdomains: usage/lenses/subdomains.md
+      - family: usage/lenses/family.md
+      - vendors: usage/lenses/vendors.md
+      - group-vendors: usage/lenses/group-vendors.md
+      - org-group: usage/lenses/org-group.md
+      - affiliation: usage/lenses/affiliation.md
+      - accounts: usage/lenses/accounts.md
+      - funding: usage/lenses/funding.md
+      - group-funding: usage/lenses/group-funding.md
+      - services: usage/lenses/services.md
+      - web: usage/lenses/web.md
+      - network: usage/lenses/network.md
+      - cloud: usage/lenses/cloud.md
+      - dangling: usage/lenses/dangling.md
+      - changes: usage/lenses/changes.md
+      - certificates: usage/lenses/certificates.md
+      - domains: usage/lenses/domains.md
+      - email: usage/lenses/email.md
+      - contacts: usage/lenses/contacts.md
+      - identifiers: usage/lenses/identifiers.md
+      - exposure: usage/lenses/exposure.md
+      - headers: usage/lenses/headers.md
+      - disclosure: usage/lenses/disclosure.md
+      - concentration: usage/lenses/concentration.md
+      - coverage: usage/lenses/coverage.md
+      - geography: usage/lenses/geography.md
+      - compare: usage/lenses/compare.md
+      - vulnerable: usage/lenses/vulnerable.md
+      - lookalikes: usage/lenses/lookalikes.md
     - Database Hygiene: usage/db.md
     - Review: usage/review.md
-    - Other Subcommands: usage/tools.md
+    - Other Subcommands:
+      - Overview: usage/tools.md
+      - Association Walks: usage/assoc.md
+      - Visualizations: usage/viz.md
+      - Vulnerability Data: usage/vuln-update.md
   - Configuration:
     - Configuration: configuration/index.md
     - Data Sources: configuration/data_sources.md
