@@ -42,6 +42,16 @@ By type:
   registries) would add registry numbers — see
   [Organizations: identity and geography](../../ai/organizations.md).
 
+## Breach exposure
+
+For an **email** identifier, Amass can also record the known data breaches it
+appears in — breach name, date and data classes, **never the leaked secret**
+— collected from an opt-in source (XposedOrNot free, HIBP keyed). The lens
+reports each exposed email and a count, and the [`report`](report.md) lens
+raises it as a priority-1 key finding. Exposure is a stored observation from an
+outside authority, so unlike the computed identifier list it is collected, not
+derived.
+
 ## See also
 
 - [`db` (database hygiene)](../db.md) · [`accounts`](accounts.md) ·

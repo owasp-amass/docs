@@ -14,8 +14,9 @@ A single document: a **Key findings** list that pulls the most important items
 to the top (takeovers, exposed services, unsupported software, expired domains
 and certificates, email spoofing, mail-receiving lookalikes), then one section
 per posture lens — exposure, dangling, certificates, domains, email,
-disclosure, headers, lookalikes, services, vulnerable, network, concentration,
-changes and coverage — each the same output that lens produces on its own.
+disclosure, identifiers (with breach exposure), headers, lookalikes, services,
+vulnerable, network, concentration, changes and coverage — each the same output
+that lens produces on its own.
 
 ## Example
 
@@ -45,6 +46,11 @@ stored, not a live scan._
 
 ## Reading it
 
+- **Breach exposure rises to the top.** If any collected email identifier
+  appears in a known data breach, it is a priority-1 key finding
+  ("Identifiers exposed in a known data breach") — the breach names only,
+  never a secret. Enable a breach source (see [`identifiers`](identifiers.md))
+  to populate it.
 - **Read Key findings first.** It is the triage layer — each item is drawn from
   a lens below and ordered by priority, so you can act before reading the full
   sections. For owasp.org the top items are mail-receiving lookalike domains.
