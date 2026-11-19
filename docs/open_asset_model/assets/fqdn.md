@@ -86,6 +86,16 @@ verified@{ shape: braces, label: "verified_for" }
 fqdn1 --o verified
 verified --> org
 verified --> serv2
+
+fqdn5["FQDN (e.g. _spf.example.net)"]
+spf@{ shape: braces, label: "spf_authorizes"}
+fqdn1 --o spf
+spf --> fqdn5
+
+fqdn6["FQDN (e.g. dmarc.example.net)"]
+dmarc@{ shape: braces, label: "dmarc_reports_to"}
+fqdn1 --o dmarc
+dmarc --> fqdn6
 ```
 
 ---
@@ -99,6 +109,8 @@ verified --> serv2
 | [`PortRelation`](../relations/port_relation.md) | `port` | [`Service`](./service.md) | Represents a port at the FQDN with a responding service |
 | [`SimpleRelation`](../relations/simple_relation.md) | `registration` | [`DomainRecord`](./domain_record.md) | Links a root domain to its associated registration data |
 | [`SimpleRelation`](../relations/simple_relation.md) | `verified_for` | [`Organization`](./organization.md), [`Service`](./service.md) | Evidence was discovered of a business or technical relationship |
+| [`SimpleRelation`](../relations/simple_relation.md) | `spf_authorizes` | `FQDN` | A domain this FQDN's SPF record authorizes to send on its behalf (an `include:` or `redirect=` mechanism), derived from the published SPF TXT record |
+| [`SimpleRelation`](../relations/simple_relation.md) | `dmarc_reports_to` | `FQDN` | A domain this FQDN's DMARC record sends its aggregate or forensic reports to (an `rua`/`ruf` address), derived from the published DMARC TXT record |
 
 ---
 
