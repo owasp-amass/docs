@@ -18,6 +18,15 @@ and edges.
 
 [oam]: ../open_asset_model/index.md
 
+```mermaid
+flowchart LR
+  ENUM["amass enum"]
+  DB[("Asset Database<br/>SQLite · PostgreSQL · Neo4j")]
+  ENUM -->|writes entities &amp; relations| DB
+  DB -->|read-only| L["lens"]
+  DB -->|read-only| AI["ai"]
+```
+
 ## :material-database: Supported Backends
 
 | Backend | Connection String | Best For |
@@ -65,13 +74,20 @@ an IP address via a `dns_record` relation) are stored
 as directed edges. This graph structure is what makes
 the [Triples Query Language](triples.md) possible.
 
+Beside the graph, the database records each
+[collection run](collection_runs.md): what an
+enumeration or another tool was asked to collect, and
+whether it finished. Any tool can record its runs there.
+
 ## :material-page-next: Next Steps
 
 - [PostgreSQL Setup](postgres.md) — production
   PostgreSQL setup guide
+- [Collection Runs](collection_runs.md) — record
+  what each enumeration or tool run collected
 - [Triples Query Language](triples.md) — traverse
   the asset graph with subject-predicate-object queries
 
 ---
 
-*© 2025 Jeff Foley — Licensed under Apache 2.0.*
+*© 2026 Jeff Foley — Licensed under Apache 2.0.*

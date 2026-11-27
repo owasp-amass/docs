@@ -1,14 +1,30 @@
 # :simple-owasp: Netblock
 
-The **Netblock** asset type in the [OWASP](https://owasp.org) [Open Asset Model](https://github.com/owasp-amass/open-asset-model) (OAM) represents a contiguous range of IP addresses, typically expressed in CIDR notation and often associated with an Autonomous System (AS).
+The **Netblock** asset type in the [OWASP](https://owasp.org)
+[Open Asset Model](https://github.com/owasp-amass/open-asset-model) (OAM)
+represents a contiguous range of IP addresses, typically expressed in CIDR
+notation and often associated with an Autonomous System (AS).
 
-- **Definition:** A `Netblock` defines an IP range (e.g., `203.0.113.0/24` or `2001:db8::/32`) that encompasses many individual IP addresses. It usually reflects address space allocated to or announced by an Autonomous System and may represent organizational, geographic, or functional network boundaries.
+- **Definition:** A `Netblock` defines an IP range (e.g., `203.0.113.0/24` or
+  `2001:db8::/32`) that encompasses many individual IP addresses. It usually
+  reflects address space allocated to or announced by an Autonomous System and
+  may represent organizational, geographic, or functional network boundaries.
 
-- **Purpose:** This asset type enables modeling of large-scale network ownership and infrastructure grouping. By identifying which IP addresses fall within a specific `Netblock`, analysts can track organizational control, ISP allocation, or exposure zones across the internet or private networks. It's especially useful in asset discovery, threat attribution, and risk scoping.
+- **Purpose:** This asset type enables modeling of large-scale network ownership
+  and infrastructure grouping. By identifying which IP addresses fall within a
+  specific `Netblock`, analysts can track organizational control, ISP
+  allocation, or exposure zones across the internet or private networks. It's
+  especially useful in asset discovery, threat attribution, and risk scoping.
 
-- **Design Choice:** The `Netblock` provides an abstract, high-level view of address space without enumerating every IP address it contains. It can be related to specific `IPAddress` or `AutonomousSystem` assets through appropriate relations, enabling hierarchical and scalable modeling of internet-facing infrastructure.
+- **Design Choice:** The `Netblock` provides an abstract, high-level view of
+  address space without enumerating every IP address it contains. It can be
+  related to specific `IPAddress` or `AutonomousSystem` assets through
+  appropriate relations, enabling hierarchical and scalable modeling of
+  internet-facing infrastructure.
 
-In summary, the `Netblock` asset type captures ranges of IP addresses in a compact, structured way, supporting infrastructure mapping, ownership tracking, and contextual analysis of network exposure in the OAM.
+In summary, the `Netblock` asset type captures ranges of IP addresses in a
+compact, structured way, supporting infrastructure mapping, ownership tracking,
+and contextual analysis of network exposure in the OAM.
 
 ## :fontawesome-solid-network-wired: Netblock Attributes
 
@@ -23,6 +39,7 @@ In summary, the `Netblock` asset type captures ranges of IP addresses in a compa
 | :-----------------: | :-----------------: | :------------ |
 | [`SimpleProperty`](../properties/simple_property.md) | `last_monitored` | Tracks when a data source was last queried regarding this Netblock |
 | [`SourceProperty`](../properties/source_property.md) | Source Plugin Name | Indicates that the specified data source discovered this Netblock |
+| [`SimpleProperty`](../properties/simple_property.md) | `rpki_status` | The netblock's RPKI validity for the AS that announces it: `valid`, `invalid` or `unknown` (no ROA covers it) |
 
 ## :fontawesome-solid-network-wired: Netblock Outgoing Relations
 
@@ -34,10 +51,26 @@ contains@{ shape: braces, label: "contains" }
 netblock --o contains
 contains --> ipaddr
 
+org["Organization"]
+provrel@{ shape: braces, label: "provider" }
+netblock --o provrel
+provrel --> org
+
 iprec["IPNetRecord"]
 regrel@{ shape: braces, label: "registration"}
 netblock --o regrel
 regrel --> iprec
+
+ident["Identifier"]
+mntrel@{ shape: braces, label: "irr_maintainer"}
+netblock --o mntrel
+mntrel --> ident
+
+autsys["AutonomousSystem"]
+roarel@{ shape: braces, label: "irr_origin
+rpki_origin"}
+netblock --o roarel
+roarel --> autsys
 ```
 
 ---
@@ -45,8 +78,12 @@ regrel --> iprec
 | Relation Type       | Relation Label     | Target Assets    | Description   |
 | :-----------------: | :----------------: | :--------------: | :------------ |
 | [`SimpleRelation`](../relations/simple_relation.md) | `contains` | [`IPAddress`](./ip_address.md) | Links a Netblock to an IPAddress within the CIDR range |
+| [`SimpleRelation`](../relations/simple_relation.md) | `provider` | [`Organization`](./organization.md) | Links a Netblock to the organization that provides it, such as its cloud or hosting provider |
 | [`SimpleRelation`](../relations/simple_relation.md) | `registration` | [`IPNetRecord`](./ipnet_record.md) | Links a network to its associated registration data |
+| [`SimpleRelation`](../relations/simple_relation.md) | `irr_maintainer` | [`Identifier`](./identifier.md) | The routing registry (IRR) maintainer that keeps the netblock's route object |
+| [`SimpleRelation`](../relations/simple_relation.md) | `irr_origin` | [`AutonomousSystem`](./autonomous_system.md) | The origin autonomous system the netblock's routing registry (IRR) route object names |
+| [`SimpleRelation`](../relations/simple_relation.md) | `rpki_origin` | [`AutonomousSystem`](./autonomous_system.md) | An autonomous system a valid RPKI ROA authorizes to announce the netblock |
 
 ---
 
-*© 2025 Jeff Foley — Licensed under Apache 2.0.*
+*© 2026 Jeff Foley — Licensed under Apache 2.0.*

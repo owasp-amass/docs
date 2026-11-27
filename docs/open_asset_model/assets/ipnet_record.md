@@ -1,14 +1,34 @@
 # :simple-owasp: IPNetRecord
 
-The **IPNetRecord** asset type in the [OWASP](https://owasp.org) [Open Asset Model](https://github.com/owasp-amass/open-asset-model) (OAM) represents authoritative **registration data** for a block of IP addresses (IPv4 or IPv6), typically retrieved from a Regional Internet Registry (RIR) via the [RDAP](https://www.arin.net/resources/registry/whois/rdap/) protocol. This record captures the ownership, administrative, and organizational context of a given CIDR allocation.
+The **IPNetRecord** asset type in the [OWASP](https://owasp.org)
+[Open Asset Model](https://github.com/owasp-amass/open-asset-model) (OAM)
+represents authoritative **registration data** for a block of IP addresses (IPv4
+or IPv6), typically retrieved from a Regional Internet Registry (RIR) via the
+[RDAP](https://www.arin.net/resources/registry/whois/rdap/) protocol. This
+record captures the ownership, administrative, and organizational context of a
+given CIDR allocation.
 
-- **Definition:** An `IPNetRecord` models a registered IP network block with accompanying metadata such as handle, range, status, country, and registration dates. It mirrors RDAP responses from RIRs like ARIN, RIPE, APNIC, AFRINIC, and LACNIC.
+- **Definition:** An `IPNetRecord` models a registered IP network block with
+  accompanying metadata such as handle, range, status, country, and registration
+  dates. It mirrors RDAP responses from RIRs like ARIN, RIPE, APNIC, AFRINIC,
+  and LACNIC.
 
-- **Purpose:** By modeling IP allocations as assets, `IPNetRecord` entries allow external infrastructure to be tied back to real-world entities. This is essential for **attribution**, **provider relationships**, and **BGP analysis**. It enables analysts to query: “Who owns this IP range?”, “What organization controls this infrastructure?”, or “Which AS announces this block?”
+- **Purpose:** By modeling IP allocations as assets, `IPNetRecord` entries allow
+  external infrastructure to be tied back to real-world entities. This is
+  essential for **attribution**, **provider relationships**, and **BGP
+  analysis**. It enables analysts to query: “Who owns this IP range?”, “What
+  organization controls this infrastructure?”, or “Which AS announces this
+  block?”
 
-- **Design Choice:** The `IPNetRecord` structure preserves key fields from RDAP while ensuring they are queryable in graph form. CIDR blocks are expressed as typed network prefixes with explicit start and end addresses. Optional fields provide additional semantics for routing origin, delegation hierarchy, and jurisdictional scope.
+- **Design Choice:** The `IPNetRecord` structure preserves key fields from RDAP
+  while ensuring they are queryable in graph form. CIDR blocks are expressed as
+  typed network prefixes with explicit start and end addresses. Optional fields
+  provide additional semantics for routing origin, delegation hierarchy, and
+  jurisdictional scope.
 
-The IPNetRecord asset enables infrastructure attribution, jurisdictional mapping, and inter-provider analysis within the OAM graph, anchoring raw IPs and services in a meaningful real-world context.
+The IPNetRecord asset enables infrastructure attribution, jurisdictional
+mapping, and inter-provider analysis within the OAM graph, anchoring raw IPs and
+services in a meaningful real-world context.
 
 ## :material-file-cabinet: IPNetRecord Attributes
 
@@ -73,4 +93,4 @@ urlRel --> url
 
 ---
 
-*© 2025 Jeff Foley — Licensed under Apache 2.0.*
+*© 2026 Jeff Foley — Licensed under Apache 2.0.*

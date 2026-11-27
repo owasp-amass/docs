@@ -1,14 +1,29 @@
 # :simple-owasp: ProductRelease
 
-The **ProductRelease** asset type in the [OWASP](https://owasp.org) [Open Asset Model](https://github.com/owasp-amass/open-asset-model) (OAM) represents a specific version or release milestone of a technology product. This asset enables security analysts to track when a product version was introduced, helping to contextualize vulnerabilities, lifecycles, and compatibility considerations.
+The **ProductRelease** asset type in the [OWASP](https://owasp.org)
+[Open Asset Model](https://github.com/owasp-amass/open-asset-model) (OAM)
+represents a specific version or release milestone of a technology product. This
+asset enables security analysts to track when a product version was introduced,
+helping to contextualize vulnerabilities, lifecycles, and compatibility
+considerations.
 
-* **Definition:** A `ProductRelease` asset identifies a named version or release of a product (e.g., "v2.4.1", "2023 Q1 Patch"). It may optionally include the release date in a standardized format.
+* **Definition:** A `ProductRelease` asset identifies a named version or release
+  of a product (e.g., "v2.4.1", "2023 Q1 Patch"). It may optionally include the
+  release date in a standardized format.
 
-* **Purpose:** Tracking product releases is vital for assessing *vulnerability exposure*, *patch levels*, *software supply chain integrity*, and *asset compatibility*. This asset type supports fine-grained analysis of software deployment across environments.
+* **Purpose:** Tracking product releases is vital for assessing *vulnerability
+  exposure*, *patch levels*, *software supply chain integrity*, and *asset
+  compatibility*. This asset type supports fine-grained analysis of software
+  deployment across environments.
 
-* **Design Choice:** By separating a `ProductRelease` from the broader `Product` asset, the model supports a clean versioning structure that can evolve independently. This separation enables better temporal modeling and historical tracking of asset deployments and vulnerabilities.
+* **Design Choice:** By separating a `ProductRelease` from the broader `Product`
+  asset, the model supports a clean versioning structure that can evolve
+  independently. This separation enables better temporal modeling and historical
+  tracking of asset deployments and vulnerabilities.
 
-In summary, the `ProductRelease` asset type provides version-level granularity for representing software and hardware products, enriching the asset graph for supply chain and lifecycle analysis.
+In summary, the `ProductRelease` asset type provides version-level granularity
+for representing software and hardware products, enriching the asset graph for
+supply chain and lifecycle analysis.
 
 ## :material-package-variant: ProductRelease Attributes
 
@@ -50,4 +65,4 @@ urlRel --> url
 
 ---
 
-*© 2025 Jeff Foley — Licensed under Apache 2.0.*
+*© 2026 Jeff Foley — Licensed under Apache 2.0.*

@@ -1,14 +1,33 @@
 # :simple-owasp: Product
 
-The **Product** asset type in the [OWASP](https://owasp.org) [Open Asset Model](https://github.com/owasp-amass/open-asset-model) (OAM) represents a commercial or open-source technology product—hardware, software, or service—that plays a role in an organization's external attack surface. Products may include server software, security appliances, cloud services, content management systems, networking gear, and more.
+The **Product** asset type in the [OWASP](https://owasp.org)
+[Open Asset Model](https://github.com/owasp-amass/open-asset-model) (OAM)
+represents a commercial or open-source technology product—hardware, software, or
+service—that plays a role in an organization's external attack surface. Products
+may include server software, security appliances, cloud services, content
+management systems, networking gear, and more.
 
-- **Definition:** A `Product` asset includes a name, type, optional category and description, and optionally a country of origin. It represents a distinct technology offering as discovered in intelligence collection, vulnerability data, or infrastructure enumeration.
+- **Definition:** A `Product` asset includes a name, type, optional category and
+  description, and optionally a country of origin. It represents a distinct
+  technology offering as discovered in intelligence collection, vulnerability
+  data, or infrastructure enumeration.
 
-- **Purpose:** Modeling products as first-class assets allows the OAM to associate technologies with organizations, services, or infrastructure. This helps analysts answer questions like “What products are deployed by this organization?”, “Where are certain technologies concentrated?”, or “Is this vulnerable product version publicly exposed?”
+- **Purpose:** Modeling products as first-class assets allows the OAM to
+  associate technologies with organizations, services, or infrastructure. This
+  helps analysts answer questions like “What products are deployed by this
+  organization?”, “Where are certain technologies concentrated?”, or “Is this
+  vulnerable product version publicly exposed?”
 
-- **Design Choice:** The `Product` structure is intentionally minimal to support broad applicability. While the `ProductRelease` handles additional information such as version, vendor, and licensing via `Identifier` assets and properties, the core type emphasizes identification and categorization. The inclusion of `country_of_origin` supports use cases related to supply chain risk and regulatory compliance.
+- **Design Choice:** The `Product` structure is intentionally minimal to support
+  broad applicability. While the `ProductRelease` handles additional information
+  such as version, vendor, and licensing via `Identifier` assets and properties,
+  the core type emphasizes identification and categorization. The inclusion of
+  `country_of_origin` supports use cases related to supply chain risk and
+  regulatory compliance.
 
-The Product asset type provides structured visibility into the technologies exposed in an organization's external footprint, supporting vulnerability mapping, software inventory, and strategic technology analysis.
+The Product asset type provides structured visibility into the technologies
+exposed in an organization's external footprint, supporting vulnerability
+mapping, software inventory, and strategic technology analysis.
 
 ## :material-package-variant: Product Attributes
 
@@ -27,6 +46,11 @@ The Product asset type provides structured visibility into the technologies expo
 |:-------------:|:-------------:|:------------|
 | [`SimpleProperty`](../properties/simple_property.md) | `last_monitored` | Tracks when a data source was last queried regarding this Product |
 | [`SourceProperty`](../properties/source_property.md) | Source Plugin Name | Indicates that the specified data source discovered this Product |
+
+A software package found on a package registry is a Product with `product_type` `software_package` and its
+registry (`maven`, `npm`) as its `category`, identified by a `purl` Identifier. The `url_role` property on its
+`website` relation says which URL the package named: `homepage`, `project`, `repository` or `organization`
+(its publisher's site).
 
 ## :material-package-variant: Product Outgoing Relations
 
@@ -65,4 +89,4 @@ rel --> prodrel
 
 ---
 
-*© 2025 Jeff Foley — Licensed under Apache 2.0.*
+*© 2026 Jeff Foley — Licensed under Apache 2.0.*

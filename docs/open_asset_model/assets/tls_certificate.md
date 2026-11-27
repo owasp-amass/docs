@@ -1,24 +1,45 @@
 # :simple-owasp: TLSCertificate
 
-The `TLSCertificate` asset type in the [OWASP](https://owasp.org) [Open Asset Model](https://github.com/owasp-amass/open-asset-model) (OAM) represents an X.509 certificate used to establish trust in TLS/SSL connections across Internet-facing services. TLS certificates are critical for encrypting traffic, authenticating services, and ensuring secure communication between clients and servers.
+The `TLSCertificate` asset type in the [OWASP](https://owasp.org)
+[Open Asset Model](https://github.com/owasp-amass/open-asset-model) (OAM)
+represents an X.509 certificate used to establish trust in TLS/SSL connections
+across Internet-facing services. TLS certificates are critical for encrypting
+traffic, authenticating services, and ensuring secure communication between
+clients and servers.
 
-This asset captures detailed metadata about observed certificates, making it possible to track their usage across domains, detect misconfigurations, monitor expiration, and identify shared infrastructure through certificate reuse. By modeling certificates as first-class assets, the OAM enables graph-based analysis of cryptographic trust relationships and their ties to real-world entities and assets.
+This asset captures detailed metadata about observed certificates, making it
+possible to track their usage across domains, detect misconfigurations, monitor
+expiration, and identify shared infrastructure through certificate reuse. By
+modeling certificates as first-class assets, the OAM enables graph-based
+analysis of cryptographic trust relationships and their ties to real-world
+entities and assets.
 
 Each `TLSCertificate` includes key attributes such as:
 
 - **Version** – The X.509 version number of the certificate.
-- **Serial Number** – A unique identifier assigned by the certificate authority (CA).
-- **Subject Common Name (CN)** – The primary identity this certificate claims to represent.
+- **Serial Number** – A unique identifier assigned by the certificate authority
+  (CA).
+- **Subject Common Name (CN)** – The primary identity this certificate claims to
+  represent.
 - **Issuer Common Name (CN)** – The identity of the CA that issued the certificate.
-- **Validity Period** – Timestamps indicating when the certificate is valid (`not_before`) and when it expires (`not_after`).
-- **Key Usage / Extended Key Usage** – Lists of intended purposes for the certificate (e.g., `DigitalSignature`, `ServerAuth`).
+- **Validity Period** – Timestamps indicating when the certificate is valid
+  (`not_before`) and when it expires (`not_after`).
+- **Key Usage / Extended Key Usage** – Lists of intended purposes for the
+  certificate (e.g., `DigitalSignature`, `ServerAuth`).
 - **Signature Algorithm** – The algorithm used by the CA to sign the certificate.
 - **Public Key Algorithm** – The algorithm used by the certificate's public key.
-- **CA Flag** – A boolean flag indicating whether the certificate is a Certificate Authority.
-- **CRL Distribution Points** – URLs where revocation information for the certificate may be retrieved.
-- **Subject Key ID / Authority Key ID** – Identifiers used for verifying trust chains and certificate lineage.
+- **CA Flag** – A boolean flag indicating whether the certificate is a
+  Certificate Authority.
+- **CRL Distribution Points** – URLs where revocation information for the
+  certificate may be retrieved.
+- **Subject Key ID / Authority Key ID** – Identifiers used for verifying trust
+  chains and certificate lineage.
 
-This asset type is commonly used to enrich discovered web services, verify proper encryption practices, and detect certificate sharing across unrelated hosts (e.g., in cloud environments or phishing infrastructure). When linked with assets like `FQDN`, `IPAddress`, or `URL`, `TLSCertificate` helps establish strong associations between services and the organizations operating them.
+This asset type is commonly used to enrich discovered web services, verify
+proper encryption practices, and detect certificate sharing across unrelated
+hosts (e.g., in cloud environments or phishing infrastructure). When linked with
+assets like `FQDN`, `IPAddress`, or `URL`, `TLSCertificate` helps establish
+strong associations between services and the organizations operating them.
 
 ## :material-certificate-outline: TLSCertificate Attributes
 
@@ -31,13 +52,14 @@ This asset type is commonly used to enrich discovered web services, verify prope
 | `not_before`               | string (datetime) | :material-check-decagram: | Start of the certificate’s validity period |
 | `not_after`                | string (datetime) | :material-check-decagram: | Expiration of the certificate’s validity period |
 | `key_usage`                | array of strings | :material-checkbox-blank-circle-outline: | Allowed cryptographic uses (e.g., `DigitalSignature`, `KeyEncipherment`) |
-| `ext_key_usage`            | array of strings | :material-checkbox-blank-circle-outline: | Extended usage purposes (e.g., `ServerAuth`, `ClientAuth`) |
-| `signature_algorithm`      | string   | :material-checkbox-blank-circle-outline: | Algorithm used to sign the certificate (e.g., `SHA256-RSA`) |
-| `public_key_algorithm`     | string   | :material-checkbox-blank-circle-outline: | Algorithm used in the certificate’s public key (e.g., `RSA`, `ECDSA`) |
-| `is_ca`                    | boolean  | :material-checkbox-blank-circle-outline: | Indicates if the certificate is a Certificate Authority |
+| `ext_key_usage`            | array of strings | :material-checkbox-blank-circle-outline: | Extended usage purposes (e.g., `ServerAuth`, `ClientAuth`; a BIMI mark certificate lists `Brand Indicator for Message Identification`) |
+| `signature_algorithm`      | string   | :material-check-decagram: | Algorithm used to sign the certificate (e.g., `SHA256-RSA`) |
+| `public_key_algorithm`     | string   | :material-check-decagram: | Algorithm used in the certificate’s public key (e.g., `RSA`, `ECDSA`) |
+| `is_ca`                    | boolean  | :material-check-decagram: | Indicates if the certificate is a Certificate Authority |
 | `crl_distribution_points`  | array of strings | :material-checkbox-blank-circle-outline: | URLs where revocation info can be found |
 | `subject_key_id`           | string   | :material-checkbox-blank-circle-outline: | Identifier for the certificate’s public key |
 | `authority_key_id`         | string   | :material-checkbox-blank-circle-outline: | Identifier for the public key used to sign this certificate |
+| `public_key_sha256`        | string   | :material-checkbox-blank-circle-outline: | Lower-case hex SHA-256 of the DER SubjectPublicKeyInfo; identifies the key pair itself, so certificates sharing it share a key |
 
 ## :material-certificate-outline: TLSCertificate Properties
 
@@ -45,6 +67,7 @@ This asset type is commonly used to enrich discovered web services, verify prope
 | :-----------------: | :-----------------: | :------------ |
 | [`SimpleProperty`](../properties/simple_property.md) | `last_monitored` | Tracks when a data source was last queried regarding this TLSCertificate |
 | [`SourceProperty`](../properties/source_property.md) | Source Plugin Name | Indicates that the specified data source discovered this TLSCertificate |
+| [`SimpleProperty`](../properties/simple_property.md) | `bimi_logo` | The logo URL a domain's BIMI record publishes with this mark certificate |
 
 ## :material-certificate-outline: TLSCertificate Outgoing Relations
 
@@ -103,4 +126,4 @@ issuer --> cert
 
 ---
 
-*© 2025 Jeff Foley — Licensed under Apache 2.0.*
+*© 2026 Jeff Foley — Licensed under Apache 2.0.*

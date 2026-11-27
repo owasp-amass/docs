@@ -1,14 +1,28 @@
 # :simple-owasp: BasicDNSRelation
 
-The **BasicDNSRelation** in the [OWASP](https://owasp.org) [Open Asset Model](https://github.com/owasp-amass/open-asset-model) (OAM) represents a minimal DNS resource record that links a DNS name to either another DNS name or an IP address, using only standard DNS header information.
+The **BasicDNSRelation** in the [OWASP](https://owasp.org)
+[Open Asset Model](https://github.com/owasp-amass/open-asset-model) (OAM)
+represents a minimal DNS resource record that links a DNS name to either another
+DNS name or an IP address, using only standard DNS header information.
 
-- **Definition:** A `BasicDNSRelation` captures DNS records such as A, AAAA, or CNAME that map a hostname to another hostname or IP address. It includes only the DNS header fields and the target reference, without storing extended metadata or record-specific attributes.
+- **Definition:** A `BasicDNSRelation` captures DNS records such as A, AAAA, or
+  CNAME that map a hostname to another hostname or IP address. It includes only
+  the DNS header fields and the target reference, without storing extended
+  metadata or record-specific attributes.
 
-- **Purpose:** This relation type is designed to reflect simple DNS resolution chains within the asset model. It allows mapping how DNS names ultimately resolve to assets or addresses, which is fundamental for understanding how domain names expose infrastructure in an attack surface.
+- **Purpose:** This relation type is designed to reflect simple DNS resolution
+  chains within the asset model. It allows mapping how DNS names ultimately
+  resolve to assets or addresses, which is fundamental for understanding how
+  domain names expose infrastructure in an attack surface.
 
-- **Design Choice:** By limiting the relation to just the DNS header and the resolved name or address, `BasicDNSRelation` avoids the complexity of modeling full DNS behavior (e.g., priorities or DNSSEC). It's intended for lightweight use cases where basic DNS resolution structure is sufficient.
+- **Design Choice:** By limiting the relation to just the DNS header and the
+  resolved name or address, `BasicDNSRelation` avoids the complexity of modeling
+  full DNS behavior (e.g., priorities or DNSSEC). It's intended for lightweight
+  use cases where basic DNS resolution structure is sufficient.
 
-In summary, `BasicDNSRelation` enables efficient modeling of essential DNS relationships, illustrating how domain names resolve in a minimal, structured format, without the overhead of full DNS record semantics.
+In summary, `BasicDNSRelation` enables efficient modeling of essential DNS
+relationships, illustrating how domain names resolve in a minimal, structured
+format, without the overhead of full DNS record semantics.
 
 ## :material-relation-one-to-one: BasicDNSRelation Attributes
 
@@ -27,4 +41,4 @@ In summary, `BasicDNSRelation` enables efficient modeling of essential DNS relat
 
 ---
 
-*© 2025 Jeff Foley — Licensed under Apache 2.0.*
+*© 2026 Jeff Foley — Licensed under Apache 2.0.*

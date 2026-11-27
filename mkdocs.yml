@@ -10,7 +10,7 @@ site_description: "In-depth OSINT collection and external attack surface mapping
 site_author: OWASP Amass Contributors
 remote_branch: gh-pages
 
-#copyright: 2025 Jeff Foley
+#copyright: 2026 Jeff Foley
 
 theme:
   name: 'material'
@@ -37,13 +37,22 @@ theme:
     text: 'Lato'
     code: 'Fira Code'
   features:
+    - announce.dismiss
     - content.code.copy
     - content.code.select
     - content.code.annotate
+    - content.tooltips
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
     - navigation.indexes
     - navigation.footer
     - navigation.top
     - navigation.tracking
+    - search.highlight
+    - search.suggest
     - toc.follow
     
 
@@ -115,6 +124,56 @@ markdown_extensions:
 # Page tree
 nav:
   - Getting Started: index.md
+  - Guides:
+    - Guides: guides/index.md
+    - Your first enumeration: guides/first-enumeration.md
+    - Map an attack surface: guides/attack-surface-report.md
+    - Investigate with AI: guides/investigating-with-ai.md
+    - Organizations and groups: guides/organizations-and-groups.md
+  - Usage:
+    - Using the Framework: usage/index.md
+    - Enumeration: usage/enum.md
+    - Lenses:
+      - Overview: usage/lenses.md
+      - report: usage/lenses/report.md
+      - subdomains: usage/lenses/subdomains.md
+      - family: usage/lenses/family.md
+      - vendors: usage/lenses/vendors.md
+      - group-vendors: usage/lenses/group-vendors.md
+      - org-group: usage/lenses/org-group.md
+      - affiliation: usage/lenses/affiliation.md
+      - accounts: usage/lenses/accounts.md
+      - funding: usage/lenses/funding.md
+      - group-funding: usage/lenses/group-funding.md
+      - services: usage/lenses/services.md
+      - web: usage/lenses/web.md
+      - network: usage/lenses/network.md
+      - cloud: usage/lenses/cloud.md
+      - dangling: usage/lenses/dangling.md
+      - changes: usage/lenses/changes.md
+      - certificates: usage/lenses/certificates.md
+      - domains: usage/lenses/domains.md
+      - email: usage/lenses/email.md
+      - contacts: usage/lenses/contacts.md
+      - identifiers: usage/lenses/identifiers.md
+      - exposure: usage/lenses/exposure.md
+      - headers: usage/lenses/headers.md
+      - disclosure: usage/lenses/disclosure.md
+      - concentration: usage/lenses/concentration.md
+      - coverage: usage/lenses/coverage.md
+      - geography: usage/lenses/geography.md
+      - compare: usage/lenses/compare.md
+      - vulnerable: usage/lenses/vulnerable.md
+      - lookalikes: usage/lenses/lookalikes.md
+    - Database Hygiene: usage/db.md
+    - Review: usage/review.md
+    - Other Subcommands:
+      - Overview: usage/tools.md
+      - Association Walks: usage/assoc.md
+      - Vulnerability Data: usage/vuln-update.md
+  - Engine:
+    - How the Engine Works: engine/index.md
+    - The Logic Behind the Design: engine/design.md
   - Configuration:
     - Configuration: configuration/index.md
     - Data Sources: configuration/data_sources.md
@@ -122,6 +181,7 @@ nav:
   - Asset Database:
     - Asset Database: asset_db/index.md
     - PostgreSQL: asset_db/postgres.md
+    - Collection Runs: asset_db/collection_runs.md
     - Triples: asset_db/triples.md
   - Open Asset Model:
     - Open Asset Model: open_asset_model/index.md
@@ -135,10 +195,10 @@ nav:
       - File: open_asset_model/assets/file.md
       - FQDN: open_asset_model/assets/fqdn.md
       - FundsTransfer: open_asset_model/assets/funds_transfer.md
+      - GeoLocation: open_asset_model/assets/geo_location.md
       - Identifier: open_asset_model/assets/identifier.md
       - IPAddress: open_asset_model/assets/ip_address.md
       - IPNetRecord: open_asset_model/assets/ipnet_record.md
-      - Location: open_asset_model/assets/location.md
       - Netblock: open_asset_model/assets/netblock.md
       - Organization: open_asset_model/assets/organization.md
       - Person: open_asset_model/assets/person.md
@@ -146,6 +206,8 @@ nav:
       - Product: open_asset_model/assets/product.md
       - ProductRelease: open_asset_model/assets/product_release.md
       - Service: open_asset_model/assets/service.md
+      - StorageBucket: open_asset_model/assets/storage_bucket.md
+      - StreetAddress: open_asset_model/assets/street_address.md
       - TLSCertificate: open_asset_model/assets/tls_certificate.md
       - URL: open_asset_model/assets/url.md
     - Relations: 
@@ -161,4 +223,11 @@ nav:
       - SimpleProperty: open_asset_model/properties/simple_property.md
       - SourceProperty: open_asset_model/properties/source_property.md
       - VulnProperty: open_asset_model/properties/vuln_property.md
+  - AI (Experimental):
+    - Overview: ai/index.md
+    - Classification and Triage: ai/classification.md
+    - Bug-Bounty Programs: ai/bug-bounty.md
+    - Documents: ai/documents.md
+    - Funding and Procurement: ai/funding.md
+    - Organizations and Geography: ai/organizations.md
   - Contributing: contributing/contributing.md

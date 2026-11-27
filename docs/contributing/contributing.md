@@ -117,8 +117,9 @@ pools scale between 4 and 32 instances; all other
 types scale between 1 and 4. Hard cap is
 `maxInstances × 2`.
 
-**Backlog** — durable SQLite-backed work queue with
-claim/ack/lease semantics. Items progress through:
+**Backlog** — durable work queue with claim/ack/lease
+semantics: the Asset Database's work queue (`repository.WorkQueue`)
+on PostgreSQL and SQLite, a local SQLite file otherwise. Items progress through:
 `queued → leased (in-flight) → done`. Expired leases
 automatically return items to `queued`, enabling
 recovery from failures.
@@ -305,4 +306,4 @@ The same git workflow applies to all repos under the
 
 ---
 
-*© 2025 Jeff Foley — Licensed under Apache 2.0.*
+*© 2026 Jeff Foley — Licensed under Apache 2.0.*

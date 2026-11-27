@@ -1,6 +1,16 @@
 # :simple-owasp: ContactRecord
 
-The **ContactRecord** asset serves as a connective entity that maintains a reliable audit trail of where contact information was discovered during the *attack surface intelligence* collection process. It plays a critical role in ensuring both flexibility and consistency within the [Open Asset Model](https://github.com/owasp-amass/open-asset-model), as it is uniformly applied wherever contact details are identified—regardless of the specific type of contact information uncovered. Because such information is often found in varied groupings, it's important to preserve the context in which each piece was associated. The **ContactRecord** makes this possible by capturing and storing the discovered contact data alongside its source location, maintaining their relationship within the model.
+The **ContactRecord** asset serves as a connective entity that maintains a
+reliable audit trail of where contact information was discovered during the
+*attack surface intelligence* collection process. It plays a critical role in
+ensuring both flexibility and consistency within the
+[Open Asset Model](https://github.com/owasp-amass/open-asset-model), as it is
+uniformly applied wherever contact details are identified—regardless of the
+specific type of contact information uncovered. Because such information is
+often found in varied groupings, it's important to preserve the context in which
+each piece was associated. The **ContactRecord** makes this possible by
+capturing and storing the discovered contact data alongside its source location,
+maintaining their relationship within the model.
 
 ## :material-contacts: ContactRecord Attributes
 
@@ -14,6 +24,8 @@ The **ContactRecord** asset serves as a connective entity that maintains a relia
 | :-----------------: | :-----------------: | :------------ |
 | [`SimpleProperty`](../properties/simple_property.md) | `last_monitored` | Tracks when a data source was last queried regarding this ContactRecord |
 | [`SourceProperty`](../properties/source_property.md) | Source Plugin Name | Indicates that the specified data source discovered this ContactRecord |
+| [`SimpleProperty`](../properties/simple_property.md) | `mark_type` | The kind of mark a mark certificate's subject holds (e.g., `Registered Mark`) |
+| [`SimpleProperty`](../properties/simple_property.md) | `word_mark` | The registered word mark named in a mark certificate |
 
 ## :material-contacts: ContactRecord Outgoing Relations
 
@@ -41,6 +53,11 @@ simple4@{ shape: braces, label: "person"}
 contact --o simple4
 simple4 --> person
 
+loc["StreetAddress"]
+simple7@{ shape: braces, label: "street_address"}
+contact --o simple7
+simple7 --> loc
+
 phone["Phone"]
 simple5@{ shape: braces, label: "phone"}
 contact --o simple5
@@ -59,10 +76,11 @@ simple6 --> url
 | [`SimpleRelation`](../relations/simple_relation.md) | `fqdn` | [`FQDN`](./fqdn.md) | Represents a FQDN discovered in the contact information |
 | [`SimpleRelation`](../relations/simple_relation.md) | `id` | [`Identifier`](./identifier.md) | Represents an ID (e.g. email address) in the contact information |
 | [`SimpleRelation`](../relations/simple_relation.md) | `organization` | [`Organization`](./organization.md) | Represents an organization name in the contact information |
-| [`SimpleRelation`](../relations/simple_relation.md) | `person` | [`Person`](./person) | Represents a person's name discovered with the contact information |
+| [`SimpleRelation`](../relations/simple_relation.md) | `person` | [`Person`](./person.md) | Represents a person's name discovered with the contact information |
+| [`SimpleRelation`](../relations/simple_relation.md) | `street_address` | [`StreetAddress`](./street_address.md) | Represents a street address in the contact information |
 | [`SimpleRelation`](../relations/simple_relation.md) | `phone` | [`Phone`](./phone.md) | Represents a phone number in the contact information |
 | [`SimpleRelation`](../relations/simple_relation.md) | `url` | [`URL`](./url.md) | Represents an URL discovered in the contact information |
 
 ---
 
-*© 2025 Jeff Foley — Licensed under Apache 2.0.*
+*© 2026 Jeff Foley — Licensed under Apache 2.0.*

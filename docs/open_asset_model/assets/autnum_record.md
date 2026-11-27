@@ -1,14 +1,32 @@
 # :simple-owasp: AutnumRecord
 
-The **AutnumRecord** asset type in the [OWASP](https://owasp.org) [Open Asset Model](https://github.com/owasp-amass/open-asset-model) (OAM) represents authoritative **registration data** for an Autonomous System (AS), as provided by Regional Internet Registries (RIRs) via RDAP or legacy WHOIS. This includes ownership and operational metadata related to an **Autonomous System Number (ASN)**—the numeric identifier used in BGP routing.
+The **AutnumRecord** asset type in the [OWASP](https://owasp.org)
+[Open Asset Model](https://github.com/owasp-amass/open-asset-model) (OAM)
+represents authoritative **registration data** for an Autonomous System (AS), as
+provided by Regional Internet Registries (RIRs) via RDAP or legacy WHOIS. This
+includes ownership and operational metadata related to an **Autonomous System
+Number (ASN)**—the numeric identifier used in BGP routing.
 
-- **Definition:** An `AutnumRecord` contains parsed RDAP registration data about an ASN, including its number, handle, registered name, lifecycle dates, and optional status flags. It also includes the raw source text for auditing or secondary parsing.
+- **Definition:** An `AutnumRecord` contains parsed RDAP registration data about
+  an ASN, including its number, handle, registered name, lifecycle dates, and
+  optional status flags. It also includes the raw source text for auditing or
+  secondary parsing.
 
-- **Purpose:** Modeling AS registration data as a distinct asset allows analysts to pivot from infrastructure to **attribution**, understand who controls internet routing authority, and detect AS-level behavior changes (e.g., hijacks, acquisitions, multi-homing). It supports graph queries like “which ASNs are linked to a given organization?” or “what netblocks does a registered AS announce?”
+- **Purpose:** Modeling AS registration data as a distinct asset allows analysts
+  to pivot from infrastructure to **attribution**, understand who controls
+  internet routing authority, and detect AS-level behavior changes (e.g.,
+  hijacks, acquisitions, multi-homing). It supports graph queries like “which
+  ASNs are linked to a given organization?” or “what netblocks does a registered
+  AS announce?”
 
-- **Design Choice:** Like `DomainRecord`, the `AutnumRecord` includes both structured and unstructured fields, preserving original RDAP/WHOIS responses while enabling consistent graph modeling. Fields are optimized for operational monitoring and attribution while remaining tolerant to registry variability.
+- **Design Choice:** Like `DomainRecord`, the `AutnumRecord` includes both
+  structured and unstructured fields, preserving original RDAP/WHOIS responses
+  while enabling consistent graph modeling. Fields are optimized for operational
+  monitoring and attribution while remaining tolerant to registry variability.
 
-The AutnumRecord asset type enables attribution, tracking, and auditing of ASNs across the global routing system, serving as a critical bridge between technical infrastructure and organizational ownership.
+The AutnumRecord asset type enables attribution, tracking, and auditing of ASNs
+across the global routing system, serving as a critical bridge between technical
+infrastructure and organizational ownership.
 
 ## :material-file-cabinet: AutnumRecord Attributes
 
@@ -67,4 +85,4 @@ urlRel --> url
 
 ---
 
-*© 2025 Jeff Foley — Licensed under Apache 2.0.*
+*© 2026 Jeff Foley — Licensed under Apache 2.0.*

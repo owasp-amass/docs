@@ -1,8 +1,15 @@
 # :simple-owasp: URL
 
-The `URL` asset type is part of the [OWASP](https://owasp.org) [Open Asset Model](https://github.com/owasp-amass/open-asset-model) (OAM) and represents a fully qualified web resource identifier. This asset captures essential information about a Uniform Resource Locator, including its structure, classification, and the context in which it was discovered or used.
+The `URL` asset type is part of the [OWASP](https://owasp.org)
+[Open Asset Model](https://github.com/owasp-amass/open-asset-model) (OAM) and
+represents a fully qualified web resource identifier. This asset captures
+essential information about a Uniform Resource Locator, including its structure,
+classification, and the context in which it was discovered or used.
 
-URLs are a central component in external-attack surface assessments, as they often map directly to web applications, APIs, or other internet-facing services. Modeling URLs as first-class assets enables automated analysis, correlation with certificates, subdomain enumeration, and vulnerability scanning workflows.
+URLs are a central component in external-attack surface assessments, as they
+often map directly to web applications, APIs, or other internet-facing services.
+Modeling URLs as first-class assets enables automated analysis, correlation with
+certificates, subdomain enumeration, and vulnerability scanning workflows.
 
 Each `URL` asset includes the following attributes:
 
@@ -16,9 +23,14 @@ Each `URL` asset includes the following attributes:
 - **Options** – Extra options used while connecting.
 - **Fragment** – Optional—anchor reference within the resource (e.g., `#section`).
 
-By representing URLs with a dedicated asset structure, OAM supports detailed analysis of web-facing infrastructure—like identifying TLS mismatches, linking subdomains to specific applications, flagging hosts with dynamic or query-based endpoints, and auditing for insecure or deprecated schemes.
+By representing URLs with a dedicated asset structure, OAM supports detailed
+analysis of web-facing infrastructure—like identifying TLS mismatches, linking
+subdomains to specific applications, flagging hosts with dynamic or query-based
+endpoints, and auditing for insecure or deprecated schemes.
 
-This asset type plays a key role in workflows such as subdomain takeover detection, API fingerprinting, redirect chain mapping, and vulnerability assessment pipelines.
+This asset type plays a key role in workflows such as subdomain takeover
+detection, API fingerprinting, redirect chain mapping, and vulnerability
+assessment pipelines.
 
 ## :octicons-browser-24: URL Attributes
 
@@ -65,6 +77,16 @@ file["File"]
 filerel@{ shape: braces, label: "file" }
 url --o filerel
 filerel --> file
+
+fp["Identifier (e.g. analytics ID)"]
+fpRel@{ shape: braces, label: "fingerprint" }
+url --o fpRel
+fpRel --> fp
+
+cr["ContactRecord"]
+crRel@{ shape: braces, label: "contact" }
+url --o crRel
+crRel --> cr
 ```
 
 ---
@@ -75,7 +97,9 @@ filerel --> file
 | [`SimpleRelation`](../relations/simple_relation.md) | `ip_address` | [`IPAddress`](./ip_address.md) | Links the URL to the IP address equal to the `host` attribute |
 | [`PortRelation`](../relations/port_relation.md) | `port` | [`Service`](./service.md) | Represents the port that served up content for this URL |
 | [`SimpleRelation`](../relations/simple_relation.md) | `file` | [`File`](./file.md) | Links the URL to the file that was served up at this location |
+| [`SimpleRelation`](../relations/simple_relation.md) | `fingerprint` | [`Identifier`](./identifier.md) | A fingerprint (e.g. an analytics identifier) of the page at this URL |
+| [`SimpleRelation`](../relations/simple_relation.md) | `contact` | [`ContactRecord`](./contact_record.md) | Contact information the page or file at this URL publishes, such as the contacts and links a `security.txt` lists or the owner domain and contact an `ads.txt` names |
 
 ---
 
-*© 2025 Jeff Foley — Licensed under Apache 2.0.*
+*© 2026 Jeff Foley — Licensed under Apache 2.0.*

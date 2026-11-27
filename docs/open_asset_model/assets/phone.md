@@ -1,14 +1,28 @@
 # :simple-owasp: Phone
 
-The **Phone** asset type in the [OWASP](https://owasp.org) [Open Asset Model](https://github.com/owasp-amass/open-asset-model) (OAM) represents a structured phone number associated with a person, organization, or service. This includes landlines, mobile phones, and fax numbers, supporting international formats and extensions.
+The **Phone** asset type in the [OWASP](https://owasp.org)
+[Open Asset Model](https://github.com/owasp-amass/open-asset-model) (OAM)
+represents a structured phone number associated with a person, organization, or
+service. This includes landlines, mobile phones, and fax numbers, supporting
+international formats and extensions.
 
-* **Definition:** A `Phone` asset includes raw and standardized (E.164) representations of phone numbers, along with metadata such as type (e.g., mobile or fax), country code, and optional extension.
+* **Definition:** A `Phone` asset includes raw and standardized (E.164)
+  representations of phone numbers, along with metadata such as type (e.g.,
+  mobile or fax), country code, and optional extension.
 
-* **Purpose:** Phone numbers are valuable in *OSINT investigations*, *phishing detection*, *social engineering risk analysis*, and mapping *communications infrastructure*. Modeling them as first-class assets allows for clear linkage to entities and tracing how they appear across datasets.
+* **Purpose:** Phone numbers are valuable in *OSINT investigations*, *phishing
+  detection*, *social engineering risk analysis*, and mapping *communications
+  infrastructure*. Modeling them as first-class assets allows for clear linkage
+  to entities and tracing how they appear across datasets.
 
-* **Design Choice:** The model uses the E.164 international standard to normalize phone numbers for global consistency. A `Type` field supports differentiation between regular, mobile, and fax numbers, enabling more nuanced analysis and relation modeling.
+* **Design Choice:** The model uses the E.164 international standard to
+  normalize phone numbers for global consistency. A `Type` field supports
+  differentiation between regular, mobile, and fax numbers, enabling more
+  nuanced analysis and relation modeling.
 
-In summary, the `Phone` asset type brings structure and semantic clarity to phone number data, providing essential context for investigative and security workflows in the OAM.
+In summary, the `Phone` asset type brings structure and semantic clarity to
+phone number data, providing essential context for investigative and security
+workflows in the OAM.
 
 ## :material-phone: Phone Attributes
 
@@ -53,4 +67,4 @@ contact --> contactrec
 
 ---
 
-*© 2025 Jeff Foley — Licensed under Apache 2.0.*
+*© 2026 Jeff Foley — Licensed under Apache 2.0.*

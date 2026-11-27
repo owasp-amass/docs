@@ -1,14 +1,32 @@
 # :simple-owasp: FundsTransfer
 
-The **FundsTransfer** asset type in the [OWASP](https://owasp.org) [Open Asset Model](https://github.com/owasp-amass/open-asset-model) (OAM) represents the movement of funds between two financial accounts. These transfers may occur via wire, ACH, cryptocurrency, internal bank movement, or other mechanisms that involve the exchange of currency between accounts or organizations.
+The **FundsTransfer** asset type in the [OWASP](https://owasp.org)
+[Open Asset Model](https://github.com/owasp-amass/open-asset-model) (OAM)
+represents the movement of funds between two financial accounts. These transfers
+may occur via wire, ACH, cryptocurrency, internal bank movement, or other
+mechanisms that involve the exchange of currency between accounts or
+organizations.
 
-- **Definition:** A `FundsTransfer` asset models a single financial transaction involving a specific amount of money, a method of transfer, a currency type, and optionally, reference and exchange data.
+- **Definition:** A `FundsTransfer` asset models a single financial transaction
+  involving a specific amount of money, a method of transfer, a currency type,
+  and optionally, reference and exchange data.
 
-- **Purpose:** Including `FundsTransfer` in the asset model enables reasoning about **financial flows**, which can assist in analyzing operational patterns, detecting anomalies, or tracing value exchanges between entities. When connected to `Account` assets, it supports graph-based queries that explore supply chains, fraud trails, and inter-organizational dependencies.
+- **Purpose:** Including `FundsTransfer` in the asset model enables reasoning
+  about **financial flows**, which can assist in analyzing operational patterns,
+  detecting anomalies, or tracing value exchanges between entities. When
+  connected to `Account` assets, it supports graph-based queries that explore
+  supply chains, fraud trails, and inter-organizational dependencies.
 
-- **Design Choice:** This type focuses on capturing the *structure* of a transfer (e.g., amount, method, and timing) rather than sensitive or regulated content (like full account numbers). Optional fields like `exchange_rate` allow the model to support cross-currency scenarios and future integration with financial intelligence tooling, while keeping the core schema minimal and auditable.
+- **Design Choice:** This type focuses on capturing the *structure* of a
+  transfer (e.g., amount, method, and timing) rather than sensitive or regulated
+  content (like full account numbers). Optional fields like `exchange_rate`
+  allow the model to support cross-currency scenarios and future integration
+  with financial intelligence tooling, while keeping the core schema minimal and
+  auditable.
 
-The FundsTransfer asset type enables graph-based tracking of financial transactions, providing insight into economic behavior, potential fraud, or organizational connections in the external attack surface.
+The FundsTransfer asset type enables graph-based tracking of financial
+transactions, providing insight into economic behavior, potential fraud, or
+organizational connections in the external attack surface.
 
 ## :material-cash-multiple: FundsTransfer Attributes
 
@@ -34,8 +52,8 @@ The FundsTransfer asset type enables graph-based tracking of financial transacti
 ```mermaid
 graph TD
 transfer["FundsTransfer ($5,000 USD)"]
-ident["Identifer"]
-idRel@{ shape, braces, label: "id" }
+ident["Identifier"]
+idRel@{ shape: braces, label: "id" }
 transfer --o idRel
 idRel --> ident
 
@@ -66,4 +84,4 @@ third --> org
 
 ---
 
-*© 2025 Jeff Foley — Licensed under Apache 2.0.*
+*© 2026 Jeff Foley — Licensed under Apache 2.0.*

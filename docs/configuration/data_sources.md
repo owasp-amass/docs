@@ -1,8 +1,13 @@
 # Amass Data Sources Configuration
 
-This document explains how to configure external data sources for Amass using the `datasources.yaml` file. Data sources provide additional information for enumeration and require credentials for access.
+This document explains how to configure external data sources for Amass using
+the `datasources.yaml` file. Data sources provide additional information for
+enumeration and require credentials for access.
 
-> **Note:** Some data sources require a paid subscription or API key to access advanced features. Using paid or premium data sources can unlock extra capabilities and may provide a better experience for the Amass engine, including more comprehensive results and faster queries.
+> **Note:** Some data sources require a paid subscription or API key to access
+> advanced features. Using paid or premium data sources can unlock extra
+> capabilities and may provide a better experience for the Amass engine,
+> including more comprehensive results and faster queries.
 
 ---
 
@@ -27,18 +32,26 @@ global_options:
 
 ### `datasources`
 
-The `datasources` section is a list of external data sources Amass will use. Each entry can specify credentials, TTL, and multiple accounts. All fields are optional except for `name`.
+The `datasources` section is a list of external data sources Amass will use.
+Each entry can specify credentials, TTL, and multiple accounts. All fields are
+optional except for `name`.
 
 **Supported Fields:**
 
 - `name` (string, required): The name of the data source (e.g., `Shodan`, `CIRCL`).
-- `ttl` (int, optional): Time-to-live for results from this data source, in minutes. If omitted, the global minimum TTL is used.
-- `creds` (object, optional): A map of account names to credential sets. You can name the account key anything (e.g., `account`, `personal`, `work`, `default`), which helps organize multiple credential sets for the same data source. Amass will accept any key name here.
-  - `<account>` (object): The account name (arbitrary string) for this credential set.
+- `ttl` (int, optional): Time-to-live for results from this data source, in
+  minutes. If omitted, the global minimum TTL is used.
+- `creds` (object, optional): A map of account names to credential sets. You can
+  name the account key anything (e.g., `account`, `personal`, `work`,
+  `default`), which helps organize multiple credential sets for the same data
+  source. Amass will accept any key name here.
+  - `<account>` (object): The account name (arbitrary string) for this
+    credential set.
     - `apikey` (string, optional): API key for the data source.
     - `username` (string, optional): Username for authentication.
     - `password` (string, optional): Password for authentication.
-    - `secret` (string, optional): Secret value for authentication (used by some APIs).
+    - `secret` (string, optional): Secret value for authentication (used by some
+      APIs).
 
 **Format:**
 
@@ -72,18 +85,97 @@ datasources:
 
 ---
 
+## Credentials outside the file
+
+Credentials can also come from the environment or from the Asset Database,
+which lets every engine that shares a database use keys added once. A data
+source takes all of its credentials from the first of these that has any:
+
+1. `datasources.yaml`.
+2. Environment variables named `AMASS_SECRET_<SOURCE>_<FIELD>`: the source's
+   name in capitals, with anything but letters and digits as `_`, and a field
+   of `APIKEY`, `SECRET`, `USERNAME` or `PASSWORD`. For example,
+   `AMASS_SECRET_SHODAN_APIKEY`.
+3. The Asset Database (PostgreSQL or SQLite), encrypted under a key that the
+   engine and tools read from `AMASS_SECRETS_KEY`, or from the file that
+   `AMASS_SECRETS_KEY_FILE` names. The database holds only ciphertext. With
+   Neo4j as the Asset Database, there's no encrypted store: use the file or
+   the environment.
+
+Manage the database's credentials with `amass secrets`:
+
+```bash
+# make a key once, and give it to every engine and tool
+amass secrets new-key > ~/.config/amass/secrets.key
+chmod 600 ~/.config/amass/secrets.key
+export AMASS_SECRETS_KEY_FILE=~/.config/amass/secrets.key
+
+# store a key; the value is read from standard input, never a flag
+read -rs KEY && printf '%s' "$KEY" | amass secrets set Shodan apikey
+
+amass secrets list            # sources and fields, never values
+amass secrets delete Shodan   # one source's credentials (or name a field)
+
+# move every credential to a new key, then give the engines the new key
+amass secrets new-key > new.key
+amass secrets rotate < new.key
+```
+
+Each command also takes `-config` and `-dir` to find the database. Every
+change is recorded in the database's journal, without its value. Keep the
+key safe and backed up with the database: credentials can't be read without
+it. In the AI Compose stack, `./scripts/up` makes the key and the `secrets`
+service runs these commands.
+
+---
+
+## Key-less data sources
+
+Many data sources need no credentials and run automatically — no
+`datasources.yaml` entry is required for them. These include
+certificate-transparency and passive-DNS sources such as:
+
+- **CertSpotter** — subdomains from the Certificate Transparency logs
+  through SSLMate's CertSpotter API, a reliable alternative to crt.sh.
+- **Columbus** — subdomains from the free Columbus Project index
+  (`columbus.elmasy.com`).
+- **Anubis** — subdomains from the Anubis-DB index (`anubisdb.com`).
+- **ThreatMiner** — subdomains from ThreatMiner's domain intelligence
+  API (`api.threatminer.org`).
+
+They query public endpoints that are rate-limited rather than
+credentialed, so they work out of the box. You can still give a key-less
+source a `ttl` in `datasources.yaml` to control how long its results are
+reused:
+
+```yaml
+datasources:
+  - name: CertSpotter
+    ttl: 1440 # reuse results for one day
+```
+
+---
+
 ## Tips
 
 - Comment or uncomment sections in YAML to enable/disable features.
 - Use relative paths for wordlists and data source files for portability.
 - Always keep your API keys and credentials secure.
 
-For more details, see the [example configuration files](https://github.com/owasp-amass/amass/tree/main/resources) and the [Amass documentation](https://github.com/owasp-amass/amass/wiki).
+For more details, see the
+[example configuration files](https://github.com/owasp-amass/amass/tree/main/resources)
+and the [Amass documentation](https://github.com/owasp-amass/amass/wiki).
 
 ---
 
 ## Advanced Configuration Details
 
-- **Custom Data Source Credentials:** In the data source config, [credentials are stored as a map](https://github.com/owasp-amass/amass/blob/f46cda51b3e9a701a0498eafa0e9f82a0f26e864/config/datasrcs.go#L16-L29) (`map[string]*Credentials`). This allows you to define multiple credential sets per data source in YAML, and Amass will deserialize them into Go structs. You can add new credential types as needed for custom integrations.
+- **Custom Data Source Credentials:** In the data source config,
+  [credentials are stored as a map](https://github.com/owasp-amass/amass/blob/f46cda51b3e9a701a0498eafa0e9f82a0f26e864/config/datasrcs.go#L16-L29)
+  (`map[string]*Credentials`). This allows you to define multiple credential
+  sets per data source in YAML, and Amass will deserialize them into Go structs.
+  You can add new credential types as needed for custom integrations.
 
-**Tip:** This flexibility is powerful for advanced users and developers, but be careful—unsupported or misspelled options may be silently ignored unless handled in code.
+**Tip:** This flexibility is powerful for advanced users and developers, but be
+careful—unsupported or misspelled options may be silently ignored unless handled
+in code.
