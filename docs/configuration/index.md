@@ -184,6 +184,13 @@ type.
   many, so other enumerations get their help. An engine asked to enumerate
   the same scope still joins. `0` sets no cap. Engines that join use the
   value the enumeration started with, not their own.
+- `dispatch` (string, default `positions`): how the engine runs the data
+  sources and probes for each asset it finds. `positions` runs them one
+  after another, as Amass always has. `phased` (experimental) runs DNS
+  resolution first, as before, and then all the remaining sources and
+  probes at once. Each source still keeps its own limits, and the results
+  should be the same. Assets move through the enumeration faster when slow
+  or rate-limited sources would otherwise hold them up.
 - `ai` (object): Optional model settings for `amass ai` and the MCP server;
   enumeration needs no model, and nothing here turns AI on by itself. See
   [`options.ai`](#optionsai) below.
