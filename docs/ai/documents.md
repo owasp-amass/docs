@@ -100,6 +100,10 @@ AI's decisions: offices, staff, parent organizations and suppliers change. The
 one exception is history, such as a former name or a merger, which an old
 document records as well as a new one. Current documents are read first.
 
+Between two and five years old, a document still counts, but for less as it
+ages: by five years, what it says weighs half what a current document's
+would. Undated documents, and history, keep their full weight.
+
 When the engine has finished, the run stays open for up to 15 minutes while
 the model reads the documents found last.
 
