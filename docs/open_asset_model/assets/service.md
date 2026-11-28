@@ -110,6 +110,7 @@ fpRel --> fp
 | [`SimpleRelation`](../relations/simple_relation.md) | `allowed_origin` | [`FQDN`](./fqdn.md) | An origin the service's CORS `Access-Control-Allow-Origin` or CSP `frame-ancestors` lets call or embed it |
 | [`SimpleRelation`](../relations/simple_relation.md) | `report_endpoint` | [`URL`](./url.md) | Where the service sends browser reports (CSP `report-uri`, `Report-To`, `Reporting-Endpoints`, NEL) |
 | [`SimpleRelation`](../relations/simple_relation.md) | `fingerprint` | [`Identifier`](./identifier.md) | A fingerprint of what the service served (favicon hash, JARM, page title, content hash, analytics identifier, SSH host key); the `Identifier`'s `id_type` names the fingerprint |
+| [`SimpleRelation`](../relations/simple_relation.md) | `discloses` | [`Identifier`](./identifier.md) | A credential or cloud identifier found in what it published: an exposed secret (its kind and a hash, never the value) or an AWS access key ID or account ID |
 
 ---
 

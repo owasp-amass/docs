@@ -99,6 +99,7 @@ crRel --> cr
 | [`SimpleRelation`](../relations/simple_relation.md) | `file` | [`File`](./file.md) | Links the URL to the file that was served up at this location |
 | [`SimpleRelation`](../relations/simple_relation.md) | `fingerprint` | [`Identifier`](./identifier.md) | A fingerprint (e.g. an analytics identifier) of the page at this URL |
 | [`SimpleRelation`](../relations/simple_relation.md) | `contact` | [`ContactRecord`](./contact_record.md) | Contact information the page or file at this URL publishes, such as the contacts and links a `security.txt` lists or the owner domain and contact an `ads.txt` names |
+| [`SimpleRelation`](../relations/simple_relation.md) | `discloses` | [`Identifier`](./identifier.md) | A credential or cloud identifier found in what it published: an exposed secret (its kind and a hash, never the value) or an AWS access key ID or account ID |
 
 ---
 

@@ -15,7 +15,11 @@ entity, or object within or across systems.
   - `id_type`: A label describing the type of identifier (e.g., `arin`, `duns`,
     `email`, `lei`, etc.). A `trademark` Identifier is a trademark registration,
     written as `<country>:<registration number>`, and a `purl` Identifier is a
-    software package's Package URL (`pkg:maven/com.example/core`).
+    software package's Package URL (`pkg:maven/com.example/core`). An
+    `aws_access_key_id` or `aws_account_id` Identifier names an AWS access key
+    or account found in collected content, and an `exposed_secret` Identifier
+    a credential found exposed, written as `<kind>:<SHA-256 of its value>`: the
+    value itself is never stored in an Identifier.
   - `creation_date` *(optional)*: When the identifier was created.
   - `update_date` *(optional)*: The most recent update timestamp.
   - `expiration_date` *(optional)*: When the identifier is expected to expire or
@@ -79,6 +83,7 @@ allrel --> contact
 | Relation Type       | Relation Label     | Target Assets    | Description   |
 | :-----------------: | :----------------: | :--------------: | :------------ |
 | [`SimpleRelation`](../relations/simple_relation.md) | `registration_agency` | [`ContactRecord`](./contact_record.md) | Links a registration ID with the registering agency |
+| [`SimpleRelation`](../relations/simple_relation.md) | `cloud_account` | [`Identifier`](./identifier.md) | The cloud account an access key ID belongs to (an `aws_access_key_id` to its `aws_account_id`) |
 | [`SimpleRelation`](../relations/simple_relation.md) | `issuing_authority` | [`ContactRecord`](./contact_record.md) | Links an identifier with its issuing authority |
 | [`SimpleRelation`](../relations/simple_relation.md) | `issuing_agent` | [`ContactRecord`](./contact_record.md) | Links an identifier with its issuing agent |
 

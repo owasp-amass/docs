@@ -111,6 +111,7 @@ contains --> url
 | [`SimpleRelation`](../relations/simple_relation.md) | `created_with` | [`Product`](./product.md), [`ProductRelease`](./product_release.md) | The software that produced the document, as its metadata names it |
 | [`SimpleRelation`](../relations/simple_relation.md) | `fingerprint` | [`Identifier`](./identifier.md) | The file's content hash as a shared `Identifier` (`id_type` `file_sha256`), so the same document found at several URLs is one hop apart |
 | [`SimpleRelation`](../relations/simple_relation.md) | `contains` | [`Account`](./account.md), [`ContactRecord`](./contact_record.md), [`FQDN`](./fqdn.md), `File`, [`GeoLocation`](./geo_location.md), [`Identifier`](./identifier.md), [`IPAddress`](./ip_address.md), [`StreetAddress`](./street_address.md), [`Netblock`](./netblock.md), [`Organization`](./organization.md), [`Person`](./person.md), [`Phone`](./phone.md), [`URL`](./url.md) | What the file's content names or records: accounts its paths show, email addresses, host names, links, addresses, phone numbers, people, and the GPS position of embedded photos. A mention does not confer ownership |
+| [`SimpleRelation`](../relations/simple_relation.md) | `discloses` | [`Identifier`](./identifier.md) | A credential or cloud identifier found in what it published: an exposed secret (its kind and a hash, never the value) or an AWS access key ID or account ID |
 
 ---
 

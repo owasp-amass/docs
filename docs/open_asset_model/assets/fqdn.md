@@ -149,6 +149,7 @@ bucketRel --> bucket
 | [`SimpleRelation`](../relations/simple_relation.md) | `identity_provider` | `FQDN` | The host the domain's users sign in at: a federation server or an identity provider's tenant host, read from Microsoft's realm answer or the domain's OpenID Connect discovery document |
 | [`SimpleRelation`](../relations/simple_relation.md) | `signing_certificate` | [`TLSCertificate`](./tls_certificate.md) | A certificate this host's SAML or WS-Federation metadata names for signing tokens |
 | [`SimpleRelation`](../relations/simple_relation.md) | `bucket` | [`StorageBucket`](./storage_bucket.md) | An object-storage bucket this name resolves to (an Amazon S3, Google Cloud Storage or Azure Blob host) |
+| [`SimpleRelation`](../relations/simple_relation.md) | `discloses` | [`Identifier`](./identifier.md) | A credential or cloud identifier found in what it published: an exposed secret (its kind and a hash, never the value) or an AWS access key ID or account ID |
 
 ---
 
