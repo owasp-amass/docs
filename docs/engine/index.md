@@ -386,6 +386,20 @@ the target's own hosts. The engine paces itself:
   a Tor exit isn't taken as evidence about the target.
 - **A probe pacer** spaces out active probes (certificate and service probes,
   zone transfers) against the target's hosts.
+- **A probe gate** bounds how many active probes are in flight at once from the
+  engine's public address, shared by every enumeration it runs: at most 16 to
+  one registered domain, 2 to one host name and 4 to one IP address. The
+  address limit matters for names behind a CDN, which share a few edge
+  addresses and are slowed or cut off when too many connections reach them at
+  once. A probe waits for its turn before its own timeout starts, and a name
+  is resolved through the enumeration's own DNS resolvers to find its address.
+  Set the engine's limits with its `-probe-per-domain`, `-probe-per-name` and
+  `-probe-per-address` flags, the `AMASS_PROBE_PER_DOMAIN`,
+  `AMASS_PROBE_PER_NAME` and `AMASS_PROBE_PER_ADDRESS` environment variables,
+  or `probe_per_domain`, `probe_per_name` and `probe_per_address` under
+  `options:` in the configuration file the engine is started with (`-config`),
+  in that order of precedence (`0` removes a limit). An enumeration's own
+  configuration can set the same options lower for its probes, never higher.
 - **Separate HTTP clients** for ordinary API calls, active probes, crawling, and
   slow bulk queries (such as a web archive's index of a whole domain, which can
   take minutes to start answering).

@@ -53,6 +53,23 @@ options:
 Set `probe_pace_ms: 0` to turn pacing off when you are probing hosts you
 control and want maximum speed.
 
+The engine also bounds how many probes are in flight at once from its public
+address, across every enumeration it runs: by default 16 to one registered
+domain, 2 to one host name and 4 to one IP address. Names behind a CDN share
+a few edge addresses, and too many connections to them at once get the
+probes slowed or dropped. A probe waits its turn before its own timeout
+starts. An enumeration can set lower limits for its own probes:
+
+```yaml
+options:
+  probe_per_domain: 8    # probes in flight to one registered domain
+  probe_per_name: 1      # to one host name
+  probe_per_address: 2   # to one IP address
+```
+
+These can only lower the engine's limits. To raise them, set them for the
+engine (see [How the Engine Works](../engine/index.md)).
+
 !!! warning "Authorized use"
     Active collection sends traffic to the target's own infrastructure.
     Only enumerate assets you own or are explicitly authorized to assess.
