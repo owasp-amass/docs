@@ -40,6 +40,8 @@ workflows in the OAM.
 | Property Type       | Property Name       | Description   |
 | :-----------------: | :-----------------: | :------------ |
 | [`SimpleProperty`](../properties/simple_property.md) | `last_monitored` | Tracks when a data source was last queried regarding this Phone |
+| [`SimpleProperty`](../properties/simple_property.md) | `line_type` | The kind of line the numbering plan says the number is: `fixed_line`, `mobile`, `fixed_line_or_mobile`, `toll_free`, `premium_rate`, `shared_cost`, `voip`, `personal_number`, `pager`, `uan` or `voicemail` |
+| [`SimpleProperty`](../properties/simple_property.md) | `phone_region` | The area the numbering plan says the number was issued in (e.g., `London`); a number can move with its owner, so this is where it was first issued, not where it is used |
 | [`SourceProperty`](../properties/source_property.md) | Source Plugin Name | Indicates that the specified data source discovered this Phone |
 
 ## :material-phone: Phone Outgoing Relations
