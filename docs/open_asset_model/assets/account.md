@@ -85,7 +85,7 @@ reason about control, access, and exposure across digital systems.
 | Attributes            | Type        | Required    | Description   |
 | :-------------------: | :---------: | :---------: | :------------ |
 | `unique_id`           | string      | :material-check-decagram: | Unique identifier for the account within the model |
-| `account_type`        | string      | :material-check-decagram: | Classification of the account (e.g., `cloud`, `bank`, `user`, `bug_bounty_program`, `package_namespace`, `ads_seller`) |
+| `account_type`        | string      | :material-check-decagram: | Classification of the account (e.g., `cloud`, `bank`, `user`, `bug_bounty_program`, `package_namespace`, `ads_seller`, `code_host_organization`, `code_host_user`) |
 | `username`            | string      | :material-checkbox-blank-circle-outline: | Login name, email, or screen name associated with the account |
 | `account_number`      | string      | :material-checkbox-blank-circle-outline: | Optional numeric or alphanumeric account ID (e.g., `acct-1234`) |
 | `balance`             | float       | :material-checkbox-blank-circle-outline: | Optional financial or credit balance |
@@ -145,6 +145,19 @@ cr["ContactRecord"]
 crRel@{ shape: braces, label: "contact" }
 acct --o crRel
 crRel --> cr
+
+repoRel@{ shape: braces, label: "repository" }
+acct --o repoRel
+repoRel --> url
+
+webRel@{ shape: braces, label: "website" }
+acct --o webRel
+webRel --> url
+
+member["Account (code_host_user)"]
+memberRel@{ shape: braces, label: "member" }
+acct --o memberRel
+memberRel --> member
 ```
 
 ---
@@ -156,7 +169,10 @@ crRel --> cr
 | [`SimpleRelation`](../relations/simple_relation.md) | `program_page` | [`URL`](./url.md) | A bug-bounty program's page on its platform |
 | [`SimpleRelation`](../relations/simple_relation.md) | `in_scope` | [`FQDN`](./fqdn.md), [`Netblock`](./netblock.md), [`URL`](./url.md) | An asset a bug-bounty program lists in its scope. A listing alone does not mean the program's organization owns the asset |
 | [`SimpleRelation`](../relations/simple_relation.md) | `package` | [`Product`](./product.md) | A package published under a package registry namespace (a Maven groupId, an npm scope) |
-| [`SimpleRelation`](../relations/simple_relation.md) | `namespace_domain` | [`FQDN`](./fqdn.md) | The domain a package registry namespace is tied to: the domain a Maven groupId names, or the domain of the addresses that maintain an npm namespace |
+| [`SimpleRelation`](../relations/simple_relation.md) | `namespace_domain` | [`FQDN`](./fqdn.md) | The domain a package registry namespace or code-host organization is tied to: the domain a Maven groupId names, the domain of the addresses that maintain an npm namespace, or the domain a code-host organization names as its website |
+| [`SimpleRelation`](../relations/simple_relation.md) | `repository` | [`URL`](./url.md) | A public repository of a code-host organization (its page) |
+| [`SimpleRelation`](../relations/simple_relation.md) | `website` | [`URL`](./url.md) | A website a code-host organization, or one of its repositories, names as its homepage |
+| [`SimpleRelation`](../relations/simple_relation.md) | `member` | [`Account`](./account.md) | A user a code-host organization publicly lists as its member |
 | [`SimpleRelation`](../relations/simple_relation.md) | `contact` | [`ContactRecord`](./contact_record.md) | Contact information published for the account, such as a package namespace's maintainer addresses, a bug-bounty program's website, or the business name and domain an advertising system lists for a seller account |
 
 ---
