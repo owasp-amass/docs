@@ -321,9 +321,15 @@ documents from your own targets (below).
 
 Every model also reports findings that don't fit, so findings are checked
 against the text before they're stored, and you review what an enumeration
-applied. Two kinds of document give nothing to any model: scanned documents,
-which hold images instead of text, and documents whose text can't be
-extracted.
+applied. Documents whose text can't be extracted give nothing to any model.
+
+Scanned documents hold pictures of their pages instead of text. When the
+document model can read pictures, it's shown each page and writes out the
+text. Otherwise Tesseract reads the pages; it's included in the Compose
+images. `options.ai.documents.vision` says whether the model can read
+pictures. Left at `auto`, Anthropic models can, Ollama models can when Ollama
+reports it (vision models such as `qwen3-vl`), and other models can't. Set it
+to `off` to use Tesseract even with a model that can.
 
 ### Keeping the work in bounds
 
@@ -369,6 +375,7 @@ right.
 | `context_tokens` | `16384` | An Ollama model's context window |
 | `chunk_chars` | `12000` | How much of a document one request reads |
 | `max_tokens` | `4096` | Longest reply the model may give to one request |
+| `vision` | `auto` | Whether the model can read pictures, for scanned documents: `auto`, `on` or `off`. A model that can't gets Tesseract's reading of the pages |
 | `share_with_assistants` | `false` | Lets other models read the findings |
 | `max_leads` | `0` (adaptive) | Caps the leads one enumeration receives; `-1` turns leads off |
 | `hold` | `15m` | How long a finished enumeration stays open while documents are still being read, so their leads reach it; `0` ends it as soon as collection is done. It ends sooner when the documents left could not be read in time, and the next run reads them |
