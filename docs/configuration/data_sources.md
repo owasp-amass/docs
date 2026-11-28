@@ -127,6 +127,18 @@ key safe and backed up with the database: credentials can't be read without
 it. In the AI Compose stack, `./scripts/up` makes the key and the `secrets`
 service runs these commands.
 
+When an enumeration finds a credential exposed by the target, such as a key
+in a web page or a TXT record, Amass never uses or tests it. Reports show its
+kind, a masked preview and a reference, and models only ever see the masked
+form. With the secrets key, the value itself is kept encrypted in the same
+store. To read it, pass the reference from the report:
+
+```bash
+amass secrets found exposed_secret:github_token:<hash>
+```
+
+Each read is recorded in the journal.
+
 ---
 
 ## Key-less data sources
