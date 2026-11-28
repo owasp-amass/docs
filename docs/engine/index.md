@@ -394,6 +394,17 @@ the target's own hosts. The engine paces itself:
   banner probes and zone transfers, and is for systems you're authorized to
   test.
 
+The engine's log shows what this traffic met. A data source request that fails,
+times out or gets an error status is logged with its host and path (never its
+query, which can carry an API key), and every few minutes and when a session
+ends, its network use lists each probe plugin's probes by outcome: answered,
+refused (a closed port), no answer, timed out after connecting, or failed. A
+probe that timed out after connecting is logged on its own, because a burst
+the target or the network can't keep up with looks like that. When the engine
+logs to a syslog server (`SYSLOG_HOST`), it writes the same records to its
+standard error too, so `docker logs` shows them; set `AMASS_LOG_STDERR=false`
+to turn that off.
+
 ---
 
 ## :material-flag-checkered: When is an enumeration finished?
