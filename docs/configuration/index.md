@@ -166,8 +166,10 @@ type.
   working on background collection once its other work is done. The web
   archives (the Wayback Machine and Common Crawl) can take an hour to answer
   for a big domain, so they're read beside the rest of the enumeration, one
-  domain at a time, and never hold it up. A domain still waiting when the
-  hold runs out is left for the next run, and the log says so. `0` waits for
+  domain at a time, and never hold it up. An archive that doesn't answer is
+  asked again 5 and then 15 minutes later in the same run. A domain still
+  waiting when the hold runs out is left for the next run, and the log says
+  so. `0` waits for
   none: the archives are read only while the enumeration has other work.
   Longer holds, such as `2h`, suit runs that can wait for the archives. At
   most `24h`.
