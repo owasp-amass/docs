@@ -38,6 +38,10 @@ the ownership of obscure or third-party hosted assets.
 | :-----------------: | :-----------------: | :------------ |
 | [`SimpleProperty`](../properties/simple_property.md) | `last_monitored` | Tracks when a data source was last queried regarding this AutonomousSystem |
 | [`SourceProperty`](../properties/source_property.md) | Source Plugin Name | Indicates that the specified data source discovered this AutonomousSystem |
+| [`SimpleProperty`](../properties/simple_property.md) | `peeringdb_net_id` | The network's record number in PeeringDB |
+| [`SimpleProperty`](../properties/simple_property.md) | `network_type` | The kind of network its PeeringDB record says it is (e.g., `NSP`, `Content`, `Enterprise`, `Educational/Research`) |
+| [`SimpleProperty`](../properties/simple_property.md) | `peering_policy` | The network's general peering policy in PeeringDB (`Open`, `Selective`, `Restrictive` or `No`) |
+| [`SimpleProperty`](../properties/simple_property.md) | `irr_as_set` | The routing registry as-set the network's PeeringDB record names |
 
 ## :material-router-network: AutonomousSystem Outgoing Relations
 
@@ -53,6 +57,11 @@ autnum["AutnumRecord"]
 regrel@{ shape: braces, label: "registration"}
 asn --o regrel
 regrel --> autnum
+
+cr["ContactRecord (e.g. a PeeringDB organization page)"]
+contactrel@{ shape: braces, label: "contact"}
+asn --o contactrel
+contactrel --> cr
 ```
 
 ---
@@ -61,6 +70,7 @@ regrel --> autnum
 | :-----------------: | :----------------: | :--------------: | :------------ |
 | [`SimpleRelation`](../relations/simple_relation.md) | `announces` | [`Netblock`](./netblock.md) | Links an IPAddress to its DNS name used in PTR records |
 | [`SimpleRelation`](../relations/simple_relation.md) | `registration` | [`AutnumRecord`](./autnum_record.md) | Links a ASN to its associated registration data |
+| [`SimpleRelation`](../relations/simple_relation.md) | `contact` | [`ContactRecord`](./contact_record.md) | The operator record the network keeps about itself in PeeringDB: the organization running it, its website and address |
 
 ---
 
