@@ -114,6 +114,16 @@ federated@{ shape: braces, label: "federated_with"}
 fqdn1 --o federated
 federated --> fqdn7
 
+fqdn8["FQDN (e.g. owasp.okta.com)"]
+idp@{ shape: braces, label: "identity_provider"}
+fqdn1 --o idp
+idp --> fqdn8
+
+signcert["TLSCertificate (federation signing)"]
+signing@{ shape: braces, label: "signing_certificate"}
+fqdn8 --o signing
+signing --> signcert
+
 bucket["StorageBucket (e.g. s3:owasp-assets)"]
 bucketRel@{ shape: braces, label: "bucket"}
 fqdn2 --o bucketRel
@@ -136,6 +146,8 @@ bucketRel --> bucket
 | [`SimpleRelation`](../relations/simple_relation.md) | `dmarc_reports_to` | `FQDN` | A domain this FQDN's DMARC record sends its aggregate or forensic reports to (an `rua`/`ruf` address), derived from the published DMARC TXT record |
 | [`SimpleRelation`](../relations/simple_relation.md) | `identity_tenant` | [`Identifier`](./identifier.md) | The domain's identity tenant, such as a Microsoft Entra tenant ID or an Okta organization |
 | [`SimpleRelation`](../relations/simple_relation.md) | `federated_with` | `FQDN` | A sibling domain that shares the same identity tenant federation trust |
+| [`SimpleRelation`](../relations/simple_relation.md) | `identity_provider` | `FQDN` | The host the domain's users sign in at: a federation server or an identity provider's tenant host, read from Microsoft's realm answer or the domain's OpenID Connect discovery document |
+| [`SimpleRelation`](../relations/simple_relation.md) | `signing_certificate` | [`TLSCertificate`](./tls_certificate.md) | A certificate this host's SAML or WS-Federation metadata names for signing tokens |
 | [`SimpleRelation`](../relations/simple_relation.md) | `bucket` | [`StorageBucket`](./storage_bucket.md) | An object-storage bucket this name resolves to (an Amazon S3, Google Cloud Storage or Azure Blob host) |
 
 ---
